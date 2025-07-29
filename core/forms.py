@@ -71,11 +71,11 @@ class UserLoginForm(AuthenticationForm):
     """Form para login de usuário"""
     username = forms.CharField(
         label=_("Nome de usuário ou E-mail"),
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome de usuário ou e-mail'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("Nome de usuário ou e-mail")})
     )
     password = forms.CharField(
         label=_("Senha"),
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Sua senha'})
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _("Sua senha")})
     )
     
     def __init__(self, *args, **kwargs):

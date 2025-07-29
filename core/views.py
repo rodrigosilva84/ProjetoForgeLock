@@ -122,6 +122,11 @@ def resend_sms(request):
 
 def user_login(request):
     """Login de usuário"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
     if request.method == 'POST':
         form = UserLoginForm(request, data=request.POST)
         if form.is_valid():
@@ -135,6 +140,7 @@ def user_login(request):
                 request.session['user_id'] = user.id
                 return redirect('verify_sms')
     else:
+        # Criar formulário APÓS ativar o idioma
         form = UserLoginForm()
     
     return render(request, 'core/login.html', {'form': form})

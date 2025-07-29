@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-29 11:56-0300\n"
+"POT-Creation-Date: 2025-07-29 13:12-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Informações pessoais"
 msgstr ""
 
-#: .\core\admin.py:17 .\core\models.py:65 .\core\models.py:78
+#: .\core\admin.py:17 .\core\models.py:80 .\core\models.py:93
 #: .\templates\base.html:67
 msgid "Empresa"
 msgstr ""
@@ -75,7 +75,7 @@ msgstr "(11) 99999-9999"
 msgid "País *"
 msgstr "Country *"
 
-#: .\core\forms.py:35 .\core\forms.py:123
+#: .\core\forms.py:35 .\core\forms.py:63 .\core\forms.py:134
 msgid "Selecione um país"
 msgstr "Select a country"
 
@@ -83,7 +83,7 @@ msgstr "Select a country"
 msgid "Nome de usuário"
 msgstr "Username"
 
-#: .\core\forms.py:45 .\core\forms.py:66
+#: .\core\forms.py:45 .\core\forms.py:77 .\templates\core\login.html:30
 msgid "Senha"
 msgstr "Password"
 
@@ -120,135 +120,151 @@ msgstr "Your password must contain at least 8 characters."
 msgid "Digite a mesma senha novamente para verificação."
 msgstr "Enter the same password again for verification."
 
-#: .\core\forms.py:62 .\core\forms.py:72
+#: .\core\forms.py:73 .\core\forms.py:83 .\templates\core\login.html:18
 msgid "Nome de usuário ou E-mail"
 msgstr "Username or Email"
 
-#: .\core\forms.py:78 .\core\forms.py:90 .\core\models.py:80
+#: .\core\forms.py:74
+msgid "Nome de usuário ou e-mail"
+msgstr "Username or email"
+
+#: .\core\forms.py:78
+msgid "Sua senha"
+msgstr "Your password"
+
+#: .\core\forms.py:89 .\core\forms.py:101 .\core\models.py:95
 msgid "Código de verificação"
 msgstr "Verification code"
 
-#: .\core\forms.py:112
+#: .\core\forms.py:123
 msgid "Nome da empresa"
 msgstr ""
 
-#: .\core\forms.py:113 .\core\models.py:53
+#: .\core\forms.py:124 .\core\models.py:68
 msgid "CNPJ"
 msgstr ""
 
-#: .\core\forms.py:114 .\core\models.py:54 .\core\models.py:75
+#: .\core\forms.py:125 .\core\models.py:69 .\core\models.py:90
 msgid "E-mail"
 msgstr ""
 
-#: .\core\forms.py:115 .\core\models.py:55 .\core\models.py:76
+#: .\core\forms.py:126 .\core\models.py:70 .\core\models.py:91
 msgid "Telefone"
 msgstr ""
 
-#: .\core\forms.py:116 .\core\models.py:56
+#: .\core\forms.py:127 .\core\models.py:71
 msgid "Endereço"
 msgstr ""
 
-#: .\core\forms.py:117 .\core\models.py:19 .\core\models.py:57
-#: .\core\models.py:77
+#: .\core\forms.py:128 .\core\models.py:21 .\core\models.py:72
+#: .\core\models.py:92
 msgid "País"
 msgstr ""
 
-#: .\core\forms.py:118 .\core\models.py:58
+#: .\core\forms.py:129 .\core\models.py:73
 msgid "Logo"
 msgstr ""
 
-#: .\core\forms.py:119 .\core\models.py:30 .\core\models.py:59
+#: .\core\forms.py:130 .\core\models.py:45 .\core\models.py:74
 msgid "Descrição"
 msgstr ""
 
-#: .\core\models.py:10 .\core\models.py:29 .\core\models.py:52
+#: .\core\models.py:10 .\core\models.py:44 .\core\models.py:67
 msgid "Nome"
 msgstr ""
 
 #: .\core\models.py:11
+msgid "Nome (Inglês)"
+msgstr ""
+
+#: .\core\models.py:12
+msgid "Nome (Espanhol)"
+msgstr ""
+
+#: .\core\models.py:13
 msgid "Código"
 msgstr ""
 
-#: .\core\models.py:12 .\templates\core\company_setup.html:62
+#: .\core\models.py:14 .\templates\core\company_setup.html:62
 #: .\templates\core\register.html:91
 msgid "DDI"
 msgstr ""
 
-#: .\core\models.py:13
+#: .\core\models.py:15
 msgid "Bandeira"
 msgstr ""
 
-#: .\core\models.py:14 .\core\models.py:37 .\core\models.py:60
-#: .\core\models.py:104 .\templates\core\profile.html:37
+#: .\core\models.py:16 .\core\models.py:52 .\core\models.py:75
+#: .\core\models.py:119 .\templates\core\profile.html:37
 msgid "Ativo"
 msgstr ""
 
-#: .\core\models.py:20
+#: .\core\models.py:22
 msgid "Países"
 msgstr ""
 
-#: .\core\models.py:31
+#: .\core\models.py:46
 msgid "Preço"
 msgstr ""
 
-#: .\core\models.py:32
+#: .\core\models.py:47
 msgid "Máximo de usuários"
 msgstr ""
 
-#: .\core\models.py:33
+#: .\core\models.py:48
 msgid "Máximo de clientes"
 msgstr ""
 
-#: .\core\models.py:34
+#: .\core\models.py:49
 msgid "Máximo de produtos"
 msgstr ""
 
-#: .\core\models.py:35
+#: .\core\models.py:50
 msgid "Máximo de projetos"
 msgstr ""
 
-#: .\core\models.py:36 .\templates\core\home.html:118
+#: .\core\models.py:51 .\templates\core\home.html:118
 #: .\templates\core\home.html:134
 msgid "Segurança STL"
 msgstr ""
 
-#: .\core\models.py:42 .\core\models.py:103
+#: .\core\models.py:57 .\core\models.py:118
 msgid "Plano"
 msgstr ""
 
-#: .\core\models.py:43
+#: .\core\models.py:58
 msgid "Planos"
 msgstr ""
 
-#: .\core\models.py:66
+#: .\core\models.py:81
 msgid "Empresas"
 msgstr ""
 
-#: .\core\models.py:79
+#: .\core\models.py:94
 msgid "Verificado"
 msgstr ""
 
-#: .\core\models.py:81
+#: .\core\models.py:96
 msgid "Expiração da verificação"
 msgstr ""
 
-#: .\core\models.py:82
+#: .\core\models.py:97
 msgid "Expiração do trial"
 msgstr ""
 
-#: .\core\models.py:87 .\core\models.py:102
+#: .\core\models.py:102 .\core\models.py:117
 msgid "Usuário"
 msgstr ""
 
-#: .\core\models.py:88
+#: .\core\models.py:103
 msgid "Usuários"
 msgstr ""
 
-#: .\core\models.py:109
+#: .\core\models.py:124
 msgid "Conta"
 msgstr ""
 
-#: .\core\models.py:110
+#: .\core\models.py:125
 msgid "Contas"
 msgstr ""
 
@@ -284,23 +300,23 @@ msgstr ""
 msgid "Erro ao enviar código. Tente novamente."
 msgstr ""
 
-#: .\core\views.py:131
+#: .\core\views.py:136
 msgid "Login realizado com sucesso!"
 msgstr ""
 
-#: .\core\views.py:134
+#: .\core\views.py:139
 msgid "Conta não verificada. Verifique seu telefone."
 msgstr ""
 
-#: .\core\views.py:146
+#: .\core\views.py:152
 msgid "Logout realizado com sucesso!"
 msgstr ""
 
-#: .\core\views.py:157
+#: .\core\views.py:163
 msgid "Configure sua empresa para começar a usar o sistema."
 msgstr ""
 
-#: .\core\views.py:194
+#: .\core\views.py:200
 msgid "Empresa configurada com sucesso!"
 msgstr ""
 
@@ -333,11 +349,11 @@ msgstr ""
 #: .\templates\base.html:75 .\templates\core\login.html:11
 #: .\templates\core\login.html:43
 msgid "Entrar"
-msgstr ""
+msgstr "Login"
 
 #: .\templates\base.html:80
 msgid "Registrar"
-msgstr ""
+msgstr "Register"
 
 #: .\templates\base.html:160
 msgid "Sistema de gestão empresarial"
@@ -424,8 +440,8 @@ msgid ""
 "Sistema completo de gestão empresarial para pequenas e médias empresas. "
 "Controle de clientes, produtos, projetos e muito mais."
 msgstr ""
-"Complete business management system for small and medium companies. "
-"Customer control, products, projects and much more."
+"Complete business management system for small and medium companies. Customer "
+"control, products, projects and much more."
 
 #: .\templates\core\home.html:16
 msgid "Começar Agora"
@@ -450,8 +466,7 @@ msgstr "Customer Management"
 #: .\templates\core\home.html:48
 msgid ""
 "Organize seus clientes, histórico de vendas e interações em um só lugar."
-msgstr ""
-"Organize your customers, sales history and interactions in one place."
+msgstr "Organize your customers, sales history and interactions in one place."
 
 #: .\templates\core\home.html:59
 msgid "Controle de Produtos"
@@ -565,15 +580,15 @@ msgstr "Create Free Account"
 
 #: .\templates\core\login.html:4
 msgid "Login - ForgeLock"
-msgstr ""
+msgstr "Login - ForgeLock"
 
 #: .\templates\core\login.html:51
 msgid "Não tem uma conta?"
-msgstr ""
+msgstr "Don't have an account?"
 
 #: .\templates\core\login.html:52
 msgid "Registre-se"
-msgstr ""
+msgstr "Register"
 
 #: .\templates\core\profile.html:4
 msgid "Perfil - ForgeLock"
