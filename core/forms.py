@@ -10,26 +10,26 @@ User = get_user_model()
 class UserRegistrationForm(UserCreationForm):
     """Form para registro de usuário"""
     email = forms.EmailField(
-        label=_("E-mail"),
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'seu@email.com'})
+        label=_("E-mail *"),
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': _("Seu email")})
     )
     first_name = forms.CharField(
-        label=_("Nome"),
+        label=_("Nome *"),
         max_length=30,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu nome'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("Seu nome")})
     )
     last_name = forms.CharField(
-        label=_("Sobrenome"),
+        label=_("Sobrenome *"),
         max_length=30,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Seu sobrenome'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("Seu sobrenome")})
     )
     phone_number = forms.CharField(
-        label=_("Telefone"),
+        label=_("Telefone (DDD + Número) *"),
         max_length=20,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '(11) 99999-9999'})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("(11) 99999-9999")})
     )
     country = forms.ModelChoiceField(
-        label=_("País"),
+        label=_("País *"),
         queryset=Country.objects.filter(is_active=True),
         widget=forms.Select(attrs={'class': 'form-control'}),
         empty_label=_("Selecione um país")
@@ -41,17 +41,17 @@ class UserRegistrationForm(UserCreationForm):
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['username'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Nome de usuário'})
-        self.fields['password1'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Senha'})
-        self.fields['password2'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Confirme a senha'})
+        self.fields['username'].widget.attrs.update({'class': 'form-control', 'placeholder': _("Nome de usuário")})
+        self.fields['password1'].widget.attrs.update({'class': 'form-control', 'placeholder': _("Senha")})
+        self.fields['password2'].widget.attrs.update({'class': 'form-control', 'placeholder': _("Confirme a senha")})
         
         # Traduzir labels
-        self.fields['username'].label = _("Nome de usuário")
-        self.fields['password1'].label = _("Senha")
-        self.fields['password2'].label = _("Confirme a senha")
+        self.fields['username'].label = _("Nome de usuário *")
+        self.fields['password1'].label = _("Senha *")
+        self.fields['password2'].label = _("Confirme a senha *")
         
         # Help texts
-        self.fields['username'].help_text = _("Obrigatório. 150 caracteres ou menos. Letras, dígitos e @/./+/-/_ apenas.")
+        self.fields['username'].help_text = _("O nome de usuário pode ter no máximo 150 caracteres. Podem ser utilizados letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, admin@test")
         self.fields['password1'].help_text = _("Sua senha deve conter pelo menos 8 caracteres.")
         self.fields['password2'].help_text = _("Digite a mesma senha novamente para verificação.")
 

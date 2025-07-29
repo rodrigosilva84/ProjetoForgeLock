@@ -10,54 +10,54 @@ from datetime import timedelta
 from .forms import UserRegistrationForm, UserLoginForm, SMSVerificationForm, CompanyForm
 from .services import VerificationService
 from .models import User, Country, Plan, Account
+from django.utils import translation
 
 verification_service = VerificationService()
 
 
 def home(request):
     """Página inicial"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
     return render(request, 'core/home.html')
 
 
 def user_register(request):
     """Registro de usuário"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    # Criar formulário APÓS ativar o idioma
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.is_verified = False
-            
-            # Definir trial de 15 dias
-            user.trial_expires = timezone.now() + timedelta(days=15)
+            user.set_password(form.cleaned_data['password1'])
             user.save()
             
-            # Criar plano trial
+            # Criar conta com plano Trial
             trial_plan, created = Plan.objects.get_or_create(
-                name="Trial",
-                defaults={
-                    'description': "Plano trial de 15 dias",
-                    'price': 0,
-                    'max_users': 1,
-                    'max_customers': 10,
-                    'max_products': 5,
-                    'max_projects': 3,
-                    'has_stl_security': False,
-                    'is_active': True
-                }
+                name='Trial',
+                defaults={'duration_days': 15, 'price': 0}
             )
             
-            # Criar account
-            Account.objects.create(user=user, plan=trial_plan)
+            Account.objects.create(
+                user=user,
+                plan=trial_plan,
+                is_active=True
+            )
             
-            # Enviar código SMS
-            if verification_service.send_verification_code(user):
-                messages.success(request, _('Conta criada com sucesso! Verifique seu telefone para o código de confirmação.'))
-                request.session['user_id'] = user.id
-                return redirect('verify_sms')
-            else:
-                messages.error(request, _('Erro ao enviar código de verificação. Tente novamente.'))
-                user.delete()
-                return redirect('register')
+            # Enviar SMS de verificação
+            verification_service.send_verification_code(user)
+            
+            request.session['user_id'] = user.id
+            messages.success(request, _('Conta criada com sucesso! Verifique seu telefone.'))
+            return redirect('verify_sms')
     else:
         form = UserRegistrationForm()
     
@@ -178,6 +178,11 @@ def profile(request):
 @login_required
 def company_setup(request):
     """Configuração de empresa"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
     user = request.user
     
     if request.method == 'POST':
@@ -189,6 +194,7 @@ def company_setup(request):
             messages.success(request, _('Empresa configurada com sucesso!'))
             return redirect('dashboard')
     else:
+        # Criar formulário APÓS ativar o idioma
         form = CompanyForm()
     
     return render(request, 'core/company_setup.html', {'form': form})
@@ -198,11 +204,16 @@ def change_language(request):
     """Muda o idioma da aplicação"""
     if request.method == 'POST':
         language = request.POST.get('language')
-        if language:
+        if language and language in ['pt', 'en', 'es']:
+            # Ativar o idioma imediatamente
+            translation.activate(language)
             request.session['django_language'] = language
             request.session.modified = True
+        else:
+            pass # No debug print for invalid language
     
-    return redirect(request.META.get('HTTP_REFERER', 'home'))
+    referer = request.META.get('HTTP_REFERER', 'home')
+    return redirect(referer)
 
 
 def get_country_ddi(request, country_id):

@@ -1,0 +1,760 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-29 11:56-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\admin.py:16
+msgid "Informações pessoais"
+msgstr ""
+
+#: .\core\admin.py:17 .\core\models.py:65 .\core\models.py:78
+#: .\templates\base.html:67
+msgid "Empresa"
+msgstr "Empresa"
+
+#: .\core\admin.py:18
+msgid "Verificação"
+msgstr ""
+
+#: .\core\admin.py:19
+msgid "Permissões"
+msgstr ""
+
+#: .\core\admin.py:22
+msgid "Datas importantes"
+msgstr ""
+
+#: .\core\forms.py:13 .\templates\core\register.html:65
+msgid "E-mail *"
+msgstr "Correo electrónico *"
+
+#: .\core\forms.py:14
+#, fuzzy
+#| msgid "Suporte por email"
+msgid "Seu email"
+msgstr "Soporte por email"
+
+#: .\core\forms.py:17 .\templates\core\register.html:25
+msgid "Nome *"
+msgstr "Nombre *"
+
+#: .\core\forms.py:19
+#, fuzzy
+#| msgid "Sobrenome *"
+msgid "Seu nome"
+msgstr "Apellido *"
+
+#: .\core\forms.py:22 .\templates\core\register.html:38
+msgid "Sobrenome *"
+msgstr "Apellido *"
+
+#: .\core\forms.py:24
+#, fuzzy
+#| msgid "Sobrenome *"
+msgid "Seu sobrenome"
+msgstr "Apellido *"
+
+#: .\core\forms.py:27 .\templates\core\register.html:97
+msgid "Telefone (DDD + Número) *"
+msgstr "Teléfono (Código + Número) *"
+
+#: .\core\forms.py:29
+msgid "(11) 99999-9999"
+msgstr ""
+
+#: .\core\forms.py:32 .\templates\core\register.html:77
+msgid "País *"
+msgstr "País *"
+
+#: .\core\forms.py:35 .\core\forms.py:123
+msgid "Selecione um país"
+msgstr "Seleccione un país"
+
+#: .\core\forms.py:44
+#, fuzzy
+#| msgid "1 usuário"
+msgid "Nome de usuário"
+msgstr "Nombre de usuario *"
+
+#: .\core\forms.py:45 .\core\forms.py:66
+msgid "Senha"
+msgstr "Contraseña"
+
+#: .\core\forms.py:46
+#, fuzzy
+#| msgid "Confirme a senha *"
+msgid "Confirme a senha"
+msgstr "Confirme la contraseña *"
+
+#: .\core\forms.py:49 .\templates\core\register.html:52
+#, fuzzy
+#| msgid "1 usuário"
+msgid "Nome de usuário *"
+msgstr "Nombre de usuario *"
+
+#: .\core\forms.py:50 .\templates\core\register.html:111
+msgid "Senha *"
+msgstr "Contraseña *"
+
+#: .\core\forms.py:51 .\templates\core\register.html:124
+msgid "Confirme a senha *"
+msgstr "Confirme la contraseña *"
+
+#: .\core\forms.py:54 .\templates\core\register.html:54
+msgid ""
+"O nome de usuário pode ter no máximo 150 caracteres. Podem ser utilizados "
+"letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, "
+"admin@test"
+msgstr ""
+"El nombre de usuario puede tener un máximo de 150 caracteres. Se pueden "
+"utilizar letras, dígitos y símbolos especiales. Ejemplo: joao.silva, "
+"user123, admin@test"
+
+#: .\core\forms.py:55 .\templates\core\register.html:113
+msgid "Sua senha deve conter pelo menos 8 caracteres."
+msgstr "Su contraseña debe contener al menos 8 caracteres."
+
+#: .\core\forms.py:56 .\templates\core\register.html:126
+msgid "Digite a mesma senha novamente para verificação."
+msgstr "Escriba la misma contraseña nuevamente para verificación."
+
+#: .\core\forms.py:62 .\core\forms.py:72
+msgid "Nome de usuário ou E-mail"
+msgstr "Nombre de usuario o Correo electrónico"
+
+#: .\core\forms.py:78 .\core\forms.py:90 .\core\models.py:80
+msgid "Código de verificação"
+msgstr ""
+
+#: .\core\forms.py:112
+msgid "Nome da empresa"
+msgstr ""
+
+#: .\core\forms.py:113 .\core\models.py:53
+msgid "CNPJ"
+msgstr ""
+
+#: .\core\forms.py:114 .\core\models.py:54 .\core\models.py:75
+msgid "E-mail"
+msgstr ""
+
+#: .\core\forms.py:115 .\core\models.py:55 .\core\models.py:76
+msgid "Telefone"
+msgstr ""
+
+#: .\core\forms.py:116 .\core\models.py:56
+msgid "Endereço"
+msgstr ""
+
+#: .\core\forms.py:117 .\core\models.py:19 .\core\models.py:57
+#: .\core\models.py:77
+msgid "País"
+msgstr ""
+
+#: .\core\forms.py:118 .\core\models.py:58
+msgid "Logo"
+msgstr ""
+
+#: .\core\forms.py:119 .\core\models.py:30 .\core\models.py:59
+msgid "Descrição"
+msgstr ""
+
+#: .\core\models.py:10 .\core\models.py:29 .\core\models.py:52
+msgid "Nome"
+msgstr ""
+
+#: .\core\models.py:11
+msgid "Código"
+msgstr ""
+
+#: .\core\models.py:12 .\templates\core\company_setup.html:62
+#: .\templates\core\register.html:91
+msgid "DDI"
+msgstr ""
+
+#: .\core\models.py:13
+msgid "Bandeira"
+msgstr ""
+
+#: .\core\models.py:14 .\core\models.py:37 .\core\models.py:60
+#: .\core\models.py:104 .\templates\core\profile.html:37
+msgid "Ativo"
+msgstr ""
+
+#: .\core\models.py:20
+msgid "Países"
+msgstr ""
+
+#: .\core\models.py:31
+msgid "Preço"
+msgstr ""
+
+#: .\core\models.py:32
+#, fuzzy
+#| msgid "Até 3 usuários"
+msgid "Máximo de usuários"
+msgstr "Hasta 3 usuarios"
+
+#: .\core\models.py:33
+#, fuzzy
+#| msgid "Gestão de Clientes"
+msgid "Máximo de clientes"
+msgstr "Gestión de Clientes"
+
+#: .\core\models.py:34
+#, fuzzy
+#| msgid "5 produtos"
+msgid "Máximo de produtos"
+msgstr "5 productos"
+
+#: .\core\models.py:35
+#, fuzzy
+#| msgid "Gestão de Projetos"
+msgid "Máximo de projetos"
+msgstr "Gestión de Proyectos"
+
+#: .\core\models.py:36 .\templates\core\home.html:118
+#: .\templates\core\home.html:134
+msgid "Segurança STL"
+msgstr "Seguridad STL"
+
+#: .\core\models.py:42 .\core\models.py:103
+msgid "Plano"
+msgstr ""
+
+#: .\core\models.py:43
+msgid "Planos"
+msgstr ""
+
+#: .\core\models.py:66
+#, fuzzy
+#| msgid "Empresa"
+msgid "Empresas"
+msgstr "Empresa"
+
+#: .\core\models.py:79
+msgid "Verificado"
+msgstr ""
+
+#: .\core\models.py:81
+msgid "Expiração da verificação"
+msgstr ""
+
+#: .\core\models.py:82
+msgid "Expiração do trial"
+msgstr ""
+
+#: .\core\models.py:87 .\core\models.py:102
+#, fuzzy
+#| msgid "1 usuário"
+msgid "Usuário"
+msgstr "1 usuario"
+
+#: .\core\models.py:88
+#, fuzzy
+#| msgid "1 usuário"
+msgid "Usuários"
+msgstr "1 usuario"
+
+#: .\core\models.py:109
+msgid "Conta"
+msgstr ""
+
+#: .\core\models.py:110
+msgid "Contas"
+msgstr ""
+
+#: .\core\views.py:59
+msgid "Conta criada com sucesso! Verifique seu telefone."
+msgstr ""
+
+#: .\core\views.py:71
+msgid "Sessão expirada. Faça o registro novamente."
+msgstr ""
+
+#: .\core\views.py:77 .\core\views.py:118
+msgid "Usuário não encontrado."
+msgstr ""
+
+#: .\core\views.py:87
+msgid "Conta verificada com sucesso! Bem-vindo ao ForgeLock."
+msgstr ""
+
+#: .\core\views.py:92
+msgid "Código expirado. Um novo código foi enviado."
+msgstr ""
+
+#: .\core\views.py:95
+msgid "Código inválido. Tente novamente."
+msgstr ""
+
+#: .\core\views.py:114
+msgid "Novo código enviado com sucesso!"
+msgstr ""
+
+#: .\core\views.py:116
+msgid "Erro ao enviar código. Tente novamente."
+msgstr ""
+
+#: .\core\views.py:131
+msgid "Login realizado com sucesso!"
+msgstr ""
+
+#: .\core\views.py:134
+msgid "Conta não verificada. Verifique seu telefone."
+msgstr ""
+
+#: .\core\views.py:146
+msgid "Logout realizado com sucesso!"
+msgstr ""
+
+#: .\core\views.py:157
+msgid "Configure sua empresa para começar a usar o sistema."
+msgstr ""
+
+#: .\core\views.py:194
+msgid "Empresa configurada com sucesso!"
+msgstr ""
+
+#: .\templates\base.html:38 .\templates\core\dashboard.html:10
+msgid "Dashboard"
+msgstr "Panel de Control"
+
+#: .\templates\base.html:43 .\templates\core\dashboard.html:21
+#: .\templates\core\dashboard.html:139
+msgid "Clientes"
+msgstr "Clientes"
+
+#: .\templates\base.html:48 .\templates\core\dashboard.html:27
+#: .\templates\core\dashboard.html:143
+msgid "Produtos"
+msgstr "Productos"
+
+#: .\templates\base.html:53 .\templates\core\dashboard.html:33
+msgid "Projetos"
+msgstr "Proyectos"
+
+#: .\templates\base.html:66
+msgid "Perfil"
+msgstr "Perfil"
+
+#: .\templates\base.html:69
+msgid "Sair"
+msgstr "Salir"
+
+#: .\templates\base.html:75 .\templates\core\login.html:11
+#: .\templates\core\login.html:43
+msgid "Entrar"
+msgstr "Entrar"
+
+#: .\templates\base.html:80
+msgid "Registrar"
+msgstr "Registrar"
+
+#: .\templates\base.html:160
+msgid "Sistema de gestão empresarial"
+msgstr "Sistema de gestión empresarial"
+
+#: .\templates\base.html:163
+msgid "Todos os direitos reservados."
+msgstr "Todos los derechos reservados."
+
+#: .\templates\core\company_setup.html:5
+msgid "Configurar Empresa - ForgeLock"
+msgstr ""
+
+#: .\templates\core\company_setup.html:12 .\templates\core\dashboard.html:72
+msgid "Configurar Empresa"
+msgstr ""
+
+#: .\templates\core\company_setup.html:120
+msgid "Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB."
+msgstr ""
+
+#: .\templates\core\company_setup.html:137
+#, fuzzy
+#| msgid "Empresa"
+msgid "Salvar Empresa"
+msgstr "Empresa"
+
+#: .\templates\core\company_setup.html:146
+msgid "Esta informação será usada em seus documentos e relatórios."
+msgstr ""
+
+#: .\templates\core\dashboard.html:4
+#, fuzzy
+#| msgid "Dashboard"
+msgid "Dashboard - ForgeLock"
+msgstr "Panel de Control"
+
+#: .\templates\core\dashboard.html:12
+msgid "Bem-vindo ao ForgeLock"
+msgstr ""
+
+#: .\templates\core\dashboard.html:39
+msgid "Plano Atual"
+msgstr ""
+
+#: .\templates\core\dashboard.html:50
+msgid "Ações Rápidas"
+msgstr ""
+
+#: .\templates\core\dashboard.html:57
+#, fuzzy
+#| msgid "Clientes"
+msgid "Novo Cliente"
+msgstr "Clientes"
+
+#: .\templates\core\dashboard.html:62
+#, fuzzy
+#| msgid "Produtos"
+msgid "Novo Produto"
+msgstr "Productos"
+
+#: .\templates\core\dashboard.html:67
+#, fuzzy
+#| msgid "Projetos"
+msgid "Novo Projeto"
+msgstr "Proyectos"
+
+#: .\templates\core\dashboard.html:88
+msgid "Informações da Empresa"
+msgstr ""
+
+#: .\templates\core\dashboard.html:120
+msgid "Atividade Recente"
+msgstr ""
+
+#: .\templates\core\dashboard.html:124
+msgid "Nenhuma atividade recente"
+msgstr ""
+
+#: .\templates\core\dashboard.html:132
+msgid "Resumo"
+msgstr ""
+
+#: .\templates\core\home.html:4
+msgid "ForgeLock - Sistema de Gestão Empresarial"
+msgstr "ForgeLock - Sistema de Gestión Empresarial"
+
+#: .\templates\core\home.html:12
+msgid "ForgeLock"
+msgstr "ForgeLock"
+
+#: .\templates\core\home.html:13
+msgid ""
+"Sistema completo de gestão empresarial para pequenas e médias empresas. "
+"Controle de clientes, produtos, projetos e muito mais."
+msgstr ""
+"Sistema completo de gestión empresarial para pequeñas y medianas empresas. "
+"Control de clientes, productos, proyectos y mucho más."
+
+#: .\templates\core\home.html:16
+msgid "Começar Agora"
+msgstr "Comenzar Ahora"
+
+#: .\templates\core\home.html:19
+msgid "Saiba Mais"
+msgstr "Saber Más"
+
+#: .\templates\core\home.html:35
+msgid "Por que escolher o ForgeLock?"
+msgstr "¿Por qué elegir ForgeLock?"
+
+#: .\templates\core\home.html:36
+msgid "Tudo que sua empresa precisa em uma única plataforma"
+msgstr "Todo lo que su empresa necesita en una sola plataforma"
+
+#: .\templates\core\home.html:47
+msgid "Gestão de Clientes"
+msgstr "Gestión de Clientes"
+
+#: .\templates\core\home.html:48
+msgid ""
+"Organize seus clientes, histórico de vendas e interações em um só lugar."
+msgstr ""
+"Organice sus clientes, historial de ventas e interacciones en un solo lugar."
+
+#: .\templates\core\home.html:59
+msgid "Controle de Produtos"
+msgstr "Control de Productos"
+
+#: .\templates\core\home.html:60
+msgid ""
+"Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos."
+msgstr ""
+"Gestione inventario, precios, categorías e historial de ventas de sus "
+"productos."
+
+#: .\templates\core\home.html:71
+msgid "Gestão de Projetos"
+msgstr "Gestión de Proyectos"
+
+#: .\templates\core\home.html:72
+msgid "Acompanhe projetos, cronogramas e recursos de forma eficiente."
+msgstr "Acompañe proyectos, cronogramas y recursos de forma eficiente."
+
+#: .\templates\core\home.html:85
+msgid "Planos e Preços"
+msgstr "Planes y Precios"
+
+#: .\templates\core\home.html:86
+msgid "Escolha o plano ideal para sua empresa"
+msgstr "Elija el plan ideal para su empresa"
+
+#: .\templates\core\home.html:94
+msgid "Trial"
+msgstr "Prueba"
+
+#: .\templates\core\home.html:96
+msgid "15 dias grátis"
+msgstr "15 días gratis"
+
+#: .\templates\core\home.html:98 .\templates\core\home.html:115
+msgid "1 usuário"
+msgstr "1 usuario"
+
+#: .\templates\core\home.html:99
+msgid "10 clientes"
+msgstr "10 clientes"
+
+#: .\templates\core\home.html:100
+msgid "5 produtos"
+msgstr "5 productos"
+
+#: .\templates\core\home.html:101
+msgid "3 projetos"
+msgstr "3 proyectos"
+
+#: .\templates\core\home.html:103
+msgid "Começar Trial"
+msgstr "Comenzar Prueba"
+
+#: .\templates\core\home.html:111
+msgid "Básico"
+msgstr "Básico"
+
+#: .\templates\core\home.html:113
+msgid "Ideal para pequenas empresas"
+msgstr "Ideal para pequeñas empresas"
+
+#: .\templates\core\home.html:116
+msgid "Vendas + Projetos"
+msgstr "Ventas + Proyectos"
+
+#: .\templates\core\home.html:117
+msgid "Suporte por email"
+msgstr "Soporte por email"
+
+#: .\templates\core\home.html:120
+msgid "Escolher Básico"
+msgstr "Elegir Básico"
+
+#: .\templates\core\home.html:128
+msgid "Premium"
+msgstr "Premium"
+
+#: .\templates\core\home.html:130
+msgid "Para empresas em crescimento"
+msgstr "Para empresas en crecimiento"
+
+#: .\templates\core\home.html:132
+msgid "Até 3 usuários"
+msgstr "Hasta 3 usuarios"
+
+#: .\templates\core\home.html:133
+msgid "Todas as funcionalidades"
+msgstr "Todas las funcionalidades"
+
+#: .\templates\core\home.html:135
+msgid "Suporte prioritário"
+msgstr "Soporte prioritario"
+
+#: .\templates\core\home.html:137
+msgid "Escolher Premium"
+msgstr "Elegir Premium"
+
+#: .\templates\core\home.html:148
+msgid "Pronto para começar?"
+msgstr "¿Listo para comenzar?"
+
+#: .\templates\core\home.html:149
+msgid "Junte-se a centenas de empresas que já confiam no ForgeLock"
+msgstr "Únase a cientos de empresas que ya confían en ForgeLock"
+
+#: .\templates\core\home.html:151
+msgid "Criar Conta Grátis"
+msgstr "Crear Cuenta Gratis"
+
+#: .\templates\core\login.html:4
+#, fuzzy
+#| msgid "ForgeLock"
+msgid "Login - ForgeLock"
+msgstr "ForgeLock"
+
+#: .\templates\core\login.html:51
+msgid "Não tem uma conta?"
+msgstr ""
+
+#: .\templates\core\login.html:52
+#, fuzzy
+#| msgid "Registrar"
+msgid "Registre-se"
+msgstr "Registrar"
+
+#: .\templates\core\profile.html:4
+#, fuzzy
+#| msgid "ForgeLock"
+msgid "Perfil - ForgeLock"
+msgstr "ForgeLock"
+
+#: .\templates\core\profile.html:12
+#, fuzzy
+#| msgid "Perfil"
+msgid "Meu Perfil"
+msgstr "Perfil"
+
+#: .\templates\core\profile.html:18
+msgid "Informações Pessoais"
+msgstr ""
+
+#: .\templates\core\profile.html:19
+msgid "Nome:"
+msgstr ""
+
+#: .\templates\core\profile.html:20
+#, fuzzy
+#| msgid "1 usuário"
+msgid "Usuário:"
+msgstr "1 usuario"
+
+#: .\templates\core\profile.html:21
+msgid "E-mail:"
+msgstr ""
+
+#: .\templates\core\profile.html:22
+msgid "Telefone:"
+msgstr ""
+
+#: .\templates\core\profile.html:23
+msgid "País:"
+msgstr ""
+
+#: .\templates\core\profile.html:24
+msgid "Verificado:"
+msgstr ""
+
+#: .\templates\core\profile.html:26
+msgid "Sim"
+msgstr ""
+
+#: .\templates\core\profile.html:28
+msgid "Não"
+msgstr ""
+
+#: .\templates\core\profile.html:33
+msgid "Informações da Conta"
+msgstr ""
+
+#: .\templates\core\profile.html:34
+msgid "Plano:"
+msgstr ""
+
+#: .\templates\core\profile.html:35
+#, fuzzy
+#| msgid "Trial"
+msgid "Trial:"
+msgstr "Prueba"
+
+#: .\templates\core\profile.html:39
+msgid "Expirado"
+msgstr ""
+
+#: .\templates\core\profile.html:42
+msgid "Membro desde:"
+msgstr ""
+
+#: .\templates\core\profile.html:43
+msgid "Último login:"
+msgstr ""
+
+#: .\templates\core\profile.html:51
+#, fuzzy
+#| msgid "Perfil"
+msgid "Editar Perfil"
+msgstr "Perfil"
+
+#: .\templates\core\profile.html:54
+msgid "Alterar Senha"
+msgstr ""
+
+#: .\templates\core\register.html:5
+#, fuzzy
+#| msgid "ForgeLock"
+msgid "Registro - ForgeLock"
+msgstr "ForgeLock"
+
+#: .\templates\core\register.html:13 .\templates\core\register.html:138
+#, fuzzy
+#| msgid "Criar Conta Grátis"
+msgid "Criar Conta"
+msgstr "Crear Cuenta Gratis"
+
+#: .\templates\core\register.html:146
+msgid "Já tem uma conta?"
+msgstr "¿Ya tienes una cuenta?"
+
+#: .\templates\core\register.html:147
+msgid "Faça login"
+msgstr "Iniciar sesión"
+
+#: .\templates\core\verify_sms.html:4
+msgid "Verificação SMS - ForgeLock"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:11
+msgid "Verificação SMS"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:15
+msgid "Enviamos um código de verificação para:"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:17
+msgid "O código expira em"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:17
+msgid "minutos"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:37
+msgid "Verificar Código"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:46
+msgid "Reenviar Código"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:55
+msgid "Problemas com a verificação?"
+msgstr ""
+
+#: .\templates\core\verify_sms.html:56
+msgid "Tente novamente"
+msgstr ""

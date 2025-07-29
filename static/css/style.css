@@ -189,3 +189,137 @@
     background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
     color: white;
 }
+
+/* Flag icon styles */
+.flag-icon {
+    width: 20px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.language-selector .dropdown-toggle .flag-icon {
+    width: 18px;
+    height: 14px;
+}
+
+.language-selector .dropdown-item .flag-icon {
+    width: 20px;
+    height: 15px;
+}
+
+/* Language Selector Styles */
+.language-selector .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.language-selector .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s;
+}
+
+.language-selector .dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.language-selector .dropdown-item:active {
+    background-color: #e9ecef;
+}
+
+/* Current language indicator */
+.language-selector .current-language {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .language-selector .dropdown-toggle {
+        font-size: 0.9rem;
+    }
+    
+    .language-selector .dropdown-item {
+        font-size: 0.9rem;
+    }
+    
+    .flag-icon {
+        width: 16px;
+        height: 12px;
+    }
+}
+
+/* Required field indicators */
+.required-field {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* DDI Field Styles */
+#ddi-field {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #6c757d;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    min-width: 60px;
+    padding: 0.375rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+#ddi-field:focus {
+    background-color: #f8f9fa;
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Country Select with Flags */
+.country-select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.country-select-wrapper select {
+    padding-left: 40px;
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 20px 15px;
+}
+
+.country-flag-preview {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.country-flag-preview .flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Country options with flags */
+.country-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+}
+
+.country-option .flag-icon {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
