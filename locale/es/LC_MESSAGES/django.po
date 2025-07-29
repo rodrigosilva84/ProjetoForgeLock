@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-29 13:33-0300\n"
+"POT-Creation-Date: 2025-07-29 13:42-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\core\admin.py:16
+#: .\core\admin.py:48
 msgid "Informações pessoais"
 msgstr "Información personal"
 
-#: .\core\admin.py:17 .\core\models.py:80 .\core\models.py:93
+#: .\core\admin.py:49 .\core\models.py:80 .\core\models.py:93
 #: .\templates\base.html:67
 msgid "Empresa"
 msgstr "Empresa"
 
-#: .\core\admin.py:18
+#: .\core\admin.py:50
 msgid "Verificação"
 msgstr "Verificación"
 
-#: .\core\admin.py:19
+#: .\core\admin.py:51
 msgid "Permissões"
 msgstr "Permisos"
 
-#: .\core\admin.py:22
+#: .\core\admin.py:54
 msgid "Datas importantes"
 msgstr "Fechas importantes"
 
@@ -79,7 +79,7 @@ msgstr "País *"
 msgid "Selecione um país"
 msgstr "Seleccione un país"
 
-#: .\core\forms.py:44
+#: .\core\forms.py:44 .\core\models.py:134
 msgid "Nome de usuário"
 msgstr "Nombre de usuario"
 
@@ -250,11 +250,11 @@ msgstr "Verificado"
 msgid "Expiração da verificação"
 msgstr "Expiración de la verificación"
 
-#: .\core\models.py:97
+#: .\core\models.py:97 .\core\models.py:120
 msgid "Expiração do trial"
 msgstr "Expiración de la prueba"
 
-#: .\core\models.py:102 .\core\models.py:117
+#: .\core\models.py:102
 msgid "Usuário"
 msgstr "Usuario"
 
@@ -262,89 +262,125 @@ msgstr "Usuario"
 msgid "Usuários"
 msgstr "Usuarios"
 
-#: .\core\models.py:124
+#: .\core\models.py:125
 msgid "Conta"
 msgstr "Cuenta"
 
-#: .\core\models.py:125
+#: .\core\models.py:126
 msgid "Contas"
 msgstr "Cuentas"
 
-#: .\core\views.py:59
+#: .\core\models.py:135
+#, fuzzy
+#| msgid "Endereço"
+msgid "Endereço IP"
+msgstr "Dirección"
+
+#: .\core\models.py:136
+msgid "Sucesso"
+msgstr ""
+
+#: .\core\models.py:138
+msgid "User Agent"
+msgstr ""
+
+#: .\core\models.py:141
+msgid "Tentativa de Login"
+msgstr ""
+
+#: .\core\models.py:142
+msgid "Tentativas de Login"
+msgstr ""
+
+#: .\core\views.py:60
 msgid "Conta criada com sucesso! Verifique seu telefone."
 msgstr "¡Cuenta creada con éxito! Verifique su teléfono."
 
-#: .\core\views.py:71
+#: .\core\views.py:72
 msgid "Sessão expirada. Faça o registro novamente."
 msgstr "Sesión expirada. Haga el registro nuevamente."
 
-#: .\core\views.py:77 .\core\views.py:118
+#: .\core\views.py:78 .\core\views.py:119
 msgid "Usuário não encontrado."
 msgstr "Usuario no encontrado."
 
-#: .\core\views.py:87
+#: .\core\views.py:88
 msgid "Conta verificada com sucesso! Bem-vindo ao ForgeLock."
 msgstr "¡Cuenta verificada con éxito! Bienvenido a ForgeLock."
 
-#: .\core\views.py:92
+#: .\core\views.py:93
 msgid "Código expirado. Um novo código foi enviado."
 msgstr "Código expirado. Se ha enviado un nuevo código."
 
-#: .\core\views.py:95
+#: .\core\views.py:96
 msgid "Código inválido. Tente novamente."
 msgstr "Código inválido. Inténtelo de nuevo."
 
-#: .\core\views.py:114
+#: .\core\views.py:115
 msgid "Novo código enviado com sucesso!"
 msgstr "¡Nuevo código enviado con éxito!"
 
-#: .\core\views.py:116
+#: .\core\views.py:117
 msgid "Erro ao enviar código. Tente novamente."
 msgstr "Error al enviar código. Inténtelo de nuevo."
 
-#: .\core\views.py:136
+#: .\core\views.py:164
 msgid "Login realizado com sucesso!"
 msgstr "¡Inicio de sesión realizado con éxito!"
 
-#: .\core\views.py:139
+#: .\core\views.py:169
 msgid "Conta não verificada. Verifique seu telefone."
 msgstr "Cuenta no verificada. Verifique su teléfono."
 
-#: .\core\views.py:156
 msgid "Senha incorreta. Tente novamente."
-msgstr "Contraseña incorrecta. Inténtelo de nuevo."
+msgstr "Contraseña incorrecta. Inténtalo de nuevo."
 
-#: .\core\views.py:159
+msgid "Senha incorreta. Tentativas restantes: {}"
+msgstr "Contraseña incorrecta. Intentos restantes: {}"
+
+#: .\core\views.py:188
 msgid "Usuário não encontrado. Verifique o nome de usuário ou email."
 msgstr "Usuario no encontrado. Verifique el nombre de usuario o email."
 
-#: .\core\views.py:170
+#: .\core\views.py:199
 msgid "Logout realizado com sucesso!"
 msgstr "¡Cierre de sesión realizado con éxito!"
 
-#: .\core\views.py:181
+#: .\core\views.py:210
 msgid "Configure sua empresa para começar a usar o sistema."
 msgstr "Configure su empresa para comenzar a usar el sistema."
 
-#: .\core\views.py:218
+#: .\core\views.py:247
 msgid "Empresa configurada com sucesso!"
 msgstr "¡Empresa configurada con éxito!"
 
-#: .\core\views.py:265
+#: .\core\views.py:294
 msgid "Email de recuperação enviado com sucesso!"
 msgstr "¡Email de recuperación enviado con éxito!"
 
-#: .\core\views.py:268
+#: .\core\views.py:297
 msgid "Email não encontrado no sistema."
 msgstr "Email no encontrado en el sistema."
 
-#: .\core\views.py:287
+#: .\core\views.py:316
 msgid "Senha alterada com sucesso!"
 msgstr "¡Contraseña cambiada con éxito!"
 
-#: .\core\views.py:290
+#: .\core\views.py:319
 msgid "As senhas não coincidem."
 msgstr "Las contraseñas no coinciden."
+
+#: .\core\views.py:280
+msgid "IP temporariamente bloqueado devido a múltiplas tentativas."
+msgstr "IP temporalmente bloqueado debido a múltiples intentos."
+
+#: .\core\views.py:283
+msgid "Muitas tentativas falhadas. Tente novamente em alguns minutos."
+msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en unos minutos."
+
+#: .\core\views.py:286
+msgid "Atividade suspeita detectada. IP temporariamente bloqueado."
+msgstr "Actividad sospechosa detectada. IP temporalmente bloqueado."
 
 #: .\templates\base.html:38 .\templates\core\dashboard.html:10
 msgid "Dashboard"
@@ -797,3 +833,19 @@ msgstr "¿Problemas con la verificación?"
 #: .\templates\core\verify_sms.html:56
 msgid "Tente novamente"
 msgstr "Inténtelo de nuevo"
+
+#: .\core\views.py:89
+msgid "Tentativas restantes: {}"
+msgstr "Intentos restantes: {}"
+
+#: .\core\services.py:89
+msgid "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente em 3 minutos."
+msgstr "IP temporalmente bloqueado debido a múltiples intentos. Inténtelo de nuevo en 3 minutos."
+
+#: .\core\services.py:95
+msgid "Muitas tentativas falhadas. Tente novamente em 3 minutos."
+msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en 3 minutos."
+
+#: .\core\services.py:100
+msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+msgstr "Actividad sospechosa detectada. IP temporalmente bloqueado por 3 minutos."

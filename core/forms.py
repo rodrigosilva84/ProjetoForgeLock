@@ -67,7 +67,7 @@ class UserRegistrationForm(UserCreationForm):
         self.fields['country'].choices = country_choices
 
 
-class UserLoginForm(AuthenticationForm):
+class UserLoginForm(forms.Form):
     """Form para login de usuário"""
     username = forms.CharField(
         label=_("Nome de usuário ou E-mail"),

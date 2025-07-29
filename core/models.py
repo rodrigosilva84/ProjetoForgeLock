@@ -114,9 +114,10 @@ class User(AbstractUser):
 
 class Account(models.Model):
     """Modelo para conta do usuário"""
-    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name=_("Usuário"))
-    plan = models.ForeignKey(Plan, on_delete=models.PROTECT, verbose_name=_("Plano"))
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='account')
+    plan = models.ForeignKey(Plan, on_delete=models.CASCADE, verbose_name=_("Plano"))
     is_active = models.BooleanField(_("Ativo"), default=True)
+    trial_expires_at = models.DateTimeField(_("Expiração do trial"), null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -125,4 +126,21 @@ class Account(models.Model):
         verbose_name_plural = _("Contas")
 
     def __str__(self):
-        return f"{self.user.email} - {self.plan.name}"
+        return f"Conta de {self.user.username}"
+
+
+class LoginAttempt(models.Model):
+    """Modelo para rastrear tentativas de login"""
+    username = models.CharField(_("Nome de usuário"), max_length=150)
+    ip_address = models.GenericIPAddressField(_("Endereço IP"))
+    success = models.BooleanField(_("Sucesso"), default=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    user_agent = models.TextField(_("User Agent"), blank=True)
+    
+    class Meta:
+        verbose_name = _("Tentativa de Login")
+        verbose_name_plural = _("Tentativas de Login")
+        ordering = ['-timestamp']
+    
+    def __str__(self):
+        return f"{self.username} - {self.ip_address} - {'Sucesso' if self.success else 'Falha'}"

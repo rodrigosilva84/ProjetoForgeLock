@@ -707,3 +707,25 @@ msgstr ""
 #: .\templates\core\verify_sms.html:56
 msgid "Tente novamente"
 msgstr ""
+
+#: .\core\views.py:89
+msgid "Tentativas restantes: {}"
+msgstr "Tentativas restantes: {}"
+
+#: .\core\services.py:89
+msgid "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente em 3 minutos."
+msgstr "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente em 3 minutos."
+
+#: .\core\services.py:95
+msgid "Muitas tentativas falhadas. Tente novamente em 3 minutos."
+msgstr "Muitas tentativas falhadas. Tente novamente em 3 minutos."
+
+#: .\core\services.py:100
+msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+msgstr "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+
+msgid "Senha incorreta. Tente novamente."
+msgstr "Senha incorreta. Tente novamente."
+
+msgid "Senha incorreta. Tentativas restantes: {}"
+msgstr "Senha incorreta. Tentativas restantes: {}"
