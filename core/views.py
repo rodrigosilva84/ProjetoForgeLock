@@ -44,7 +44,15 @@ def user_register(request):
             # Criar conta com plano Trial
             trial_plan, created = Plan.objects.get_or_create(
                 name='Trial',
-                defaults={'duration_days': 15, 'price': 0}
+                defaults={
+                    'description': 'Plano trial gratuito por 15 dias',
+                    'price': 0,
+                    'max_users': 1,
+                    'max_customers': 10,
+                    'max_products': 5,
+                    'max_projects': 3,
+                    'has_stl_security': False
+                }
             )
             
             Account.objects.create(
@@ -67,6 +75,15 @@ def user_register(request):
 
 def verify_sms(request):
     """Verificação de SMS"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    print(f"DEBUG: Session language: {session_language}")
+    if session_language:
+        translation.activate(session_language)
+        print(f"DEBUG: Activated language: {translation.get_language()}")
+    else:
+        print(f"DEBUG: No session language, current: {translation.get_language()}")
+    
     user_id = request.session.get('user_id')
     if not user_id:
         messages.error(request, _('Sessão expirada. Faça o registro novamente.'))
@@ -95,6 +112,7 @@ def verify_sms(request):
                 else:
                     messages.error(request, _('Código inválido. Tente novamente.'))
     else:
+        # Criar formulário APÓS ativar o idioma
         form = SMSVerificationForm()
     
     return render(request, 'core/verify_sms.html', {
@@ -106,6 +124,11 @@ def verify_sms(request):
 
 def resend_sms(request):
     """Reenvia código SMS"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
     if request.method == 'POST':
         user_id = request.session.get('user_id')
         if user_id:

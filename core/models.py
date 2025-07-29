@@ -93,7 +93,7 @@ class User(AbstractUser):
     company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_("Empresa"), null=True, blank=True)
     is_verified = models.BooleanField(_("Verificado"), default=False)
     verification_code = models.CharField(_("Código de verificação"), max_length=10, blank=True)
-    verification_expires = models.DateTimeField(_("Expiração da verificação"), null=True, blank=True)
+    verification_expires_at = models.DateTimeField(_("Expiração da verificação"), null=True, blank=True)
     trial_expires = models.DateTimeField(_("Expiração do trial"), null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

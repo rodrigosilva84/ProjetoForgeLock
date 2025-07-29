@@ -307,27 +307,27 @@ msgstr ""
 
 #: .\core\views.py:93
 msgid "Código expirado. Um novo código foi enviado."
-msgstr ""
+msgstr "Code expired. A new code has been sent."
 
 #: .\core\views.py:96
 msgid "Código inválido. Tente novamente."
-msgstr ""
+msgstr "Invalid code. Try again."
 
 #: .\core\views.py:115
 msgid "Novo código enviado com sucesso!"
-msgstr ""
+msgstr "New code sent successfully!"
 
 #: .\core\views.py:117
 msgid "Erro ao enviar código. Tente novamente."
-msgstr ""
+msgstr "Error sending code. Try again."
 
 #: .\core\views.py:164
 msgid "Login realizado com sucesso!"
-msgstr ""
+msgstr "Login successful!"
 
 #: .\core\views.py:169
 msgid "Conta não verificada. Verifique seu telefone."
-msgstr ""
+msgstr "Account not verified. Check your phone."
 
 msgid "Senha incorreta. Tente novamente."
 msgstr "Incorrect password. Try again."
@@ -341,15 +341,15 @@ msgstr "User not found. Check the username or email."
 
 #: .\core\views.py:199
 msgid "Logout realizado com sucesso!"
-msgstr ""
+msgstr "Logout successful!"
 
 #: .\core\views.py:210
 msgid "Configure sua empresa para começar a usar o sistema."
-msgstr ""
+msgstr "Configure your company to start using the system."
 
 #: .\core\views.py:247
 msgid "Empresa configurada com sucesso!"
-msgstr ""
+msgstr "Company configured successfully!"
 
 #: .\core\views.py:294
 msgid "Email de recuperação enviado com sucesso!"
@@ -381,29 +381,29 @@ msgstr "Suspicious activity detected. IP temporarily blocked."
 
 #: .\templates\base.html:38 .\templates\core\dashboard.html:10
 msgid "Dashboard"
-msgstr ""
+msgstr "Dashboard"
 
 #: .\templates\base.html:43 .\templates\core\dashboard.html:21
 #: .\templates\core\dashboard.html:139
 msgid "Clientes"
-msgstr ""
+msgstr "Customers"
 
 #: .\templates\base.html:48 .\templates\core\dashboard.html:27
 #: .\templates\core\dashboard.html:143
 msgid "Produtos"
-msgstr ""
+msgstr "Products"
 
 #: .\templates\base.html:53 .\templates\core\dashboard.html:33
 msgid "Projetos"
-msgstr ""
+msgstr "Projects"
 
 #: .\templates\base.html:66
 msgid "Perfil"
-msgstr ""
+msgstr "Profile"
 
 #: .\templates\base.html:69
 msgid "Sair"
-msgstr ""
+msgstr "Logout"
 
 #: .\templates\base.html:75 .\templates\core\login.html:11
 #: .\templates\core\login.html:49
@@ -804,39 +804,39 @@ msgstr "Log in"
 
 #: .\templates\core\verify_sms.html:4
 msgid "Verificação SMS - ForgeLock"
-msgstr ""
+msgstr "SMS Verification - ForgeLock"
 
 #: .\templates\core\verify_sms.html:11
 msgid "Verificação SMS"
-msgstr ""
+msgstr "SMS Verification"
 
 #: .\templates\core\verify_sms.html:15
 msgid "Enviamos um código de verificação para:"
-msgstr ""
+msgstr "We sent a verification code to:"
 
 #: .\templates\core\verify_sms.html:17
 msgid "O código expira em"
-msgstr ""
+msgstr "The code expires in"
 
 #: .\templates\core\verify_sms.html:17
 msgid "minutos"
-msgstr ""
+msgstr "minutes"
 
 #: .\templates\core\verify_sms.html:37
 msgid "Verificar Código"
-msgstr ""
+msgstr "Verify Code"
 
 #: .\templates\core\verify_sms.html:46
 msgid "Reenviar Código"
-msgstr ""
+msgstr "Resend Code"
 
 #: .\templates\core\verify_sms.html:55
 msgid "Problemas com a verificação?"
-msgstr ""
+msgstr "Having trouble with verification?"
 
 #: .\templates\core\verify_sms.html:56
 msgid "Tente novamente"
-msgstr ""
+msgstr "Try again"
 
 #: .\core\views.py:89
 msgid "Tentativas restantes: {}"

@@ -12,7 +12,7 @@ from .models import LoginAttempt
 logger = logging.getLogger(__name__)
 
 
-class SMSService:
+class TwilioService:
     """Serviço para envio de SMS usando Twilio"""
     
     def __init__(self):
@@ -22,21 +22,20 @@ class SMSService:
         
     def send_sms(self, to_number, message):
         """Envia SMS usando Twilio"""
-        if settings.SMS_DEVELOPMENT_MODE:
-            # Modo desenvolvimento - simula envio
-            logger.info(f"SMS SIMULADO para {to_number}: {message}")
+        if not all([self.account_sid, self.auth_token, self.phone_number]):
+            logger.warning("Credenciais Twilio não configuradas. Usando fallback.")
             return self._send_email_fallback(to_number, message)
         
         try:
             from twilio.rest import Client
             
             client = Client(self.account_sid, self.auth_token)
-            message = client.messages.create(
+            message_obj = client.messages.create(
                 body=message,
                 from_=self.phone_number,
                 to=to_number
             )
-            logger.info(f"SMS enviado com sucesso: {message.sid}")
+            logger.info(f"SMS enviado com sucesso: {message_obj.sid}")
             return True
             
         except Exception as e:
@@ -69,37 +68,151 @@ class SMSService:
             return False
 
 
+class TwilioVerifyService:
+    """Serviço para verificação usando Twilio Verify"""
+    
+    def __init__(self):
+        self.account_sid = settings.TWILIO_ACCOUNT_SID
+        self.auth_token = settings.TWILIO_AUTH_TOKEN
+        self.verify_service_sid = settings.TWILIO_VERIFY_SERVICE_SID
+        
+    def send_verification(self, phone_number):
+        """Envia código de verificação via Twilio Verify"""
+        if not all([self.account_sid, self.auth_token, self.verify_service_sid]):
+            logger.warning("Credenciais Twilio Verify não configuradas. Usando fallback.")
+            return self._send_email_fallback(phone_number)
+        
+        try:
+            from twilio.rest import Client
+            
+            client = Client(self.account_sid, self.auth_token)
+            verification = client.verify \
+                .v2 \
+                .services(self.verify_service_sid) \
+                .verifications \
+                .create(to=phone_number, channel='sms')
+            
+            logger.info(f"Verificação enviada com sucesso: {verification.sid}")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Erro ao enviar verificação: {e}")
+            return self._send_email_fallback(phone_number)
+    
+    def check_verification(self, phone_number, code):
+        """Verifica código de verificação via Twilio Verify"""
+        if not all([self.account_sid, self.auth_token, self.verify_service_sid]):
+            logger.warning("Credenciais Twilio Verify não configuradas.")
+            return False
+        
+        try:
+            from twilio.rest import Client
+            
+            client = Client(self.account_sid, self.auth_token)
+            verification_check = client.verify \
+                .v2 \
+                .services(self.verify_service_sid) \
+                .verification_checks \
+                .create(to=phone_number, code=code)
+            
+            is_valid = verification_check.status == 'approved'
+            logger.info(f"Verificação {'aprovada' if is_valid else 'rejeitada'}: {verification_check.sid}")
+            return is_valid
+            
+        except Exception as e:
+            logger.error(f"Erro ao verificar código: {e}")
+            return False
+    
+    def _send_email_fallback(self, phone_number):
+        """Fallback para email em desenvolvimento"""
+        try:
+            subject = "Código de Verificação ForgeLock"
+            email_message = f"""
+            Código de verificação: 123456 (simulado)
+            
+            Este é um código de verificação para sua conta ForgeLock.
+            Se você não solicitou este código, ignore este email.
+            """
+            
+            send_mail(
+                subject,
+                email_message,
+                settings.DEFAULT_FROM_EMAIL,
+                [f"{phone_number}@example.com"],
+                fail_silently=False,
+            )
+            logger.info(f"Email de fallback enviado para {phone_number}")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Erro no fallback de email: {e}")
+            return False
+
+
 class VerificationService:
-    """Serviço para verificação SMS"""
+    """Serviço para verificação SMS com Twilio Verify"""
+    
+    def __init__(self):
+        self.twilio_verify = TwilioVerifyService()
+        self.expiry_minutes = settings.SMS_VERIFICATION_EXPIRY_MINUTES
     
     def generate_verification_code(self):
-        """Gera código de verificação de 6 dígitos"""
-        return ''.join(random.choices(string.digits, k=6))
+        """Gera código de verificação de 6 dígitos (para fallback)"""
+        return ''.join(random.choices(string.digits, k=settings.SMS_VERIFICATION_CODE_LENGTH))
     
     def send_verification_code(self, user):
-        """Envia código de verificação via SMS"""
-        code = self.generate_verification_code()
-        user.verification_code = code
-        user.verification_expires_at = timezone.now() + timedelta(minutes=10)
-        user.save()
+        """Envia código de verificação via Twilio Verify"""
+        # Formatar número de telefone
+        formatted_number = self._format_phone_number(user.phone_number, user.country.ddi)
         
-        # Aqui você implementaria o envio real do SMS
-        # Por enquanto, apenas simulamos
-        print(f"Código de verificação para {user.phone_number}: {code}")
+        # Enviar via Twilio Verify
+        success = self.twilio_verify.send_verification(formatted_number)
+        
+        if success:
+            # Salvar informações para tracking
+            user.verification_code = 'VERIFY'  # Indica que usa Twilio Verify
+            user.verification_expires_at = timezone.now() + timedelta(minutes=self.expiry_minutes)
+            user.save()
+            logger.info(f"Código de verificação enviado para {formatted_number}")
+        else:
+            logger.error(f"Falha ao enviar código para {formatted_number}")
+        
+        return success
+    
+    def _format_phone_number(self, phone_number, ddi):
+        """Formata número de telefone para formato internacional"""
+        # Remove caracteres especiais
+        clean_number = ''.join(filter(str.isdigit, phone_number))
+        
+        # Adiciona DDI se não estiver presente
+        if not clean_number.startswith(ddi):
+            clean_number = ddi + clean_number
+        
+        # Adiciona + no início
+        return f"+{clean_number}"
     
     def verify_code(self, user, code):
-        """Verifica código de verificação"""
-        if user.verification_code == code and not self.is_code_expired(user):
+        """Verifica código de verificação via Twilio Verify"""
+        # Formatar número de telefone
+        formatted_number = self._format_phone_number(user.phone_number, user.country.ddi)
+        
+        # Verificar via Twilio Verify
+        is_valid = self.twilio_verify.check_verification(formatted_number, code)
+        
+        if is_valid:
             user.is_verified = True
-            user.verification_code = None
+            user.verification_code = ''  # String vazia em vez de None
             user.verification_expires_at = None
             user.save()
             return True
+        
         return False
     
     def is_code_expired(self, user):
         """Verifica se o código expirou"""
-        return user.verification_expires_at and user.verification_expires_at < timezone.now()
+        if not user.verification_expires_at:
+            return True
+        return timezone.now() > user.verification_expires_at
 
 
 class SecurityService:

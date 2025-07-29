@@ -674,39 +674,39 @@ msgstr ""
 
 #: .\templates\core\verify_sms.html:4
 msgid "Verificação SMS - ForgeLock"
-msgstr ""
+msgstr "Verificação SMS - ForgeLock"
 
 #: .\templates\core\verify_sms.html:11
 msgid "Verificação SMS"
-msgstr ""
+msgstr "Verificação SMS"
 
 #: .\templates\core\verify_sms.html:15
 msgid "Enviamos um código de verificação para:"
-msgstr ""
+msgstr "Enviamos um código de verificação para:"
 
 #: .\templates\core\verify_sms.html:17
 msgid "O código expira em"
-msgstr ""
+msgstr "O código expira em"
 
 #: .\templates\core\verify_sms.html:17
 msgid "minutos"
-msgstr ""
+msgstr "minutos"
 
 #: .\templates\core\verify_sms.html:37
 msgid "Verificar Código"
-msgstr ""
+msgstr "Verificar Código"
 
 #: .\templates\core\verify_sms.html:46
 msgid "Reenviar Código"
-msgstr ""
+msgstr "Reenviar Código"
 
 #: .\templates\core\verify_sms.html:55
 msgid "Problemas com a verificação?"
-msgstr ""
+msgstr "Problemas com a verificação?"
 
 #: .\templates\core\verify_sms.html:56
 msgid "Tente novamente"
-msgstr ""
+msgstr "Tente novamente"
 
 #: .\core\views.py:89
 msgid "Tentativas restantes: {}"
@@ -724,8 +724,4 @@ msgstr "Muitas tentativas falhadas. Tente novamente em 3 minutos."
 msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 msgstr "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 
-msgid "Senha incorreta. Tente novamente."
-msgstr "Senha incorreta. Tente novamente."
 
-msgid "Senha incorreta. Tentativas restantes: {}"
-msgstr "Senha incorreta. Tentativas restantes: {}"

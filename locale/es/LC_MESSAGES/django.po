@@ -278,19 +278,19 @@ msgstr "Dirección"
 
 #: .\core\models.py:136
 msgid "Sucesso"
-msgstr ""
+msgstr "Éxito"
 
 #: .\core\models.py:138
 msgid "User Agent"
-msgstr ""
+msgstr "Agente de Usuario"
 
 #: .\core\models.py:141
 msgid "Tentativa de Login"
-msgstr ""
+msgstr "Intento de Inicio de Sesión"
 
 #: .\core\models.py:142
 msgid "Tentativas de Login"
-msgstr ""
+msgstr "Intentos de Inicio de Sesión"
 
 #: .\core\views.py:60
 msgid "Conta criada com sucesso! Verifique seu telefone."
@@ -808,7 +808,7 @@ msgstr "Verificación SMS"
 
 #: .\templates\core\verify_sms.html:15
 msgid "Enviamos um código de verificação para:"
-msgstr "Hemos enviado un código de verificación a:"
+msgstr "Enviamos un código de verificación a:"
 
 #: .\templates\core\verify_sms.html:17
 msgid "O código expira em"
