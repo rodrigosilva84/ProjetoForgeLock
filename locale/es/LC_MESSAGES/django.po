@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-29 13:03-0300\n"
+"POT-Creation-Date: 2025-07-29 13:33-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,7 +43,7 @@ msgstr "Fechas importantes"
 msgid "E-mail *"
 msgstr "Correo electrónico *"
 
-#: .\core\forms.py:14
+#: .\core\forms.py:14 .\templates\core\password_reset_request.html:24
 msgid "Seu email"
 msgstr "Su correo electrónico"
 
@@ -146,6 +146,7 @@ msgid "CNPJ"
 msgstr "CNPJ"
 
 #: .\core\forms.py:125 .\core\models.py:69 .\core\models.py:90
+#: .\templates\core\password_reset_request.html:22
 msgid "E-mail"
 msgstr "Correo electrónico"
 
@@ -301,25 +302,49 @@ msgstr "¡Nuevo código enviado con éxito!"
 msgid "Erro ao enviar código. Tente novamente."
 msgstr "Error al enviar código. Inténtelo de nuevo."
 
-#: .\core\views.py:131
+#: .\core\views.py:136
 msgid "Login realizado com sucesso!"
 msgstr "¡Inicio de sesión realizado con éxito!"
 
-#: .\core\views.py:134
+#: .\core\views.py:139
 msgid "Conta não verificada. Verifique seu telefone."
 msgstr "Cuenta no verificada. Verifique su teléfono."
 
-#: .\core\views.py:146
+#: .\core\views.py:156
+msgid "Senha incorreta. Tente novamente."
+msgstr "Contraseña incorrecta. Inténtelo de nuevo."
+
+#: .\core\views.py:159
+msgid "Usuário não encontrado. Verifique o nome de usuário ou email."
+msgstr "Usuario no encontrado. Verifique el nombre de usuario o email."
+
+#: .\core\views.py:170
 msgid "Logout realizado com sucesso!"
 msgstr "¡Cierre de sesión realizado con éxito!"
 
-#: .\core\views.py:157
+#: .\core\views.py:181
 msgid "Configure sua empresa para começar a usar o sistema."
 msgstr "Configure su empresa para comenzar a usar el sistema."
 
-#: .\core\views.py:194
+#: .\core\views.py:218
 msgid "Empresa configurada com sucesso!"
 msgstr "¡Empresa configurada con éxito!"
+
+#: .\core\views.py:265
+msgid "Email de recuperação enviado com sucesso!"
+msgstr "¡Email de recuperación enviado con éxito!"
+
+#: .\core\views.py:268
+msgid "Email não encontrado no sistema."
+msgstr "Email no encontrado en el sistema."
+
+#: .\core\views.py:287
+msgid "Senha alterada com sucesso!"
+msgstr "¡Contraseña cambiada con éxito!"
+
+#: .\core\views.py:290
+msgid "As senhas não coincidem."
+msgstr "Las contraseñas no coinciden."
 
 #: .\templates\base.html:38 .\templates\core\dashboard.html:10
 msgid "Dashboard"
@@ -348,7 +373,7 @@ msgid "Sair"
 msgstr "Salir"
 
 #: .\templates\base.html:75 .\templates\core\login.html:11
-#: .\templates\core\login.html:43
+#: .\templates\core\login.html:49
 msgid "Entrar"
 msgstr "Iniciar sesión"
 
@@ -585,13 +610,69 @@ msgstr "Crear Cuenta Gratis"
 msgid "Login - ForgeLock"
 msgstr "Iniciar Sesión - ForgeLock"
 
-#: .\templates\core\login.html:51
+#: .\templates\core\login.html:43
+msgid "Esqueceu sua senha?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: .\templates\core\login.html:57
 msgid "Não tem uma conta?"
 msgstr "¿No tiene una cuenta?"
 
-#: .\templates\core\login.html:52
+#: .\templates\core\login.html:58
 msgid "Registre-se"
 msgstr "Regístrese"
+
+#: .\templates\core\password_reset_confirm.html:4
+msgid "Nova Senha - ForgeLock"
+msgstr "Nueva Contraseña - ForgeLock"
+
+#: .\templates\core\password_reset_confirm.html:11
+#: .\templates\core\password_reset_confirm.html:22
+msgid "Nova Senha"
+msgstr "Nueva Contraseña"
+
+#: .\templates\core\password_reset_confirm.html:15
+msgid "Digite sua nova senha."
+msgstr "Ingresa tu nueva contraseña."
+
+#: .\templates\core\password_reset_confirm.html:24
+msgid "Sua nova senha"
+msgstr "Tu nueva contraseña"
+
+#: .\templates\core\password_reset_confirm.html:28
+msgid "Confirmar Nova Senha"
+msgstr "Confirmar Nueva Contraseña"
+
+#: .\templates\core\password_reset_confirm.html:30
+msgid "Confirme sua nova senha"
+msgstr "Confirma tu nueva contraseña"
+
+#: .\templates\core\password_reset_confirm.html:35
+#: .\templates\core\profile.html:54
+msgid "Alterar Senha"
+msgstr "Cambiar Contraseña"
+
+#: .\templates\core\password_reset_confirm.html:45
+#: .\templates\core\password_reset_request.html:39
+msgid "Voltar ao Login"
+msgstr "Volver al Login"
+
+#: .\templates\core\password_reset_request.html:4
+msgid "Recuperar Senha - ForgeLock"
+msgstr "Recuperar Contraseña - ForgeLock"
+
+#: .\templates\core\password_reset_request.html:11
+msgid "Recuperar Senha"
+msgstr "Recuperar Contraseña"
+
+#: .\templates\core\password_reset_request.html:15
+msgid "Digite seu email para receber instruções de recuperação de senha."
+msgstr ""
+"Ingresa tu email para recibir instrucciones de recuperación de contraseña."
+
+#: .\templates\core\password_reset_request.html:29
+msgid "Enviar Email"
+msgstr "Enviar Email"
 
 #: .\templates\core\profile.html:4
 msgid "Perfil - ForgeLock"
@@ -664,10 +745,6 @@ msgstr "Último inicio de sesión:"
 #: .\templates\core\profile.html:51
 msgid "Editar Perfil"
 msgstr "Editar Perfil"
-
-#: .\templates\core\profile.html:54
-msgid "Alterar Senha"
-msgstr "Cambiar Contraseña"
 
 #: .\templates\core\register.html:5
 msgid "Registro - ForgeLock"

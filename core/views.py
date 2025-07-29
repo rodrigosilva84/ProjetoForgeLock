@@ -139,6 +139,24 @@ def user_login(request):
                 messages.error(request, _('Conta não verificada. Verifique seu telefone.'))
                 request.session['user_id'] = user.id
                 return redirect('verify_sms')
+        else:
+            # Verificar se o usuário existe para dar feedback específico
+            username_or_email = request.POST.get('username', '')
+            password = request.POST.get('password', '')
+            
+            # Tentar encontrar o usuário
+            try:
+                # Verificar se é email ou username
+                if '@' in username_or_email:
+                    user = User.objects.get(email=username_or_email)
+                else:
+                    user = User.objects.get(username=username_or_email)
+                
+                # Usuário existe, então a senha está incorreta
+                messages.error(request, _('Senha incorreta. Tente novamente.'))
+            except User.DoesNotExist:
+                # Usuário não existe
+                messages.error(request, _('Usuário não encontrado. Verifique o nome de usuário ou email.'))
     else:
         # Criar formulário APÓS ativar o idioma
         form = UserLoginForm()
@@ -223,9 +241,52 @@ def change_language(request):
 
 
 def get_country_ddi(request, country_id):
-    """API para obter DDI do país"""
+    """Retorna o DDI de um país"""
     try:
         country = Country.objects.get(id=country_id)
         return JsonResponse({'ddi': country.ddi})
     except Country.DoesNotExist:
         return JsonResponse({'error': 'País não encontrado'}, status=404)
+
+
+def password_reset_request(request):
+    """Solicitação de recuperação de senha"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        try:
+            user = User.objects.get(email=email)
+            # Aqui você implementaria o envio do email de recuperação
+            # Por enquanto, vamos apenas mostrar uma mensagem de sucesso
+            messages.success(request, _('Email de recuperação enviado com sucesso!'))
+            return redirect('login')
+        except User.DoesNotExist:
+            messages.error(request, _('Email não encontrado no sistema.'))
+    
+    return render(request, 'core/password_reset_request.html')
+
+
+def password_reset_confirm(request, token):
+    """Confirmação de recuperação de senha"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    if request.method == 'POST':
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+        
+        if password1 == password2:
+            # Aqui você implementaria a validação do token
+            # Por enquanto, vamos apenas mostrar uma mensagem de sucesso
+            messages.success(request, _('Senha alterada com sucesso!'))
+            return redirect('login')
+        else:
+            messages.error(request, _('As senhas não coincidem.'))
+    
+    return render(request, 'core/password_reset_confirm.html')

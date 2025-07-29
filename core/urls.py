@@ -13,4 +13,6 @@ urlpatterns = [
     path('company-setup/', views.company_setup, name='company_setup'),
     path('change-language/', views.change_language, name='change_language'),
     path('api/country/<int:country_id>/ddi/', views.get_country_ddi, name='get_country_ddi'),
+    path('password-reset/', views.password_reset_request, name='password_reset_request'),
+    path('password-reset/<str:token>/', views.password_reset_confirm, name='password_reset_confirm'),
 ]
