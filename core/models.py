@@ -8,6 +8,8 @@ import uuid
 class Country(models.Model):
     """Modelo para países"""
     name = models.CharField(_("Nome"), max_length=100)
+    name_en = models.CharField(_("Nome (Inglês)"), max_length=100, blank=True)
+    name_es = models.CharField(_("Nome (Espanhol)"), max_length=100, blank=True)
     code = models.CharField(_("Código"), max_length=3, unique=True)
     ddi = models.CharField(_("DDI"), max_length=5)
     flag = models.CharField(_("Bandeira"), max_length=10, blank=True)
@@ -22,6 +24,19 @@ class Country(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_localized_name(self, language_code=None):
+        """Retorna o nome do país no idioma especificado"""
+        if not language_code:
+            from django.utils import translation
+            language_code = translation.get_language()
+        
+        if language_code == 'en' and self.name_en:
+            return self.name_en
+        elif language_code == 'es' and self.name_es:
+            return self.name_es
+        else:
+            return self.name
 
 
 class Plan(models.Model):

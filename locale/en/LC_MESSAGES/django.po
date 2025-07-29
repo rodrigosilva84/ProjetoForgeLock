@@ -52,8 +52,6 @@ msgid "Nome *"
 msgstr "Name *"
 
 #: .\core\forms.py:19
-#, fuzzy
-#| msgid "Sobrenome *"
 msgid "Seu nome"
 msgstr "Your name"
 
@@ -62,8 +60,6 @@ msgid "Sobrenome *"
 msgstr "Last Name *"
 
 #: .\core\forms.py:24
-#, fuzzy
-#| msgid "Sobrenome *"
 msgid "Seu sobrenome"
 msgstr "Your last name"
 
@@ -84,8 +80,6 @@ msgid "Selecione um país"
 msgstr "Select a country"
 
 #: .\core\forms.py:44
-#, fuzzy
-#| msgid "Nome de usuário *"
 msgid "Nome de usuário"
 msgstr "Username"
 
@@ -94,8 +88,6 @@ msgid "Senha"
 msgstr "Password"
 
 #: .\core\forms.py:46
-#, fuzzy
-#| msgid "Confirme a senha *"
 msgid "Confirme a senha"
 msgstr "Confirm password"
 

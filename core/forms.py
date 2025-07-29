@@ -54,6 +54,17 @@ class UserRegistrationForm(UserCreationForm):
         self.fields['username'].help_text = _("O nome de usuário pode ter no máximo 150 caracteres. Podem ser utilizados letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, admin@test")
         self.fields['password1'].help_text = _("Sua senha deve conter pelo menos 8 caracteres.")
         self.fields['password2'].help_text = _("Digite a mesma senha novamente para verificação.")
+        
+        # Personalizar as opções do campo country para usar nomes localizados
+        from django.utils import translation
+        current_language = translation.get_language()
+        
+        # Criar choices personalizados com nomes localizados
+        country_choices = [('', _("Selecione um país"))]
+        for country in Country.objects.filter(is_active=True):
+            country_choices.append((country.id, country.get_localized_name(current_language)))
+        
+        self.fields['country'].choices = country_choices
 
 
 class UserLoginForm(AuthenticationForm):
