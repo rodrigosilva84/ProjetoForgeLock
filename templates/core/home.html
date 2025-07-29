@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "ForgeLock - Sistema de Gestão Empresarial" %}{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1>{% translate "ForgeLock" %}</h1>
+                <p class="lead">{% translate "Sistema completo de gestão empresarial para pequenas e médias empresas. Controle de clientes, produtos, projetos e muito mais." %}</p>
+                <div class="d-flex gap-3">
+                    <a href="{% url 'register' %}" class="btn btn-light btn-lg">
+                        <i class="fas fa-rocket me-2"></i>{% translate "Começar Agora" %}
+                    </a>
+                    <a href="#features" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>{% translate "Saiba Mais" %}
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <i class="fas fa-lock" style="font-size: 8rem; opacity: 0.3;"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2>{% translate "Por que escolher o ForgeLock?" %}</h2>
+                <p class="lead">{% translate "Tudo que sua empresa precisa em uma única plataforma" %}</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h5 class="card-title">{% translate "Gestão de Clientes" %}</h5>
+                        <p class="card-text">{% translate "Organize seus clientes, histórico de vendas e interações em um só lugar." %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h5 class="card-title">{% translate "Controle de Produtos" %}</h5>
+                        <p class="card-text">{% translate "Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos." %}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card feature-card h-100">
+                    <div class="card-body text-center">
+                        <div class="card-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h5 class="card-title">{% translate "Gestão de Projetos" %}</h5>
+                        <p class="card-text">{% translate "Acompanhe projetos, cronogramas e recursos de forma eficiente." %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2>{% translate "Planos e Preços" %}</h2>
+                <p class="lead">{% translate "Escolha o plano ideal para sua empresa" %}</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card pricing-card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{% translate "Trial" %}</h5>
+                        <h2 class="text-primary">R$ 0</h2>
+                        <p class="text-muted">{% translate "15 dias grátis" %}</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "10 clientes" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "5 produtos" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "3 projetos" %}</li>
+                        </ul>
+                        <a href="{% url 'register' %}" class="btn btn-outline-primary">{% translate "Começar Trial" %}</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card pricing-card featured h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{% translate "Básico" %}</h5>
+                        <h2 class="text-primary">R$ 29/mês</h2>
+                        <p class="text-muted">{% translate "Ideal para pequenas empresas" %}</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Vendas + Projetos" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Suporte por email" %}</li>
+                            <li><i class="fas fa-times text-muted me-2"></i>{% translate "Segurança STL" %}</li>
+                        </ul>
+                        <a href="{% url 'register' %}" class="btn btn-primary">{% translate "Escolher Básico" %}</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card pricing-card h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{% translate "Premium" %}</h5>
+                        <h2 class="text-primary">R$ 79/mês</h2>
+                        <p class="text-muted">{% translate "Para empresas em crescimento" %}</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Até 3 usuários" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Todas as funcionalidades" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Segurança STL" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Suporte prioritário" %}</li>
+                        </ul>
+                        <a href="{% url 'register' %}" class="btn btn-outline-primary">{% translate "Escolher Premium" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2>{% translate "Pronto para começar?" %}</h2>
+        <p class="lead">{% translate "Junte-se a centenas de empresas que já confiam no ForgeLock" %}</p>
+        <a href="{% url 'register' %}" class="btn btn-primary btn-lg">
+            <i class="fas fa-rocket me-2"></i>{% translate "Criar Conta Grátis" %}
+        </a>
+    </div>
+</section>
+{% endblock %}

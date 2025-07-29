@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Dashboard - ForgeLock" %}{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <h1 class="h3">
+            <i class="fas fa-tachometer-alt me-2"></i>{% translate "Dashboard" %}
+        </h1>
+        <p class="text-muted">{% translate "Bem-vindo ao ForgeLock" %}, {{ user.get_full_name|default:user.username }}!</p>
+    </div>
+</div>
+
+<!-- Stats Cards -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="stat-number">{{ customers_count }}</div>
+            <div class="stat-label">{% translate "Clientes" %}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="stat-number">{{ products_count }}</div>
+            <div class="stat-label">{% translate "Produtos" %}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="stat-number">{{ projects_count }}</div>
+            <div class="stat-label">{% translate "Projetos" %}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card">
+            <div class="stat-number">{{ user.account.plan.name }}</div>
+            <div class="stat-label">{% translate "Plano Atual" %}</div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-bolt me-2"></i>{% translate "Ações Rápidas" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'customers:customer_create' %}" class="btn btn-outline-primary w-100">
+                            <i class="fas fa-user-plus me-2"></i>{% translate "Novo Cliente" %}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'products:product_create' %}" class="btn btn-outline-success w-100">
+                            <i class="fas fa-box me-2"></i>{% translate "Novo Produto" %}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'projects:project_create' %}" class="btn btn-outline-info w-100">
+                            <i class="fas fa-project-diagram me-2"></i>{% translate "Novo Projeto" %}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'company_setup' %}" class="btn btn-outline-warning w-100">
+                            <i class="fas fa-building me-2"></i>{% translate "Configurar Empresa" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Company Info -->
+{% if company %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-building me-2"></i>{% translate "Informações da Empresa" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        {% if company.logo %}
+                            <img src="{{ company.logo.url }}" alt="{{ company.name }}" class="img-fluid rounded">
+                        {% else %}
+                            <div class="bg-light rounded d-flex align-items-center justify-content-center" style="height: 100px;">
+                                <i class="fas fa-building fa-2x text-muted"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-10">
+                        <h5>{{ company.name }}</h5>
+                        <p class="text-muted mb-2">{{ company.email }} | {{ company.phone }}</p>
+                        <p class="mb-0">{{ company.address }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Recent Activity -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-clock me-2"></i>{% translate "Atividade Recente" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">{% translate "Nenhuma atividade recente" %}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-chart-line me-2"></i>{% translate "Resumo" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-6">
+                        <h4 class="text-primary">{{ customers_count }}</h4>
+                        <small class="text-muted">{% translate "Clientes" %}</small>
+                    </div>
+                    <div class="col-6">
+                        <h4 class="text-success">{{ products_count }}</h4>
+                        <small class="text-muted">{% translate "Produtos" %}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
