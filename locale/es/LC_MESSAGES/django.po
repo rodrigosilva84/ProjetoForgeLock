@@ -919,3 +919,15 @@ msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en 3 minutos."
 #: .\core\services.py:100
 msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 msgstr "Actividad sospechosa detectada. IP temporalmente bloqueado por 3 minutos."
+
+#: .\templates\core\register.html:140
+msgid "Plano Selecionado:"
+msgstr "Plan Seleccionado:"
+
+#: .\templates\core\register.html:143
+msgid "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal."
+msgstr "Comenzarás con una prueba gratuita de este plan. Después del período de prueba, se cobrará el precio normal."
+
+#: .\templates\core\register.html:150
+msgid "Escolher outro plano"
+msgstr "Elegir otro plan"

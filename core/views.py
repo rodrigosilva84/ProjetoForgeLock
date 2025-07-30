@@ -61,12 +61,21 @@ def home(request):
     })
 
 
-def user_register(request):
+def user_register(request, plan_id=None):
     """Registro de usuário"""
     # Forçar ativação do idioma baseado na sessão
     session_language = request.session.get('django_language')
     if session_language:
         translation.activate(session_language)
+    
+    # Buscar plano se especificado
+    selected_plan = None
+    if plan_id:
+        try:
+            selected_plan = Plan.objects.get(id=plan_id, is_active=True)
+        except Plan.DoesNotExist:
+            messages.error(request, _('Plano não encontrado.'))
+            return redirect('home')
     
     # Criar formulário APÓS ativar o idioma
     if request.method == 'POST':
@@ -76,7 +85,7 @@ def user_register(request):
             user.set_password(form.cleaned_data['password1'])
             user.save()
             
-            # Criar conta com plano Trial
+            # Criar conta com plano Trial (sempre começa com trial)
             trial_plan, created = Plan.objects.get_or_create(
                 name='Trial',
                 defaults={
@@ -108,6 +117,10 @@ def user_register(request):
                 billing_cycle='monthly'
             )
             
+            # Salvar plano selecionado na sessão para uso posterior
+            if selected_plan:
+                request.session['selected_plan_id'] = selected_plan.id
+            
             # Enviar SMS de verificação
             verification_service.send_verification_code(user)
             
@@ -117,13 +130,20 @@ def user_register(request):
     else:
         form = UserRegistrationForm()
     
-    # Buscar plano trial para exibir informações
-    trial_plan = Plan.objects.filter(is_trial=True, is_active=True).first()
+    # Se não há plano selecionado, usar trial como padrão
+    if not selected_plan:
+        selected_plan = Plan.objects.filter(is_trial=True, is_active=True).first()
     
     return render(request, 'core/register.html', {
         'form': form,
-        'plan': trial_plan
+        'plan': selected_plan,
+        'is_plan_selected': plan_id is not None
     })
+
+
+def user_register_with_plan(request, plan_id):
+    """Registro de usuário com plano específico"""
+    return user_register(request, plan_id)
 
 
 def verify_sms(request):

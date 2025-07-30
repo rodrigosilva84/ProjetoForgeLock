@@ -133,33 +133,55 @@
                     {% endif %}
                 </div>
                 
-                <!-- Informações do Plano Trial -->
-                {% with trial_plan=plan|default:None %}
-                {% if trial_plan and trial_plan.is_trial %}
-                <div class="alert alert-info mb-4">
+                <!-- Informações do Plano Selecionado -->
+                {% if plan %}
+                <div class="alert {% if plan.is_trial %}alert-info{% else %}alert-success{% endif %} mb-4">
                     <div class="d-flex align-items-center mb-2">
-                        <i class="fas fa-gift me-2"></i>
-                        <strong>{% translate "Plano Trial Gratuito" %}</strong>
+                        {% if plan.is_trial %}
+                            <i class="fas fa-gift me-2"></i>
+                            <strong>{% translate "Plano Trial Gratuito" %}</strong>
+                        {% else %}
+                            <i class="fas fa-star me-2"></i>
+                            <strong>{{ plan.get_localized_name }} - {% translate "Trial" %}</strong>
+                        {% endif %}
                     </div>
+                    
+                    {% if is_plan_selected and not plan.is_trial %}
+                    <div class="alert alert-warning mb-3">
+                        <i class="fas fa-info-circle me-2"></i>
+                        <strong>{% translate "Plano Selecionado:" %}</strong> {{ plan.get_localized_name }}
+                        <br>
+                        <small>{% translate "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal." %}</small>
+                    </div>
+                    {% endif %}
+                    
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="list-unstyled mb-0">
-                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.get_trial_duration_display }} {% translate "grátis" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_users }} {% translate "usuário" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_customers }} {% translate "clientes" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{% translate "15 dias grátis" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_users }} {% translate "usuário" %}{% if plan.max_users > 1 %}s{% endif %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_customers }} {% translate "clientes" %}</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled mb-0">
-                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_products }} {% translate "produtos" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_projects }} {% translate "projetos" %}</li>
-                                <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>{% translate "Após" %} {{ trial_plan.trial_days }} {% translate "dias, escolha um plano para continuar" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_products }} {% translate "produtos" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_projects }} {% translate "projetos" %}</li>
+                                {% if plan.has_stl_security %}
+                                    <li><i class="fas fa-check text-success me-2"></i>{% translate "Segurança STL" %}</li>
+                                {% endif %}
+                                <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>{% translate "Após 15 dias, escolha um plano para continuar" %}</li>
                             </ul>
                         </div>
                     </div>
+                    
+                    <div class="mt-3">
+                        <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-arrow-left me-1"></i>{% translate "Escolher outro plano" %}
+                        </a>
+                    </div>
                 </div>
                 {% endif %}
-                {% endwith %}
                 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary btn-lg">

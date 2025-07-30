@@ -138,7 +138,7 @@
                                 <li><i class="fas fa-times text-muted me-2"></i>{% translate "Segurança STL" %}</li>
                             {% endif %}
                         </ul>
-                                                 <a href="{% url 'register' %}" class="btn {% if forloop.first %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                                                 <a href="{% url 'register_with_plan' plan.id %}" class="btn {% if forloop.first %}btn-primary{% else %}btn-outline-primary{% endif %}">
                              {% translate "Escolher" %} {{ plan.get_localized_name }}
                          </a>
                     </div>

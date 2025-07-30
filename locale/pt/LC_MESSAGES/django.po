@@ -724,4 +724,16 @@ msgstr "Muitas tentativas falhadas. Tente novamente em 3 minutos."
 msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 msgstr "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 
+#: .\templates\core\register.html:140
+msgid "Plano Selecionado:"
+msgstr "Plano Selecionado:"
+
+#: .\templates\core\register.html:143
+msgid "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal."
+msgstr "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal."
+
+#: .\templates\core\register.html:150
+msgid "Escolher outro plano"
+msgstr "Escolher outro plano"
+
 
