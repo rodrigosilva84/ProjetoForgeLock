@@ -8,6 +8,9 @@ from datetime import timedelta
 import logging
 from django.core.cache import cache
 from .models import LoginAttempt
+import requests
+from twilio.rest import Client
+from twilio.base.exceptions import TwilioException
 
 logger = logging.getLogger(__name__)
 
@@ -275,3 +278,70 @@ class SecurityService:
             pass
         
         return False, None
+
+
+class GeolocationService:
+    """Serviço para detectar localização do usuário por IP"""
+    
+    @staticmethod
+    def get_client_ip(request):
+        """Obtém o IP real do cliente"""
+        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+        if x_forwarded_for:
+            ip = x_forwarded_for.split(',')[0]
+        else:
+            ip = request.META.get('REMOTE_ADDR')
+        return ip
+    
+    @staticmethod
+    def get_country_by_ip(ip):
+        """Detecta país por IP usando API gratuita"""
+        # Para desenvolvimento local, simular Brasil
+        if ip in ['127.0.0.1', 'localhost', '::1']:
+            return 'BR'
+        
+        try:
+            # Usar API gratuita do ipapi.co
+            response = requests.get(f'http://ip-api.com/json/{ip}', timeout=3)
+            if response.status_code == 200:
+                data = response.json()
+                if data.get('status') == 'success':
+                    return data.get('countryCode', 'US')
+        except Exception as e:
+            logger.warning(f"Erro ao detectar país por IP {ip}: {e}")
+        
+        return 'US'  # Fallback para EUA
+    
+    @staticmethod
+    def get_currency_by_country(country_code):
+        """Mapeia código do país para moeda"""
+        currency_mapping = {
+            'BR': 'BRL',  # Brasil
+            'US': 'USD',  # Estados Unidos
+            'CA': 'USD',  # Canadá (usando USD por simplicidade)
+            'GB': 'USD',  # Reino Unido (usando USD por simplicidade)
+            'DE': 'EUR',  # Alemanha
+            'FR': 'EUR',  # França
+            'IT': 'EUR',  # Itália
+            'ES': 'EUR',  # Espanha
+            'NL': 'EUR',  # Holanda
+            'BE': 'EUR',  # Bélgica
+            'AT': 'EUR',  # Áustria
+            'PT': 'EUR',  # Portugal
+            'IE': 'EUR',  # Irlanda
+            'FI': 'EUR',  # Finlândia
+            'SE': 'EUR',  # Suécia
+            'DK': 'EUR',  # Dinamarca
+            'NO': 'EUR',  # Noruega
+            'CH': 'EUR',  # Suíça
+        }
+        
+        return currency_mapping.get(country_code, 'USD')
+    
+    @staticmethod
+    def detect_user_currency(request):
+        """Detecta moeda do usuário baseada na localização real (IP)"""
+        # Sempre detectar por IP, independente se usuário está logado ou não
+        ip = GeolocationService.get_client_ip(request)
+        country_code = GeolocationService.get_country_by_ip(ip)
+        return GeolocationService.get_currency_by_country(country_code)

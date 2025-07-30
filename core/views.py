@@ -3,27 +3,62 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils.translation import gettext as _
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from datetime import timedelta
 from .forms import UserRegistrationForm, UserLoginForm, SMSVerificationForm, CompanyForm
 from .services import VerificationService, SecurityService
-from .models import User, Country, Plan, Account
+from .models import User, Country, Plan, Account, PlanPrice
 from django.utils import translation
 
 verification_service = VerificationService()
 security_service = SecurityService()
 
 
+def test_view(request):
+    """View de teste simples"""
+    return HttpResponse("Teste funcionando!")
+
+
+def get_user_currency(request):
+    """Detecta a moeda baseada na localização do usuário"""
+    from .services import GeolocationService
+    return GeolocationService.detect_user_currency(request)
+
+def get_currency_symbol(currency_code):
+    """Converte código da moeda para símbolo"""
+    currency_symbols = {
+        'BRL': 'R$',
+        'USD': '$',
+        'EUR': '€'
+    }
+    return currency_symbols.get(currency_code, currency_code)
+
+
 def home(request):
     """Página inicial"""
     # Forçar ativação do idioma baseado na sessão
-    session_language = request.session.get('django_language')
+    session_language = request.session.get('django_language') if hasattr(request, 'session') else None
     if session_language:
         translation.activate(session_language)
     
-    return render(request, 'core/home.html')
+    # Buscar planos ativos (excluir Admin e Trial)
+    plans = Plan.objects.filter(is_active=True, is_trial=False).exclude(name__iexact='admin').order_by('price')
+    
+    # Detectar moeda do usuário
+    user_currency = get_user_currency(request)
+    user_currency_symbol = get_currency_symbol(user_currency)
+    
+    # Configurar moeda para cada plano
+    for plan in plans:
+        plan._user_currency = user_currency
+    
+    return render(request, 'core/home.html', {
+        'plans': plans,
+        'user_currency': user_currency,
+        'user_currency_symbol': user_currency_symbol
+    })
 
 
 def user_register(request):
@@ -50,15 +85,27 @@ def user_register(request):
                     'max_users': 1,
                     'max_customers': 10,
                     'max_products': 5,
-                    'max_projects': 3,
-                    'has_stl_security': False
+                    'max_projects': 2,
+                    'has_stl_security': False,
+                    'is_trial': True,
+                    'trial_days': 15
                 }
             )
             
-            Account.objects.create(
+            # Criar conta
+            account = Account.objects.create(
                 user=user,
                 plan=trial_plan,
                 is_active=True
+            )
+            
+            # Criar assinatura trial
+            from .models import Subscription
+            Subscription.objects.create(
+                user=user,
+                plan=trial_plan,
+                status='trial',
+                billing_cycle='monthly'
             )
             
             # Enviar SMS de verificação
@@ -70,7 +117,13 @@ def user_register(request):
     else:
         form = UserRegistrationForm()
     
-    return render(request, 'core/register.html', {'form': form})
+    # Buscar plano trial para exibir informações
+    trial_plan = Plan.objects.filter(is_trial=True, is_active=True).first()
+    
+    return render(request, 'core/register.html', {
+        'form': form,
+        'plan': trial_plan
+    })
 
 
 def verify_sms(request):

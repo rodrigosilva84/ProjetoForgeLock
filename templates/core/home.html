@@ -88,56 +88,63 @@
         </div>
         
         <div class="row">
-            <div class="col-md-4">
-                <div class="card pricing-card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{% translate "Trial" %}</h5>
-                        <h2 class="text-primary">R$ 0</h2>
-                        <p class="text-muted">{% translate "15 dias grátis" %}</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "10 clientes" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "5 produtos" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "3 projetos" %}</li>
-                        </ul>
-                        <a href="{% url 'register' %}" class="btn btn-outline-primary">{% translate "Começar Trial" %}</a>
-                    </div>
-                </div>
-            </div>
+                         <!-- Trial Card -->
+             <div class="col-md-4">
+                 <div class="card pricing-card h-100">
+                     <div class="card-body text-center">
+                         <h5 class="card-title">{% translate "Trial" %}</h5>
+                         <h2 class="text-primary">{{ user_currency_symbol }} 0</h2>
+                         <p class="text-muted">{% translate "15 dias grátis" %}</p>
+                         <ul class="list-unstyled">
+                             <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
+                             <li><i class="fas fa-check text-success me-2"></i>{% translate "10 clientes" %}</li>
+                             <li><i class="fas fa-check text-success me-2"></i>{% translate "5 produtos" %}</li>
+                             <li><i class="fas fa-check text-success me-2"></i>{% translate "2 projetos" %}</li>
+                         </ul>
+                         <a href="{% url 'register' %}" class="btn btn-outline-primary">{% translate "Começar Trial" %}</a>
+                     </div>
+                 </div>
+             </div>
             
-            <div class="col-md-4">
-                <div class="card pricing-card featured h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{% translate "Básico" %}</h5>
-                        <h2 class="text-primary">R$ 29/mês</h2>
-                        <p class="text-muted">{% translate "Ideal para pequenas empresas" %}</p>
+                         <!-- Planos dinâmicos -->
+             {% for plan in plans %}
+             <div class="col-md-4">
+                 <div class="card pricing-card {% if forloop.first %}featured{% endif %} h-100">
+                     <div class="card-body text-center">
+                         <h5 class="card-title">{{ plan.get_localized_name }}</h5>
+                         
+                         <!-- Preços Mensal/Anual -->
+                         <div class="pricing-toggle mb-3">
+                             <div class="btn-group" role="group">
+                                 <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="monthly_{{ forloop.counter }}" checked>
+                                 <label class="btn btn-outline-primary btn-sm" for="monthly_{{ forloop.counter }}">{% translate "Mensal" %}</label>
+                                 
+                                 <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="yearly_{{ forloop.counter }}">
+                                 <label class="btn btn-outline-primary btn-sm" for="yearly_{{ forloop.counter }}">{% translate "Anual" %}</label>
+                             </div>
+                         </div>
+                         
+                                                   <h2 class="text-primary monthly-price">{{ plan.get_currency_display }}{{ plan.get_price_for_currency }}</h2>
+                          <h2 class="text-primary yearly-price" style="display: none;">{{ plan.get_currency_display }}{{ plan.get_yearly_price }}</h2>
+                         <p class="text-muted">{{ plan.get_localized_description }}</p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Vendas + Projetos" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Suporte por email" %}</li>
-                            <li><i class="fas fa-times text-muted me-2"></i>{% translate "Segurança STL" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_users }} {% translate "usuário" %}{% if plan.max_users > 1 %}s{% endif %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_customers }} {% translate "clientes" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_products }} {% translate "produtos" %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_projects }} {% translate "projetos" %}</li>
+                            {% if plan.has_stl_security %}
+                                <li><i class="fas fa-check text-success me-2"></i>{% translate "Segurança STL" %}</li>
+                            {% else %}
+                                <li><i class="fas fa-times text-muted me-2"></i>{% translate "Segurança STL" %}</li>
+                            {% endif %}
                         </ul>
-                        <a href="{% url 'register' %}" class="btn btn-primary">{% translate "Escolher Básico" %}</a>
+                                                 <a href="{% url 'register' %}" class="btn {% if forloop.first %}btn-primary{% else %}btn-outline-primary{% endif %}">
+                             {% translate "Escolher" %} {{ plan.get_localized_name }}
+                         </a>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-4">
-                <div class="card pricing-card h-100">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{% translate "Premium" %}</h5>
-                        <h2 class="text-primary">R$ 79/mês</h2>
-                        <p class="text-muted">{% translate "Para empresas em crescimento" %}</p>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Até 3 usuários" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Todas as funcionalidades" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Segurança STL" %}</li>
-                            <li><i class="fas fa-check text-success me-2"></i>{% translate "Suporte prioritário" %}</li>
-                        </ul>
-                        <a href="{% url 'register' %}" class="btn btn-outline-primary">{% translate "Escolher Premium" %}</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -150,6 +157,30 @@
         <a href="{% url 'register' %}" class="btn btn-primary btn-lg">
             <i class="fas fa-rocket me-2"></i>{% translate "Criar Conta Grátis" %}
         </a>
-    </div>
-</section>
-{% endblock %}
+         </div>
+ </section>
+
+
+  <script>
+ document.addEventListener('DOMContentLoaded', function() {
+     // Alternar entre preços mensal/anual
+     const billingToggles = document.querySelectorAll('input[name^="billing_"]');
+     
+     billingToggles.forEach(toggle => {
+         toggle.addEventListener('change', function() {
+             const card = this.closest('.card');
+             const monthlyPrice = card.querySelector('.monthly-price');
+             const yearlyPrice = card.querySelector('.yearly-price');
+             
+             if (this.id.includes('yearly')) {
+                 monthlyPrice.style.display = 'none';
+                 yearlyPrice.style.display = 'block';
+             } else {
+                 monthlyPrice.style.display = 'block';
+                 yearlyPrice.style.display = 'none';
+             }
+         });
+     });
+ });
+ </script>
+ {% endblock %}

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
-from .models import User, Country, Plan, Company, Account, LoginAttempt
+from .models import User, Country, Plan, Company, Account, LoginAttempt, Subscription, PlanPrice
 
 
 @admin.register(Country)
@@ -17,6 +17,13 @@ class PlanAdmin(admin.ModelAdmin):
     list_filter = ['is_active', 'has_stl_security']
 
 
+@admin.register(PlanPrice)
+class PlanPriceAdmin(admin.ModelAdmin):
+    list_display = ['plan', 'currency', 'price', 'yearly_price', 'is_active']
+    list_filter = ['currency', 'is_active', 'plan']
+    search_fields = ['plan__name']
+
+
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ['name', 'email', 'phone', 'country', 'is_active']
@@ -26,8 +33,21 @@ class CompanyAdmin(admin.ModelAdmin):
 
 @admin.register(Account)
 class AccountAdmin(admin.ModelAdmin):
-    list_display = ['user', 'plan', 'is_active', 'trial_expires_at']
+    list_display = ['user', 'plan', 'is_active', 'created_at']
     list_filter = ['is_active', 'plan']
+
+
+@admin.register(Subscription)
+class SubscriptionAdmin(admin.ModelAdmin):
+    list_display = ['user', 'plan', 'status', 'billing_cycle', 'start_date', 'end_date', 'is_active']
+    list_filter = ['status', 'billing_cycle', 'plan', 'auto_renew']
+    search_fields = ['user__email', 'user__username']
+    readonly_fields = ['created_at', 'updated_at']
+    
+    def is_active(self, obj):
+        return obj.is_active()
+    is_active.boolean = True
+    is_active.short_description = _('Ativa')
 
 
 @admin.register(LoginAttempt)

@@ -455,6 +455,46 @@ msgstr "Ya existe un usuario con este correo electrónico."
 msgid "Já existe um usuário com este telefone."
 msgstr "Ya existe un usuario con este número de teléfono."
 
+#: .\templates\base.html:70
+msgid "15 dias restantes"
+msgstr "15 días restantes"
+
+#: .\templates\core\register.html:140
+msgid "grátis"
+msgstr "gratis"
+
+#: .\templates\core\register.html:142
+msgid "usuário"
+msgstr "usuario"
+
+#: .\templates\core\register.html:143
+msgid "clientes"
+msgstr "clientes"
+
+#: .\templates\core\register.html:146
+msgid "produtos"
+msgstr "productos"
+
+#: .\templates\core\register.html:147
+msgid "projetos"
+msgstr "proyectos"
+
+#: .\templates\core\register.html:148
+msgid "Após"
+msgstr "Después de"
+
+#: .\templates\core\register.html:148
+msgid "dias, escolha um plano para continuar"
+msgstr "días, elige un plan para continuar"
+
+
+
+
+
+#: .\templates\core\home.html:116
+msgid "Escolher"
+msgstr "Elegir"
+
 #: .\templates\core\company_setup.html:5
 msgid "Configurar Empresa - ForgeLock"
 msgstr "Configurar Empresa - ForgeLock"

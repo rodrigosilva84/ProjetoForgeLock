@@ -134,6 +134,8 @@
                 </div>
                 
                 <!-- Informações do Plano Trial -->
+                {% with trial_plan=plan|default:None %}
+                {% if trial_plan and trial_plan.is_trial %}
                 <div class="alert alert-info mb-4">
                     <div class="d-flex align-items-center mb-2">
                         <i class="fas fa-gift me-2"></i>
@@ -142,20 +144,22 @@
                     <div class="row">
                         <div class="col-md-6">
                             <ul class="list-unstyled mb-0">
-                                <li><i class="fas fa-check text-success me-2"></i>{% translate "15 dias grátis" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{% translate "10 clientes" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.get_trial_duration_display }} {% translate "grátis" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_users }} {% translate "usuário" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_customers }} {% translate "clientes" %}</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled mb-0">
-                                <li><i class="fas fa-check text-success me-2"></i>{% translate "5 produtos" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{% translate "3 projetos" %}</li>
-                                <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>{% translate "Após 15 dias, escolha um plano para continuar" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_products }} {% translate "produtos" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ trial_plan.max_projects }} {% translate "projetos" %}</li>
+                                <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>{% translate "Após" %} {{ trial_plan.trial_days }} {% translate "dias, escolha um plano para continuar" %}</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                {% endif %}
+                {% endwith %}
                 
                 <div class="d-grid">
                     <button type="submit" class="btn btn-primary btn-lg">
