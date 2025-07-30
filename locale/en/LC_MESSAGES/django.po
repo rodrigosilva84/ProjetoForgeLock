@@ -25,7 +25,7 @@ msgstr ""
 #: .\core\admin.py:49 .\core\models.py:80 .\core\models.py:93
 #: .\templates\base.html:67
 msgid "Empresa"
-msgstr ""
+msgstr "Company"
 
 #: .\core\admin.py:50
 msgid "Verificação"
@@ -422,6 +422,28 @@ msgstr "Business management system"
 msgid "Todos os direitos reservados."
 msgstr "All rights reserved."
 
+#: .\templates\core\register.html:130
+msgid "Plano Trial Gratuito"
+msgstr "Free Trial Plan"
+
+
+
+#: .\templates\core\register.html:143
+msgid "Após 15 dias, escolha um plano para continuar"
+msgstr "After 15 days, choose a plan to continue"
+
+
+
+
+
+#: .\templates\base.html:67
+msgid "restantes"
+msgstr "remaining"
+
+#: .\templates\base.html:75
+msgid "Gerenciar Assinatura"
+msgstr "Manage Subscription"
+
 #: .\templates\core\company_setup.html:5
 msgid "Configurar Empresa - ForgeLock"
 msgstr ""
@@ -452,7 +474,7 @@ msgstr ""
 
 #: .\templates\core\dashboard.html:39
 msgid "Plano Atual"
-msgstr ""
+msgstr "Current Plan"
 
 #: .\templates\core\dashboard.html:50
 msgid "Ações Rápidas"
