@@ -88,7 +88,7 @@ class Company(models.Model):
 class User(AbstractUser):
     """Modelo de usuário customizado"""
     email = models.EmailField(_("E-mail"), unique=True)
-    phone_number = models.CharField(_("Telefone"), max_length=20)
+    phone_number = models.CharField(_("Telefone"), max_length=20, unique=True)
     country = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name=_("País"))
     company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_("Empresa"), null=True, blank=True)
     is_verified = models.BooleanField(_("Verificado"), default=False)
