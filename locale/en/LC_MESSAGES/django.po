@@ -291,19 +291,19 @@ msgstr ""
 
 #: .\core\views.py:60
 msgid "Conta criada com sucesso! Verifique seu telefone."
-msgstr ""
+msgstr "Account created successfully! Check your phone."
 
 #: .\core\views.py:72
 msgid "Sessão expirada. Faça o registro novamente."
-msgstr ""
+msgstr "Session expired. Please register again."
 
 #: .\core\views.py:78 .\core\views.py:119
 msgid "Usuário não encontrado."
-msgstr ""
+msgstr "User not found."
 
 #: .\core\views.py:88
 msgid "Conta verificada com sucesso! Bem-vindo ao ForgeLock."
-msgstr ""
+msgstr "Account verified successfully! Welcome to ForgeLock."
 
 #: .\core\views.py:93
 msgid "Código expirado. Um novo código foi enviado."

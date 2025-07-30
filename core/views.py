@@ -103,7 +103,7 @@ def verify_sms(request):
             if verification_service.verify_code(user, code):
                 login(request, user)
                 messages.success(request, _('Conta verificada com sucesso! Bem-vindo ao ForgeLock.'))
-                del request.session['user_id']
+                request.session.pop('user_id', None)
                 return redirect('dashboard')
             else:
                 if verification_service.is_code_expired(user):
@@ -140,6 +140,10 @@ def resend_sms(request):
                     messages.error(request, _('Erro ao enviar código. Tente novamente.'))
             except User.DoesNotExist:
                 messages.error(request, _('Usuário não encontrado.'))
+                request.session.pop('user_id', None)
+        else:
+            messages.error(request, _('Sessão expirada. Faça o registro novamente.'))
+            return redirect('register')
     
     return redirect('verify_sms')
 
@@ -235,6 +239,11 @@ def user_logout(request):
 @login_required
 def dashboard(request):
     """Dashboard do usuário"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
     user = request.user
     
     # Verificar se usuário tem empresa
