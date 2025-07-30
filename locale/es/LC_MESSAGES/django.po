@@ -447,6 +447,14 @@ msgstr "restantes"
 msgid "Gerenciar Assinatura"
 msgstr "Gestionar Suscripción"
 
+#: .\core\forms.py:15
+msgid "Já existe um usuário com este e-mail."
+msgstr "Ya existe un usuario con este correo electrónico."
+
+#: .\core\forms.py:25
+msgid "Já existe um usuário com este telefone."
+msgstr "Ya existe un usuario con este número de teléfono."
+
 #: .\templates\core\company_setup.html:5
 msgid "Configurar Empresa - ForgeLock"
 msgstr "Configurar Empresa - ForgeLock"

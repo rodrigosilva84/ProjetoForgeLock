@@ -11,7 +11,10 @@ class UserRegistrationForm(UserCreationForm):
     """Form para registro de usuário"""
     email = forms.EmailField(
         label=_("E-mail *"),
-        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': _("Seu email")})
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': _("Seu email")}),
+        error_messages={
+            'unique': _('Já existe um usuário com este e-mail.')
+        }
     )
     first_name = forms.CharField(
         label=_("Nome *"),
@@ -26,7 +29,10 @@ class UserRegistrationForm(UserCreationForm):
     phone_number = forms.CharField(
         label=_("Telefone (DDD + Número) *"),
         max_length=20,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("(11) 99999-9999")})
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("(11) 99999-9999")}),
+        error_messages={
+            'unique': _('Já existe um usuário com este telefone.')
+        }
     )
     country = forms.ModelChoiceField(
         label=_("País *"),
