@@ -171,7 +171,7 @@ TWILIO_VERIFY_SERVICE_SID = os.environ.get('TWILIO_VERIFY_SERVICE_SID', '')
 # SMS Settings
 SMS_VERIFICATION_CODE_LENGTH = 6
 SMS_VERIFICATION_EXPIRY_MINUTES = 10
-SMS_DEVELOPMENT_MODE = True  # Para desenvolvimento
+SMS_DEVELOPMENT_MODE = False  # Desabilitar para usar sistema híbrido
 
 # Email Settings (fallback para SMS)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
