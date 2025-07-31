@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 12:50-0300\n"
+"POT-Creation-Date: 2025-07-31 13:48-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr "Active"
 
 #: .\core\admin.py:68
 msgid "Informações pessoais"
-msgstr ""
+msgstr "Personal information"
 
 #: .\core\admin.py:69 .\core\models.py:179 .\core\models.py:192
 #: .\templates\base.html:85
@@ -35,15 +35,15 @@ msgstr "Company"
 
 #: .\core\admin.py:70
 msgid "Verificação"
-msgstr ""
+msgstr "Verification"
 
 #: .\core\admin.py:71
 msgid "Permissões"
-msgstr ""
+msgstr "Permissions"
 
 #: .\core\admin.py:74
 msgid "Datas importantes"
-msgstr ""
+msgstr "Important dates"
 
 #: .\core\forms.py:13 .\templates\core\register.html:65
 msgid "E-mail *"
@@ -73,7 +73,7 @@ msgstr "Last Name *"
 msgid "Seu sobrenome"
 msgstr "Your last name"
 
-#: .\core\forms.py:30 .\templates\core\register.html:112
+#: .\core\forms.py:30
 msgid "Telefone (DDD + Número) *"
 msgstr "Phone (Area Code + Number) *"
 
@@ -85,7 +85,7 @@ msgstr "(11) 99999-9999"
 msgid "Já existe um usuário com este telefone."
 msgstr "A user with this phone number already exists."
 
-#: .\core\forms.py:38 .\templates\core\register.html:77
+#: .\core\forms.py:38
 msgid "País *"
 msgstr "Country *"
 
@@ -132,6 +132,8 @@ msgid ""
 "letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, "
 "admin@test"
 msgstr ""
+"The username can have a maximum of 150 characters. Special letters, digits "
+"and symbols can be used. Example: joao.silva, user123, admin@test"
 
 #: .\core\forms.py:67 .\templates\core\register.html:128
 msgid "Sua senha deve conter pelo menos 8 caracteres."
@@ -195,39 +197,41 @@ msgstr "Company description (optional)"
 
 #: .\core\forms.py:168
 msgid "Nome da empresa"
-msgstr ""
+msgstr "Company name"
 
 #: .\core\forms.py:169 .\core\models.py:167
 msgid "CNPJ"
-msgstr ""
+msgstr "CNPJ"
 
 #: .\core\forms.py:170 .\core\models.py:168 .\core\models.py:189
 #: .\templates\core\password_reset_request.html:22
 #: .\templates\core\profile_setup.html:84
 msgid "E-mail"
-msgstr ""
+msgstr "E-mail"
 
 #: .\core\forms.py:171 .\core\models.py:169 .\core\models.py:190
-#: .\templates\core\profile_setup.html:111
+#: .\templates\core\profile.html:22 .\templates\core\profile_setup.html:111
+#: .\templates\core\register.html:112
 msgid "Telefone"
 msgstr "Phone"
 
 #: .\core\forms.py:172 .\core\models.py:170
 msgid "Endereço"
-msgstr ""
+msgstr "Address"
 
 #: .\core\forms.py:173 .\core\models.py:22 .\core\models.py:171
 #: .\core\models.py:191 .\templates\core\profile_setup.html:97
+#: .\templates\core\register.html:77
 msgid "País"
 msgstr "Country"
 
 #: .\core\forms.py:174 .\core\models.py:172
 msgid "Logo"
-msgstr ""
+msgstr "Soon"
 
 #: .\core\forms.py:175 .\core\models.py:48 .\core\models.py:173
 msgid "Descrição"
-msgstr ""
+msgstr "Description"
 
 #: .\core\models.py:11 .\core\models.py:45 .\core\models.py:166
 #: .\templates\core\profile_setup.html:43
@@ -358,7 +362,7 @@ msgstr "Trial"
 
 #: .\core\models.py:249
 msgid "Cancelada"
-msgstr ""
+msgstr "Canceled"
 
 #: .\core\models.py:250
 #, fuzzy
@@ -368,11 +372,11 @@ msgstr "Expired"
 
 #: .\core\models.py:254 .\templates\core\home.html:120
 msgid "Mensal"
-msgstr ""
+msgstr "Monthly"
 
 #: .\core\models.py:255 .\templates\core\home.html:123
 msgid "Anual"
-msgstr ""
+msgstr "Annual"
 
 #: .\core\models.py:260
 #, fuzzy
@@ -382,7 +386,7 @@ msgstr "Status:"
 
 #: .\core\models.py:261
 msgid "Ciclo de cobrança"
-msgstr ""
+msgstr "Collection cycle"
 
 #: .\core\models.py:262
 #, fuzzy
@@ -398,11 +402,11 @@ msgstr "Date of birth"
 
 #: .\core\models.py:264
 msgid "Próxima cobrança"
-msgstr ""
+msgstr "Next collection"
 
 #: .\core\models.py:265
 msgid "Renovação automática"
-msgstr ""
+msgstr "Automatic renewal"
 
 #: .\core\models.py:270
 #, fuzzy
@@ -418,7 +422,7 @@ msgstr "My Subscription"
 
 #: .\core\models.py:328
 msgid "Moeda"
-msgstr ""
+msgstr "Coin"
 
 #: .\core\models.py:333
 #, fuzzy
@@ -446,23 +450,23 @@ msgstr "Plan Information"
 
 #: .\core\models.py:351
 msgid "Endereço IP"
-msgstr ""
+msgstr "IP address"
 
 #: .\core\models.py:352
 msgid "Sucesso"
-msgstr ""
+msgstr "Success"
 
 #: .\core\models.py:354
 msgid "User Agent"
-msgstr ""
+msgstr "User agent"
 
 #: .\core\models.py:357
 msgid "Tentativa de Login"
-msgstr ""
+msgstr "Login attempt"
 
 #: .\core\models.py:358
 msgid "Tentativas de Login"
-msgstr ""
+msgstr "Login attempts"
 
 #: .\core\views.py:77
 #, fuzzy
@@ -532,27 +536,27 @@ msgstr "Logout successful!"
 msgid "Configure sua empresa para começar a usar o sistema."
 msgstr "Configure your company to start using the system."
 
-#: .\core\views.py:353
+#: .\core\views.py:357
 msgid "Perfil atualizado com sucesso!"
 msgstr "Profile updated successfully!"
 
-#: .\core\views.py:411
+#: .\core\views.py:415
 msgid "Empresa configurada com sucesso!"
 msgstr "Company configured successfully!"
 
-#: .\core\views.py:465
+#: .\core\views.py:469
 msgid "Email de recuperação enviado com sucesso!"
 msgstr "Recovery email sent successfully!"
 
-#: .\core\views.py:468
+#: .\core\views.py:472
 msgid "Email não encontrado no sistema."
 msgstr "Email not found in the system."
 
-#: .\core\views.py:487
+#: .\core\views.py:491
 msgid "Senha alterada com sucesso!"
 msgstr "Password changed successfully!"
 
-#: .\core\views.py:490
+#: .\core\views.py:494
 msgid "As senhas não coincidem."
 msgstr "Passwords do not match."
 
@@ -615,11 +619,11 @@ msgstr "All rights reserved."
 
 #: .\templates\core\company_setup.html:5
 msgid "Configurar Empresa - ForgeLock"
-msgstr ""
+msgstr "Configure Company - FORGELOCK"
 
 #: .\templates\core\company_setup.html:12 .\templates\core\dashboard.html:72
 msgid "Configurar Empresa"
-msgstr ""
+msgstr "Configure company"
 
 #: .\templates\core\company_setup.html:17
 msgid "Configure sua empresa"
@@ -631,55 +635,55 @@ msgstr "You can use a trade name if you don't have a formal company."
 
 #: .\templates\core\company_setup.html:140
 msgid "Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB."
-msgstr ""
+msgstr "Accepted Formats: JPG, PNG, GIF. Maximum size: 2MB."
 
 #: .\templates\core\company_setup.html:157
 msgid "Salvar Empresa"
-msgstr ""
+msgstr "Save"
 
 #: .\templates\core\company_setup.html:166
 msgid "Esta informação será usada em seus documentos e relatórios."
-msgstr ""
+msgstr "This information will be used in your documents and reports."
 
 #: .\templates\core\dashboard.html:4
 msgid "Dashboard - ForgeLock"
-msgstr ""
+msgstr "DASHBOARD - FORGELOCK"
 
 #: .\templates\core\dashboard.html:12
 msgid "Bem-vindo ao ForgeLock"
-msgstr ""
+msgstr "Welcome to Forgelock"
 
 #: .\templates\core\dashboard.html:50
 msgid "Ações Rápidas"
-msgstr ""
+msgstr "Rapid actions"
 
 #: .\templates\core\dashboard.html:57
 msgid "Novo Cliente"
-msgstr ""
+msgstr "New customer"
 
 #: .\templates\core\dashboard.html:62
 msgid "Novo Produto"
-msgstr ""
+msgstr "New product"
 
 #: .\templates\core\dashboard.html:67
 msgid "Novo Projeto"
-msgstr ""
+msgstr "New project"
 
 #: .\templates\core\dashboard.html:88
 msgid "Informações da Empresa"
-msgstr ""
+msgstr "Company information"
 
 #: .\templates\core\dashboard.html:120
 msgid "Atividade Recente"
-msgstr ""
+msgstr "Recent activity"
 
 #: .\templates\core\dashboard.html:124
 msgid "Nenhuma atividade recente"
-msgstr ""
+msgstr "No recent activity"
 
 #: .\templates\core\dashboard.html:132
 msgid "Resumo"
-msgstr ""
+msgstr "Summary"
 
 #: .\templates\core\home.html:4
 msgid "ForgeLock - Sistema de Gestão Empresarial"
@@ -694,6 +698,8 @@ msgid ""
 "Sistema completo de gestão empresarial para pequenas e médias empresas. "
 "Controle de clientes, produtos, projetos e muito mais."
 msgstr ""
+"Complete Business Management System for Small and Medium Enterprises. "
+"Customer control, products, projects and more."
 
 #: .\templates\core\home.html:16
 msgid "Começar Agora"
@@ -718,7 +724,7 @@ msgstr "Customer Management"
 #: .\templates\core\home.html:48
 msgid ""
 "Organize seus clientes, histórico de vendas e interações em um só lugar."
-msgstr ""
+msgstr "Organize your customers, sales history and interactions in one place."
 
 #: .\templates\core\home.html:59
 msgid "Controle de Produtos"
@@ -729,6 +735,7 @@ msgid ""
 "Gerencie estoque, preços, categorias e histórico de vendas dos seus "
 "produtos."
 msgstr ""
+"Manage inventory, prices, categories and sales history of your products."
 
 #: .\templates\core\home.html:71
 msgid "Gestão de Projetos"
@@ -905,10 +912,6 @@ msgstr "Username:"
 msgid "E-mail:"
 msgstr "Email:"
 
-#: .\templates\core\profile.html:22
-msgid "Telefone:"
-msgstr "Phone:"
-
 #: .\templates\core\profile.html:23
 msgid "País:"
 msgstr "Country:"
@@ -986,16 +989,12 @@ msgid "Sobrenome"
 msgstr "Last Name"
 
 #: .\templates\core\profile_setup.html:158
-msgid "Voltar"
-msgstr "Back"
-
-#: .\templates\core\profile_setup.html:161
 msgid "Salvar e Continuar"
 msgstr "Save and Continue"
 
 #: .\templates\core\register.html:5
 msgid "Registro - ForgeLock"
-msgstr ""
+msgstr "Registration - Forgelock"
 
 #: .\templates\core\register.html:13 .\templates\core\register.html:203
 msgid "Criar Conta"
@@ -1140,6 +1139,12 @@ msgstr "Having trouble with verification?"
 #: .\templates\core\verify_sms.html:62
 msgid "Tente novamente"
 msgstr "Try again"
+
+#~ msgid "Telefone:"
+#~ msgstr "Phone:"
+
+#~ msgid "Voltar"
+#~ msgstr "Back"
 
 #~ msgid "Pular por enquanto"
 #~ msgstr "Skip for now"

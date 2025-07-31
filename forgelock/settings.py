@@ -48,6 +48,9 @@ INSTALLED_APPS = [
     'customers',
     'products',
     'projects',
+    
+    # Apps de tradução
+    'rosetta',
 ]
 
 MIDDLEWARE = [

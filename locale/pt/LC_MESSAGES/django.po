@@ -103,8 +103,6 @@ msgstr "https://meusite.com"
 msgid "Opcional. Seu site pessoal ou portfólio."
 msgstr "Opcional. Seu site pessoal ou portfólio."
 
-
-
 #: .\templates\core\profile_setup.html:6
 msgid "Completar Perfil - ForgeLock"
 msgstr "Completar Perfil - ForgeLock"
@@ -134,8 +132,12 @@ msgid "Usar dados do meu registro"
 msgstr "Usar dados do meu registro"
 
 #: .\core\forms.py:117
-msgid "Marque para usar automaticamente seus dados de registro nos campos da empresa."
-msgstr "Marque para usar automaticamente seus dados de registro nos campos da empresa."
+msgid ""
+"Marque para usar automaticamente seus dados de registro nos campos da "
+"empresa."
+msgstr ""
+"Marque para usar automaticamente seus dados de registro nos campos da "
+"empresa."
 
 #: .\core\forms.py:125
 msgid "Nome da empresa ou nome fantasia"
@@ -168,8 +170,6 @@ msgstr "Data de nascimento:"
 #: .\templates\core\profile.html:25
 msgid "Site pessoal:"
 msgstr "Site pessoal:"
-
-
 
 #: .\core\forms.py:44
 #, fuzzy
@@ -553,7 +553,8 @@ msgstr ""
 
 #: .\templates\core\home.html:60
 msgid ""
-"Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos."
+"Gerencie estoque, preços, categorias e histórico de vendas dos seus "
+"produtos."
 msgstr ""
 
 #: .\templates\core\home.html:71
@@ -801,27 +802,35 @@ msgid "Tentativas restantes: {}"
 msgstr "Tentativas restantes: {}"
 
 #: .\core\services.py:89
-msgid "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente em 3 minutos."
-msgstr "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente em 3 minutos."
+msgid ""
+"IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente "
+"em 3 minutos."
+msgstr ""
+"IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente "
+"em 3 minutos."
 
 #: .\core\services.py:95
 msgid "Muitas tentativas falhadas. Tente novamente em 3 minutos."
 msgstr "Muitas tentativas falhadas. Tente novamente em 3 minutos."
 
 #: .\core\services.py:100
-msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
-msgstr "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+msgid ""
+"Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+msgstr ""
+"Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 
 #: .\templates\core\register.html:140
 msgid "Plano Selecionado:"
 msgstr "Plano Selecionado:"
 
 #: .\templates\core\register.html:143
-msgid "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal."
-msgstr "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal."
+msgid ""
+"Você começará com um trial gratuito deste plano. Após o período trial, será "
+"cobrado o valor normal."
+msgstr ""
+"Você começará com um trial gratuito deste plano. Após o período trial, será "
+"cobrado o valor normal."
 
 #: .\templates\core\register.html:150
 msgid "Escolher outro plano"
 msgstr "Escolher outro plano"
-
-

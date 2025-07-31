@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-31 12:50-0300\n"
+"POT-Creation-Date: 2025-07-31 13:48-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgstr "Apellido *"
 msgid "Seu sobrenome"
 msgstr "Su apellido"
 
-#: .\core\forms.py:30 .\templates\core\register.html:112
+#: .\core\forms.py:30
 msgid "Telefone (DDD + Número) *"
 msgstr "Teléfono (Código + Número) *"
 
@@ -85,7 +85,7 @@ msgstr "(11) 99999-9999"
 msgid "Já existe um usuário com este telefone."
 msgstr "Ya existe un usuario con este número de teléfono."
 
-#: .\core\forms.py:38 .\templates\core\register.html:77
+#: .\core\forms.py:38
 msgid "País *"
 msgstr "País *"
 
@@ -132,6 +132,9 @@ msgid ""
 "letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, "
 "admin@test"
 msgstr ""
+"El nombre de usuario puede tener un máximo de 150 caracteres. Se pueden usar"
+" letras, dígitos y símbolos especiales. Ejemplo: Joao.silva, user123, "
+"admin@test"
 
 #: .\core\forms.py:67 .\templates\core\register.html:128
 msgid "Sua senha deve conter pelo menos 8 caracteres."
@@ -209,7 +212,8 @@ msgid "E-mail"
 msgstr "Correo electrónico"
 
 #: .\core\forms.py:171 .\core\models.py:169 .\core\models.py:190
-#: .\templates\core\profile_setup.html:111
+#: .\templates\core\profile.html:22 .\templates\core\profile_setup.html:111
+#: .\templates\core\register.html:112
 msgid "Telefone"
 msgstr "Teléfono"
 
@@ -219,6 +223,7 @@ msgstr "Dirección"
 
 #: .\core\forms.py:173 .\core\models.py:22 .\core\models.py:171
 #: .\core\models.py:191 .\templates\core\profile_setup.html:97
+#: .\templates\core\register.html:77
 msgid "País"
 msgstr "País"
 
@@ -237,11 +242,11 @@ msgstr "Nombre"
 
 #: .\core\models.py:12 .\core\models.py:46
 msgid "Nome (Inglês)"
-msgstr ""
+msgstr "Nombre (inglés)"
 
 #: .\core\models.py:13 .\core\models.py:47
 msgid "Nome (Espanhol)"
-msgstr ""
+msgstr "Nombre (español)"
 
 #: .\core\models.py:14
 msgid "Código"
@@ -359,7 +364,7 @@ msgstr "Prueba"
 
 #: .\core\models.py:249
 msgid "Cancelada"
-msgstr ""
+msgstr "Cancelado"
 
 #: .\core\models.py:250
 #, fuzzy
@@ -369,11 +374,11 @@ msgstr "Expirado"
 
 #: .\core\models.py:254 .\templates\core\home.html:120
 msgid "Mensal"
-msgstr ""
+msgstr "Mensual"
 
 #: .\core\models.py:255 .\templates\core\home.html:123
 msgid "Anual"
-msgstr ""
+msgstr "Anual"
 
 #: .\core\models.py:260
 #, fuzzy
@@ -383,7 +388,7 @@ msgstr "Estado:"
 
 #: .\core\models.py:261
 msgid "Ciclo de cobrança"
-msgstr ""
+msgstr "Ciclo de recolección"
 
 #: .\core\models.py:262
 #, fuzzy
@@ -399,11 +404,11 @@ msgstr "Fecha de nacimiento"
 
 #: .\core\models.py:264
 msgid "Próxima cobrança"
-msgstr ""
+msgstr "Siguiente colección"
 
 #: .\core\models.py:265
 msgid "Renovação automática"
-msgstr ""
+msgstr "Renovación automática"
 
 #: .\core\models.py:270
 #, fuzzy
@@ -419,7 +424,7 @@ msgstr "Mi Suscripción"
 
 #: .\core\models.py:328
 msgid "Moeda"
-msgstr ""
+msgstr "Acuñar"
 
 #: .\core\models.py:333
 #, fuzzy
@@ -535,27 +540,27 @@ msgstr "¡Cierre de sesión realizado con éxito!"
 msgid "Configure sua empresa para começar a usar o sistema."
 msgstr "Configure su empresa para comenzar a usar el sistema."
 
-#: .\core\views.py:353
+#: .\core\views.py:357
 msgid "Perfil atualizado com sucesso!"
 msgstr "¡Perfil actualizado con éxito!"
 
-#: .\core\views.py:411
+#: .\core\views.py:415
 msgid "Empresa configurada com sucesso!"
 msgstr "¡Empresa configurada con éxito!"
 
-#: .\core\views.py:465
+#: .\core\views.py:469
 msgid "Email de recuperação enviado com sucesso!"
 msgstr "¡Email de recuperación enviado con éxito!"
 
-#: .\core\views.py:468
+#: .\core\views.py:472
 msgid "Email não encontrado no sistema."
 msgstr "Email no encontrado en el sistema."
 
-#: .\core\views.py:487
+#: .\core\views.py:491
 msgid "Senha alterada com sucesso!"
 msgstr "¡Contraseña cambiada con éxito!"
 
-#: .\core\views.py:490
+#: .\core\views.py:494
 msgid "As senhas não coincidem."
 msgstr "Las contraseñas no coinciden."
 
@@ -697,6 +702,8 @@ msgid ""
 "Sistema completo de gestão empresarial para pequenas e médias empresas. "
 "Controle de clientes, produtos, projetos e muito mais."
 msgstr ""
+"Sistema completo de gestión empresarial para pequeñas y medianas empresas. "
+"Control del cliente, productos, proyectos y más."
 
 #: .\templates\core\home.html:16
 msgid "Começar Agora"
@@ -722,6 +729,8 @@ msgstr "Gestión de Clientes"
 msgid ""
 "Organize seus clientes, histórico de vendas e interações em um só lugar."
 msgstr ""
+"Organice a sus clientes, historial de ventas e interacciones en un solo "
+"lugar."
 
 #: .\templates\core\home.html:59
 msgid "Controle de Produtos"
@@ -732,6 +741,8 @@ msgid ""
 "Gerencie estoque, preços, categorias e histórico de vendas dos seus "
 "produtos."
 msgstr ""
+"Administre el inventario, los precios, las categorías y el historial de "
+"ventas de sus productos."
 
 #: .\templates\core\home.html:71
 msgid "Gestão de Projetos"
@@ -899,10 +910,6 @@ msgstr "Usuario:"
 msgid "E-mail:"
 msgstr "Correo electrónico:"
 
-#: .\templates\core\profile.html:22
-msgid "Telefone:"
-msgstr "Teléfono:"
-
 #: .\templates\core\profile.html:23
 msgid "País:"
 msgstr "País:"
@@ -980,10 +987,6 @@ msgid "Sobrenome"
 msgstr "Apellido"
 
 #: .\templates\core\profile_setup.html:158
-msgid "Voltar"
-msgstr "Volver"
-
-#: .\templates\core\profile_setup.html:161
 msgid "Salvar e Continuar"
 msgstr "Guardar y continuar"
 
@@ -1134,6 +1137,12 @@ msgstr "¿Problemas con la verificación?"
 #: .\templates\core\verify_sms.html:62
 msgid "Tente novamente"
 msgstr "Inténtelo de nuevo"
+
+#~ msgid "Telefone:"
+#~ msgstr "Teléfono:"
+
+#~ msgid "Voltar"
+#~ msgstr "Volver"
 
 #~ msgid "Pular por enquanto"
 #~ msgstr "Omitir por ahora"

@@ -21,14 +21,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
-    # Apps do ForgeLock
     path('', include('core.urls')),
     path('customers/', include('customers.urls')),
     path('products/', include('products.urls')),
     path('projects/', include('projects.urls')),
+    
+    # URLs de tradução
+    path('rosetta/', include('rosetta.urls')),
 ]
 
-# Serve media files in development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
