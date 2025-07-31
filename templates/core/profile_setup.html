@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Completar Perfil - ForgeLock" %}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .form-control[readonly] {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+    .form-control[disabled] {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="form-container">
+            <h2 class="text-center mb-4">
+                <i class="fas fa-user-edit me-2"></i>{% translate "Completar Perfil" %}
+            </h2>
+            
+            <div class="alert alert-info mb-4">
+                <i class="fas fa-info-circle me-2"></i>
+                <strong>{% translate "Bem-vindo ao ForgeLock!" %}</strong>
+                <br>
+                <small>{% translate "Vamos completar seu perfil para uma melhor experiência." %}</small>
+            </div>
+            
+            <form method="post" novalidate>
+                {% csrf_token %}
+                
+                <!-- Nome e Sobrenome lado a lado -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ form.first_name.id_for_label }}" class="form-label">{% translate "Nome" %}</label>
+                            {{ form.first_name }}
+                            {% if form.first_name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.first_name.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="{{ form.last_name.id_for_label }}" class="form-label">{% translate "Sobrenome" %}</label>
+                            {{ form.last_name }}
+                            {% if form.last_name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.last_name.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Usuário -->
+                <div class="mb-3">
+                    <label for="{{ form.username.id_for_label }}" class="form-label">{% translate "Usuário" %}</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.username.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="{{ form.email.id_for_label }}" class="form-label">{% translate "E-mail" %}</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.email.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- País (somente exibição) -->
+                <div class="mb-3">
+                    <label class="form-label">{% translate "País" %}</label>
+                    <input type="text" class="form-control" value="{{ user.country.name }}" readonly>
+                </div>
+                
+                <!-- DDI e Telefone lado a lado -->
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="mb-3">
+                            <label class="form-label">{% translate "DDI" %}</label>
+                            <input type="text" class="form-control" value="{{ user.country.ddi }}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="mb-3">
+                            <label for="{{ form.phone_number.id_for_label }}" class="form-label">{% translate "Telefone" %}</label>
+                            {{ form.phone_number }}
+                            {% if form.phone_number.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.phone_number.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data de Nascimento -->
+                <div class="mb-3">
+                    <label for="{{ form.date_of_birth.id_for_label }}" class="form-label">{% translate "Data de nascimento" %}</label>
+                    {{ form.date_of_birth }}
+                    {% if form.date_of_birth.help_text %}
+                        <div class="form-text">{{ form.date_of_birth.help_text }}</div>
+                    {% endif %}
+                    {% if form.date_of_birth.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.date_of_birth.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Website -->
+                <div class="mb-3">
+                    <label for="{{ form.website.id_for_label }}" class="form-label">{% translate "Site pessoal" %}</label>
+                    {{ form.website }}
+                    {% if form.website.help_text %}
+                        <div class="form-text">{{ form.website.help_text }}</div>
+                    {% endif %}
+                    {% if form.website.errors %}
+                        <div class="invalid-feedback d-block">
+                            {% for error in form.website.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save me-2"></i>{% translate "Salvar e Continuar" %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %} 

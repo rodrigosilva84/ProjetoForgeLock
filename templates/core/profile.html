@@ -19,8 +19,22 @@
                         <p><strong>{% translate "Nome:" %}</strong> {{ user.get_full_name }}</p>
                         <p><strong>{% translate "Usuário:" %}</strong> {{ user.username }}</p>
                         <p><strong>{% translate "E-mail:" %}</strong> {{ user.email }}</p>
-                        <p><strong>{% translate "Telefone:" %}</strong> {{ user.phone_number }}</p>
+                        <p><strong>{% translate "Telefone" %}</strong> {{ user.phone_number }}</p>
                         <p><strong>{% translate "País:" %}</strong> {{ user.country.name }}</p>
+                        <p><strong>{% translate "Data de nascimento:" %}</strong> 
+                            {% if user.date_of_birth %}
+                                {{ user.date_of_birth|date:"d/m/Y" }}
+                            {% else %}
+                                <em>{% translate "Não informado" %}</em>
+                            {% endif %}
+                        </p>
+                        <p><strong>{% translate "Site pessoal:" %}</strong> 
+                            {% if user.website %}
+                                <a href="{{ user.website }}" target="_blank">{{ user.website }}</a>
+                            {% else %}
+                                <em>{% translate "Não informado" %}</em>
+                            {% endif %}
+                        </p>
                         <p><strong>{% translate "Verificado:" %}</strong> 
                             {% if user.is_verified %}
                                 <span class="badge bg-success">{% translate "Sim" %}</span>
@@ -47,7 +61,7 @@
                 <hr>
                 
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary">
+                    <a href="{% url 'profile_setup' %}" class="btn btn-primary">
                         <i class="fas fa-edit me-2"></i>{% translate "Editar Perfil" %}
                     </a>
                     <a href="#" class="btn btn-outline-secondary">

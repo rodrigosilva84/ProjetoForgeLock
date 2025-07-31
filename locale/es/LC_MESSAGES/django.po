@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-29 13:42-0300\n"
+"POT-Creation-Date: 2025-07-31 12:50-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,24 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\core\admin.py:48
+#: .\core\admin.py:50 .\core\models.py:248
+#, fuzzy
+#| msgid "Ativo"
+msgid "Ativa"
+msgstr "Activo"
+
+#: .\core\admin.py:68
 msgid "Informações pessoais"
 msgstr "Información personal"
 
-#: .\core\admin.py:49 .\core\models.py:80 .\core\models.py:93
-#: .\templates\base.html:67
+#: .\core\admin.py:69 .\core\models.py:179 .\core\models.py:192
+#: .\templates\base.html:85
 msgid "Empresa"
 msgstr "Compañía"
 
-#: .\core\admin.py:50
+#: .\core\admin.py:70
 msgid "Verificação"
 msgstr "Verificación"
 
-#: .\core\admin.py:51
+#: .\core\admin.py:71
 msgid "Permissões"
 msgstr "Permisos"
 
-#: .\core\admin.py:54
+#: .\core\admin.py:74
 msgid "Datas importantes"
 msgstr "Fechas importantes"
 
@@ -47,340 +53,511 @@ msgstr "Correo electrónico *"
 msgid "Seu email"
 msgstr "Su correo electrónico"
 
-#: .\core\forms.py:17 .\templates\core\register.html:25
+#: .\core\forms.py:16
+msgid "Já existe um usuário com este e-mail."
+msgstr "Ya existe un usuario con este correo electrónico."
+
+#: .\core\forms.py:20 .\templates\core\register.html:25
 msgid "Nome *"
 msgstr "Nombre *"
 
-#: .\core\forms.py:19
+#: .\core\forms.py:22
 msgid "Seu nome"
 msgstr "Su nombre"
 
-#: .\core\forms.py:22 .\templates\core\register.html:38
+#: .\core\forms.py:25 .\templates\core\register.html:38
 msgid "Sobrenome *"
 msgstr "Apellido *"
 
-#: .\core\forms.py:24
+#: .\core\forms.py:27
 msgid "Seu sobrenome"
 msgstr "Su apellido"
 
-#: .\core\forms.py:27 .\templates\core\register.html:97
+#: .\core\forms.py:30 .\templates\core\register.html:112
 msgid "Telefone (DDD + Número) *"
 msgstr "Teléfono (Código + Número) *"
 
-#: .\core\forms.py:29
+#: .\core\forms.py:32
 msgid "(11) 99999-9999"
 msgstr "(11) 99999-9999"
 
-#: .\core\forms.py:32 .\templates\core\register.html:77
+#: .\core\forms.py:34
+msgid "Já existe um usuário com este telefone."
+msgstr "Ya existe un usuario con este número de teléfono."
+
+#: .\core\forms.py:38 .\templates\core\register.html:77
 msgid "País *"
 msgstr "País *"
 
-#: .\core\forms.py:35 .\core\forms.py:63 .\core\forms.py:134
+#: .\core\forms.py:41 .\core\forms.py:75 .\core\forms.py:179
 msgid "Selecione um país"
 msgstr "Seleccione un país"
 
-#: .\core\forms.py:44 .\core\models.py:134
+#: .\core\forms.py:44 .\core\models.py:193
+#: .\templates\core\profile_setup.html:126 .\templates\core\register.html:89
+msgid "Data de nascimento"
+msgstr "Fecha de nacimiento"
+
+#: .\core\forms.py:47
+msgid "Opcional. Sua data de nascimento."
+msgstr "Opcional. Tu fecha de nacimiento."
+
+#: .\core\forms.py:56 .\core\models.py:350
 msgid "Nome de usuário"
 msgstr "Nombre de usuario"
 
-#: .\core\forms.py:45 .\core\forms.py:77 .\templates\core\login.html:30
+#: .\core\forms.py:57 .\core\forms.py:89 .\templates\core\login.html:30
 msgid "Senha"
 msgstr "Contraseña"
 
-#: .\core\forms.py:46
+#: .\core\forms.py:58
 msgid "Confirme a senha"
 msgstr "Confirme la contraseña"
 
-#: .\core\forms.py:49 .\templates\core\register.html:52
+#: .\core\forms.py:61 .\templates\core\register.html:52
 msgid "Nome de usuário *"
 msgstr "Nombre de usuario *"
 
-#: .\core\forms.py:50 .\templates\core\register.html:111
+#: .\core\forms.py:62 .\templates\core\register.html:126
 msgid "Senha *"
 msgstr "Contraseña *"
 
-#: .\core\forms.py:51 .\templates\core\register.html:124
+#: .\core\forms.py:63 .\templates\core\register.html:139
 msgid "Confirme a senha *"
 msgstr "Confirme la contraseña *"
 
-#: .\core\forms.py:54 .\templates\core\register.html:54
+#: .\core\forms.py:66 .\templates\core\register.html:54
 msgid ""
 "O nome de usuário pode ter no máximo 150 caracteres. Podem ser utilizados "
 "letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, "
 "admin@test"
 msgstr ""
-"El nombre de usuario puede tener un máximo de 150 caracteres. Se pueden "
-"utilizar letras, dígitos y símbolos especiales. Ejemplo: joao.silva, "
-"user123, admin@test"
 
-#: .\core\forms.py:55 .\templates\core\register.html:113
+#: .\core\forms.py:67 .\templates\core\register.html:128
 msgid "Sua senha deve conter pelo menos 8 caracteres."
 msgstr "Su contraseña debe contener al menos 8 caracteres."
 
-#: .\core\forms.py:56 .\templates\core\register.html:126
+#: .\core\forms.py:68 .\templates\core\register.html:141
 msgid "Digite a mesma senha novamente para verificação."
 msgstr "Escriba la misma contraseña nuevamente para verificación."
 
-#: .\core\forms.py:73 .\core\forms.py:83 .\templates\core\login.html:18
+#: .\core\forms.py:85 .\core\forms.py:95 .\templates\core\login.html:18
 msgid "Nome de usuário ou E-mail"
 msgstr "Nombre de usuario o Correo electrónico"
 
-#: .\core\forms.py:74
+#: .\core\forms.py:86
 msgid "Nome de usuário ou e-mail"
 msgstr "Nombre de usuario o correo electrónico"
 
-#: .\core\forms.py:78
+#: .\core\forms.py:90
 msgid "Sua senha"
 msgstr "Su contraseña"
 
-#: .\core\forms.py:89 .\core\forms.py:101 .\core\models.py:95
+#: .\core\forms.py:101 .\core\forms.py:113 .\core\models.py:196
 msgid "Código de verificação"
 msgstr "Código de verificación"
 
-#: .\core\forms.py:123
+#: .\core\forms.py:119 .\core\models.py:194
+#: .\templates\core\profile_setup.html:142
+msgid "Site pessoal"
+msgstr "Sitio web personal"
+
+#: .\core\forms.py:121
+msgid "https://meusite.com"
+msgstr "https://misitio.com"
+
+#: .\core\forms.py:122
+msgid "Opcional. Seu site pessoal ou portfólio."
+msgstr "Opcional. Tu sitio web personal o portafolio."
+
+#: .\core\forms.py:145
+msgid "Usar dados do meu registro"
+msgstr "Usar datos de mi registro"
+
+#: .\core\forms.py:148
+msgid ""
+"Marque para usar automaticamente seus dados de registro nos campos da "
+"empresa."
+msgstr ""
+"Marca para usar automáticamente tus datos de registro en los campos de la "
+"empresa."
+
+#: .\core\forms.py:155
+msgid "Nome da empresa ou nome fantasia"
+msgstr "Nombre de la empresa o nombre comercial"
+
+#: .\core\forms.py:159
+msgid "Endereço completo (opcional)"
+msgstr "Dirección completa (opcional)"
+
+#: .\core\forms.py:162
+msgid "Descrição da empresa (opcional)"
+msgstr "Descripción de la empresa (opcional)"
+
+#: .\core\forms.py:168
 msgid "Nome da empresa"
 msgstr "Nombre de la empresa"
 
-#: .\core\forms.py:124 .\core\models.py:68
+#: .\core\forms.py:169 .\core\models.py:167
 msgid "CNPJ"
 msgstr "CNPJ"
 
-#: .\core\forms.py:125 .\core\models.py:69 .\core\models.py:90
+#: .\core\forms.py:170 .\core\models.py:168 .\core\models.py:189
 #: .\templates\core\password_reset_request.html:22
+#: .\templates\core\profile_setup.html:84
 msgid "E-mail"
 msgstr "Correo electrónico"
 
-#: .\core\forms.py:126 .\core\models.py:70 .\core\models.py:91
+#: .\core\forms.py:171 .\core\models.py:169 .\core\models.py:190
+#: .\templates\core\profile_setup.html:111
 msgid "Telefone"
 msgstr "Teléfono"
 
-#: .\core\forms.py:127 .\core\models.py:71
+#: .\core\forms.py:172 .\core\models.py:170
 msgid "Endereço"
 msgstr "Dirección"
 
-#: .\core\forms.py:128 .\core\models.py:21 .\core\models.py:72
-#: .\core\models.py:92
+#: .\core\forms.py:173 .\core\models.py:22 .\core\models.py:171
+#: .\core\models.py:191 .\templates\core\profile_setup.html:97
 msgid "País"
 msgstr "País"
 
-#: .\core\forms.py:129 .\core\models.py:73
+#: .\core\forms.py:174 .\core\models.py:172
 msgid "Logo"
 msgstr "Logo"
 
-#: .\core\forms.py:130 .\core\models.py:45 .\core\models.py:74
+#: .\core\forms.py:175 .\core\models.py:48 .\core\models.py:173
 msgid "Descrição"
 msgstr "Descripción"
 
-#: .\core\models.py:10 .\core\models.py:44 .\core\models.py:67
+#: .\core\models.py:11 .\core\models.py:45 .\core\models.py:166
+#: .\templates\core\profile_setup.html:43
 msgid "Nome"
 msgstr "Nombre"
 
-#: .\core\models.py:11
+#: .\core\models.py:12 .\core\models.py:46
 msgid "Nome (Inglês)"
 msgstr ""
 
-#: .\core\models.py:12
+#: .\core\models.py:13 .\core\models.py:47
 msgid "Nome (Espanhol)"
 msgstr ""
 
-#: .\core\models.py:13
+#: .\core\models.py:14
 msgid "Código"
 msgstr "Código"
 
-#: .\core\models.py:14 .\templates\core\company_setup.html:62
-#: .\templates\core\register.html:91
+#: .\core\models.py:15 .\templates\core\company_setup.html:82
+#: .\templates\core\profile_setup.html:105 .\templates\core\register.html:106
 msgid "DDI"
 msgstr "DDI"
 
-#: .\core\models.py:15
+#: .\core\models.py:16
 msgid "Bandeira"
 msgstr "Bandera"
 
-#: .\core\models.py:16 .\core\models.py:52 .\core\models.py:75
-#: .\core\models.py:119 .\templates\core\profile.html:37
+#: .\core\models.py:17 .\core\models.py:59 .\core\models.py:174
+#: .\core\models.py:213 .\core\models.py:335 .\templates\core\profile.html:51
 msgid "Ativo"
 msgstr "Activo"
 
-#: .\core\models.py:22
+#: .\core\models.py:23
 msgid "Países"
 msgstr "Países"
 
-#: .\core\models.py:46
+#: .\core\models.py:49
+#, fuzzy
+#| msgid "Descrição"
+msgid "Descrição (Inglês)"
+msgstr "Descripción"
+
+#: .\core\models.py:50
+#, fuzzy
+#| msgid "Descrição"
+msgid "Descrição (Espanhol)"
+msgstr "Descripción"
+
+#: .\core\models.py:51
 msgid "Preço"
 msgstr "Precio"
 
-#: .\core\models.py:47
+#: .\core\models.py:52
 msgid "Máximo de usuários"
 msgstr "Máximo de usuarios"
 
-#: .\core\models.py:48
+#: .\core\models.py:53
 msgid "Máximo de clientes"
 msgstr "Máximo de clientes"
 
-#: .\core\models.py:49
+#: .\core\models.py:54
 msgid "Máximo de produtos"
 msgstr "Máximo de productos"
 
-#: .\core\models.py:50
+#: .\core\models.py:55
 msgid "Máximo de projetos"
 msgstr "Máximo de proyectos"
 
-#: .\core\models.py:51 .\templates\core\home.html:118
-#: .\templates\core\home.html:134
+#: .\core\models.py:56 .\templates\core\home.html:136
+#: .\templates\core\home.html:138 .\templates\core\register.html:186
 msgid "Segurança STL"
 msgstr "Seguridad STL"
 
-#: .\core\models.py:57 .\core\models.py:118
+#: .\core\models.py:57
+#, fuzzy
+#| msgid "Plano Atual"
+msgid "É plano trial"
+msgstr "Plan Actual"
+
+#: .\core\models.py:58
+#, fuzzy
+#| msgid "Expiração do trial"
+msgid "Dias de trial"
+msgstr "Expiración de la prueba"
+
+#: .\core\models.py:64 .\core\models.py:212 .\core\models.py:259
+#: .\core\models.py:327
 msgid "Plano"
 msgstr "Plan"
 
-#: .\core\models.py:58
+#: .\core\models.py:65
 msgid "Planos"
 msgstr "Planes"
 
-#: .\core\models.py:81
+#: .\core\models.py:180
 msgid "Empresas"
 msgstr "Empresas"
 
-#: .\core\models.py:94
+#: .\core\models.py:195
 msgid "Verificado"
 msgstr "Verificado"
 
-#: .\core\models.py:96
+#: .\core\models.py:197
 msgid "Expiração da verificação"
 msgstr "Expiración de la verificación"
 
-#: .\core\models.py:97 .\core\models.py:120
-msgid "Expiração do trial"
-msgstr "Expiración de la prueba"
-
-#: .\core\models.py:102
+#: .\core\models.py:202 .\core\models.py:258
+#: .\templates\core\profile_setup.html:71
 msgid "Usuário"
 msgstr "Usuario"
 
-#: .\core\models.py:103
+#: .\core\models.py:203
 msgid "Usuários"
 msgstr "Usuarios"
 
-#: .\core\models.py:125
+#: .\core\models.py:218
 msgid "Conta"
 msgstr "Cuenta"
 
-#: .\core\models.py:126
+#: .\core\models.py:219
 msgid "Contas"
 msgstr "Cuentas"
 
-#: .\core\models.py:135
+#: .\core\models.py:247 .\templates\base.html:75 .\templates\core\home.html:95
+#: .\templates\core\register.html:160
+msgid "Trial"
+msgstr "Prueba"
+
+#: .\core\models.py:249
+msgid "Cancelada"
+msgstr ""
+
+#: .\core\models.py:250
+#, fuzzy
+#| msgid "Expirado"
+msgid "Expirada"
+msgstr "Expirado"
+
+#: .\core\models.py:254 .\templates\core\home.html:120
+msgid "Mensal"
+msgstr ""
+
+#: .\core\models.py:255 .\templates\core\home.html:123
+msgid "Anual"
+msgstr ""
+
+#: .\core\models.py:260
+#, fuzzy
+#| msgid "Status:"
+msgid "Status"
+msgstr "Estado:"
+
+#: .\core\models.py:261
+msgid "Ciclo de cobrança"
+msgstr ""
+
+#: .\core\models.py:262
+#, fuzzy
+#| msgid "Data de nascimento"
+msgid "Data de início"
+msgstr "Fecha de nacimiento"
+
+#: .\core\models.py:263
+#, fuzzy
+#| msgid "Data de nascimento"
+msgid "Data de fim"
+msgstr "Fecha de nacimiento"
+
+#: .\core\models.py:264
+msgid "Próxima cobrança"
+msgstr ""
+
+#: .\core\models.py:265
+msgid "Renovação automática"
+msgstr ""
+
+#: .\core\models.py:270
+#, fuzzy
+#| msgid "Minha Assinatura"
+msgid "Assinatura"
+msgstr "Mi Suscripción"
+
+#: .\core\models.py:271
+#, fuzzy
+#| msgid "Minha Assinatura"
+msgid "Assinaturas"
+msgstr "Mi Suscripción"
+
+#: .\core\models.py:328
+msgid "Moeda"
+msgstr ""
+
+#: .\core\models.py:333
+#, fuzzy
+#| msgid "Preço"
+msgid "Preço Mensal"
+msgstr "Precio"
+
+#: .\core\models.py:334
+#, fuzzy
+#| msgid "Preço"
+msgid "Preço Anual"
+msgstr "Precio"
+
+#: .\core\models.py:341
+#, fuzzy
+#| msgid "Informações do Plano"
+msgid "Preço do Plano"
+msgstr "Información del Plan"
+
+#: .\core\models.py:342
+#, fuzzy
+#| msgid "Informações do Plano"
+msgid "Preços dos Planos"
+msgstr "Información del Plan"
+
+#: .\core\models.py:351
 #, fuzzy
 #| msgid "Endereço"
 msgid "Endereço IP"
 msgstr "Dirección"
 
-#: .\core\models.py:136
+#: .\core\models.py:352
 msgid "Sucesso"
 msgstr "Éxito"
 
-#: .\core\models.py:138
+#: .\core\models.py:354
 msgid "User Agent"
 msgstr "Agente de Usuario"
 
-#: .\core\models.py:141
+#: .\core\models.py:357
 msgid "Tentativa de Login"
 msgstr "Intento de Inicio de Sesión"
 
-#: .\core\models.py:142
+#: .\core\models.py:358
 msgid "Tentativas de Login"
 msgstr "Intentos de Inicio de Sesión"
 
-#: .\core\views.py:60
+#: .\core\views.py:77
+#, fuzzy
+#| msgid "Usuário não encontrado."
+msgid "Plano não encontrado."
+msgstr "Usuario no encontrado."
+
+#: .\core\views.py:128
 msgid "Conta criada com sucesso! Verifique seu telefone."
 msgstr "¡Cuenta creada con éxito! Verifique su teléfono."
 
-#: .\core\views.py:72
+#: .\core\views.py:162 .\core\views.py:218
 msgid "Sessão expirada. Faça o registro novamente."
 msgstr "Sesión expirada. Haga el registro nuevamente."
 
-#: .\core\views.py:78 .\core\views.py:119
+#: .\core\views.py:168 .\core\views.py:215
 msgid "Usuário não encontrado."
 msgstr "Usuario no encontrado."
 
-#: .\core\views.py:88
+#: .\core\views.py:178
 msgid "Conta verificada com sucesso! Bem-vindo ao ForgeLock."
 msgstr "¡Cuenta verificada con éxito! Bienvenido a ForgeLock."
 
-#: .\core\views.py:93
+#: .\core\views.py:183
 msgid "Código expirado. Um novo código foi enviado."
 msgstr "Código expirado. Se ha enviado un nuevo código."
 
-#: .\core\views.py:96
+#: .\core\views.py:186
 msgid "Código inválido. Tente novamente."
 msgstr "Código inválido. Inténtelo de nuevo."
 
-#: .\core\views.py:115
+#: .\core\views.py:211
 msgid "Novo código enviado com sucesso!"
 msgstr "¡Nuevo código enviado con éxito!"
 
-#: .\core\views.py:117
+#: .\core\views.py:213
 msgid "Erro ao enviar código. Tente novamente."
 msgstr "Error al enviar código. Inténtelo de nuevo."
 
-#: .\core\views.py:164
+#: .\core\views.py:269
 msgid "Login realizado com sucesso!"
 msgstr "¡Inicio de sesión realizado con éxito!"
 
-#: .\core\views.py:169
+#: .\core\views.py:274
 msgid "Conta não verificada. Verifique seu telefone."
 msgstr "Cuenta no verificada. Verifique su teléfono."
 
-msgid "Senha incorreta. Tente novamente."
-msgstr "Contraseña incorrecta. Inténtalo de nuevo."
-
+#: .\core\views.py:292
 msgid "Senha incorreta. Tentativas restantes: {}"
 msgstr "Contraseña incorrecta. Intentos restantes: {}"
 
-#: .\core\views.py:188
+#: .\core\views.py:294
+#, fuzzy
+#| msgid "Senha incorreta. Tente novamente."
+msgid "Senha incorreta."
+msgstr "Contraseña incorrecta. Inténtalo de nuevo."
+
+#: .\core\views.py:298
 msgid "Usuário não encontrado. Verifique o nome de usuário ou email."
 msgstr "Usuario no encontrado. Verifique el nombre de usuario o email."
 
-#: .\core\views.py:199
+#: .\core\views.py:308
 msgid "Logout realizado com sucesso!"
 msgstr "¡Cierre de sesión realizado con éxito!"
 
-#: .\core\views.py:210
+#: .\core\views.py:324
 msgid "Configure sua empresa para começar a usar o sistema."
 msgstr "Configure su empresa para comenzar a usar el sistema."
 
-#: .\core\views.py:247
+#: .\core\views.py:353
+msgid "Perfil atualizado com sucesso!"
+msgstr "¡Perfil actualizado con éxito!"
+
+#: .\core\views.py:411
 msgid "Empresa configurada com sucesso!"
 msgstr "¡Empresa configurada con éxito!"
 
-#: .\core\views.py:294
+#: .\core\views.py:465
 msgid "Email de recuperação enviado com sucesso!"
 msgstr "¡Email de recuperación enviado con éxito!"
 
-#: .\core\views.py:297
+#: .\core\views.py:468
 msgid "Email não encontrado no sistema."
 msgstr "Email no encontrado en el sistema."
 
-#: .\core\views.py:316
+#: .\core\views.py:487
 msgid "Senha alterada com sucesso!"
 msgstr "¡Contraseña cambiada con éxito!"
 
-#: .\core\views.py:319
+#: .\core\views.py:490
 msgid "As senhas não coincidem."
 msgstr "Las contraseñas no coinciden."
-
-#: .\core\views.py:280
-msgid "IP temporariamente bloqueado devido a múltiplas tentativas."
-msgstr "IP temporalmente bloqueado debido a múltiples intentos."
-
-#: .\core\views.py:283
-msgid "Muitas tentativas falhadas. Tente novamente em alguns minutos."
-msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en unos minutos."
-
-#: .\core\views.py:286
-msgid "Atividade suspeita detectada. IP temporariamente bloqueado."
-msgstr "Actividad sospechosa detectada. IP temporalmente bloqueado."
 
 #: .\templates\base.html:38 .\templates\core\dashboard.html:10
 msgid "Dashboard"
@@ -400,100 +577,44 @@ msgstr "Productos"
 msgid "Projetos"
 msgstr "Proyectos"
 
-#: .\templates\base.html:66
+#: .\templates\base.html:69 .\templates\core\dashboard.html:39
+msgid "Plano Atual"
+msgstr "Plan Actual"
+
+#: .\templates\base.html:75
+#, fuzzy
+#| msgid "15 dias restantes"
+msgid "dias restantes"
+msgstr "15 días restantes"
+
+#: .\templates\base.html:84
 msgid "Perfil"
 msgstr "Perfil"
 
-#: .\templates\base.html:69
+#: .\templates\base.html:88
+msgid "Gerenciar Assinatura"
+msgstr "Gestionar Suscripción"
+
+#: .\templates\base.html:92
 msgid "Sair"
 msgstr "Salir"
 
-#: .\templates\base.html:75 .\templates\core\login.html:11
+#: .\templates\base.html:98 .\templates\core\login.html:11
 #: .\templates\core\login.html:49
 msgid "Entrar"
 msgstr "Iniciar sesión"
 
-#: .\templates\base.html:80
+#: .\templates\base.html:103
 msgid "Registrar"
 msgstr "Registrar"
 
-#: .\templates\base.html:160
+#: .\templates\base.html:183
 msgid "Sistema de gestão empresarial"
 msgstr "Sistema de gestión empresarial"
 
-#: .\templates\base.html:163
+#: .\templates\base.html:186
 msgid "Todos os direitos reservados."
 msgstr "Todos los derechos reservados."
-
-#: .\templates\core\register.html:130
-msgid "Plano Trial Gratuito"
-msgstr "Plan Trial Gratuito"
-
-
-
-#: .\templates\core\register.html:143
-msgid "Após 15 dias, escolha um plano para continuar"
-msgstr "Después de 15 días, elige un plan para continuar"
-
-
-
-
-
-#: .\templates\base.html:67
-msgid "restantes"
-msgstr "restantes"
-
-#: .\templates\base.html:75
-msgid "Gerenciar Assinatura"
-msgstr "Gestionar Suscripción"
-
-#: .\core\forms.py:15
-msgid "Já existe um usuário com este e-mail."
-msgstr "Ya existe un usuario con este correo electrónico."
-
-#: .\core\forms.py:25
-msgid "Já existe um usuário com este telefone."
-msgstr "Ya existe un usuario con este número de teléfono."
-
-#: .\templates\base.html:70
-msgid "15 dias restantes"
-msgstr "15 días restantes"
-
-#: .\templates\core\register.html:140
-msgid "grátis"
-msgstr "gratis"
-
-#: .\templates\core\register.html:142
-msgid "usuário"
-msgstr "usuario"
-
-#: .\templates\core\register.html:143
-msgid "clientes"
-msgstr "clientes"
-
-#: .\templates\core\register.html:146
-msgid "produtos"
-msgstr "productos"
-
-#: .\templates\core\register.html:147
-msgid "projetos"
-msgstr "proyectos"
-
-#: .\templates\core\register.html:148
-msgid "Após"
-msgstr "Después de"
-
-#: .\templates\core\register.html:148
-msgid "dias, escolha um plano para continuar"
-msgstr "días, elige un plan para continuar"
-
-
-
-
-
-#: .\templates\core\home.html:116
-msgid "Escolher"
-msgstr "Elegir"
 
 #: .\templates\core\company_setup.html:5
 msgid "Configurar Empresa - ForgeLock"
@@ -503,15 +624,23 @@ msgstr "Configurar Empresa - ForgeLock"
 msgid "Configurar Empresa"
 msgstr "Configurar Empresa"
 
-#: .\templates\core\company_setup.html:120
+#: .\templates\core\company_setup.html:17
+msgid "Configure sua empresa"
+msgstr "Configurar tu empresa"
+
+#: .\templates\core\company_setup.html:19
+msgid "Você pode usar um nome fantasia se não tiver uma empresa formal."
+msgstr "Puedes usar un nombre comercial si no tienes una empresa formal."
+
+#: .\templates\core\company_setup.html:140
 msgid "Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB."
 msgstr "Formatos aceptados: JPG, PNG, GIF. Tamaño máximo: 2MB."
 
-#: .\templates\core\company_setup.html:137
+#: .\templates\core\company_setup.html:157
 msgid "Salvar Empresa"
 msgstr "Guardar Empresa"
 
-#: .\templates\core\company_setup.html:146
+#: .\templates\core\company_setup.html:166
 msgid "Esta informação será usada em seus documentos e relatórios."
 msgstr "Esta información será utilizada en sus documentos e informes."
 
@@ -522,10 +651,6 @@ msgstr "Panel de Control - ForgeLock"
 #: .\templates\core\dashboard.html:12
 msgid "Bem-vindo ao ForgeLock"
 msgstr "Bienvenido a ForgeLock"
-
-#: .\templates\core\dashboard.html:39
-msgid "Plano Atual"
-msgstr "Plan Actual"
 
 #: .\templates\core\dashboard.html:50
 msgid "Ações Rápidas"
@@ -572,8 +697,6 @@ msgid ""
 "Sistema completo de gestão empresarial para pequenas e médias empresas. "
 "Controle de clientes, produtos, projetos e muito mais."
 msgstr ""
-"Sistema completo de gestión empresarial para pequeñas y medianas empresas. "
-"Control de clientes, productos, proyectos y mucho más."
 
 #: .\templates\core\home.html:16
 msgid "Começar Agora"
@@ -599,7 +722,6 @@ msgstr "Gestión de Clientes"
 msgid ""
 "Organize seus clientes, histórico de vendas e interações em um só lugar."
 msgstr ""
-"Organice sus clientes, historial de ventas e interacciones en un solo lugar."
 
 #: .\templates\core\home.html:59
 msgid "Controle de Produtos"
@@ -607,10 +729,9 @@ msgstr "Control de Productos"
 
 #: .\templates\core\home.html:60
 msgid ""
-"Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos."
+"Gerencie estoque, preços, categorias e histórico de vendas dos seus "
+"produtos."
 msgstr ""
-"Gestione inventario, precios, categorías e historial de ventas de sus "
-"productos."
 
 #: .\templates\core\home.html:71
 msgid "Gestão de Projetos"
@@ -628,87 +749,61 @@ msgstr "Planes y Precios"
 msgid "Escolha o plano ideal para sua empresa"
 msgstr "Elija el plan ideal para su empresa"
 
-#: .\templates\core\home.html:94
-msgid "Trial"
-msgstr "Prueba"
-
-#: .\templates\core\home.html:96
+#: .\templates\core\home.html:97 .\templates\core\register.html:176
 msgid "15 dias grátis"
 msgstr "15 días gratis"
 
-#: .\templates\core\home.html:98 .\templates\core\home.html:115
+#: .\templates\core\home.html:99
 msgid "1 usuário"
 msgstr "1 usuario"
 
-#: .\templates\core\home.html:99
+#: .\templates\core\home.html:100
 msgid "10 clientes"
 msgstr "10 clientes"
 
-#: .\templates\core\home.html:100
+#: .\templates\core\home.html:101
 msgid "5 produtos"
 msgstr "5 productos"
 
-#: .\templates\core\home.html:101
-msgid "3 projetos"
+#: .\templates\core\home.html:102
+#, fuzzy
+#| msgid "3 projetos"
+msgid "2 projetos"
 msgstr "3 proyectos"
 
-#: .\templates\core\home.html:103
+#: .\templates\core\home.html:104
 msgid "Começar Trial"
 msgstr "Comenzar Prueba"
 
-#: .\templates\core\home.html:111
-msgid "Básico"
-msgstr "Básico"
+#: .\templates\core\home.html:131 .\templates\core\register.html:177
+msgid "usuário"
+msgstr "usuario"
 
-#: .\templates\core\home.html:113
-msgid "Ideal para pequenas empresas"
-msgstr "Ideal para pequeñas empresas"
+#: .\templates\core\home.html:132 .\templates\core\register.html:178
+msgid "clientes"
+msgstr "clientes"
 
-#: .\templates\core\home.html:116
-msgid "Vendas + Projetos"
-msgstr "Ventas + Proyectos"
+#: .\templates\core\home.html:133 .\templates\core\register.html:183
+msgid "produtos"
+msgstr "productos"
 
-#: .\templates\core\home.html:117
-msgid "Suporte por email"
-msgstr "Soporte por email"
+#: .\templates\core\home.html:134 .\templates\core\register.html:184
+msgid "projetos"
+msgstr "proyectos"
 
-#: .\templates\core\home.html:120
-msgid "Escolher Básico"
-msgstr "Elegir Básico"
+#: .\templates\core\home.html:142
+msgid "Escolher"
+msgstr "Elegir"
 
-#: .\templates\core\home.html:128
-msgid "Premium"
-msgstr "Premium"
-
-#: .\templates\core\home.html:130
-msgid "Para empresas em crescimento"
-msgstr "Para empresas en crecimiento"
-
-#: .\templates\core\home.html:132
-msgid "Até 3 usuários"
-msgstr "Hasta 3 usuarios"
-
-#: .\templates\core\home.html:133
-msgid "Todas as funcionalidades"
-msgstr "Todas las funcionalidades"
-
-#: .\templates\core\home.html:135
-msgid "Suporte prioritário"
-msgstr "Soporte prioritario"
-
-#: .\templates\core\home.html:137
-msgid "Escolher Premium"
-msgstr "Elegir Premium"
-
-#: .\templates\core\home.html:148
+#: .\templates\core\home.html:155
 msgid "Pronto para começar?"
 msgstr "¿Listo para comenzar?"
 
-#: .\templates\core\home.html:149
+#: .\templates\core\home.html:156
 msgid "Junte-se a centenas de empresas que já confiam no ForgeLock"
 msgstr "Únase a cientos de empresas que ya confían en ForgeLock"
 
-#: .\templates\core\home.html:151
+#: .\templates\core\home.html:158
 msgid "Criar Conta Grátis"
 msgstr "Crear Cuenta Gratis"
 
@@ -754,7 +849,7 @@ msgid "Confirme sua nova senha"
 msgstr "Confirma tu nueva contraseña"
 
 #: .\templates\core\password_reset_confirm.html:35
-#: .\templates\core\profile.html:54
+#: .\templates\core\profile.html:68
 msgid "Alterar Senha"
 msgstr "Cambiar Contraseña"
 
@@ -813,121 +908,307 @@ msgid "País:"
 msgstr "País:"
 
 #: .\templates\core\profile.html:24
+msgid "Data de nascimento:"
+msgstr "Fecha de nacimiento:"
+
+#: .\templates\core\profile.html:28 .\templates\core\profile.html:35
+msgid "Não informado"
+msgstr "No proporcionado"
+
+#: .\templates\core\profile.html:31
+msgid "Site pessoal:"
+msgstr "Sitio web personal:"
+
+#: .\templates\core\profile.html:38
 msgid "Verificado:"
 msgstr "Verificado:"
 
-#: .\templates\core\profile.html:26
+#: .\templates\core\profile.html:40
 msgid "Sim"
 msgstr "Sí"
 
-#: .\templates\core\profile.html:28
+#: .\templates\core\profile.html:42
 msgid "Não"
 msgstr "No"
 
-#: .\templates\core\profile.html:33
+#: .\templates\core\profile.html:47
 msgid "Informações da Conta"
 msgstr "Información de la Cuenta"
 
-#: .\templates\core\profile.html:34
+#: .\templates\core\profile.html:48
 msgid "Plano:"
 msgstr "Plan:"
 
-#: .\templates\core\profile.html:35
+#: .\templates\core\profile.html:49
 msgid "Trial:"
 msgstr "Prueba:"
 
-#: .\templates\core\profile.html:39
+#: .\templates\core\profile.html:53
 msgid "Expirado"
 msgstr "Expirado"
 
-#: .\templates\core\profile.html:42
+#: .\templates\core\profile.html:56
 msgid "Membro desde:"
 msgstr "Miembro desde:"
 
-#: .\templates\core\profile.html:43
+#: .\templates\core\profile.html:57
 msgid "Último login:"
 msgstr "Último inicio de sesión:"
 
-#: .\templates\core\profile.html:51
+#: .\templates\core\profile.html:65
 msgid "Editar Perfil"
 msgstr "Editar Perfil"
+
+#: .\templates\core\profile_setup.html:4
+msgid "Completar Perfil - ForgeLock"
+msgstr "Completar Perfil - ForgeLock"
+
+#: .\templates\core\profile_setup.html:26
+msgid "Completar Perfil"
+msgstr "Completar Perfil"
+
+#: .\templates\core\profile_setup.html:31
+msgid "Bem-vindo ao ForgeLock!"
+msgstr "¡Bienvenido a ForgeLock!"
+
+#: .\templates\core\profile_setup.html:33
+msgid "Vamos completar seu perfil para uma melhor experiência."
+msgstr "Vamos a completar tu perfil para una mejor experiencia."
+
+#: .\templates\core\profile_setup.html:56
+msgid "Sobrenome"
+msgstr "Apellido"
+
+#: .\templates\core\profile_setup.html:158
+msgid "Voltar"
+msgstr "Volver"
+
+#: .\templates\core\profile_setup.html:161
+msgid "Salvar e Continuar"
+msgstr "Guardar y continuar"
 
 #: .\templates\core\register.html:5
 msgid "Registro - ForgeLock"
 msgstr "Registro - ForgeLock"
 
-#: .\templates\core\register.html:13 .\templates\core\register.html:138
+#: .\templates\core\register.html:13 .\templates\core\register.html:203
 msgid "Criar Conta"
 msgstr "Crear Cuenta"
 
-#: .\templates\core\register.html:146
+#: .\templates\core\register.html:157
+msgid "Plano Trial Gratuito"
+msgstr "Plan Trial Gratuito"
+
+#: .\templates\core\register.html:167
+msgid "Plano Selecionado:"
+msgstr "Plan Seleccionado:"
+
+#: .\templates\core\register.html:169
+msgid ""
+"Você começará com um trial gratuito deste plano. Após o período trial, será "
+"cobrado o valor normal."
+msgstr ""
+"Comenzarás con una prueba gratuita de este plan. Después del período de "
+"prueba, se cobrará el precio normal."
+
+#: .\templates\core\register.html:188
+msgid "Após 15 dias, escolha um plano para continuar"
+msgstr "Después de 15 días, elige un plan para continuar"
+
+#: .\templates\core\register.html:195
+msgid "Escolher outro plano"
+msgstr "Elegir otro plan"
+
+#: .\templates\core\register.html:211
 msgid "Já tem uma conta?"
 msgstr "¿Ya tienes una cuenta?"
 
-#: .\templates\core\register.html:147
+#: .\templates\core\register.html:212
 msgid "Faça login"
 msgstr "Iniciar sesión"
+
+#: .\templates\core\subscription.html:4
+msgid "Assinatura - ForgeLock"
+msgstr "Suscripción - ForgeLock"
+
+#: .\templates\core\subscription.html:12
+msgid "Minha Assinatura"
+msgstr "Mi Suscripción"
+
+#: .\templates\core\subscription.html:18
+msgid "Informações do Plano"
+msgstr "Información del Plan"
+
+#: .\templates\core\subscription.html:19
+msgid "Plano Atual:"
+msgstr "Plan Actual:"
+
+#: .\templates\core\subscription.html:22
+msgid "Status:"
+msgstr "Estado:"
+
+#: .\templates\core\subscription.html:24
+msgid "Trial Ativo"
+msgstr "Prueba Activa"
+
+#: .\templates\core\subscription.html:26
+msgid "Trial Expirado"
+msgstr "Prueba Expirada"
+
+#: .\templates\core\subscription.html:29
+msgid "Validade:"
+msgstr "Vencimiento:"
+
+#: .\templates\core\subscription.html:33
+msgid "Não definida"
+msgstr "No definida"
+
+#: .\templates\core\subscription.html:38
+msgid "Limites do Plano"
+msgstr "Límites del Plan"
+
+#: .\templates\core\subscription.html:39
+msgid "Usuários:"
+msgstr "Usuarios:"
+
+#: .\templates\core\subscription.html:40
+msgid "Clientes:"
+msgstr "Clientes:"
+
+#: .\templates\core\subscription.html:41
+msgid "Produtos:"
+msgstr "Productos:"
+
+#: .\templates\core\subscription.html:42
+msgid "Projetos:"
+msgstr "Proyectos:"
+
+#: .\templates\core\subscription.html:44
+msgid "Segurança STL:"
+msgstr "Seguridad STL:"
+
+#: .\templates\core\subscription.html:44
+msgid "Incluído"
+msgstr "Incluido"
+
+#: .\templates\core\subscription.html:53
+msgid "Alterar Plano"
+msgstr "Cambiar Plan"
+
+#: .\templates\core\subscription.html:56
+msgid "Voltar ao Dashboard"
+msgstr "Volver al Dashboard"
 
 #: .\templates\core\verify_sms.html:4
 msgid "Verificação SMS - ForgeLock"
 msgstr "Verificación SMS - ForgeLock"
 
-#: .\templates\core\verify_sms.html:11
+#: .\templates\core\verify_sms.html:17
 msgid "Verificação SMS"
 msgstr "Verificación SMS"
 
-#: .\templates\core\verify_sms.html:15
+#: .\templates\core\verify_sms.html:21
 msgid "Enviamos um código de verificação para:"
 msgstr "Enviamos un código de verificación a:"
 
-#: .\templates\core\verify_sms.html:17
+#: .\templates\core\verify_sms.html:23
 msgid "O código expira em"
 msgstr "El código expira en"
 
-#: .\templates\core\verify_sms.html:17
+#: .\templates\core\verify_sms.html:23
 msgid "minutos"
 msgstr "minutos"
 
-#: .\templates\core\verify_sms.html:37
+#: .\templates\core\verify_sms.html:43
 msgid "Verificar Código"
 msgstr "Verificar Código"
 
-#: .\templates\core\verify_sms.html:46
+#: .\templates\core\verify_sms.html:52
 msgid "Reenviar Código"
 msgstr "Reenviar Código"
 
-#: .\templates\core\verify_sms.html:55
+#: .\templates\core\verify_sms.html:61
 msgid "Problemas com a verificação?"
 msgstr "¿Problemas con la verificación?"
 
-#: .\templates\core\verify_sms.html:56
+#: .\templates\core\verify_sms.html:62
 msgid "Tente novamente"
 msgstr "Inténtelo de nuevo"
 
-#: .\core\views.py:89
-msgid "Tentativas restantes: {}"
-msgstr "Intentos restantes: {}"
+#~ msgid "Pular por enquanto"
+#~ msgstr "Omitir por ahora"
 
-#: .\core\services.py:89
-msgid "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente em 3 minutos."
-msgstr "IP temporalmente bloqueado debido a múltiples intentos. Inténtelo de nuevo en 3 minutos."
+#~ msgid "00.000.000/0000-00 (opcional)"
+#~ msgstr "00.000.000/0000-00 (opcional)"
 
-#: .\core\services.py:95
-msgid "Muitas tentativas falhadas. Tente novamente em 3 minutos."
-msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en 3 minutos."
+#~ msgid "IP temporariamente bloqueado devido a múltiplas tentativas."
+#~ msgstr "IP temporalmente bloqueado debido a múltiples intentos."
 
-#: .\core\services.py:100
-msgid "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
-msgstr "Actividad sospechosa detectada. IP temporalmente bloqueado por 3 minutos."
+#~ msgid "Muitas tentativas falhadas. Tente novamente em alguns minutos."
+#~ msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en unos minutos."
 
-#: .\templates\core\register.html:140
-msgid "Plano Selecionado:"
-msgstr "Plan Seleccionado:"
+#~ msgid "Atividade suspeita detectada. IP temporariamente bloqueado."
+#~ msgstr "Actividad sospechosa detectada. IP temporalmente bloqueado."
 
-#: .\templates\core\register.html:143
-msgid "Você começará com um trial gratuito deste plano. Após o período trial, será cobrado o valor normal."
-msgstr "Comenzarás con una prueba gratuita de este plan. Después del período de prueba, se cobrará el precio normal."
+#~ msgid "restantes"
+#~ msgstr "restantes"
 
-#: .\templates\core\register.html:150
-msgid "Escolher outro plano"
-msgstr "Elegir otro plan"
+#~ msgid "grátis"
+#~ msgstr "gratis"
+
+#~ msgid "Após"
+#~ msgstr "Después de"
+
+#~ msgid "dias, escolha um plano para continuar"
+#~ msgstr "días, elige un plan para continuar"
+
+#~ msgid "Básico"
+#~ msgstr "Básico"
+
+#~ msgid "Ideal para pequenas empresas"
+#~ msgstr "Ideal para pequeñas empresas"
+
+#~ msgid "Vendas + Projetos"
+#~ msgstr "Ventas + Proyectos"
+
+#~ msgid "Suporte por email"
+#~ msgstr "Soporte por email"
+
+#~ msgid "Escolher Básico"
+#~ msgstr "Elegir Básico"
+
+#~ msgid "Premium"
+#~ msgstr "Premium"
+
+#~ msgid "Para empresas em crescimento"
+#~ msgstr "Para empresas en crecimiento"
+
+#~ msgid "Até 3 usuários"
+#~ msgstr "Hasta 3 usuarios"
+
+#~ msgid "Todas as funcionalidades"
+#~ msgstr "Todas las funcionalidades"
+
+#~ msgid "Suporte prioritário"
+#~ msgstr "Soporte prioritario"
+
+#~ msgid "Escolher Premium"
+#~ msgstr "Elegir Premium"
+
+#~ msgid "Tentativas restantes: {}"
+#~ msgstr "Intentos restantes: {}"
+
+#~ msgid ""
+#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente "
+#~ "em 3 minutos."
+#~ msgstr ""
+#~ "IP temporalmente bloqueado debido a múltiples intentos. Inténtelo de nuevo "
+#~ "en 3 minutos."
+
+#~ msgid "Muitas tentativas falhadas. Tente novamente em 3 minutos."
+#~ msgstr "Demasiados intentos fallidos. Inténtelo de nuevo en 3 minutos."
+
+#~ msgid ""
+#~ "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+#~ msgstr ""
+#~ "Actividad sospechosa detectada. IP temporalmente bloqueado por 3 minutos."

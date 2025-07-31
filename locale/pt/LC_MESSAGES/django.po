@@ -83,6 +83,94 @@ msgstr "País *"
 msgid "Selecione um país"
 msgstr "Selecione um país"
 
+#: .\core\forms.py:43
+msgid "Data de nascimento"
+msgstr "Data de nascimento"
+
+#: .\core\forms.py:44
+msgid "Opcional. Sua data de nascimento."
+msgstr "Opcional. Sua data de nascimento."
+
+#: .\core\forms.py:95
+msgid "Site pessoal"
+msgstr "Site pessoal"
+
+#: .\core\forms.py:96
+msgid "https://meusite.com"
+msgstr "https://meusite.com"
+
+#: .\core\forms.py:97
+msgid "Opcional. Seu site pessoal ou portfólio."
+msgstr "Opcional. Seu site pessoal ou portfólio."
+
+
+
+#: .\templates\core\profile_setup.html:6
+msgid "Completar Perfil - ForgeLock"
+msgstr "Completar Perfil - ForgeLock"
+
+#: .\templates\core\profile_setup.html:12
+msgid "Completar Perfil"
+msgstr "Completar Perfil"
+
+#: .\templates\core\profile_setup.html:17
+msgid "Bem-vindo ao ForgeLock!"
+msgstr "Bem-vindo ao ForgeLock!"
+
+#: .\templates\core\profile_setup.html:20
+msgid "Vamos completar seu perfil para uma melhor experiência."
+msgstr "Vamos completar seu perfil para uma melhor experiência."
+
+#: .\templates\core\profile_setup.html:75
+msgid "Pular por enquanto"
+msgstr "Pular por enquanto"
+
+#: .\templates\core\profile_setup.html:78
+msgid "Salvar e Continuar"
+msgstr "Salvar e Continuar"
+
+#: .\core\forms.py:115
+msgid "Usar dados do meu registro"
+msgstr "Usar dados do meu registro"
+
+#: .\core\forms.py:117
+msgid "Marque para usar automaticamente seus dados de registro nos campos da empresa."
+msgstr "Marque para usar automaticamente seus dados de registro nos campos da empresa."
+
+#: .\core\forms.py:125
+msgid "Nome da empresa ou nome fantasia"
+msgstr "Nome da empresa ou nome fantasia"
+
+#: .\core\forms.py:127
+msgid "00.000.000/0000-00 (opcional)"
+msgstr "00.000.000/0000-00 (opcional)"
+
+#: .\core\forms.py:130
+msgid "Endereço completo (opcional)"
+msgstr "Endereço completo (opcional)"
+
+#: .\core\forms.py:133
+msgid "Descrição da empresa (opcional)"
+msgstr "Descrição da empresa (opcional)"
+
+#: .\templates\core\company_setup.html:18
+msgid "Configure sua empresa"
+msgstr "Configure sua empresa"
+
+#: .\templates\core\company_setup.html:21
+msgid "Você pode usar um nome fantasia se não tiver uma empresa formal."
+msgstr "Você pode usar um nome fantasia se não tiver uma empresa formal."
+
+#: .\templates\core\profile.html:22
+msgid "Data de nascimento:"
+msgstr "Data de nascimento:"
+
+#: .\templates\core\profile.html:25
+msgid "Site pessoal:"
+msgstr "Site pessoal:"
+
+
+
 #: .\core\forms.py:44
 #, fuzzy
 #| msgid "Nome de usuário *"

@@ -40,10 +40,16 @@ class UserRegistrationForm(UserCreationForm):
         widget=forms.Select(attrs={'class': 'form-control'}),
         empty_label=_("Selecione um país")
     )
+    date_of_birth = forms.DateField(
+        label=_("Data de nascimento"),
+        required=False,
+        widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+        help_text=_("Opcional. Sua data de nascimento.")
+    )
     
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number', 'country', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number', 'country', 'date_of_birth', 'password1', 'password2')
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -107,20 +113,53 @@ class SMSVerificationForm(forms.Form):
         self.fields['verification_code'].label = _("Código de verificação")
 
 
+class UserProfileForm(forms.ModelForm):
+    """Form para completar perfil do usuário"""
+    website = forms.URLField(
+        label=_("Site pessoal"),
+        required=False,
+        widget=forms.URLInput(attrs={'class': 'form-control', 'placeholder': _("https://meusite.com")}),
+        help_text=_("Opcional. Seu site pessoal ou portfólio.")
+    )
+    
+    class Meta:
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'date_of_birth', 'website']
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
+            'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Removendo traduções duplicadas - agora usamos template translations
+
+
 class CompanyForm(forms.ModelForm):
     """Form para configuração de empresa"""
+    use_registration_data = forms.BooleanField(
+        label=_("Usar dados do meu registro"),
+        required=False,
+        initial=True,
+        help_text=_("Marque para usar automaticamente seus dados de registro nos campos da empresa.")
+    )
+    
     class Meta:
         model = Company
         fields = ['name', 'cnpj', 'email', 'phone', 'address', 'country', 'logo', 'description']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome da empresa'}),
-            'cnpj': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '00.000.000/0000-00'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Nome da empresa ou nome fantasia')}),
+            'cnpj': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '00.000.000/0000-00 (opcional)'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'contato@empresa.com'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '(11) 99999-9999'}),
-            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Endereço completo'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': _('Endereço completo (opcional)')}),
             'country': forms.Select(attrs={'class': 'form-control'}),
             'logo': forms.FileInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Descrição da empresa'}),
+            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': _('Descrição da empresa (opcional)')}),
         }
         
     def __init__(self, *args, **kwargs):

@@ -190,6 +190,8 @@ class User(AbstractUser):
     phone_number = models.CharField(_("Telefone"), max_length=20, unique=True)
     country = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name=_("País"))
     company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_("Empresa"), null=True, blank=True)
+    date_of_birth = models.DateField(_("Data de nascimento"), null=True, blank=True)
+    website = models.URLField(_("Site pessoal"), blank=True)
     is_verified = models.BooleanField(_("Verificado"), default=False)
     verification_code = models.CharField(_("Código de verificação"), max_length=10, blank=True)
     verification_expires_at = models.DateTimeField(_("Expiração da verificação"), null=True, blank=True)

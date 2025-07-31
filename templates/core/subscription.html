@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% translate "Assinatura - ForgeLock" %}{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-credit-card me-2"></i>{% translate "Minha Assinatura" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>{% translate "Informações do Plano" %}</h6>
+                        <p><strong>{% translate "Plano Atual:" %}</strong> 
+                            <span class="badge bg-primary">{{ user.account.plan.name }}</span>
+                        </p>
+                        <p><strong>{% translate "Status:" %}</strong> 
+                            {% if user.is_trial_active %}
+                                <span class="badge bg-info">{% translate "Trial Ativo" %}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{% translate "Trial Expirado" %}</span>
+                            {% endif %}
+                        </p>
+                        <p><strong>{% translate "Validade:" %}</strong> 
+                            {% if user.account.trial_expires_at %}
+                                {{ user.account.trial_expires_at|date:"d/m/Y" }}
+                            {% else %}
+                                <em>{% translate "Não definida" %}</em>
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>{% translate "Limites do Plano" %}</h6>
+                        <p><strong>{% translate "Usuários:" %}</strong> {{ user.account.plan.max_users }}</p>
+                        <p><strong>{% translate "Clientes:" %}</strong> {{ user.account.plan.max_customers }}</p>
+                        <p><strong>{% translate "Produtos:" %}</strong> {{ user.account.plan.max_products }}</p>
+                        <p><strong>{% translate "Projetos:" %}</strong> {{ user.account.plan.max_projects }}</p>
+                        {% if user.account.plan.has_stl_security %}
+                            <p><strong>{% translate "Segurança STL:" %}</strong> <span class="badge bg-success">{% translate "Incluído" %}</span></p>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <hr>
+                
+                <div class="text-center">
+                    <a href="{% url 'home' %}" class="btn btn-primary">
+                        <i class="fas fa-exchange-alt me-2"></i>{% translate "Alterar Plano" %}
+                    </a>
+                    <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>{% translate "Voltar ao Dashboard" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -7,7 +7,7 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.http import require_POST
 from django.utils import timezone
 from datetime import timedelta
-from .forms import UserRegistrationForm, UserLoginForm, SMSVerificationForm, CompanyForm
+from .forms import UserRegistrationForm, UserLoginForm, SMSVerificationForm, CompanyForm, UserProfileForm
 from .services import VerificationService, SecurityService
 from .models import User, Country, Plan, Account, PlanPrice
 from django.utils import translation
@@ -177,7 +177,7 @@ def verify_sms(request):
                 login(request, user)
                 messages.success(request, _('Conta verificada com sucesso! Bem-vindo ao ForgeLock.'))
                 request.session.pop('user_id', None)
-                return redirect('dashboard')
+                return redirect('profile_setup')
             else:
                 if verification_service.is_code_expired(user):
                     messages.error(request, _('Código expirado. Um novo código foi enviado.'))
@@ -337,9 +337,54 @@ def dashboard(request):
 
 
 @login_required
+def profile_setup(request):
+    """Setup inicial do perfil do usuário"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    print(f"DEBUG profile_setup: Session language: {session_language}")
+    if session_language:
+        translation.activate(session_language)
+        print(f"DEBUG profile_setup: Activated language: {translation.get_language()}")
+    else:
+        print(f"DEBUG profile_setup: No session language, current: {translation.get_language()}")
+    
+    user = request.user
+    
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, _('Perfil atualizado com sucesso!'))
+            return redirect('company_setup')
+    else:
+        form = UserProfileForm(instance=user)
+    
+    return render(request, 'core/profile_setup.html', {
+        'form': form,
+        'user': user
+    })
+
+
+@login_required
 def profile(request):
     """Perfil do usuário"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
     return render(request, 'core/profile.html', {'user': request.user})
+
+
+@login_required
+def subscription(request):
+    """Página de assinatura/plano"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    return render(request, 'core/subscription.html', {'user': request.user})
 
 
 @login_required
@@ -355,7 +400,16 @@ def company_setup(request):
     if request.method == 'POST':
         form = CompanyForm(request.POST, request.FILES)
         if form.is_valid():
-            company = form.save()
+            # Se o usuário marcou para usar dados do registro
+            if form.cleaned_data.get('use_registration_data'):
+                company = form.save(commit=False)
+                company.email = user.email
+                company.phone = user.phone_number
+                company.country = user.country
+                company.save()
+            else:
+                company = form.save()
+            
             user.company = company
             user.save()
             messages.success(request, _('Empresa configurada com sucesso!'))
@@ -363,8 +417,15 @@ def company_setup(request):
     else:
         # Criar formulário APÓS ativar o idioma
         form = CompanyForm()
+        # Pré-preencher com dados do usuário se disponível
+        if user.email:
+            form.fields['email'].initial = user.email
+        if user.phone_number:
+            form.fields['phone'].initial = user.phone_number
+        if user.country:
+            form.fields['country'].initial = user.country
     
-    return render(request, 'core/company_setup.html', {'form': form})
+    return render(request, 'core/company_setup.html', {'form': form, 'user': user})
 
 
 def change_language(request):
