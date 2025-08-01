@@ -12,11 +12,11 @@
                 <h1>{% translate "ForgeLock" %}</h1>
                 <p class="lead">{% translate "Sistema completo de gestão empresarial para pequenas e médias empresas. Controle de clientes, produtos, projetos e muito mais." %}</p>
                 <div class="d-flex gap-3">
-                    <a href="{% url 'register' %}" class="btn btn-light btn-lg">
-                        <i class="fas fa-rocket me-2"></i>{% translate "Começar Agora" %}
+                    <a href="{% url 'register' %}" class="btn btn-gradient-enabled btn-lg">
+                        <i class="fas fa-rocket"></i>{% translate "Começar Agora" %}
                     </a>
-                    <a href="#features" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-info-circle me-2"></i>{% translate "Saiba Mais" %}
+                    <a href="#features" class="btn btn-gradient-outline btn-lg">
+                        <i class="fas fa-info-circle"></i>{% translate "Saiba Mais" %}
                     </a>
                 </div>
             </div>
@@ -101,7 +101,7 @@
                              <li><i class="fas fa-check text-success me-2"></i>{% translate "5 produtos" %}</li>
                              <li><i class="fas fa-check text-success me-2"></i>{% translate "2 projetos" %}</li>
                          </ul>
-                         <a href="{% url 'register' %}" class="btn btn-outline-primary">{% translate "Começar Trial" %}</a>
+                         <a href="{% url 'register' %}" class="btn btn-gradient-outline">{% translate "Começar Trial" %}</a>
                      </div>
                  </div>
              </div>
@@ -117,10 +117,10 @@
                          <div class="pricing-toggle mb-3">
                              <div class="btn-group" role="group">
                                  <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="monthly_{{ forloop.counter }}" checked>
-                                 <label class="btn btn-outline-primary btn-sm" for="monthly_{{ forloop.counter }}">{% translate "Mensal" %}</label>
-                                 
-                                 <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="yearly_{{ forloop.counter }}">
-                                 <label class="btn btn-outline-primary btn-sm" for="yearly_{{ forloop.counter }}">{% translate "Anual" %}</label>
+                                                                 <label class="btn btn-gradient-outline btn-sm" for="monthly_{{ forloop.counter }}">{% translate "Mensal" %}</label>
+                                
+                                <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="yearly_{{ forloop.counter }}">
+                                <label class="btn btn-gradient-outline btn-sm" for="yearly_{{ forloop.counter }}">{% translate "Anual" %}</label>
                              </div>
                          </div>
                          
@@ -138,9 +138,9 @@
                                 <li><i class="fas fa-times text-muted me-2"></i>{% translate "Segurança STL" %}</li>
                             {% endif %}
                         </ul>
-                                                 <a href="{% url 'register_with_plan' plan.id %}" class="btn {% if forloop.first %}btn-primary{% else %}btn-outline-primary{% endif %}">
-                             {% translate "Escolher" %} {{ plan.get_localized_name }}
-                         </a>
+                                                                           <a href="{% url 'register_with_plan' plan.id %}" class="btn {% if forloop.first %}btn-gradient-enabled{% else %}btn-gradient-outline{% endif %}">
+                              {% translate "Escolher" %} {{ plan.get_localized_name }}
+                          </a>
                     </div>
                 </div>
             </div>
@@ -154,8 +154,8 @@
     <div class="container text-center">
         <h2>{% translate "Pronto para começar?" %}</h2>
         <p class="lead">{% translate "Junte-se a centenas de empresas que já confiam no ForgeLock" %}</p>
-        <a href="{% url 'register' %}" class="btn btn-primary btn-lg">
-            <i class="fas fa-rocket me-2"></i>{% translate "Criar Conta Grátis" %}
+        <a href="{% url 'register' %}" class="btn btn-gradient-enabled btn-lg">
+            <i class="fas fa-rocket"></i>{% translate "Criar Conta Grátis" %}
         </a>
          </div>
  </section>

@@ -30,6 +30,7 @@ class UserRegistrationForm(UserCreationForm):
         label=_("Telefone (DDD + Número) *"),
         max_length=20,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("(11) 99999-9999")}),
+        required=True,
         error_messages={
             'unique': _('Já existe um usuário com este telefone.')
         }
@@ -38,13 +39,13 @@ class UserRegistrationForm(UserCreationForm):
         label=_("País *"),
         queryset=Country.objects.filter(is_active=True),
         widget=forms.Select(attrs={'class': 'form-control'}),
-        empty_label=_("Selecione um país")
+        empty_label=_("Selecione um país"),
+        required=True
     )
     date_of_birth = forms.DateField(
-        label=_("Data de nascimento"),
-        required=False,
-        widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
-        help_text=_("Opcional. Sua data de nascimento.")
+        label=_("Data de nascimento *"),
+        required=True,
+        widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'})
     )
     
     class Meta:
@@ -137,6 +138,10 @@ class UserProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Removendo traduções duplicadas - agora usamos template translations
+        
+        # Configurar labels e help texts
+        self.fields['date_of_birth'].label = _("Data de nascimento")
+        self.fields['date_of_birth'].help_text = _("Sua data de nascimento.")
 
 
 class CompanyForm(forms.ModelForm):
@@ -144,36 +149,93 @@ class CompanyForm(forms.ModelForm):
     use_registration_data = forms.BooleanField(
         label=_("Usar dados do meu registro"),
         required=False,
-        initial=True,
+        initial=False,
         help_text=_("Marque para usar automaticamente seus dados de registro nos campos da empresa.")
     )
     
     class Meta:
         model = Company
-        fields = ['name', 'cnpj', 'email', 'phone', 'address', 'country', 'logo', 'description']
+        fields = ['name', 'cnpj', 'email', 'phone', 'address', 'country', 'logo']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Nome da empresa ou nome fantasia')}),
-            'cnpj': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '00.000.000/0000-00 (opcional)'}),
+            'cnpj': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('CNPJ, CPF, RG, Passaporte, etc. (opcional)')}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'contato@empresa.com'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '(11) 99999-9999'}),
             'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': _('Endereço completo (opcional)')}),
             'country': forms.Select(attrs={'class': 'form-control'}),
             'logo': forms.FileInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': _('Descrição da empresa (opcional)')}),
         }
         
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
         super().__init__(*args, **kwargs)
+        
+        # Armazenar o usuário para uso na validação
+        self.user = user
+        
         # Traduzir labels
         self.fields['name'].label = _("Nome da empresa")
-        self.fields['cnpj'].label = _("CNPJ")
+        self.fields['cnpj'].label = _("Documento")
         self.fields['email'].label = _("E-mail")
         self.fields['phone'].label = _("Telefone")
         self.fields['address'].label = _("Endereço")
         self.fields['country'].label = _("País")
         self.fields['logo'].label = _("Logo")
-        self.fields['description'].label = _("Descrição")
         
         # Filtrar países ativos
         self.fields['country'].queryset = Country.objects.filter(is_active=True)
         self.fields['country'].empty_label = _("Selecione um país")
+        
+        # Se temos um usuário e o flag está marcado, preencher automaticamente
+        if user and self.data.get('use_registration_data') == 'on':
+            self._prefill_with_user_data(user)
+    
+    def _prefill_with_user_data(self, user):
+        """Preenche os campos com dados do usuário"""
+        # Nome da empresa = Nome + Sobrenome
+        if user.first_name and user.last_name:
+            self.fields['name'].initial = f"{user.first_name} {user.last_name}"
+        elif user.first_name:
+            self.fields['name'].initial = user.first_name
+        elif user.last_name:
+            self.fields['name'].initial = user.last_name
+        
+        # Documento fica em branco (opcional)
+        self.fields['cnpj'].initial = ""
+        
+        # País = País do usuário
+        if user.country:
+            self.fields['country'].initial = user.country
+        
+        # E-mail = E-mail do usuário
+        if user.email:
+            self.fields['email'].initial = user.email
+        
+        # Telefone = Telefone do usuário
+        if user.phone_number:
+            self.fields['phone'].initial = user.phone_number
+        
+        # Endereço fica em branco (opcional)
+        self.fields['address'].initial = ""
+        
+        # Logo fica em branco (opcional)
+        self.fields['logo'].initial = ""
+    
+    def clean(self):
+        """Validação personalizada para garantir que campos obrigatórios sejam preenchidos"""
+        cleaned_data = super().clean()
+        
+        # Se o checkbox está marcado, usar dados do usuário
+        if self.data.get('use_registration_data') == 'on':
+            user = self.user if hasattr(self, 'user') else None
+            if user:
+                if not cleaned_data.get('name'):
+                    cleaned_data['name'] = f"{user.first_name} {user.last_name}".strip()
+                if not cleaned_data.get('email'):
+                    cleaned_data['email'] = user.email
+                if not cleaned_data.get('phone'):
+                    cleaned_data['phone'] = user.phone_number
+                if not cleaned_data.get('country'):
+                    cleaned_data['country'] = user.country
+        
+        return cleaned_data

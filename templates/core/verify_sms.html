@@ -39,17 +39,17 @@
                 </div>
                 
                 <div class="d-grid mb-3">
-                    <button type="submit" class="btn btn-primary btn-lg">
-                        <i class="fas fa-check me-2"></i>{% translate "Verificar Código" %}
-                    </button>
+                                    <button type="submit" class="btn btn-gradient-enabled btn-lg">
+                    <i class="fas fa-check"></i>{% translate "Verificar Código" %}
+                </button>
                 </div>
             </form>
             
             <form method="post" action="{% url 'resend_sms' %}">
                 {% csrf_token %}
                 <div class="d-grid">
-                    <button type="submit" class="btn btn-outline-secondary">
-                        <i class="fas fa-redo me-2"></i>{% translate "Reenviar Código" %}
+                    <button type="submit" class="btn btn-gradient-outline">
+                        <i class="fas fa-redo"></i>{% translate "Reenviar Código" %}
                     </button>
                 </div>
             </form>

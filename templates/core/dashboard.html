@@ -14,32 +14,107 @@
 </div>
 
 <!-- Stats Cards -->
+{% if is_admin %}
+<!-- Dashboard para Administradores -->
 <div class="row mb-4">
     <div class="col-md-3">
         <div class="stat-card">
-            <div class="stat-number">{{ customers_count }}</div>
-            <div class="stat-label">{% translate "Clientes" %}</div>
+            <div class="stat-number">{{ verified_users }}</div>
+            <div class="stat-label">{% translate "Usuários Verificados" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
-            <div class="stat-number">{{ products_count }}</div>
-            <div class="stat-label">{% translate "Produtos" %}</div>
+            <div class="stat-number">{{ company_members }}</div>
+            <div class="stat-label">{% translate "Membros da Empresa" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
-            <div class="stat-number">{{ projects_count }}</div>
-            <div class="stat-label">{% translate "Projetos" %}</div>
+            <div class="stat-number">{{ total_companies }}</div>
+            <div class="stat-label">{% translate "Empresas" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
-            <div class="stat-number">{{ user.account.plan.name }}</div>
+            <div class="stat-number">{{ plan_name }}</div>
             <div class="stat-label">{% translate "Plano Atual" %}</div>
         </div>
     </div>
 </div>
+
+<!-- Additional Stats para Admin -->
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="stat-card bg-light">
+            <div class="stat-number">{{ total_users }}</div>
+            <div class="stat-label">{% translate "Total de Usuários" %}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card bg-light">
+            <div class="stat-number">{{ unverified_users }}</div>
+            <div class="stat-label">{% translate "Usuários Pendentes" %}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card bg-light">
+            <div class="stat-number">{{ total_plans }}</div>
+            <div class="stat-label">{% translate "Planos Disponíveis" %}</div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="stat-card bg-light">
+            <div class="stat-number">{{ total_countries }}</div>
+            <div class="stat-label">{% translate "Países Suportados" %}</div>
+        </div>
+    </div>
+</div>
+{% else %}
+<!-- Dashboard para Usuários Clientes -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-number">{{ company_members }}</div>
+            <div class="stat-label">{% translate "Membros da Empresa" %}</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-number">{{ plan_name }}</div>
+            <div class="stat-label">{% translate "Plano Atual" %}</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card">
+            <div class="stat-number">{{ customers_count }}</div>
+            <div class="stat-label">{% translate "Meus Clientes" %}</div>
+        </div>
+    </div>
+</div>
+
+<!-- Estatísticas Pessoais -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="stat-card bg-light">
+            <div class="stat-number">{{ products_count }}</div>
+            <div class="stat-label">{% translate "Meus Produtos" %}</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card bg-light">
+            <div class="stat-number">{{ projects_count }}</div>
+            <div class="stat-label">{% translate "Meus Projetos" %}</div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="stat-card bg-light">
+            <div class="stat-number">0</div>
+            <div class="stat-label">{% translate "Atividades Hoje" %}</div>
+        </div>
+    </div>
+</div>
+{% endif %}
 
 <!-- Quick Actions -->
 <div class="row mb-4">
@@ -53,23 +128,60 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3 mb-3">
-                        <a href="{% url 'customers:customer_create' %}" class="btn btn-outline-primary w-100">
-                            <i class="fas fa-user-plus me-2"></i>{% translate "Novo Cliente" %}
+                        <a href="{% url 'profile_setup' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-user-edit"></i>{% translate "Editar Perfil" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <a href="{% url 'products:product_create' %}" class="btn btn-outline-success w-100">
-                            <i class="fas fa-box me-2"></i>{% translate "Novo Produto" %}
+                        <a href="{% url 'company_setup' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-building"></i>{% translate "Configurar Empresa" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <a href="{% url 'projects:project_create' %}" class="btn btn-outline-info w-100">
-                            <i class="fas fa-project-diagram me-2"></i>{% translate "Novo Projeto" %}
+                        <a href="{% url 'subscription' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-credit-card"></i>{% translate "Gerenciar Assinatura" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
-                        <a href="{% url 'company_setup' %}" class="btn btn-outline-warning w-100">
-                            <i class="fas fa-building me-2"></i>{% translate "Configurar Empresa" %}
+                        <a href="{% url 'profile' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-user"></i>{% translate "Ver Perfil" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Módulos do Sistema -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="fas fa-cubes me-2"></i>{% translate "Módulos do Sistema" %}
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'customers' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-users"></i>{% translate "Clientes" %}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'products' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-box"></i>{% translate "Produtos" %}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'projects' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-project-diagram"></i>{% translate "Projetos" %}
+                        </a>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <a href="{% url 'subscription' %}" class="btn btn-gradient-outline w-100">
+                            <i class="fas fa-credit-card"></i>{% translate "Assinatura" %}
                         </a>
                     </div>
                 </div>
@@ -129,18 +241,18 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-chart-line me-2"></i>{% translate "Resumo" %}
+                    <i class="fas fa-chart-line me-2"></i>{% translate "Resumo da Empresa" %}
                 </h5>
             </div>
             <div class="card-body">
                 <div class="row text-center">
                     <div class="col-6">
-                        <h4 class="text-primary">{{ customers_count }}</h4>
-                        <small class="text-muted">{% translate "Clientes" %}</small>
+                        <h4 class="text-primary">{{ company_members }}</h4>
+                        <small class="text-muted">{% translate "Membros" %}</small>
                     </div>
                     <div class="col-6">
-                        <h4 class="text-success">{{ products_count }}</h4>
-                        <small class="text-muted">{% translate "Produtos" %}</small>
+                        <h4 class="text-success">{{ plan_name }}</h4>
+                        <small class="text-muted">{% translate "Plano Atual" %}</small>
                     </div>
                 </div>
             </div>

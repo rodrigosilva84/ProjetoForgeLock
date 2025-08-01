@@ -16,11 +16,98 @@
     {% load static %}
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     
+    <style>
+        /* Navbar Gradient */
+        .navbar-gradient {
+            background: linear-gradient(135deg, #6A6AF0 0%, #8A4DCC 100%) !important;
+            box-shadow: 0 2px 10px rgba(106, 106, 240, 0.3);
+        }
+        
+        .navbar-gradient .navbar-brand,
+        .navbar-gradient .nav-link {
+            color: white !important;
+        }
+        
+        .navbar-gradient .nav-link:hover {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .navbar-gradient .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .navbar-gradient .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        /* Padrão Global de Botões/Links */
+        .btn-gradient-enabled {
+            background: linear-gradient(135deg, #6A6AF0 0%, #8A4DCC 100%) !important;
+            border: none !important;
+            color: white !important;
+            border-radius: 8px !important;
+            padding: 10px 20px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+        
+        .btn-gradient-enabled:hover {
+            background: linear-gradient(135deg, #5A5AE0 0%, #7A3DBC 100%) !important;
+            color: white !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(106, 106, 240, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        .btn-gradient-outline {
+            background: transparent !important;
+            border: 2px solid #6A6AF0 !important;
+            color: #6A6AF0 !important;
+            border-radius: 8px !important;
+            padding: 8px 18px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+        
+        .btn-gradient-outline:hover {
+            background: linear-gradient(135deg, #6A6AF0 0%, #8A4DCC 100%) !important;
+            border-color: transparent !important;
+            color: white !important;
+            transform: translateY(-1px) !important;
+            box-shadow: 0 4px 12px rgba(106, 106, 240, 0.4) !important;
+            text-decoration: none !important;
+        }
+        
+        /* Links do Dropdown */
+        .dropdown-item.btn-gradient-enabled {
+            background: transparent !important;
+            border: none !important;
+            color: #6A6AF0 !important;
+            padding: 8px 16px !important;
+            border-radius: 6px !important;
+            margin: 2px 8px !important;
+        }
+        
+        .dropdown-item.btn-gradient-enabled:hover {
+            background: linear-gradient(135deg, #6A6AF0 0%, #8A4DCC 100%) !important;
+            color: white !important;
+            transform: translateX(2px) !important;
+        }
+    </style>
+    
     {% block extra_css %}{% endblock %}
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-gradient">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <i class="fas fa-lock me-2"></i>ForgeLock
@@ -81,21 +168,21 @@
                                     <li><hr class="dropdown-divider"></li>
                                 {% endif %}
                                 
-                                <li><a class="dropdown-item" href="{% url 'profile' %}"><i class="fas fa-user-edit me-2"></i>{% translate "Perfil" %}</a></li>
-                                <li><a class="dropdown-item" href="{% url 'company_setup' %}"><i class="fas fa-building me-2"></i>{% translate "Empresa" %}</a></li>
+                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'profile' %}"><i class="fas fa-user-edit"></i>{% translate "Perfil" %}</a></li>
+                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'company_setup' %}"><i class="fas fa-building"></i>{% translate "Empresa" %}</a></li>
                                 
                                 {% if user.account %}
-                                    <li><a class="dropdown-item" href="#"><i class="fas fa-credit-card me-2"></i>{% translate "Gerenciar Assinatura" %}</a></li>
+                                    <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'subscription' %}"><i class="fas fa-credit-card"></i>{% translate "Gerenciar Assinatura" %}</a></li>
                                 {% endif %}
                                 
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt me-2"></i>{% translate "Sair" %}</a></li>
+                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>{% translate "Sair" %}</a></li>
                             </ul>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'login' %}">
-                                <i class="fas fa-sign-in-alt me-1"></i>{% translate "Entrar" %}
+                            <a class="nav-link btn-gradient-enabled" href="{% url 'login' %}">
+                                <i class="fas fa-sign-in-alt"></i>{% translate "Entrar" %}
                             </a>
                         </li>
                         <li class="nav-item">

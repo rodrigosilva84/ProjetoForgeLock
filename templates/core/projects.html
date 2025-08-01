@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Projetos" %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-project-diagram me-2"></i>{% translate "Projetos" %}
+                    </h4>
+                </div>
+                <div class="card-body text-center py-5">
+                    <div class="mb-4">
+                        <i class="fas fa-tools fa-4x text-muted"></i>
+                    </div>
+                    <h3 class="text-muted mb-3">{% translate "Em Construção" %}</h3>
+                    <p class="text-muted mb-4">
+                        {% translate "O módulo de projetos está sendo desenvolvido e estará disponível em breve." %}
+                    </p>
+                                    <a href="{% url 'dashboard' %}" class="btn btn-gradient-enabled">
+                    <i class="fas fa-arrow-left"></i>{% translate "Voltar ao Dashboard" %}
+                </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

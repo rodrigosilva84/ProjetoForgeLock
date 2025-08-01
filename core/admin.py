@@ -65,7 +65,7 @@ class LoginAttemptAdmin(admin.ModelAdmin):
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'password')}),
-        (_('Informações pessoais'), {'fields': ('first_name', 'last_name', 'email', 'phone_number', 'country')}),
+        (_('Informações pessoais'), {'fields': ('first_name', 'last_name', 'email', 'phone_number', 'country', 'date_of_birth', 'website')}),
         (_('Empresa'), {'fields': ('company',)}),
         (_('Verificação'), {'fields': ('is_verified', 'verification_code', 'verification_expires_at')}),
         (_('Permissões'), {

@@ -43,8 +43,8 @@ def home(request):
     if session_language:
         translation.activate(session_language)
     
-    # Buscar planos ativos (excluir Admin e Trial)
-    plans = Plan.objects.filter(is_active=True, is_trial=False).exclude(name__iexact='admin').order_by('price')
+    # Buscar planos ativos (excluir Admin, Trial e Vitalicio)
+    plans = Plan.objects.filter(is_active=True, is_trial=False).exclude(name__iexact='admin').exclude(name__iexact='vitalicio').order_by('price')
     
     # Detectar moeda do usuário
     user_currency = get_user_currency(request)
@@ -150,12 +150,8 @@ def verify_sms(request):
     """Verificação de SMS"""
     # Forçar ativação do idioma baseado na sessão
     session_language = request.session.get('django_language')
-    print(f"DEBUG: Session language: {session_language}")
     if session_language:
         translation.activate(session_language)
-        print(f"DEBUG: Activated language: {translation.get_language()}")
-    else:
-        print(f"DEBUG: No session language, current: {translation.get_language()}")
     
     user_id = request.session.get('user_id')
     if not user_id:
@@ -324,14 +320,69 @@ def dashboard(request):
         messages.warning(request, _('Configure sua empresa para começar a usar o sistema.'))
         return redirect('company_setup')
     
-    # Estatísticas básicas
-    context = {
-        'user': user,
-        'company': user.company,
-        'customers_count': 0,  # Será implementado quando criar o módulo customers
-        'products_count': 0,   # Será implementado quando criar o módulo products
-        'projects_count': 0,   # Será implementado quando criar o módulo projects
-    }
+    # Estatísticas da empresa do usuário
+    company = user.company
+    company_members = User.objects.filter(company=company).count()
+    
+    # Estatísticas do plano atual
+    current_plan = user.account.plan if hasattr(user, 'account') and user.account else None
+    plan_name = current_plan.name if current_plan else _('Nenhum plano')
+    
+    # Verificar se o usuário é admin (superuser ou staff)
+    is_admin = user.is_superuser or user.is_staff
+    
+    # Estatísticas baseadas no tipo de usuário
+    if is_admin:
+        # Para admins: mostrar estatísticas globais
+        from .models import Company, Plan, Country
+        
+        total_users = User.objects.count()
+        verified_users = User.objects.filter(is_verified=True).count()
+        unverified_users = User.objects.filter(is_verified=False).count()
+        total_companies = Company.objects.count()
+        total_plans = Plan.objects.count()
+        total_countries = Country.objects.count()
+        
+        context = {
+            'user': user,
+            'company': company,
+            'is_admin': True,
+            
+            # Estatísticas globais (apenas para admin)
+            'total_users': total_users,
+            'verified_users': verified_users,
+            'unverified_users': unverified_users,
+            'total_companies': total_companies,
+            'total_plans': total_plans,
+            'total_countries': total_countries,
+            
+            # Estatísticas pessoais
+            'company_members': company_members,
+            'current_plan': current_plan,
+            'plan_name': plan_name,
+            
+            # Placeholders para futuros módulos
+            'customers_count': 0,
+            'products_count': 0,
+            'projects_count': 0,
+        }
+    else:
+        # Para usuários normais: mostrar apenas informações pessoais
+        context = {
+            'user': user,
+            'company': company,
+            'is_admin': False,
+            
+            # Estatísticas pessoais
+            'company_members': company_members,
+            'current_plan': current_plan,
+            'plan_name': plan_name,
+            
+            # Placeholders para futuros módulos
+            'customers_count': 0,
+            'products_count': 0,
+            'projects_count': 0,
+        }
     
     return render(request, 'core/dashboard.html', context)
 
@@ -341,27 +392,39 @@ def profile_setup(request):
     """Setup inicial do perfil do usuário"""
     # Forçar ativação do idioma baseado na sessão
     session_language = request.session.get('django_language')
-    print(f"DEBUG profile_setup: Session language: {session_language}")
     if session_language:
         translation.activate(session_language)
-        print(f"DEBUG profile_setup: Activated language: {translation.get_language()}")
-    else:
-        print(f"DEBUG profile_setup: No session language, current: {translation.get_language()}")
     
     user = request.user
     
+    # Verificar se é primeiro acesso usando o campo booleano
+    is_first_access = user.is_first_access
+    
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=user)
-        if form.is_valid():
-            form.save()
+        # Se é primeiro acesso e clicou em "Avançar", apenas navegar
+        if is_first_access and request.POST.get('action') == 'avancar':
             messages.success(request, _('Perfil atualizado com sucesso!'))
             return redirect('company_setup')
+        
+        # Se chegou aqui, é para salvar os dados
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, _('Perfil atualizado com sucesso!'))
+            
+            # Sempre permanecer na mesma página após salvar
+            return redirect('profile_setup')
+        else:
+            # Se houver erros, mostrar mensagem
+            messages.error(request, _('Por favor, corrija os erros no formulário.'))
     else:
+        # Criar formulário APÓS ativar o idioma
         form = UserProfileForm(instance=user)
     
     return render(request, 'core/profile_setup.html', {
-        'form': form,
-        'user': user
+        'form': form, 
+        'user': user,
+        'is_first_access': is_first_access
     })
 
 
@@ -388,6 +451,39 @@ def subscription(request):
 
 
 @login_required
+def customers(request):
+    """Página de clientes"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    return render(request, 'core/customers.html', {'user': request.user})
+
+
+@login_required
+def products(request):
+    """Página de produtos"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    return render(request, 'core/products.html', {'user': request.user})
+
+
+@login_required
+def projects(request):
+    """Página de projetos"""
+    # Forçar ativação do idioma baseado na sessão
+    session_language = request.session.get('django_language')
+    if session_language:
+        translation.activate(session_language)
+    
+    return render(request, 'core/projects.html', {'user': request.user})
+
+
+@login_required
 def company_setup(request):
     """Configuração de empresa"""
     # Forçar ativação do idioma baseado na sessão
@@ -397,35 +493,50 @@ def company_setup(request):
     
     user = request.user
     
+    # Verificar se é primeiro acesso usando o campo booleano
+    is_first_access = user.is_first_access
+    
+    # Verificar se o usuário já tem uma empresa
+    existing_company = getattr(user, 'company', None)
+    
     if request.method == 'POST':
-        form = CompanyForm(request.POST, request.FILES)
-        if form.is_valid():
-            # Se o usuário marcou para usar dados do registro
-            if form.cleaned_data.get('use_registration_data'):
-                company = form.save(commit=False)
-                company.email = user.email
-                company.phone = user.phone_number
-                company.country = user.country
-                company.save()
-            else:
-                company = form.save()
+        # Se já existe uma empresa, usar a instância existente
+        if existing_company:
+            form = CompanyForm(request.POST, request.FILES, instance=existing_company, user=user)
+        else:
+            form = CompanyForm(request.POST, request.FILES, user=user)
             
-            user.company = company
+        # Se é primeiro acesso e clicou em "Avançar", apenas navegar
+        if is_first_access and request.POST.get('action') == 'avancar':
+            user.is_first_access = False
             user.save()
             messages.success(request, _('Empresa configurada com sucesso!'))
             return redirect('dashboard')
+        
+        # Se chegou aqui, é para salvar os dados
+        if form.is_valid():
+            company = form.save()
+            # Só associar a empresa ao usuário se ela não existia antes
+            if not existing_company:
+                user.company = company
+                user.save()
+            
+            messages.success(request, _('Empresa configurada com sucesso!'))
+            
+            # Sempre permanecer na mesma página após salvar
+            return redirect('company_setup')
     else:
-        # Criar formulário APÓS ativar o idioma
-        form = CompanyForm()
-        # Pré-preencher com dados do usuário se disponível
-        if user.email:
-            form.fields['email'].initial = user.email
-        if user.phone_number:
-            form.fields['phone'].initial = user.phone_number
-        if user.country:
-            form.fields['country'].initial = user.country
+        # Criar formulário APÓS ativar o idioma, passando o usuário e a instância existente
+        if existing_company:
+            form = CompanyForm(instance=existing_company, user=user)
+        else:
+            form = CompanyForm(user=user)
     
-    return render(request, 'core/company_setup.html', {'form': form, 'user': user})
+    return render(request, 'core/company_setup.html', {
+        'form': form, 
+        'user': user,
+        'is_first_access': is_first_access
+    })
 
 
 def change_language(request):
