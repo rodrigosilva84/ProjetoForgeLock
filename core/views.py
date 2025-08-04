@@ -471,18 +471,6 @@ def subscription(request):
 
 @login_required
 @read_only_access
-def customers(request):
-    """Página de clientes"""
-    # Forçar ativação do idioma baseado na sessão
-    session_language = request.session.get('django_language')
-    if session_language:
-        translation.activate(session_language)
-    
-    return render(request, 'core/customers.html', {'user': request.user})
-
-
-@login_required
-@read_only_access
 def products(request):
     """Página de produtos"""
     # Forçar ativação do idioma baseado na sessão

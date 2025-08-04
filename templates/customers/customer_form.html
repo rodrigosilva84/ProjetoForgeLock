@@ -1,0 +1,431 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ title }} - ForgeLock{% endblock %}
+
+{% block extra_css %}
+<style>
+    .form-control[readonly] {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+    .form-control[disabled] {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        cursor: not-allowed;
+    }
+    .required-field::after {
+        content: " **";
+        color: #e74c3c;
+    }
+    .optional-field::after {
+        content: " *";
+        color: #6c757d;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="form-container">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-user-plus me-2"></i>{{ title }}
+                </h2>
+                
+                <div class="alert alert-info mb-4">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>{% translate "Preencha as informações do cliente" %}</strong>
+                    <br>
+                    <small>{% translate "Informações completas para melhor atendimento." %}</small>
+                </div>
+                
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Informações Básicas -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-user me-2"></i>{% translate "Informações Básicas" %}
+                        </h5>
+                        
+                        <!-- Nome/Razão Social -->
+                        <div class="mb-3">
+                            <label for="{{ form.name.id_for_label }}" class="form-label required-field">
+                                {{ form.name.label }}
+                            </label>
+                            {{ form.name }}
+                            {% if form.name.help_text %}
+                                <div class="form-text">{{ form.name.help_text }}</div>
+                            {% endif %}
+                            {% if form.name.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.name.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- País -->
+                        <div class="mb-3">
+                            <label for="{{ form.country.id_for_label }}" class="form-label optional-field">
+                                {{ form.country.label }}
+                            </label>
+                            {{ form.country }}
+                            {% if form.country.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.country.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Informações de Contato -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-phone me-2"></i>{% translate "Informações de Contato" %}
+                        </h5>
+                        
+                        <!-- DDI e Telefone lado a lado -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label class="form-label">{% translate "DDI" %}</label>
+                                    <input type="text" class="form-control" id="ddi-field" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="mb-3">
+                                    <label for="{{ form.phone.id_for_label }}" class="form-label required-field">
+                                        {{ form.phone.label }}
+                                    </label>
+                                    {{ form.phone }}
+                                    {% if form.phone.help_text %}
+                                        <div class="form-text">{{ form.phone.help_text }}</div>
+                                    {% endif %}
+                                    {% if form.phone.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.phone.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="{{ form.email.id_for_label }}" class="form-label required-field">
+                                {{ form.email.label }}
+                            </label>
+                            {{ form.email }}
+                            {% if form.email.help_text %}
+                                <div class="form-text">{{ form.email.help_text }}</div>
+                            {% endif %}
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.email.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Instagram/Rede Social -->
+                        <div class="mb-3">
+                            <label for="{{ form.social_network.id_for_label }}" class="form-label">
+                                {{ form.social_network.label }}
+                            </label>
+                            {{ form.social_network }}
+                            {% if form.social_network.help_text %}
+                                <div class="form-text">{{ form.social_network.help_text }}</div>
+                            {% endif %}
+                            {% if form.social_network.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.social_network.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Data de Nascimento -->
+                        <div class="mb-3">
+                            <label for="{{ form.birth_date.id_for_label }}" class="form-label">
+                                {{ form.birth_date.label }}
+                            </label>
+                            {{ form.birth_date }}
+                            {% if form.birth_date.help_text %}
+                                <div class="form-text">{{ form.birth_date.help_text }}</div>
+                            {% endif %}
+                            {% if form.birth_date.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.birth_date.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Documentação -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-id-card me-2"></i>{% translate "Documentação" %}
+                        </h5>
+                        
+                        <!-- CPF/CNPJ -->
+                        <div class="mb-3">
+                            <label for="{{ form.document_number.id_for_label }}" class="form-label">
+                                {{ form.document_number.label }}
+                            </label>
+                            {{ form.document_number }}
+                            {% if form.document_number.help_text %}
+                                <div class="form-text">{{ form.document_number.help_text }}</div>
+                            {% endif %}
+                            {% if form.document_number.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.document_number.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Endereço -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-map-marker-alt me-2"></i>{% translate "Endereço" %}
+                        </h5>
+                        
+                        <!-- Endereço -->
+                        <div class="mb-3">
+                            <label for="{{ form.address.id_for_label }}" class="form-label">
+                                {{ form.address.label }}
+                            </label>
+                            {{ form.address }}
+                            {% if form.address.help_text %}
+                                <div class="form-text">{{ form.address.help_text }}</div>
+                            {% endif %}
+                            {% if form.address.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.address.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Cidade, Estado e CEP lado a lado -->
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="{{ form.city.id_for_label }}" class="form-label">
+                                        {{ form.city.label }}
+                                    </label>
+                                    {{ form.city }}
+                                    {% if form.city.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.city.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="{{ form.state.id_for_label }}" class="form-label">
+                                        {{ form.state.label }}
+                                    </label>
+                                    {{ form.state }}
+                                    {% if form.state.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.state.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="mb-3">
+                                    <label for="{{ form.zip_code.id_for_label }}" class="form-label">
+                                        {{ form.zip_code.label }}
+                                    </label>
+                                    {{ form.zip_code }}
+                                    {% if form.zip_code.errors %}
+                                        <div class="invalid-feedback d-block">
+                                            {% for error in form.zip_code.errors %}
+                                                {{ error }}
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Observações -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-sticky-note me-2"></i>{% translate "Observações" %}
+                        </h5>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.notes.id_for_label }}" class="form-label">
+                                {{ form.notes.label }}
+                            </label>
+                            {{ form.notes }}
+                            {% if form.notes.help_text %}
+                                <div class="form-text">{{ form.notes.help_text }}</div>
+                            {% endif %}
+                            {% if form.notes.errors %}
+                                <div class="invalid-feedback d-block">
+                                    {% for error in form.notes.errors %}
+                                        {{ error }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <!-- Status -->
+                    <div class="mb-4">
+                        <h5 class="mb-3">
+                            <i class="fas fa-toggle-on me-2"></i>{% translate "Status" %}
+                        </h5>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                {{ form.is_active }}
+                                <label class="form-check-label" for="{{ form.is_active.id_for_label }}">
+                                    {{ form.is_active.label }}
+                                </label>
+                                {% if form.is_active.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {% for error in form.is_active.errors %}
+                                            {{ error }}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botões de Ação -->
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <a href="{% url 'customers:customer_list' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>{% translate "Voltar" %}
+                        </a>
+                        <button type="submit" class="btn btn-gradient-enabled">
+                            <i class="fas fa-save me-2"></i>{{ submit_text }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Validação do formulário
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+    
+    // Máscara para telefone
+    const phoneInput = document.getElementById('{{ form.phone.id_for_label }}');
+    if (phoneInput) {
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 2) {
+                    value = `(${value}`;
+                } else if (value.length <= 6) {
+                    value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+                } else if (value.length <= 10) {
+                    value = `(${value.slice(0, 2)}) ${value.slice(2, 6)}-${value.slice(6)}`;
+                } else {
+                    value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7, 11)}`;
+                }
+            }
+            e.target.value = value;
+        });
+    }
+    
+    // Máscara para documento (CPF/CNPJ)
+    const documentInput = document.getElementById('{{ form.document_number.id_for_label }}');
+    if (documentInput) {
+        documentInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 11) { // CPF
+                    value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+                } else if (value.length <= 14) { // CNPJ
+                    value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+                }
+            }
+            e.target.value = value;
+        });
+    }
+    
+    // Máscara para CEP
+    const zipInput = document.getElementById('{{ form.zip_code.id_for_label }}');
+    if (zipInput) {
+        zipInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                value = value.replace(/(\d{5})(\d{3})/, '$1-$2');
+            }
+            e.target.value = value;
+        });
+    }
+    
+    // Atualizar DDI do país
+    const countrySelect = document.getElementById('{{ form.country.id_for_label }}');
+    const ddiField = document.getElementById('ddi-field');
+    
+    function updateDDI() {
+        const countryId = countrySelect.value;
+        if (countryId) {
+            fetch(`/api/country/${countryId}/ddi/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ddi) {
+                        ddiField.value = data.ddi;
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar DDI:', error);
+                    ddiField.value = '';
+                });
+        } else {
+            ddiField.value = '';
+        }
+    }
+    
+    countrySelect.addEventListener('change', updateDDI);
+    
+    // Atualizar DDI inicial
+    updateDDI();
+});
+</script>
+{% endblock %} 

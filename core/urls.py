@@ -18,7 +18,6 @@ urlpatterns = [
     path('password-reset/', views.password_reset_request, name='password_reset_request'),
     path('password-reset/<str:token>/', views.password_reset_confirm, name='password_reset_confirm'),
     path('subscription/', views.subscription, name='subscription'),
-    path('customers/', views.customers, name='customers'),
     path('products/', views.products, name='products'),
     path('projects/', views.projects, name='projects'),
 ]

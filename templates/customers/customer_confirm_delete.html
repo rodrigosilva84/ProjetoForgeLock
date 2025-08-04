@@ -1,0 +1,256 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate "Excluir Cliente" %} - ForgeLock{% endblock %}
+
+{% block extra_css %}
+<style>
+    .delete-confirmation {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    .customer-info {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    .warning-icon {
+        font-size: 4rem;
+        color: #ff6b6b;
+        margin-bottom: 1rem;
+    }
+    .customer-details {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    .btn-group-actions {
+        position: sticky;
+        bottom: 0;
+        background: white;
+        padding: 1rem 0;
+        border-top: 1px solid #dee2e6;
+        z-index: 1000;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="h3 mb-0">
+                        <i class="fas fa-trash me-2"></i>
+                        {% translate "Excluir Cliente" %}
+                    </h1>
+                    <p class="text-muted mb-0">
+                        {% translate "Confirme a exclusão do cliente" %}
+                    </p>
+                </div>
+                <div>
+                    <a href="{% url 'customers:customer_detail' customer.pk %}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>
+                        {% translate "Voltar" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aviso de Exclusão -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="delete-confirmation text-center text-white">
+                <div class="warning-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <h3 class="mb-3">{% translate "Atenção!" %}</h3>
+                <p class="mb-0">
+                    {% translate "Esta ação não pode ser desfeita. O cliente será permanentemente removido do sistema." %}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Informações do Cliente -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="customer-info">
+                <h5 class="mb-3">
+                    <i class="fas fa-user me-2"></i>
+                    {% translate "Cliente a ser excluído" %}
+                </h5>
+                
+                <div class="customer-details">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <strong>{% translate "Nome:" %}</strong>
+                                <span class="ms-2">{{ customer.name }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <strong>{% translate "E-mail:" %}</strong>
+                                <span class="ms-2">{{ customer.email }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <strong>{% translate "Telefone:" %}</strong>
+                                <span class="ms-2">{{ customer.phone }}</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <strong>{% translate "País:" %}</strong>
+                                <span class="ms-2">{{ customer.country.name }}</span>
+                            </div>
+                            <div class="mb-3">
+                                <strong>{% translate "Status:" %}</strong>
+                                <span class="ms-2 badge {% if customer.is_active %}bg-success{% else %}bg-secondary{% endif %}">
+                                    {% if customer.is_active %}
+                                        {% translate "Ativo" %}
+                                    {% else %}
+                                        {% translate "Inativo" %}
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="mb-3">
+                                <strong>{% translate "Cadastrado em:" %}</strong>
+                                <span class="ms-2">{{ customer.created_at|date:"d/m/Y H:i" }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {% if customer.document_number %}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <strong>{% translate "Documento:" %}</strong>
+                                <span class="ms-2">{{ customer.get_document_display }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if customer.address or customer.city or customer.state %}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <strong>{% translate "Endereço:" %}</strong>
+                                <span class="ms-2">
+                                    {% if customer.address %}{{ customer.address }}{% endif %}
+                                    {% if customer.city %}, {{ customer.city }}{% endif %}
+                                    {% if customer.state %}, {{ customer.state }}{% endif %}
+                                    {% if customer.zip_code %} - {{ customer.zip_code }}{% endif %}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    
+                    {% if customer.notes %}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <strong>{% translate "Observações:" %}</strong>
+                                <span class="ms-2">{{ customer.notes|truncatechars:100 }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impactos da Exclusão -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="alert alert-warning">
+                <h6 class="alert-heading">
+                    <i class="fas fa-info-circle me-2"></i>
+                    {% translate "O que acontecerá após a exclusão?" %}
+                </h6>
+                <ul class="mb-0">
+                    <li>{% translate "O cliente será permanentemente removido do banco de dados" %}</li>
+                    <li>{% translate "Todos os dados associados serão perdidos" %}</li>
+                    <li>{% translate "Não será possível recuperar as informações" %}</li>
+                    <li>{% translate "Histórico de interações será perdido" %}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulário de Confirmação -->
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="confirm-delete" required>
+                        <label class="form-check-label" for="confirm-delete">
+                            {% translate "Eu entendo que esta ação é irreversível e confirmo a exclusão do cliente" %}
+                            <strong>{{ customer.name }}</strong>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="btn-group-actions">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="{% url 'customers:customer_detail' customer.pk %}" class="btn btn-outline-secondary">
+                        <i class="fas fa-times me-2"></i>
+                        {% translate "Cancelar" %}
+                    </a>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-danger" id="delete-btn" disabled>
+                        <i class="fas fa-trash me-2"></i>
+                        {% translate "Confirmar Exclusão" %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const confirmCheckbox = document.getElementById('confirm-delete');
+    const deleteBtn = document.getElementById('delete-btn');
+    
+    // Habilitar/desabilitar botão baseado no checkbox
+    confirmCheckbox.addEventListener('change', function() {
+        deleteBtn.disabled = !this.checked;
+    });
+    
+    // Confirmação adicional antes de enviar
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+        if (!confirmCheckbox.checked) {
+            e.preventDefault();
+            alert('{% translate "Você deve confirmar a exclusão para continuar." %}');
+            return;
+        }
+        
+        const confirmed = confirm('{% translate "Tem certeza que deseja excluir permanentemente este cliente?" %}');
+        if (!confirmed) {
+            e.preventDefault();
+        }
+    });
+});
+</script>
+{% endblock %} 

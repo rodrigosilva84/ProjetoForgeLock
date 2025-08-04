@@ -173,7 +173,7 @@ class User(AbstractUser):
     country = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name=_("País"))
     # Removido: company = models.ForeignKey(Company, on_delete=models.PROTECT, verbose_name=_("Empresa"), null=True, blank=True)
     companies = models.ManyToManyField(Company, through='UserCompany', verbose_name=_("Empresas"))
-    date_of_birth = models.DateField(_("Data de nascimento"), default=timezone.now)
+    birth_date = models.DateField(_("Data de nascimento"), default=timezone.now)
     website = models.URLField(_("Site pessoal"), blank=True)
     is_verified = models.BooleanField(_("Verificado"), default=False)
     is_first_access = models.BooleanField(_("Primeiro acesso"), default=True)

@@ -50,7 +50,7 @@ class UserRegistrationForm(UserCreationForm):
     
     class Meta:
         model = User
-        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number', 'country', 'date_of_birth', 'password1', 'password2')
+        fields = ('username', 'email', 'first_name', 'last_name', 'phone_number', 'country', 'birth_date', 'password1', 'password2')
         
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -125,14 +125,14 @@ class UserProfileForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'date_of_birth', 'website']
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'birth_date', 'website']
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
-            'date_of_birth': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'birth_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         }
     
     def __init__(self, *args, **kwargs):
@@ -140,8 +140,8 @@ class UserProfileForm(forms.ModelForm):
         # Removendo traduções duplicadas - agora usamos template translations
         
         # Configurar labels e help texts
-        self.fields['date_of_birth'].label = _("Data de nascimento")
-        self.fields['date_of_birth'].help_text = _("Sua data de nascimento.")
+        self.fields['birth_date'].label = _("Data de nascimento")
+        self.fields['birth_date'].help_text = _("Sua data de nascimento.")
 
 
 class CompanyForm(forms.ModelForm):

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-01 15:48-0300\n"
+"POT-Creation-Date: 2025-08-03 23:24-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,7 +42,7 @@ msgstr "No Associate User"
 msgid "Usuários da Empresa"
 msgstr "Company Summary"
 
-#: .\core\admin.py:86 .\core\models.py:305
+#: .\core\admin.py:86 .\core\models.py:305 .\templates\core\dashboard.html:23
 #, fuzzy
 #| msgid "Ativo"
 msgid "Ativa"
@@ -57,7 +57,7 @@ msgid "Verificação"
 msgstr "Verification"
 
 #: .\core\admin.py:187 .\core\admin.py:211 .\core\models.py:162
-#: .\core\models.py:175 .\templates\core\dashboard.html:35
+#: .\core\models.py:175 .\templates\core\dashboard.html:60
 msgid "Empresas"
 msgstr "Companies"
 
@@ -95,7 +95,7 @@ msgstr ""
 "Your signature expired. You are in the grace period and you can only view "
 "data."
 
-#: .\core\forms.py:13 .\templates\core\register.html:65
+#: .\core\forms.py:13 .\customers\forms.py:76 .\templates\core\register.html:65
 msgid "E-mail *"
 msgstr "Email *"
 
@@ -127,7 +127,7 @@ msgstr "Your last name"
 msgid "Telefone (DDD + Número) *"
 msgstr "Phone (Area Code + Number) *"
 
-#: .\core\forms.py:32
+#: .\core\forms.py:32 .\customers\forms.py:28
 msgid "(11) 99999-9999"
 msgstr "(11) 99999-9999"
 
@@ -135,7 +135,7 @@ msgstr "(11) 99999-9999"
 msgid "Já existe um usuário com este telefone."
 msgstr "A user with this phone number already exists."
 
-#: .\core\forms.py:39 .\templates\core\register.html:77
+#: .\core\forms.py:39 .\customers\forms.py:74 .\templates\core\register.html:77
 msgid "País *"
 msgstr "Country *"
 
@@ -257,27 +257,36 @@ msgstr "Complete address (optional)"
 msgid "Nome da empresa"
 msgstr "Company name"
 
-#: .\core\forms.py:178
+#: .\core\forms.py:178 .\core\models.py:149
 msgid "Documento"
 msgstr "Document"
 
 #: .\core\forms.py:179 .\core\models.py:150 .\core\models.py:171
-#: .\templates\core\password_reset_request.html:22
+#: .\customers\models.py:13 .\templates\core\password_reset_request.html:22
 #: .\templates\core\profile_setup.html:86
+#: .\templates\customers\customer_detail.html:227
 msgid "E-mail"
 msgstr "E-mail"
 
 #: .\core\forms.py:180 .\core\models.py:151 .\core\models.py:172
-#: .\templates\core\profile.html:22 .\templates\core\profile_setup.html:113
+#: .\customers\models.py:12 .\templates\core\profile.html:22
+#: .\templates\core\profile_setup.html:113
+#: .\templates\customers\customer_detail.html:217
 msgid "Telefone"
 msgstr "Phone"
 
-#: .\core\forms.py:181 .\core\models.py:152
+#: .\core\forms.py:181 .\core\models.py:152 .\customers\admin.py:39
+#: .\customers\forms.py:80 .\customers\models.py:21
+#: .\templates\customers\customer_detail.html:268
+#: .\templates\customers\customer_detail.html:276
+#: .\templates\customers\customer_form.html:206
 msgid "Endereço"
 msgstr "Address"
 
 #: .\core\forms.py:182 .\core\models.py:22 .\core\models.py:153
-#: .\core\models.py:173 .\templates\core\profile_setup.html:99
+#: .\core\models.py:173 .\customers\models.py:11
+#: .\templates\core\profile_setup.html:99
+#: .\templates\customers\customer_detail.html:161
 msgid "País"
 msgstr "Country"
 
@@ -302,8 +311,9 @@ msgstr "Name (Spanish)"
 msgid "Código"
 msgstr "Code"
 
-#: .\core\models.py:15 .\templates\core\company_setup.html:84
+#: .\core\models.py:15 .\templates\core\company_setup.html:87
 #: .\templates\core\profile_setup.html:107 .\templates\core\register.html:103
+#: .\templates\customers\customer_form.html:99
 msgid "DDI"
 msgstr "DDI"
 
@@ -313,7 +323,10 @@ msgstr "Flag"
 
 #: .\core\models.py:17 .\core\models.py:59 .\core\models.py:156
 #: .\core\models.py:226 .\core\models.py:260 .\core\models.py:415
-#: .\templates\core\profile.html:51
+#: .\customers\models.py:28 .\templates\core\profile.html:51
+#: .\templates\customers\customer_confirm_delete.html:117
+#: .\templates\customers\customer_detail.html:403
+#: .\templates\customers\customer_list.html:184
 msgid "Ativo"
 msgstr "Active"
 
@@ -385,11 +398,8 @@ msgstr "Plan"
 msgid "Planos"
 msgstr "Plans"
 
-#: .\core\models.py:149
-msgid "CNPJ"
-msgstr "CNPJ"
-
-#: .\core\models.py:161 .\core\models.py:223 .\templates\base.html:172
+#: .\core\models.py:161 .\core\models.py:223 .\customers\models.py:9
+#: .\templates\base.html:172 .\templates\customers\customer_detail.html:364
 msgid "Empresa"
 msgstr "Company"
 
@@ -481,7 +491,8 @@ msgstr "Monthly"
 msgid "Anual"
 msgstr "Annual"
 
-#: .\core\models.py:318
+#: .\core\models.py:318 .\templates\customers\customer_detail.html:400
+#: .\templates\customers\customer_form.html:304
 #, fuzzy
 #| msgid "Status:"
 msgid "Status"
@@ -519,7 +530,7 @@ msgstr "Last Notification Submitted"
 msgid "Renovação automática"
 msgstr "Automatic renewal"
 
-#: .\core\models.py:330 .\templates\core\dashboard.html:184
+#: .\core\models.py:330 .\templates\core\dashboard.html:209
 #, fuzzy
 #| msgid "Minha Assinatura"
 msgid "Assinatura"
@@ -611,11 +622,9 @@ msgstr "BLACKED ACCESS - RENEW YOUR SIGNATURE"
 
 #: .\core\notifications.py:134
 msgid ""
-"ForgeLock: Seu acesso foi bloqueado. Renove sua assinatura {} para "
-"continuar!"
+"ForgeLock: Seu acesso foi bloqueado. Renove sua assinatura {} para continuar!"
 msgstr ""
-"Forgelock: Your access has been blocked. Renew your signature {} to "
-"continue!"
+"Forgelock: Your access has been blocked. Renew your signature {} to continue!"
 
 #: .\core\views.py:78
 #, fuzzy
@@ -709,51 +718,324 @@ msgstr "Profile updated successfully!"
 msgid "Por favor, corrija os erros no formulário."
 msgstr "Please correct the errors on the form."
 
-#: .\core\views.py:535 .\core\views.py:546
+#: .\core\views.py:523 .\core\views.py:539
 msgid "Empresa configurada com sucesso!"
 msgstr "Company configured successfully!"
 
-#: .\core\views.py:602
+#: .\core\views.py:600
 msgid "Email de recuperação enviado com sucesso!"
 msgstr "Recovery email sent successfully!"
 
-#: .\core\views.py:605
+#: .\core\views.py:603
 msgid "Email não encontrado no sistema."
 msgstr "Email not found in the system."
 
-#: .\core\views.py:624
+#: .\core\views.py:622
 msgid "Senha alterada com sucesso!"
 msgstr "Password changed successfully!"
 
-#: .\core\views.py:627
+#: .\core\views.py:625
 msgid "As senhas não coincidem."
 msgstr "Passwords do not match."
+
+#: .\customers\admin.py:29 .\templates\customers\customer_detail.html:144
+#: .\templates\customers\customer_form.html:52
+#, fuzzy
+#| msgid "Informações pessoais"
+msgid "Informações Básicas"
+msgstr "Personal information"
+
+#: .\customers\admin.py:32
+#, fuzzy
+#| msgid "Conta"
+msgid "Contato"
+msgstr "Account"
+
+#: .\customers\admin.py:35 .\templates\customers\customer_form.html:181
+#, fuzzy
+#| msgid "Documento"
+msgid "Documentação"
+msgstr "Document"
+
+#: .\customers\admin.py:43 .\customers\forms.py:84 .\customers\models.py:27
+#: .\templates\customers\customer_detail.html:335
+#: .\templates\customers\customer_form.html:280
+msgid "Observações"
+msgstr ""
+
+#: .\customers\admin.py:47
+msgid "Timestamps"
+msgstr ""
+
+#: .\customers\admin.py:63
+msgid "Idade"
+msgstr ""
+
+#: .\customers\admin.py:79
+#, fuzzy
+#| msgid "Login realizado com sucesso!"
+msgid "{} cliente(s) ativado(s) com sucesso."
+msgstr "Login successful!"
+
+#: .\customers\admin.py:81
+msgid "Ativar clientes selecionados"
+msgstr ""
+
+#: .\customers\admin.py:88
+#, fuzzy
+#| msgid "Login realizado com sucesso!"
+msgid "{} cliente(s) desativado(s) com sucesso."
+msgstr "Login successful!"
+
+#: .\customers\admin.py:90
+msgid "Desativar clientes selecionados"
+msgstr ""
+
+#: .\customers\admin.py:96
+msgid "Funcionalidade de exportação será implementada em breve."
+msgstr ""
+
+#: .\customers\admin.py:98
+msgid "Exportar clientes selecionados"
+msgstr ""
+
+#: .\customers\forms.py:21
+msgid "Nome completo ou razão social"
+msgstr ""
+
+#: .\customers\forms.py:32
+msgid "cliente@exemplo.com"
+msgstr ""
+
+#: .\customers\forms.py:40
+msgid "000.000.000-00 ou 00.000.000/0000-00"
+msgstr ""
+
+#: .\customers\forms.py:44
+msgid "@usuario ou link da rede social"
+msgstr ""
+
+#: .\customers\forms.py:49
+#, fuzzy
+#| msgid "Endereço completo (opcional)"
+msgid "Endereço completo"
+msgstr "Complete address (optional)"
+
+#: .\customers\forms.py:53 .\customers\forms.py:81 .\customers\models.py:22
+#: .\templates\customers\customer_detail.html:290
+#, fuzzy
+#| msgid "Validade:"
+msgid "Cidade"
+msgstr "Expiry:"
+
+#: .\customers\forms.py:57 .\customers\forms.py:82 .\customers\models.py:23
+msgid "Estado/Província"
+msgstr ""
+
+#: .\customers\forms.py:61
+msgid "00000-000"
+msgstr ""
+
+#: .\customers\forms.py:66
+msgid "Observações sobre o cliente"
+msgstr ""
+
+#: .\customers\forms.py:73
+msgid "Nome/Razão Social *"
+msgstr ""
+
+#: .\customers\forms.py:75 .\templates\core\register.html:109
+#, fuzzy
+#| msgid "Telefone"
+msgid "Telefone *"
+msgstr "Phone"
+
+#: .\customers\forms.py:77 .\customers\models.py:16
+#: .\templates\customers\customer_detail.html:184
+#, fuzzy
+#| msgid "Data de nascimento"
+msgid "Data de Nascimento"
+msgstr "Date of birth"
+
+#: .\customers\forms.py:78 .\customers\models.py:17
+#: .\templates\customers\customer_detail.html:172
+#, fuzzy
+#| msgid "CNPJ"
+msgid "CPF/CNPJ"
+msgstr "CNPJ"
+
+#: .\customers\forms.py:79 .\customers\models.py:18
+msgid "Instagram/Rede Social"
+msgstr ""
+
+#: .\customers\forms.py:83 .\customers\models.py:24
+msgid "CEP/Código Postal"
+msgstr ""
+
+#: .\customers\forms.py:85
+#, fuzzy
+#| msgid "Clientes"
+msgid "Cliente ativo"
+msgstr "Customers"
+
+#: .\customers\forms.py:88
+msgid "Nome completo para pessoa física ou razão social para pessoa jurídica"
+msgstr ""
+
+#: .\customers\forms.py:89
+msgid "Inclua o código do país se necessário"
+msgstr ""
+
+#: .\customers\forms.py:90
+msgid "E-mail válido para comunicações"
+msgstr ""
+
+#: .\customers\forms.py:91
+msgid "Opcional - útil para campanhas personalizadas"
+msgstr ""
+
+#: .\customers\forms.py:92
+msgid "CPF para pessoa física ou CNPJ para pessoa jurídica"
+msgstr ""
+
+#: .\customers\forms.py:93
+msgid "Instagram, Facebook, LinkedIn ou outra rede social"
+msgstr ""
+
+#: .\customers\forms.py:94
+#, fuzzy
+#| msgid "Endereço completo (opcional)"
+msgid "Endereço completo para envio de materiais"
+msgstr "Complete address (optional)"
+
+#: .\customers\forms.py:95
+#, fuzzy
+#| msgid "Informações da Conta"
+msgid "Informações adicionais sobre o cliente"
+msgstr "Account Information"
+
+#: .\customers\forms.py:126
+#, fuzzy
+#| msgid "Sua senha deve conter pelo menos 8 caracteres."
+msgid "Telefone deve ter pelo menos 10 dígitos"
+msgstr "Your password must contain at least 8 characters."
+
+#: .\customers\forms.py:136
+msgid "CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos"
+msgstr ""
+
+#: .\customers\models.py:10 .\templates\customers\customer_detail.html:151
+msgid "Nome/Razão Social"
+msgstr ""
+
+#: .\customers\models.py:35
+#, fuzzy
+#| msgid "Clientes"
+msgid "Cliente"
+msgstr "Customers"
+
+#: .\customers\models.py:36 .\templates\base.html:130
+#: .\templates\core\dashboard.html:194
+#: .\templates\customers\customer_list.html:5
+#: .\templates\customers\customer_list.html:45
+msgid "Clientes"
+msgstr "Customers"
+
+#: .\customers\views.py:18
+msgid "Você precisa configurar uma empresa primeiro."
+msgstr ""
+
+#: .\customers\views.py:82
+#, fuzzy
+#| msgid "Já existe um usuário com este e-mail."
+msgid "Já existe um cliente com este e-mail"
+msgstr "A user with this email already exists."
+
+#: .\customers\views.py:88
+#, fuzzy
+#| msgid "Login realizado com sucesso!"
+msgid "Cliente criado com sucesso!"
+msgstr "Login successful!"
+
+#: .\customers\views.py:95 .\templates\customers\customer_list.html:54
+msgid "Novo Cliente"
+msgstr "New customer"
+
+#: .\customers\views.py:96
+#, fuzzy
+#| msgid "Criar Conta"
+msgid "Criar Cliente"
+msgstr "Create Account"
+
+#: .\customers\views.py:131
+#, fuzzy
+#| msgid "Perfil atualizado com sucesso!"
+msgid "Cliente atualizado com sucesso!"
+msgstr "Profile updated successfully!"
+
+#: .\customers\views.py:139
+#, fuzzy
+#| msgid "Clientes"
+msgid "Editar Cliente"
+msgstr "Customers"
+
+#: .\customers\views.py:140
+msgid "Salvar Alterações"
+msgstr ""
+
+#: .\customers\views.py:158
+#, fuzzy
+#| msgid "Login realizado com sucesso!"
+msgid "Cliente \"{}\" excluído com sucesso!"
+msgstr "Login successful!"
+
+#: .\customers\views.py:173
+#, fuzzy
+#| msgid "Empresa configurada com sucesso!"
+msgid "Empresa não configurada"
+msgstr "Company configured successfully!"
+
+#: .\customers\views.py:181
+#, fuzzy
+#| msgid "Ativo"
+msgid "ativado"
+msgstr "Active"
+
+#: .\customers\views.py:181
+msgid "desativado"
+msgstr ""
+
+#: .\customers\views.py:184
+#, fuzzy
+#| msgid "Senha alterada com sucesso!"
+msgid "Cliente {} com sucesso!"
+msgstr "Password changed successfully!"
+
+#: .\customers\views.py:188
+msgid "Método não permitido"
+msgstr ""
 
 #: .\templates\base.html:125 .\templates\core\dashboard.html:10
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: .\templates\base.html:130 .\templates\core\customers.html:5
-#: .\templates\core\customers.html:14 .\templates\core\dashboard.html:169
-msgid "Clientes"
-msgstr "Customers"
-
-#: .\templates\base.html:135 .\templates\core\dashboard.html:174
+#: .\templates\base.html:135 .\templates\core\dashboard.html:199
 #: .\templates\core\products.html:5 .\templates\core\products.html:14
 msgid "Produtos"
 msgstr "Products"
 
-#: .\templates\base.html:140 .\templates\core\dashboard.html:179
+#: .\templates\base.html:140 .\templates\core\dashboard.html:204
 #: .\templates\core\projects.html:5 .\templates\core\projects.html:14
 msgid "Projetos"
 msgstr "Projects"
 
-#: .\templates\base.html:156 .\templates\core\dashboard.html:41
-#: .\templates\core\dashboard.html:85 .\templates\core\dashboard.html:255
+#: .\templates\base.html:156 .\templates\core\dashboard.html:66
+#: .\templates\core\dashboard.html:110 .\templates\core\dashboard.html:280
 msgid "Plano Atual"
 msgstr "Current Plan"
 
-#: .\templates\base.html:162
+#: .\templates\base.html:162 .\templates\core\dashboard.html:20
+#: .\templates\core\dashboard.html:23
 #, fuzzy
 #| msgid "15 dias restantes"
 msgid "dias restantes"
@@ -763,7 +1045,7 @@ msgstr "15 days remaining"
 msgid "Perfil"
 msgstr "Profile"
 
-#: .\templates\base.html:175 .\templates\core\dashboard.html:142
+#: .\templates\base.html:175 .\templates\core\dashboard.html:167
 msgid "Gerenciar Assinatura"
 msgstr "Manage Subscription"
 
@@ -792,7 +1074,7 @@ msgstr "All rights reserved."
 msgid "Configurar Empresa - ForgeLock"
 msgstr "Configure Company - FORGELOCK"
 
-#: .\templates\core\company_setup.html:14 .\templates\core\dashboard.html:137
+#: .\templates\core\company_setup.html:14 .\templates\core\dashboard.html:162
 msgid "Configurar Empresa"
 msgstr "Configure company"
 
@@ -804,46 +1086,35 @@ msgstr "Configure your company"
 msgid "Você pode usar um nome fantasia se não tiver uma empresa formal."
 msgstr "You can use a trade name if you don't have a formal company."
 
-#: .\templates\core\company_setup.html:137
+#: .\templates\core\company_setup.html:140
 msgid "Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB."
 msgstr "Accepted Formats: JPG, PNG, GIF. Maximum size: 2MB."
 
-#: .\templates\core\company_setup.html:145
+#: .\templates\core\company_setup.html:148
 #: .\templates\core\profile_setup.html:161
+#: .\templates\customers\customer_confirm_delete.html:61
+#: .\templates\customers\customer_detail.html:98
+#: .\templates\customers\customer_form.html:327
 msgid "Voltar"
 msgstr "Back"
 
-#: .\templates\core\company_setup.html:150
-#: .\templates\core\company_setup.html:292
+#: .\templates\core\company_setup.html:153
+#: .\templates\core\company_setup.html:308
 #: .\templates\core\profile_setup.html:166
 #: .\templates\core\profile_setup.html:210
+#: .\templates\customers\customer_detail.html:102
 msgid "Editar"
 msgstr "Edit"
 
-#: .\templates\core\company_setup.html:155
+#: .\templates\core\company_setup.html:158
 #: .\templates\core\profile_setup.html:171
 msgid "Avançar"
 msgstr "Advance"
 
-#: .\templates\core\company_setup.html:288
+#: .\templates\core\company_setup.html:304
 #: .\templates\core\profile_setup.html:206
 msgid "Salvar"
 msgstr "Save"
-
-#: .\templates\core\customers.html:21 .\templates\core\products.html:21
-#: .\templates\core\projects.html:21
-msgid "Em Construção"
-msgstr "Under construction"
-
-#: .\templates\core\customers.html:23
-msgid ""
-"O módulo de clientes está sendo desenvolvido e estará disponível em breve."
-msgstr "The customer module is being developed and will be available soon."
-
-#: .\templates\core\customers.html:26 .\templates\core\products.html:26
-#: .\templates\core\projects.html:26 .\templates\core\subscription.html:56
-msgid "Voltar ao Dashboard"
-msgstr "Back to Dashboard"
 
 #: .\templates\core\dashboard.html:4
 msgid "Dashboard - ForgeLock"
@@ -853,79 +1124,119 @@ msgstr "DASHBOARD - FORGELOCK"
 msgid "Bem-vindo ao ForgeLock"
 msgstr "Welcome to Forgelock"
 
-#: .\templates\core\dashboard.html:23
+#: .\templates\core\dashboard.html:18
+msgid "Status da Assinatura"
+msgstr "Subscription Status"
+
+#: .\templates\core\dashboard.html:20 .\templates\core\subscription.html:24
+msgid "Trial Ativo"
+msgstr "Active Trial"
+
+#: .\templates\core\dashboard.html:21
+msgid "Após o trial, escolha um plano para continuar"
+msgstr "After the trial, choose a plan to continue"
+
+#: .\templates\core\dashboard.html:25
+msgid "PERÍODO DE CARÊNCIA"
+msgstr "GRACE PERIOD"
+
+#: .\templates\core\dashboard.html:26 .\templates\core\dashboard.html:31
+msgid "Sua assinatura expirou e não foi renovada!"
+msgstr "Your subscription has expired and was not renewed!"
+
+#: .\templates\core\dashboard.html:27
+msgid "Você tem"
+msgstr "You have"
+
+#: .\templates\core\dashboard.html:27
+msgid "dias para renovar antes do bloqueio total"
+msgstr "days to renew before total block"
+
+#: .\templates\core\dashboard.html:28
+msgid "Durante a carência, você pode apenas visualizar dados (sem editar)"
+msgstr "During grace period, you can only view data (no editing)"
+
+#: .\templates\core\dashboard.html:30
+msgid "EXPIRADA"
+msgstr "EXPIRED"
+
+#: .\templates\core\dashboard.html:32
+msgid "Renove agora para continuar usando o sistema"
+msgstr "Renew now to continue using the system"
+
+#: .\templates\core\dashboard.html:48
 msgid "Usuários Verificados"
 msgstr "Verified Users"
 
-#: .\templates\core\dashboard.html:29 .\templates\core\dashboard.html:79
+#: .\templates\core\dashboard.html:54 .\templates\core\dashboard.html:104
 msgid "Membros da Empresa"
 msgstr "Company Members"
 
-#: .\templates\core\dashboard.html:51
+#: .\templates\core\dashboard.html:76
 msgid "Total de Usuários"
 msgstr "Total Users"
 
-#: .\templates\core\dashboard.html:57
+#: .\templates\core\dashboard.html:82
 msgid "Usuários Pendentes"
 msgstr "Pending Users"
 
-#: .\templates\core\dashboard.html:63
+#: .\templates\core\dashboard.html:88
 msgid "Planos Disponíveis"
 msgstr "Available Plans"
 
-#: .\templates\core\dashboard.html:69
+#: .\templates\core\dashboard.html:94
 msgid "Países Suportados"
 msgstr "Supported Countries"
 
-#: .\templates\core\dashboard.html:91
+#: .\templates\core\dashboard.html:116
 msgid "Meus Clientes"
 msgstr "My Customers"
 
-#: .\templates\core\dashboard.html:101
+#: .\templates\core\dashboard.html:126
 msgid "Meus Produtos"
 msgstr "My Products"
 
-#: .\templates\core\dashboard.html:107
+#: .\templates\core\dashboard.html:132
 msgid "Meus Projetos"
 msgstr "My Projects"
 
-#: .\templates\core\dashboard.html:113
+#: .\templates\core\dashboard.html:138
 msgid "Atividades Hoje"
 msgstr "Today's Activities"
 
-#: .\templates\core\dashboard.html:125
+#: .\templates\core\dashboard.html:150
 msgid "Ações Rápidas"
 msgstr "Rapid actions"
 
-#: .\templates\core\dashboard.html:132 .\templates\core\profile.html:65
+#: .\templates\core\dashboard.html:157 .\templates\core\profile.html:65
 msgid "Editar Perfil"
 msgstr "Edit Profile"
 
-#: .\templates\core\dashboard.html:147
+#: .\templates\core\dashboard.html:172
 msgid "Ver Perfil"
 msgstr "View Profile"
 
-#: .\templates\core\dashboard.html:162
+#: .\templates\core\dashboard.html:187
 msgid "Módulos do Sistema"
 msgstr "System Modules"
 
-#: .\templates\core\dashboard.html:200
+#: .\templates\core\dashboard.html:225
 msgid "Informações da Empresa"
 msgstr "Company information"
 
-#: .\templates\core\dashboard.html:232
+#: .\templates\core\dashboard.html:257
 msgid "Atividade Recente"
 msgstr "Recent activity"
 
-#: .\templates\core\dashboard.html:236
+#: .\templates\core\dashboard.html:261
 msgid "Nenhuma atividade recente"
 msgstr "No recent activity"
 
-#: .\templates\core\dashboard.html:244
+#: .\templates\core\dashboard.html:269
 msgid "Resumo da Empresa"
 msgstr "Company Summary"
 
-#: .\templates\core\dashboard.html:251
+#: .\templates\core\dashboard.html:276
 msgid "Membros"
 msgstr "Members"
 
@@ -976,8 +1287,7 @@ msgstr "Product Control"
 
 #: .\templates\core\home.html:95
 msgid ""
-"Gerencie estoque, preços, categorias e histórico de vendas dos seus "
-"produtos."
+"Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos."
 msgstr ""
 "Manage inventory, prices, categories and sales history of your products."
 
@@ -1106,10 +1416,19 @@ msgstr "Enter your email to receive password recovery instructions."
 msgid "Enviar Email"
 msgstr "Send Email"
 
+#: .\templates\core\products.html:21 .\templates\core\projects.html:21
+msgid "Em Construção"
+msgstr "Under construction"
+
 #: .\templates\core\products.html:23
 msgid ""
 "O módulo de produtos está sendo desenvolvido e estará disponível em breve."
 msgstr "The product module is being developed and will be available soon."
+
+#: .\templates\core\products.html:26 .\templates\core\projects.html:26
+#: .\templates\core\subscription.html:56
+msgid "Voltar ao Dashboard"
+msgstr "Back to Dashboard"
 
 #: .\templates\core\profile.html:4
 msgid "Perfil - ForgeLock"
@@ -1124,6 +1443,7 @@ msgid "Informações Pessoais"
 msgstr "Personal Information"
 
 #: .\templates\core\profile.html:19
+#: .\templates\customers\customer_confirm_delete.html:96
 msgid "Nome:"
 msgstr "Name:"
 
@@ -1132,10 +1452,12 @@ msgid "Usuário:"
 msgstr "Username:"
 
 #: .\templates\core\profile.html:21
+#: .\templates\customers\customer_confirm_delete.html:100
 msgid "E-mail:"
 msgstr "Email:"
 
 #: .\templates\core\profile.html:23
+#: .\templates\customers\customer_confirm_delete.html:110
 msgid "País:"
 msgstr "Country:"
 
@@ -1144,6 +1466,7 @@ msgid "Data de nascimento:"
 msgstr "Date of birth:"
 
 #: .\templates\core\profile.html:28 .\templates\core\profile.html:35
+#: .\templates\customers\customer_detail.html:253
 msgid "Não informado"
 msgstr "Not provided"
 
@@ -1187,8 +1510,7 @@ msgstr "Member since:"
 msgid "Último login:"
 msgstr "Last login:"
 
-#: .\templates\core\profile_setup.html:5
-#: .\templates\core\profile_setup.html:28
+#: .\templates\core\profile_setup.html:5 .\templates\core\profile_setup.html:28
 msgid "Completar Perfil"
 msgstr "Complete Profile"
 
@@ -1216,12 +1538,6 @@ msgstr "Registration - Forgelock"
 #: .\templates\core\register.html:13 .\templates\core\register.html:200
 msgid "Criar Conta"
 msgstr "Create Account"
-
-#: .\templates\core\register.html:109
-#, fuzzy
-#| msgid "Telefone"
-msgid "Telefone *"
-msgstr "Phone"
 
 #: .\templates\core\register.html:154
 msgid "Plano Trial Gratuito"
@@ -1276,12 +1592,9 @@ msgid "Plano Atual:"
 msgstr "Current Plan:"
 
 #: .\templates\core\subscription.html:22
+#: .\templates\customers\customer_confirm_delete.html:114
 msgid "Status:"
 msgstr "Status:"
-
-#: .\templates\core\subscription.html:24
-msgid "Trial Ativo"
-msgstr "Active Trial"
 
 #: .\templates\core\subscription.html:26
 msgid "Trial Expirado"
@@ -1363,6 +1676,302 @@ msgstr "Having trouble with verification?"
 msgid "Tente novamente"
 msgstr "Try again"
 
+#: .\templates\customers\customer_confirm_delete.html:5
+#: .\templates\customers\customer_confirm_delete.html:52
+#, fuzzy
+#| msgid "Meus Clientes"
+msgid "Excluir Cliente"
+msgstr "My Customers"
+
+#: .\templates\customers\customer_confirm_delete.html:55
+msgid "Confirme a exclusão do cliente"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:75
+#, fuzzy
+#| msgid "Função"
+msgid "Atenção!"
+msgstr "Function"
+
+#: .\templates\customers\customer_confirm_delete.html:77
+msgid ""
+"Esta ação não pode ser desfeita. O cliente será permanentemente removido do "
+"sistema."
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:89
+msgid "Cliente a ser excluído"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:104
+msgid "Telefone:"
+msgstr "Phone:"
+
+#: .\templates\customers\customer_confirm_delete.html:119
+#: .\templates\customers\customer_detail.html:405
+#: .\templates\customers\customer_list.html:186
+#, fuzzy
+#| msgid "Ativo"
+msgid "Inativo"
+msgstr "Active"
+
+#: .\templates\customers\customer_confirm_delete.html:124
+msgid "Cadastrado em:"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:134
+#, fuzzy
+#| msgid "Documento"
+msgid "Documento:"
+msgstr "Document"
+
+#: .\templates\customers\customer_confirm_delete.html:145
+#, fuzzy
+#| msgid "Endereço"
+msgid "Endereço:"
+msgstr "Address"
+
+#: .\templates\customers\customer_confirm_delete.html:161
+msgid "Observações:"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:178
+msgid "O que acontecerá após a exclusão?"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:181
+msgid "O cliente será permanentemente removido do banco de dados"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:182
+msgid "Todos os dados associados serão perdidos"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:183
+msgid "Não será possível recuperar as informações"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:184
+msgid "Histórico de interações será perdido"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:200
+msgid ""
+"Eu entendo que esta ação é irreversível e confirmo a exclusão do cliente"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:214
+#, fuzzy
+#| msgid "Cancelada"
+msgid "Cancelar"
+msgstr "Canceled"
+
+#: .\templates\customers\customer_confirm_delete.html:220
+msgid "Confirmar Exclusão"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:245
+msgid "Você deve confirmar a exclusão para continuar."
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:249
+msgid "Tem certeza que deseja excluir permanentemente este cliente?"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:6
+#, fuzzy
+#| msgid "Gestão de Clientes"
+msgid "Detalhes do Cliente"
+msgstr "Customer Management"
+
+#: .\templates\customers\customer_detail.html:92
+msgid "Detalhes do cliente"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:106
+msgid "Excluir"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:119
+#, fuzzy
+#| msgid "Meus Clientes"
+msgid "Status do Cliente"
+msgstr "My Customers"
+
+#: .\templates\customers\customer_detail.html:123
+msgid "Cliente ativo e disponível para operações"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:125
+msgid "Cliente inativo - não aparecerá em listas e operações"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:131
+msgid "ATIVO"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:133
+msgid "INATIVO"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:188
+#: .\templates\customers\customer_list.html:216
+#, fuzzy
+#| msgid "Planos"
+msgid "anos"
+msgstr "Plans"
+
+#: .\templates\customers\customer_detail.html:200
+#, fuzzy
+#| msgid "Data de nascimento"
+msgid "Data de Cadastro"
+msgstr "Date of birth"
+
+#: .\templates\customers\customer_detail.html:210
+#: .\templates\customers\customer_form.html:92
+#, fuzzy
+#| msgid "Informações da Conta"
+msgid "Informações de Contato"
+msgstr "Account Information"
+
+#: .\templates\customers\customer_detail.html:242
+msgid "Rede Social"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:304
+msgid "Estado"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:318
+msgid "CEP"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:342
+#, fuzzy
+#| msgid "Novo Cliente"
+msgid "Notas sobre o cliente"
+msgstr "New customer"
+
+#: .\templates\customers\customer_detail.html:355
+#, fuzzy
+#| msgid "Informações do Plano"
+msgid "Informações do Sistema"
+msgstr "Plan Information"
+
+#: .\templates\customers\customer_detail.html:376
+msgid "Criado em"
+msgstr ""
+
+#: .\templates\customers\customer_detail.html:388
+msgid "Atualizado em"
+msgstr ""
+
+#: .\templates\customers\customer_form.html:41
+#, fuzzy
+#| msgid "Informações do Plano"
+msgid "Preencha as informações do cliente"
+msgstr "Plan Information"
+
+#: .\templates\customers\customer_form.html:43
+msgid "Informações completas para melhor atendimento."
+msgstr ""
+
+#: .\templates\customers\customer_list.html:48
+#, fuzzy
+#| msgid "Meus Clientes"
+msgid "Gerencie seus clientes"
+msgstr "My Customers"
+
+#: .\templates\customers\customer_list.html:69
+#, fuzzy
+#| msgid "Gestão de Clientes"
+msgid "Total de Clientes"
+msgstr "Customer Management"
+
+#: .\templates\customers\customer_list.html:84
+#, fuzzy
+#| msgid "Clientes"
+msgid "Clientes Ativos"
+msgstr "Customers"
+
+#: .\templates\customers\customer_list.html:99
+#, fuzzy
+#| msgid "Clientes"
+msgid "Clientes Inativos"
+msgstr "Customers"
+
+#: .\templates\customers\customer_list.html:114
+#, fuzzy
+#| msgid "Resumo"
+msgid "Resultados"
+msgstr "Summary"
+
+#: .\templates\customers\customer_list.html:139
+msgid "Buscar por nome, e-mail, telefone..."
+msgstr ""
+
+#: .\templates\customers\customer_list.html:141
+msgid "Buscar"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:147
+msgid "Todos os Status"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:149
+#, fuzzy
+#| msgid "Ativo"
+msgid "Ativos"
+msgstr "Active"
+
+#: .\templates\customers\customer_list.html:152
+#, fuzzy
+#| msgid "Ativo"
+msgid "Inativos"
+msgstr "Active"
+
+#: .\templates\customers\customer_list.html:159
+msgid "Ordenar por Nome"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:162
+#, fuzzy
+#| msgid "Suporte por email"
+msgid "Ordenar por E-mail"
+msgstr "Email support"
+
+#: .\templates\customers\customer_list.html:165
+msgid "Ordenar por Data"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:258
+msgid "Nenhum cliente encontrado"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:261
+msgid "Tente ajustar os filtros de busca."
+msgstr ""
+
+#: .\templates\customers\customer_list.html:263
+msgid "Comece criando seu primeiro cliente."
+msgstr ""
+
+#: .\templates\customers\customer_list.html:269
+msgid "Criar Primeiro Cliente"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:288
+msgid "Deseja alterar o status deste cliente?"
+msgstr ""
+
+#: .\templates\customers\customer_list.html:305
+msgid "Erro ao alterar status"
+msgstr ""
+
+#~ msgid ""
+#~ "O módulo de clientes está sendo desenvolvido e estará disponível em breve."
+#~ msgstr "The customer module is being developed and will be available soon."
+
 #~ msgid "Opcional. Sua data de nascimento."
 #~ msgstr "Optional. Your date of birth."
 
@@ -1394,23 +2003,14 @@ msgstr "Try again"
 #~ msgid "Completar Perfil - ForgeLock"
 #~ msgstr "Complete Profile - ForgeLock"
 
-#~ msgid "Novo Cliente"
-#~ msgstr "New customer"
-
 #~ msgid "Novo Produto"
 #~ msgstr "New product"
 
 #~ msgid "Novo Projeto"
 #~ msgstr "New project"
 
-#~ msgid "Resumo"
-#~ msgstr "Summary"
-
 #~ msgid "Salvar e Continuar"
 #~ msgstr "Save and Continue"
-
-#~ msgid "Telefone:"
-#~ msgstr "Phone:"
 
 #~ msgid "Pular por enquanto"
 #~ msgstr "Skip for now"
@@ -1448,9 +2048,6 @@ msgstr "Try again"
 #~ msgid "Vendas + Projetos"
 #~ msgstr "Sales + Projects"
 
-#~ msgid "Suporte por email"
-#~ msgstr "Email support"
-
 #~ msgid "Escolher Básico"
 #~ msgstr "Choose Basic"
 
@@ -1473,8 +2070,8 @@ msgstr "Try again"
 #~ msgstr "Remaining attempts: {}"
 
 #~ msgid ""
-#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente "
-#~ "em 3 minutos."
+#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente "
+#~ "novamente em 3 minutos."
 #~ msgstr ""
 #~ "IP temporarily blocked due to multiple attempts. Try again in 3 minutes."
 
@@ -1484,32 +2081,3 @@ msgstr "Try again"
 #~ msgid ""
 #~ "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 #~ msgstr "Suspicious activity detected. IP temporarily blocked for 3 minutes."
-
-msgid "Status da Assinatura"
-msgstr "Subscription Status"
-
-msgid "Após o trial, escolha um plano para continuar"
-msgstr "After the trial, choose a plan to continue"
-
-msgid "PERÍODO DE CARÊNCIA"
-msgstr "GRACE PERIOD"
-
-msgid "Sua assinatura expirou e não foi renovada!"
-msgstr "Your subscription has expired and was not renewed!"
-
-msgid "Você tem"
-msgstr "You have"
-
-msgid "dias para renovar antes do bloqueio total"
-msgstr "days to renew before total block"
-
-msgid "Durante a carência, você pode apenas visualizar dados (sem editar)"
-msgstr "During grace period, you can only view data (no editing)"
-
-msgid "EXPIRADA"
-msgstr "EXPIRED"
-
-msgid "Renove agora para continuar usando o sistema"
-msgstr "Renew now to continue using the system"
-
-
