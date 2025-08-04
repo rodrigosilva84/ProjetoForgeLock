@@ -403,8 +403,12 @@ class GeolocationService:
         return ip
     
     @staticmethod
-    def get_country_by_ip(ip):
+    def get_country_by_ip(ip, simulate_country=None):
         """Detecta país por IP usando API gratuita"""
+        # Simulação para desenvolvimento
+        if simulate_country:
+            return simulate_country
+        
         # Para desenvolvimento local, simular Brasil
         if ip in ['127.0.0.1', 'localhost', '::1']:
             return 'BR'
@@ -448,9 +452,9 @@ class GeolocationService:
         return currency_mapping.get(country_code, 'USD')
     
     @staticmethod
-    def detect_user_currency(request):
+    def detect_user_currency(request, simulate_country=None):
         """Detecta moeda do usuário baseada na localização real (IP)"""
         # Sempre detectar por IP, independente se usuário está logado ou não
         ip = GeolocationService.get_client_ip(request)
-        country_code = GeolocationService.get_country_by_ip(ip)
+        country_code = GeolocationService.get_country_by_ip(ip, simulate_country)
         return GeolocationService.get_currency_by_country(country_code)

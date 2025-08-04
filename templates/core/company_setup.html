@@ -61,6 +61,9 @@
                                     {% endfor %}
                                 </div>
                             {% endif %}
+                            {% if form.cnpj.help_text %}
+                                <div class="form-text">{{ form.cnpj.help_text }}</div>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -279,6 +282,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if (field) {
                 field.readOnly = !editing;
                 field.disabled = !editing;
+                // Garantir que campos disabled não sejam enviados
+                if (!editing) {
+                    field.removeAttribute('name');
+                } else {
+                    // Restaurar o nome do campo se necessário
+                    if (fieldName === 'name') field.setAttribute('name', 'name');
+                    if (fieldName === 'cnpj') field.setAttribute('name', 'cnpj');
+                    if (fieldName === 'email') field.setAttribute('name', 'email');
+                    if (fieldName === 'phone') field.setAttribute('name', 'phone');
+                    if (fieldName === 'address') field.setAttribute('name', 'address');
+                    if (fieldName === 'country') field.setAttribute('name', 'country');
+                    if (fieldName === 'logo') field.setAttribute('name', 'logo');
+                }
             }
         });
         

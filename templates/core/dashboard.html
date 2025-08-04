@@ -10,6 +10,31 @@
             <i class="fas fa-tachometer-alt me-2"></i>{% translate "Dashboard" %}
         </h1>
         <p class="text-muted">{% translate "Bem-vindo ao ForgeLock" %}, {{ user.get_full_name|default:user.username }}!</p>
+        
+        <!-- Status da Assinatura -->
+        {% if subscription_status %}
+        <div class="alert {% if subscription_status == 'trial' %}alert-info{% elif subscription_status == 'active' %}alert-success{% elif subscription_status == 'grace_period' %}alert-warning{% elif subscription_status == 'expired' %}alert-danger{% else %}alert-secondary{% endif %} mb-3">
+            <i class="fas fa-info-circle me-2"></i>
+            <strong>{% translate "Status da Assinatura" %}:</strong>
+            {% if subscription_status == 'trial' %}
+                <span class="badge bg-info">{% translate "Trial Ativo" %}</span> - {{ days_remaining }} {% translate "dias restantes" %}
+                <br><small class="text-muted">{% translate "Após o trial, escolha um plano para continuar" %}</small>
+            {% elif subscription_status == 'active' %}
+                <span class="badge bg-success">{% translate "Ativa" %}</span> - {{ days_remaining }} {% translate "dias restantes" %}
+            {% elif subscription_status == 'grace_period' %}
+                <span class="badge bg-warning">{% translate "PERÍODO DE CARÊNCIA" %}</span>
+                <br><strong>{% translate "Sua assinatura expirou e não foi renovada!" %}</strong>
+                <br>{% translate "Você tem" %} {{ grace_period_days }} {% translate "dias para renovar antes do bloqueio total" %}
+                <br><small class="text-muted">{% translate "Durante a carência, você pode apenas visualizar dados (sem editar)" %}</small>
+            {% elif subscription_status == 'expired' %}
+                <span class="badge bg-danger">{% translate "EXPIRADA" %}</span>
+                <br><strong>{% translate "Sua assinatura expirou e não foi renovada!" %}</strong>
+                <br>{% translate "Renove agora para continuar usando o sistema" %}
+            {% else %}
+                {{ subscription_status|title }}
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
 </div>
 
@@ -191,7 +216,7 @@
 </div>
 
 <!-- Company Info -->
-{% if company %}
+{% if primary_company %}
 <div class="row mb-4">
     <div class="col-12">
         <div class="card">
@@ -203,8 +228,8 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-2">
-                        {% if company.logo %}
-                            <img src="{{ company.logo.url }}" alt="{{ company.name }}" class="img-fluid rounded">
+                        {% if primary_company.logo %}
+                            <img src="{{ primary_company.logo.url }}" alt="{{ primary_company.name }}" class="img-fluid rounded">
                         {% else %}
                             <div class="bg-light rounded d-flex align-items-center justify-content-center" style="height: 100px;">
                                 <i class="fas fa-building fa-2x text-muted"></i>
@@ -212,9 +237,9 @@
                         {% endif %}
                     </div>
                     <div class="col-md-10">
-                        <h5>{{ company.name }}</h5>
-                        <p class="text-muted mb-2">{{ company.email }} | {{ company.phone }}</p>
-                        <p class="mb-0">{{ company.address }}</p>
+                        <h5>{{ primary_company.name }}</h5>
+                        <p class="text-muted mb-2">{{ primary_company.email }} | {{ primary_company.phone }}</p>
+                        <p class="mb-0">{{ primary_company.address }}</p>
                     </div>
                 </div>
             </div>

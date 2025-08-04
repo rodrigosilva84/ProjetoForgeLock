@@ -11,6 +11,7 @@ from .forms import UserRegistrationForm, UserLoginForm, SMSVerificationForm, Com
 from .services import VerificationService, SecurityService
 from .models import User, Country, Plan, Account, PlanPrice
 from django.utils import translation
+from .decorators import subscription_required, full_access_required, read_only_access, check_subscription_status
 
 verification_service = VerificationService()
 security_service = SecurityService()
@@ -44,7 +45,7 @@ def home(request):
         translation.activate(session_language)
     
     # Buscar planos ativos (excluir Admin, Trial e Vitalicio)
-    plans = Plan.objects.filter(is_active=True, is_trial=False).exclude(name__iexact='admin').exclude(name__iexact='vitalicio').order_by('price')
+    plans = Plan.objects.filter(is_active=True, is_trial=False).exclude(name__iexact='admin').exclude(name__iexact='vitalicio').order_by('name')
     
     # Detectar moeda do usuário
     user_currency = get_user_currency(request)
@@ -85,41 +86,38 @@ def user_register(request, plan_id=None):
             user.set_password(form.cleaned_data['password1'])
             user.save()
             
-            # Criar conta com plano Trial (sempre começa com trial)
-            trial_plan, created = Plan.objects.get_or_create(
-                name='Trial',
-                defaults={
-                    'description': 'Plano trial gratuito por 15 dias',
-                    'price': 0,
-                    'max_users': 1,
-                    'max_customers': 10,
-                    'max_products': 5,
-                    'max_projects': 2,
-                    'has_stl_security': False,
-                    'is_trial': True,
-                    'trial_days': 15
-                }
-            )
+            # Usar plano escolhido pelo usuário ou Basic como padrão
+            if selected_plan:
+                plan_to_use = selected_plan
+            else:
+                plan_to_use = Plan.objects.filter(name='Basic', is_active=True).first()
+                if not plan_to_use:
+                    messages.error(request, _('Plano Basic não encontrado. Contate o suporte.'))
+                    return redirect('home')
             
             # Criar conta
             account = Account.objects.create(
                 user=user,
-                plan=trial_plan,
+                plan=plan_to_use,
                 is_active=True
             )
             
-            # Criar assinatura trial
+            # Criar assinatura trial (15 dias)
             from .models import Subscription
+            from django.utils import timezone
+            from datetime import timedelta
+            
+            trial_end_date = timezone.now() + timedelta(days=15)
             Subscription.objects.create(
                 user=user,
-                plan=trial_plan,
+                plan=plan_to_use,
                 status='trial',
-                billing_cycle='monthly'
+                billing_cycle='monthly',
+                start_date=timezone.now(),
+                end_date=trial_end_date
             )
             
-            # Salvar plano selecionado na sessão para uso posterior
-            if selected_plan:
-                request.session['selected_plan_id'] = selected_plan.id
+
             
             # Enviar SMS de verificação
             verification_service.send_verification_code(user)
@@ -130,9 +128,14 @@ def user_register(request, plan_id=None):
     else:
         form = UserRegistrationForm()
     
-    # Se não há plano selecionado, usar trial como padrão
+    # Se não há plano selecionado, usar Basic como padrão
     if not selected_plan:
-        selected_plan = Plan.objects.filter(is_trial=True, is_active=True).first()
+        selected_plan = Plan.objects.filter(name='Basic', is_active=True).first()
+    
+    # Garantir que temos um plano válido
+    if not selected_plan:
+        messages.error(request, _('Nenhum plano disponível. Contate o suporte.'))
+        return redirect('home')
     
     return render(request, 'core/register.html', {
         'form': form,
@@ -306,6 +309,7 @@ def user_logout(request):
 
 
 @login_required
+@check_subscription_status
 def dashboard(request):
     """Dashboard do usuário"""
     # Forçar ativação do idioma baseado na sessão
@@ -316,13 +320,14 @@ def dashboard(request):
     user = request.user
     
     # Verificar se usuário tem empresa
-    if not user.company:
+    primary_company = user.get_primary_company()
+    if not primary_company:
         messages.warning(request, _('Configure sua empresa para começar a usar o sistema.'))
         return redirect('company_setup')
     
     # Estatísticas da empresa do usuário
-    company = user.company
-    company_members = User.objects.filter(company=company).count()
+    company = primary_company
+    company_members = User.objects.filter(companies=company).count()
     
     # Estatísticas do plano atual
     current_plan = user.account.plan if hasattr(user, 'account') and user.account else None
@@ -361,6 +366,13 @@ def dashboard(request):
             'current_plan': current_plan,
             'plan_name': plan_name,
             
+            # Informações da assinatura
+            'subscription_status': getattr(request, 'subscription_status', None),
+            'days_remaining': getattr(request, 'days_remaining', 0),
+            'grace_period_days': getattr(request, 'grace_period_days', 0),
+            'can_edit': getattr(request, 'can_edit', True),
+            'can_view': getattr(request, 'can_view', True),
+            
             # Placeholders para futuros módulos
             'customers_count': 0,
             'products_count': 0,
@@ -377,6 +389,13 @@ def dashboard(request):
             'company_members': company_members,
             'current_plan': current_plan,
             'plan_name': plan_name,
+            
+            # Informações da assinatura
+            'subscription_status': getattr(request, 'subscription_status', None),
+            'days_remaining': getattr(request, 'days_remaining', 0),
+            'grace_period_days': getattr(request, 'grace_period_days', 0),
+            'can_edit': getattr(request, 'can_edit', True),
+            'can_view': getattr(request, 'can_view', True),
             
             # Placeholders para futuros módulos
             'customers_count': 0,
@@ -451,6 +470,7 @@ def subscription(request):
 
 
 @login_required
+@read_only_access
 def customers(request):
     """Página de clientes"""
     # Forçar ativação do idioma baseado na sessão
@@ -462,6 +482,7 @@ def customers(request):
 
 
 @login_required
+@read_only_access
 def products(request):
     """Página de produtos"""
     # Forçar ativação do idioma baseado na sessão
@@ -473,6 +494,7 @@ def products(request):
 
 
 @login_required
+@read_only_access
 def projects(request):
     """Página de projetos"""
     # Forçar ativação do idioma baseado na sessão
@@ -497,7 +519,7 @@ def company_setup(request):
     is_first_access = user.is_first_access
     
     # Verificar se o usuário já tem uma empresa
-    existing_company = getattr(user, 'company', None)
+    existing_company = user.get_primary_company()
     
     if request.method == 'POST':
         # Se já existe uma empresa, usar a instância existente
@@ -518,13 +540,23 @@ def company_setup(request):
             company = form.save()
             # Só associar a empresa ao usuário se ela não existia antes
             if not existing_company:
-                user.company = company
-                user.save()
+                from .models import UserCompany
+                UserCompany.objects.create(
+                    user=user,
+                    company=company,
+                    role='owner',
+                    is_active=True
+                )
             
             messages.success(request, _('Empresa configurada com sucesso!'))
             
             # Sempre permanecer na mesma página após salvar
             return redirect('company_setup')
+        else:
+            # Debug: mostrar erros do formulário
+            print("Erros do formulário:", form.errors)
+            for field_name, errors in form.errors.items():
+                print(f"Campo {field_name}: {errors}")
     else:
         # Criar formulário APÓS ativar o idioma, passando o usuário e a instância existente
         if existing_company:

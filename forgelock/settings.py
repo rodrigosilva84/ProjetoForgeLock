@@ -173,9 +173,22 @@ SMS_VERIFICATION_CODE_LENGTH = 6
 SMS_VERIFICATION_EXPIRY_MINUTES = 10
 SMS_DEVELOPMENT_MODE = False  # Desabilitar para usar sistema híbrido
 
-# Email Settings (fallback para SMS)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # Console em dev, SMTP em prod
 DEFAULT_FROM_EMAIL = 'noreply@forgelock.com'
+
+# Email SMTP Settings (para produção)
+EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True').lower() == 'true'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+
+# Site URL (para links em emails)
+SITE_URL = os.environ.get('SITE_URL', 'http://localhost:8000')
+
+# Twilio Settings
+TWILIO_ENABLED = bool(os.environ.get('TWILIO_ENABLED', False))
 
 # Login/Logout URLs
 LOGIN_URL = '/login/'

@@ -48,8 +48,8 @@ class Plan(models.Model):
     description = models.TextField(_("Descrição"))
     description_en = models.TextField(_("Descrição (Inglês)"), blank=True)
     description_es = models.TextField(_("Descrição (Espanhol)"), blank=True)
-    price = models.DecimalField(_("Preço"), max_digits=10, decimal_places=2)
     max_users = models.IntegerField(_("Máximo de usuários"), default=1)
+    max_companies = models.IntegerField(_("Máximo de empresas"), default=1)
     max_customers = models.IntegerField(_("Máximo de clientes"), default=100)
     max_products = models.IntegerField(_("Máximo de produtos"), default=50)
     max_projects = models.IntegerField(_("Máximo de projetos"), default=10)
@@ -63,7 +63,7 @@ class Plan(models.Model):
     class Meta:
         verbose_name = _("Plano")
         verbose_name_plural = _("Planos")
-        ordering = ['price']
+        ordering = ['name']
 
     def __str__(self):
         return self.name
@@ -98,65 +98,47 @@ class Plan(models.Model):
         """Retorna a duração do trial formatada"""
         if self.is_trial:
             return f"{self.trial_days} dias"
-        return None
+        return "N/A"
     
     def calculate_trial_expiry(self, start_date=None):
         """Calcula a data de expiração do trial"""
-        from django.utils import timezone
-        if not self.is_trial:
-            return None
-        
         if not start_date:
             start_date = timezone.now()
-        
-        from datetime import timedelta
         return start_date + timedelta(days=self.trial_days)
     
     def get_price_for_currency(self, currency=None, billing_cycle='monthly'):
-        """Retorna o preço para uma moeda específica e ciclo de cobrança"""
+        """Retorna o preço para a moeda especificada"""
         if not currency:
-            # Tentar usar moeda configurada no objeto
-            currency = getattr(self, '_user_currency', 'USD')
-        
-        # Para trial, sempre retorna 0
-        if self.is_trial:
-            return 0
+            currency = 'BRL'
         
         try:
-            # Para planos pagos, aplicar lógica de ciclo
-            plan_price = self.prices.get(currency=currency, is_active=True)
-            
-            if billing_cycle == 'yearly':
-                # Usar preço anual se definido, senão calcular automaticamente
-                if plan_price.yearly_price:
-                    return plan_price.yearly_price
-                else:
-                    # Calcular preço anual (12 meses com desconto)
-                    from decimal import Decimal
-                    yearly_price = plan_price.price * Decimal('12') * Decimal('0.83')  # 17% desconto (2 meses grátis)
-                    return round(yearly_price, 2)
-            else:
-                return plan_price.price
-        except:
-            return self.price  # Fallback para preço padrão
-
+            price_obj = self.prices.get(currency=currency, is_active=True)
+            if billing_cycle == 'yearly' and price_obj.yearly_price:
+                return price_obj.yearly_price
+            return price_obj.price
+        except PlanPrice.DoesNotExist:
+            return 0  # Fallback se não encontrar preço
+    
     def get_yearly_price(self, currency=None):
-        """Retorna o preço anual para uma moeda específica"""
+        """Retorna o preço anual para a moeda especificada"""
         if not currency:
-            # Tentar usar moeda configurada no objeto
-            currency = getattr(self, '_user_currency', 'USD')
-        return self.get_price_for_currency(currency, 'yearly')
+            currency = 'BRL'
+        
+        try:
+            price_obj = self.prices.get(currency=currency, is_active=True)
+            return price_obj.yearly_price if price_obj.yearly_price else price_obj.price * 12
+        except PlanPrice.DoesNotExist:
+            return 0  # Fallback se não encontrar preço
     
     def get_currency_display(self, currency=None):
         """Retorna o símbolo da moeda"""
         if not currency:
-            # Tentar usar moeda configurada no objeto
-            currency = getattr(self, '_user_currency', 'USD')
+            currency = 'BRL'
         
         currency_symbols = {
             'BRL': 'R$',
             'USD': '$',
-            'EUR': '€'
+            'EUR': '€',
         }
         return currency_symbols.get(currency, currency)
 
@@ -164,7 +146,7 @@ class Plan(models.Model):
 class Company(models.Model):
     """Modelo para empresas"""
     name = models.CharField(_("Nome"), max_length=200)
-    cnpj = models.CharField(_("CNPJ"), max_length=18, blank=True, null=True)
+    cnpj = models.CharField(_("Documento"), max_length=18, blank=True, null=True)
     email = models.EmailField(_("E-mail"))
     phone = models.CharField(_("Telefone"), max_length=20)
     address = models.TextField(_("Endereço"), blank=True)
@@ -189,7 +171,8 @@ class User(AbstractUser):
     email = models.EmailField(_("E-mail"), unique=True)
     phone_number = models.CharField(_("Telefone"), max_length=20, unique=True)
     country = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name=_("País"))
-    company = models.ForeignKey(Company, on_delete=models.PROTECT, verbose_name=_("Empresa"), null=True, blank=True)
+    # Removido: company = models.ForeignKey(Company, on_delete=models.PROTECT, verbose_name=_("Empresa"), null=True, blank=True)
+    companies = models.ManyToManyField(Company, through='UserCompany', verbose_name=_("Empresas"))
     date_of_birth = models.DateField(_("Data de nascimento"), default=timezone.now)
     website = models.URLField(_("Site pessoal"), blank=True)
     is_verified = models.BooleanField(_("Verificado"), default=False)
@@ -205,6 +188,69 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
+    
+    def get_primary_company(self):
+        """Retorna a empresa principal do usuário (primeira criada)"""
+        return self.companies.first()
+    
+    def get_companies_with_roles(self):
+        """Retorna as empresas do usuário com seus roles"""
+        return self.usercompany_set.select_related('company').all()
+    
+    def can_access_company(self, company):
+        """Verifica se o usuário pode acessar uma empresa específica"""
+        return self.usercompany_set.filter(company=company, is_active=True).exists()
+    
+    def get_role_in_company(self, company):
+        """Retorna o role do usuário em uma empresa específica"""
+        try:
+            user_company = self.usercompany_set.get(company=company, is_active=True)
+            return user_company.role
+        except UserCompany.DoesNotExist:
+            return None
+
+
+class UserCompany(models.Model):
+    """Modelo intermediário para relacionamento User-Company com roles e permissions"""
+    ROLE_CHOICES = [
+        ('owner', _('Proprietário')),
+        ('admin', _('Administrador')),
+        ('manager', _('Gerente')),
+        ('member', _('Membro')),
+    ]
+    
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_("Usuário"))
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_("Empresa"))
+    role = models.CharField(_("Função"), max_length=20, choices=ROLE_CHOICES, default='member')
+    permissions = models.JSONField(_("Permissões"), default=dict, blank=True)
+    is_active = models.BooleanField(_("Ativo"), default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = _("Usuário-Empresa")
+        verbose_name_plural = _("Usuários-Empresas")
+        unique_together = ['user', 'company']
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f"{self.user.email} - {self.company.name} ({self.get_role_display()})"
+    
+    def has_permission(self, permission):
+        """Verifica se o usuário tem uma permissão específica"""
+        if self.role == 'owner':
+            return True
+        return self.permissions.get(permission, False)
+    
+    def get_permissions(self):
+        """Retorna as permissões baseadas no role"""
+        base_permissions = {
+            'owner': ['all'],
+            'admin': ['manage_users', 'manage_company', 'view_reports', 'manage_data'],
+            'manager': ['view_reports', 'manage_data', 'view_users'],
+            'member': ['view_data', 'create_data'],
+        }
+        return base_permissions.get(self.role, [])
 
 
 class Account(models.Model):
@@ -240,6 +286,16 @@ class Account(models.Model):
             remaining = subscription.end_date - timezone.now()
             return max(0, remaining.days)
         return 0
+    
+    def can_add_company(self):
+        """Verifica se o usuário pode adicionar mais empresas baseado no plano"""
+        current_companies = self.user.companies.count()
+        return current_companies < self.plan.max_companies
+    
+    def can_add_user_to_company(self, company):
+        """Verifica se o usuário pode adicionar mais usuários a uma empresa"""
+        current_users = company.user_set.count()
+        return current_users < self.plan.max_users
 
 
 class Subscription(models.Model):
@@ -247,6 +303,7 @@ class Subscription(models.Model):
     STATUS_CHOICES = [
         ('trial', _('Trial')),
         ('active', _('Ativa')),
+        ('grace_period', _('Período de Carência')),
         ('cancelled', _('Cancelada')),
         ('expired', _('Expirada')),
     ]
@@ -263,6 +320,8 @@ class Subscription(models.Model):
     start_date = models.DateTimeField(_("Data de início"))
     end_date = models.DateTimeField(_("Data de fim"))
     next_billing_date = models.DateTimeField(_("Próxima cobrança"), null=True, blank=True)
+    grace_period_until = models.DateTimeField(_("Fim do período de carência"), null=True, blank=True)
+    last_notification_sent = models.DateTimeField(_("Última notificação enviada"), null=True, blank=True)
     auto_renew = models.BooleanField(_("Renovação automática"), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -279,6 +338,20 @@ class Subscription(models.Model):
         """Verifica se a assinatura está ativa"""
         return self.status in ['trial', 'active'] and timezone.now() < self.end_date
 
+    def is_in_grace_period(self):
+        """Verifica se está no período de carência"""
+        if self.status == 'grace_period' and self.grace_period_until:
+            return timezone.now() <= self.grace_period_until
+        return False
+
+    def can_access_full_features(self):
+        """Verifica se pode acessar todas as funcionalidades"""
+        return self.is_active() and not self.is_in_grace_period()
+
+    def can_access_read_only(self):
+        """Verifica se pode acessar apenas visualização"""
+        return self.is_active() or self.is_in_grace_period()
+
     def get_days_remaining(self):
         """Retorna dias restantes da assinatura"""
         if self.is_active():
@@ -286,38 +359,44 @@ class Subscription(models.Model):
             return max(0, remaining.days)
         return 0
 
+    def get_grace_period_days_remaining(self):
+        """Retorna dias restantes do período de carência"""
+        if self.is_in_grace_period():
+            remaining = self.grace_period_until - timezone.now()
+            return max(0, remaining.days)
+        return 0
+
     def get_price_for_cycle(self, currency=None):
-        """Retorna o preço para o ciclo atual"""
+        """Retorna o preço para o ciclo de cobrança atual"""
         if not currency:
-            from django.utils import translation
-            current_language = translation.get_language()
-            if current_language == 'pt':
-                currency = 'BRL'
-            elif current_language == 'es':
-                currency = 'EUR'
-            else:
-                currency = 'USD'
+            currency = 'BRL'
         
         try:
-            return self.plan.prices.get(currency=currency, is_active=True).price
+            price_obj = self.plan.prices.get(currency=currency, is_active=True)
+            if self.billing_cycle == 'yearly' and price_obj.yearly_price:
+                return price_obj.yearly_price
+            return price_obj.price
         except PlanPrice.DoesNotExist:
+            if self.billing_cycle == 'yearly':
+                return self.plan.price * 12
             return self.plan.price
 
     def save(self, *args, **kwargs):
-        """Override para calcular datas automaticamente"""
+        """Override do save para calcular datas automaticamente"""
         if not self.start_date:
             self.start_date = timezone.now()
         
         if not self.end_date:
             if self.status == 'trial':
-                self.end_date = self.start_date + timedelta(days=self.plan.trial_days)
+                self.end_date = self.plan.calculate_trial_expiry(self.start_date)
             else:
-                if self.billing_cycle == 'monthly':
-                    self.end_date = self.start_date + timedelta(days=30)
-                else:  # yearly
+                # Para assinaturas pagas, calcular baseado no billing_cycle
+                if self.billing_cycle == 'yearly':
                     self.end_date = self.start_date + timedelta(days=365)
+                else:
+                    self.end_date = self.start_date + timedelta(days=30)
         
-        if not self.next_billing_date and self.status != 'trial':
+        if not self.next_billing_date:
             self.next_billing_date = self.end_date
         
         super().save(*args, **kwargs)
@@ -343,7 +422,7 @@ class PlanPrice(models.Model):
         verbose_name_plural = _("Preços dos Planos")
 
     def __str__(self):
-        return f"{self.plan.name} - {self.currency} {self.price}"
+        return f"{self.plan.name} - {self.currency} ({self.price})"
 
 
 class LoginAttempt(models.Model):
@@ -353,11 +432,11 @@ class LoginAttempt(models.Model):
     success = models.BooleanField(_("Sucesso"), default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     user_agent = models.TextField(_("User Agent"), blank=True)
-    
+
     class Meta:
         verbose_name = _("Tentativa de Login")
         verbose_name_plural = _("Tentativas de Login")
         ordering = ['-timestamp']
-    
+
     def __str__(self):
-        return f"{self.username} - {self.ip_address} - {'Sucesso' if self.success else 'Falha'}"
+        return f"{self.username} - {'Sucesso' if self.success else 'Falha'} - {self.timestamp}"

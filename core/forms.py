@@ -226,7 +226,9 @@ class CompanyForm(forms.ModelForm):
         cleaned_data = super().clean()
         
         # Se o checkbox está marcado, usar dados do usuário
-        if self.data.get('use_registration_data') == 'on':
+        use_registration_data = self.data.get('use_registration_data') == 'on' if self.data else False
+        
+        if use_registration_data:
             user = self.user if hasattr(self, 'user') else None
             if user:
                 if not cleaned_data.get('name'):

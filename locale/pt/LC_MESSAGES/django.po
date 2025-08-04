@@ -818,7 +818,8 @@ msgstr ""
 
 #: .\templates\core\home.html:60
 msgid ""
-"Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos."
+"Gerencie estoque, preços, categorias e histórico de vendas dos seus "
+"produtos."
 msgstr ""
 
 #: .\templates\core\home.html:71
@@ -1061,7 +1062,8 @@ msgstr ""
 msgid "Último login:"
 msgstr ""
 
-#: .\templates\core\profile_setup.html:5 .\templates\core\profile_setup.html:28
+#: .\templates\core\profile_setup.html:5
+#: .\templates\core\profile_setup.html:28
 msgid "Completar Perfil"
 msgstr "Completar Perfil"
 
@@ -1251,11 +1253,11 @@ msgstr "Tente novamente"
 #~ msgstr "00.000.000/0000-00 (opcional)"
 
 #~ msgid ""
-#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente "
-#~ "novamente em 3 minutos."
+#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente "
+#~ "em 3 minutos."
 #~ msgstr ""
-#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente "
-#~ "novamente em 3 minutos."
+#~ "IP temporariamente bloqueado devido a múltiplas tentativas. Tente novamente "
+#~ "em 3 minutos."
 
 #~ msgid "Muitas tentativas falhadas. Tente novamente em 3 minutos."
 #~ msgstr "Muitas tentativas falhadas. Tente novamente em 3 minutos."
@@ -1264,3 +1266,5 @@ msgstr "Tente novamente"
 #~ "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
 #~ msgstr ""
 #~ "Atividade suspeita detectada. IP temporariamente bloqueado por 3 minutos."
+
+

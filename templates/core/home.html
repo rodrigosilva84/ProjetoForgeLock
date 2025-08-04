@@ -3,6 +3,41 @@
 
 {% block title %}{% translate "ForgeLock - Sistema de Gestão Empresarial" %}{% endblock %}
 
+{% block extra_css %}
+<style>
+.pricing-toggle .btn-group {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pricing-toggle .btn {
+    border: none;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.pricing-toggle .btn-gradient-enabled {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.pricing-toggle .btn-gradient-outline {
+    background: white;
+    color: #667eea;
+    border: 1px solid #e0e0e0;
+}
+
+.pricing-toggle .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+</style>
+{% endblock %}
+
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section">
@@ -88,24 +123,6 @@
         </div>
         
         <div class="row">
-                         <!-- Trial Card -->
-             <div class="col-md-4">
-                 <div class="card pricing-card h-100">
-                     <div class="card-body text-center">
-                         <h5 class="card-title">{% translate "Trial" %}</h5>
-                         <h2 class="text-primary">{{ user_currency_symbol }} 0</h2>
-                         <p class="text-muted">{% translate "15 dias grátis" %}</p>
-                         <ul class="list-unstyled">
-                             <li><i class="fas fa-check text-success me-2"></i>{% translate "1 usuário" %}</li>
-                             <li><i class="fas fa-check text-success me-2"></i>{% translate "10 clientes" %}</li>
-                             <li><i class="fas fa-check text-success me-2"></i>{% translate "5 produtos" %}</li>
-                             <li><i class="fas fa-check text-success me-2"></i>{% translate "2 projetos" %}</li>
-                         </ul>
-                         <a href="{% url 'register' %}" class="btn btn-gradient-outline">{% translate "Começar Trial" %}</a>
-                     </div>
-                 </div>
-             </div>
-            
                          <!-- Planos dinâmicos -->
              {% for plan in plans %}
              <div class="col-md-4">
@@ -115,9 +132,9 @@
                          
                          <!-- Preços Mensal/Anual -->
                          <div class="pricing-toggle mb-3">
-                             <div class="btn-group" role="group">
+                             <div class="btn-group btn-group-sm" role="group">
                                  <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="monthly_{{ forloop.counter }}" checked>
-                                                                 <label class="btn btn-gradient-outline btn-sm" for="monthly_{{ forloop.counter }}">{% translate "Mensal" %}</label>
+                                 <label class="btn btn-gradient-enabled btn-sm" for="monthly_{{ forloop.counter }}">{% translate "Mensal" %}</label>
                                 
                                 <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="yearly_{{ forloop.counter }}">
                                 <label class="btn btn-gradient-outline btn-sm" for="yearly_{{ forloop.counter }}">{% translate "Anual" %}</label>
@@ -172,12 +189,24 @@
              const monthlyPrice = card.querySelector('.monthly-price');
              const yearlyPrice = card.querySelector('.yearly-price');
              
+             // Atualizar classes dos botões para destacar o selecionado
+             const monthlyLabel = card.querySelector('label[for*="monthly"]');
+             const yearlyLabel = card.querySelector('label[for*="yearly"]');
+             
              if (this.id.includes('yearly')) {
                  monthlyPrice.style.display = 'none';
                  yearlyPrice.style.display = 'block';
+                 
+                 // Atualizar classes dos botões
+                 monthlyLabel.className = 'btn btn-gradient-outline btn-sm';
+                 yearlyLabel.className = 'btn btn-gradient-enabled btn-sm';
              } else {
                  monthlyPrice.style.display = 'block';
                  yearlyPrice.style.display = 'none';
+                 
+                 // Atualizar classes dos botões
+                 monthlyLabel.className = 'btn btn-gradient-enabled btn-sm';
+                 yearlyLabel.className = 'btn btn-gradient-outline btn-sm';
              }
          });
      });
