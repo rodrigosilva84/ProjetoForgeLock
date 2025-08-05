@@ -125,7 +125,7 @@ class UserProfileForm(forms.ModelForm):
     
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'birth_date', 'website']
+        fields = ['username', 'first_name', 'last_name', 'email', 'phone_number', 'birth_date', 'address', 'address_number', 'city', 'state', 'zip_code', 'website']
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
@@ -133,6 +133,12 @@ class UserProfileForm(forms.ModelForm):
             'email': forms.EmailInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'phone_number': forms.TextInput(attrs={'class': 'form-control', 'readonly': 'readonly'}),
             'birth_date': forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
+            'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': _('Endereço completo')}),
+            'address_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Número')}),
+            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Cidade')}),
+            'state': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Estado/Província')}),
+            'zip_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('00000-000')}),
+            'website': forms.URLInput(attrs={'class': 'form-control', 'placeholder': _('https://meusite.com')})
         }
     
     def __init__(self, *args, **kwargs):
@@ -155,13 +161,17 @@ class CompanyForm(forms.ModelForm):
     
     class Meta:
         model = Company
-        fields = ['name', 'cnpj', 'email', 'phone', 'address', 'country', 'logo']
+        fields = ['name', 'cnpj', 'email', 'phone', 'address', 'address_number', 'city', 'state', 'zip_code', 'country', 'logo']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Nome da empresa ou nome fantasia')}),
             'cnpj': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('CNPJ, CPF, RG, Passaporte, etc. (opcional)')}),
             'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'contato@empresa.com'}),
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': '(11) 99999-9999'}),
             'address': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': _('Endereço completo (opcional)')}),
+            'address_number': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Número')}),
+            'city': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Cidade')}),
+            'state': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Estado/Província')}),
+            'zip_code': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('00000-000')}),
             'country': forms.Select(attrs={'class': 'form-control'}),
             'logo': forms.FileInput(attrs={'class': 'form-control'}),
         }

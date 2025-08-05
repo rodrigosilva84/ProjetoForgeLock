@@ -12,7 +12,7 @@ class CustomerForm(forms.ModelForm):
         fields = [
             'name', 'country', 'phone', 'email',
             'birth_date', 'document_number', 'social_network',
-            'address', 'city', 'state', 'zip_code',
+            'address', 'address_number', 'city', 'state', 'zip_code',
             'notes', 'is_active'
         ]
         widgets = {
@@ -43,11 +43,15 @@ class CustomerForm(forms.ModelForm):
                 'class': 'form-control',
                 'placeholder': _('@usuario ou link da rede social')
             }),
-            'address': forms.Textarea(attrs={
-                'class': 'form-control',
-                'rows': 3,
-                'placeholder': _('Endereço completo')
-            }),
+                                    'address': forms.Textarea(attrs={
+                            'class': 'form-control',
+                            'rows': 3,
+                            'placeholder': _('Endereço completo')
+                        }),
+                        'address_number': forms.TextInput(attrs={
+                            'class': 'form-control',
+                            'placeholder': _('Número')
+                        }),
             'city': forms.TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': _('Cidade')
@@ -77,7 +81,8 @@ class CustomerForm(forms.ModelForm):
             'birth_date': _('Data de Nascimento'),
             'document_number': _('CPF/CNPJ'),
             'social_network': _('Instagram/Rede Social'),
-            'address': _('Endereço'),
+                                    'address': _('Endereço'),
+                        'address_number': _('Número'),
             'city': _('Cidade'),
             'state': _('Estado/Província'),
             'zip_code': _('CEP/Código Postal'),
@@ -90,8 +95,9 @@ class CustomerForm(forms.ModelForm):
             'email': _('E-mail válido para comunicações'),
             'birth_date': _('Opcional - útil para campanhas personalizadas'),
             'document_number': _('CPF para pessoa física ou CNPJ para pessoa jurídica'),
-            'social_network': _('Instagram, Facebook, LinkedIn ou outra rede social'),
-            'address': _('Endereço completo para envio de materiais'),
+                                    'social_network': _('Instagram, Facebook, LinkedIn ou outra rede social'),
+                        'address': _('Endereço completo para envio de materiais'),
+                        'address_number': _('Número do endereço'),
             'notes': _('Informações adicionais sobre o cliente')
         }
     

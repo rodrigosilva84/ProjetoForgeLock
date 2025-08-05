@@ -685,3 +685,8 @@ def clear_attempts(request):
     LoginAttempt.objects.all().delete()
     messages.success(request, 'Tentativas limpas!')
     return redirect('login')
+
+
+def test_address_autocomplete(request):
+    """View para testar a automação de endereço"""
+    return render(request, 'test_address_autocomplete.html')

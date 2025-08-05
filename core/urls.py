@@ -20,4 +20,5 @@ urlpatterns = [
     path('subscription/', views.subscription, name='subscription'),
     path('products/', views.products, name='products'),
     path('projects/', views.projects, name='projects'),
+    path('test-address/', views.test_address_autocomplete, name='test_address_autocomplete'),
 ]

@@ -19,6 +19,7 @@ class Customer(models.Model):
     
     # Endereço (opcional)
     address = models.TextField(_("Endereço"), blank=True)
+    address_number = models.CharField(_("Número"), max_length=20, blank=True)
     city = models.CharField(_("Cidade"), max_length=100, blank=True)
     state = models.CharField(_("Estado/Província"), max_length=100, blank=True)
     zip_code = models.CharField(_("CEP/Código Postal"), max_length=20, blank=True)
