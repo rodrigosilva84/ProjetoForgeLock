@@ -18,7 +18,7 @@ urlpatterns = [
     path('password-reset/', views.password_reset_request, name='password_reset_request'),
     path('password-reset/<str:token>/', views.password_reset_confirm, name='password_reset_confirm'),
     path('subscription/', views.subscription, name='subscription'),
-    path('products/', views.products, name='products'),
+    # path('products/', views.products, name='products'),  # Removido - conflito com app products
     path('projects/', views.projects, name='projects'),
     path('test-address/', views.test_address_autocomplete, name='test_address_autocomplete'),
 ]

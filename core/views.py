@@ -336,6 +336,14 @@ def dashboard(request):
     # Verificar se o usuário é admin (superuser ou staff)
     is_admin = user.is_superuser or user.is_staff
     
+    # Calcular contagens reais de clientes e produtos
+    from customers.models import Customer
+    from products.models import Product
+    
+    customers_count = Customer.objects.filter(company=company).count()
+    products_count = Product.objects.filter(company=company).count()
+    projects_count = 0  # Placeholder até o modelo Project ser implementado
+    
     # Estatísticas baseadas no tipo de usuário
     if is_admin:
         # Para admins: mostrar estatísticas globais
@@ -373,10 +381,10 @@ def dashboard(request):
             'can_edit': getattr(request, 'can_edit', True),
             'can_view': getattr(request, 'can_view', True),
             
-            # Placeholders para futuros módulos
-            'customers_count': 0,
-            'products_count': 0,
-            'projects_count': 0,
+            # Contagens reais dos módulos
+            'customers_count': customers_count,
+            'products_count': products_count,
+            'projects_count': projects_count,
         }
     else:
         # Para usuários normais: mostrar apenas informações pessoais
@@ -397,10 +405,10 @@ def dashboard(request):
             'can_edit': getattr(request, 'can_edit', True),
             'can_view': getattr(request, 'can_view', True),
             
-            # Placeholders para futuros módulos
-            'customers_count': 0,
-            'products_count': 0,
-            'projects_count': 0,
+            # Contagens reais dos módulos
+            'customers_count': customers_count,
+            'products_count': products_count,
+            'projects_count': projects_count,
         }
     
     return render(request, 'core/dashboard.html', context)

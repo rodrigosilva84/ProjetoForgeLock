@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate 'Países' %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">
+                    <i class="fas fa-globe me-2"></i>{% translate 'Países' %}
+                </h1>
+            </div>
+
+            <!-- Barra de Pesquisa e Filtros -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="get" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="search" class="form-label">{% translate 'Pesquisar' %}</label>
+                            <input type="text" class="form-control" id="search" name="search" 
+                                   value="{{ request.GET.search }}" placeholder="{% translate 'Nome, código ou DDI...' %}">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="status" class="form-label">{% translate 'Status' %}</label>
+                            <select class="form-select" id="status" name="status" onchange="this.form.submit()">
+                                <option value="">{% translate 'Todos' %}</option>
+                                <option value="active" {% if status == 'active' %}selected{% endif %}>{% translate 'Ativos' %}</option>
+                                <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>{% translate 'Inativos' %}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary me-2">
+                                <i class="fas fa-search me-2"></i>{% translate 'Pesquisar' %}
+                            </button>
+                            <a href="{% url 'products:country_list' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-times me-2"></i>{% translate 'Limpar' %}
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            {% if countries %}
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{% translate 'Bandeira' %}</th>
+                                    <th>{% translate 'Nome' %}</th>
+                                    <th>{% translate 'Código' %}</th>
+                                    <th>{% translate 'DDI' %}</th>
+                                    <th>{% translate 'Status' %}</th>
+                                    <th>{% translate 'Ações' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for country in countries %}
+                                <tr>
+                                    <td>
+                                        {% if country.flag %}
+                                            <img src="{% static 'images/flags/'|add:country.flag|add:'.svg' %}?v=2" 
+                                                 alt="{{ country.name }}" 
+                                                 class="flag-icon" 
+                                                 style="width: 24px; height: 16px; border: 1px solid #ddd;"
+                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                                            <i class="fas fa-flag text-muted" style="display: none;"></i>
+                                        {% else %}
+                                            <i class="fas fa-flag text-muted"></i>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <strong>{{ country.name }}</strong>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-secondary">{{ country.code }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="badge bg-info">+{{ country.ddi }}</span>
+                                    </td>
+                                    <td>
+                                        {% if country.is_active %}
+                                            <span class="badge bg-success">
+                                                <i class="fas fa-check-circle me-1"></i>{% translate 'Ativo' %}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">
+                                                <i class="fas fa-times-circle me-1"></i>{% translate 'Inativo' %}
+                                            </span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'products:country_edit' country.pk %}" 
+                                           class="btn btn-sm btn-outline-primary" title="{% translate 'Editar' %}">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-globe fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">{% translate 'Nenhum país encontrado' %}</h5>
+                    <p class="text-muted">{% translate 'Tente ajustar os filtros de pesquisa.' %}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

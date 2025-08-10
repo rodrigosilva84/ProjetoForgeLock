@@ -1,0 +1,471 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% if product %}{% translate 'Editar Produto' %}{% else %}{% translate 'Novo Produto' %}{% endif %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">
+                    <i class="fas fa-{% if product %}edit{% else %}plus{% endif %} me-2"></i>
+                    {% if product %}{% translate 'Editar Produto' %}{% else %}{% translate 'Novo Produto' %}{% endif %}
+                </h1>
+                <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>{% translate 'Voltar' %}
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <h6>{% translate 'Erro no formulário' %}</h6>
+                            {{ form.errors }}
+                        </div>
+                        {% endif %}
+                        
+                        <div class="row">
+                            <!-- Informações Básicas -->
+                            <div class="col-md-6">
+                                <h5 class="mb-3">{% translate 'Informações Básicas' %}</h5>
+                                
+                                <div class="mb-3">
+                                    {{ form.name.label_tag }}
+                                    {{ form.name }}
+                                    {% if form.name.errors %}
+                                    <div class="text-danger small">{{ form.name.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    {{ form.description.label_tag }}
+                                    {{ form.description }}
+                                    {% if form.description.errors %}
+                                    <div class="text-danger small">{{ form.description.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            {{ form.product_type.label_tag }}
+                                            <div class="input-group">
+                                                {{ form.product_type }}
+                                                <button type="button" class="btn btn-outline-secondary" 
+                                                        data-bs-toggle="modal" data-bs-target="#productTypeModal">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            {% if form.product_type.errors %}
+                                            <div class="text-danger small">{{ form.product_type.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            {{ form.category.label_tag }}
+                                            <div class="input-group">
+                                                {{ form.category }}
+                                                <button type="button" class="btn btn-outline-secondary" 
+                                                        data-bs-toggle="modal" data-bs-target="#categoryModal">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                            {% if form.category.errors %}
+                                            <div class="text-danger small">{{ form.category.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Preços -->
+                            <div class="col-md-6">
+                                <h5 class="mb-3">{% translate 'Preços' %}</h5>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            {{ form.cost_price.label_tag }}
+                                            {{ form.cost_price }}
+                                            <small class="form-text text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 10.50)' %}
+                                            </small>
+                                            {% if form.cost_price.errors %}
+                                            <div class="text-danger small">{{ form.cost_price.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            {{ form.sale_price.label_tag }}
+                                            {{ form.sale_price }}
+                                            <small class="form-text text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 10.50)' %}
+                                            </small>
+                                            {% if form.sale_price.errors %}
+                                            <div class="text-danger small">{{ form.sale_price.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    {{ form.currency.label_tag }}
+                                    {{ form.currency }}
+                                    {% if form.currency.errors %}
+                                    <div class="text-danger small">{{ form.currency.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    {{ form.stock_quantity.label_tag }}
+                                    {{ form.stock_quantity }}
+                                    {% if form.stock_quantity.errors %}
+                                    <div class="text-danger small">{{ form.stock_quantity.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="row">
+                            <!-- Especificações -->
+                            <div class="col-md-6">
+                                <h5 class="mb-3">{% translate 'Especificações' %}</h5>
+                                
+                                <div class="mb-3">
+                                    {{ form.scale.label_tag }}
+                                    <div class="input-group">
+                                        {{ form.scale }}
+                                        <button type="button" class="btn btn-outline-secondary" 
+                                                data-bs-toggle="modal" data-bs-target="#scaleModal">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                    {% if form.scale.errors %}
+                                    <div class="text-danger small">{{ form.scale.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            {{ form.dimensions_x.label_tag }}
+                                            {{ form.dimensions_x }}
+                                            <small class="form-text text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 15.25)' %}
+                                            </small>
+                                            {% if form.dimensions_x.errors %}
+                                            <div class="text-danger small">{{ form.dimensions_x.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            {{ form.dimensions_y.label_tag }}
+                                            {{ form.dimensions_y }}
+                                            <small class="form-text text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 15.25)' %}
+                                            </small>
+                                            {% if form.dimensions_y.errors %}
+                                            <div class="text-danger small">{{ form.dimensions_y.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            {{ form.dimensions_z.label_tag }}
+                                            {{ form.dimensions_z }}
+                                            <small class="form-text text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 15.25)' %}
+                                            </small>
+                                            {% if form.dimensions_z.errors %}
+                                            <div class="text-danger small">{{ form.dimensions_z.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="mb-3">
+                                            {{ form.dimension_unit.label_tag }}
+                                            {{ form.dimension_unit }}
+                                            {% if form.dimension_unit.errors %}
+                                            <div class="text-danger small">{{ form.dimension_unit.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            {{ form.weight.label_tag }}
+                                            {{ form.weight }}
+                                            <small class="form-text text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 250.75)' %}
+                                            </small>
+                                            {% if form.weight.errors %}
+                                            <div class="text-danger small">{{ form.weight.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            {{ form.weight_unit.label_tag }}
+                                            {{ form.weight_unit }}
+                                            {% if form.weight_unit.errors %}
+                                            <div class="text-danger small">{{ form.weight_unit.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            {{ form.print_time_estimate.label_tag }}
+                                            {{ form.print_time_estimate }}
+                                            {% if form.print_time_estimate.errors %}
+                                            <div class="text-danger small">{{ form.print_time_estimate.errors }}</div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                                         <!-- Imagens -->
+                             <div class="col-md-6">
+                                 <h5 class="mb-3">{% translate 'Imagens' %}</h5>
+                                 
+                                 <div class="mb-3">
+                                     <label for="images" class="form-label">{% translate 'Selecionar Imagens' %}</label>
+                                     <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
+                                     <div class="form-text">{% translate 'Máximo 5 imagens. Primeira imagem será a principal.' %}</div>
+                                 </div>
+                                 
+                                 <!-- Preview das imagens selecionadas -->
+                                 <div id="image-preview" class="mb-3" style="display: none;">
+                                     <label class="form-label">{% translate 'Preview das Imagens' %}</label>
+                                     <div class="row" id="preview-images"></div>
+                                 </div>
+                                 
+                                 {% if product and product.images.exists %}
+                                 <div class="mb-3">
+                                     <label class="form-label">{% translate 'Imagens Atuais' %}</label>
+                                     <div class="row">
+                                         {% for image in product.images.all %}
+                                         <div class="col-md-4 mb-2">
+                                             <img src="{{ image.image.url }}" class="img-thumbnail" style="height: 100px; object-fit: cover;">
+                                         </div>
+                                         {% endfor %}
+                                     </div>
+                                 </div>
+                                 {% endif %}
+                             </div>
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="d-flex justify-content-end">
+                            <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary me-2">
+                                {% translate 'Cancelar' %}
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save me-2"></i>{% translate 'Salvar' %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'js/product-image-handler.js' %}"></script>
+
+<!-- Modais para criação rápida -->
+<!-- Modal Tipo de Produto -->
+<div class="modal fade" id="productTypeModal" tabindex="-1" aria-labelledby="productTypeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="productTypeModalContent">
+                <!-- Conteúdo carregado via AJAX -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Categoria -->
+<div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="categoryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="categoryModalContent">
+                <!-- Conteúdo carregado via AJAX -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Escala -->
+<div class="modal fade" id="scaleModal" tabindex="-1" aria-labelledby="scaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="scaleModalContent">
+                <!-- Conteúdo carregado via AJAX -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Carregar conteúdo dos modais via AJAX
+document.addEventListener('DOMContentLoaded', function() {
+    // Modal Tipo de Produto
+    const productTypeModal = document.getElementById('productTypeModal');
+    productTypeModal.addEventListener('show.bs.modal', function() {
+        fetch('{% url "products:product_type_create_ajax" %}')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('productTypeModalContent').innerHTML = html;
+            });
+    });
+
+    // Modal Categoria
+    const categoryModal = document.getElementById('categoryModal');
+    categoryModal.addEventListener('show.bs.modal', function() {
+        fetch('{% url "products:category_create_ajax" %}')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('categoryModalContent').innerHTML = html;
+            });
+    });
+
+    // Modal Escala
+    const scaleModal = document.getElementById('scaleModal');
+    scaleModal.addEventListener('show.bs.modal', function() {
+        fetch('{% url "products:scale_create_ajax" %}')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('scaleModalContent').innerHTML = html;
+            });
+    });
+
+    // Manipular envio dos formulários AJAX
+    document.addEventListener('submit', function(e) {
+        if (e.target.id === 'productTypeForm') {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            fetch('{% url "products:product_type_create_ajax" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Adicionar nova opção ao select
+                    const select = document.getElementById('id_product_type');
+                    const option = new Option(data.name, data.id, true, true);
+                    select.add(option);
+                    
+                    // Fechar modal corretamente
+                    const modal = bootstrap.Modal.getInstance(productTypeModal);
+                    modal.hide();
+                    // Remover backdrop e restaurar scroll
+                    document.body.classList.remove('modal-open');
+                    const backdrop = document.querySelector('.modal-backdrop');
+                    if (backdrop) backdrop.remove();
+                    
+                    // Mostrar mensagem de sucesso
+                    alert(data.message);
+                } else {
+                    // Mostrar erros
+                    alert('Erro: ' + JSON.stringify(data.errors));
+                }
+            });
+        }
+        
+        if (e.target.id === 'categoryForm') {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            fetch('{% url "products:category_create_ajax" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Adicionar nova opção ao select
+                    const select = document.getElementById('id_category');
+                    const option = new Option(data.name, data.id, true, true);
+                    select.add(option);
+                    
+                    // Fechar modal corretamente
+                    const modal = bootstrap.Modal.getInstance(categoryModal);
+                    modal.hide();
+                    // Remover backdrop e restaurar scroll
+                    document.body.classList.remove('modal-open');
+                    const backdrop = document.querySelector('.modal-backdrop');
+                    if (backdrop) backdrop.remove();
+                    
+                    // Mostrar mensagem de sucesso
+                    alert(data.message);
+                } else {
+                    // Mostrar erros
+                    alert('Erro: ' + JSON.stringify(data.errors));
+                }
+            });
+        }
+
+        if (e.target.id === 'scaleForm') {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            
+            fetch('{% url "products:scale_create_ajax" %}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Adicionar nova opção ao select
+                    const select = document.getElementById('id_scale');
+                    const option = new Option(data.name, data.id, true, true);
+                    select.add(option);
+                    
+                    // Fechar modal corretamente
+                    const modal = bootstrap.Modal.getInstance(scaleModal);
+                    modal.hide();
+                    // Remover backdrop e restaurar scroll
+                    document.body.classList.remove('modal-open');
+                    const backdrop = document.querySelector('.modal-backdrop');
+                    if (backdrop) backdrop.remove();
+                    
+                    // Mostrar mensagem de sucesso
+                    alert(data.message);
+                } else {
+                    // Mostrar erros
+                    alert('Erro: ' + JSON.stringify(data.errors));
+                }
+            });
+        }
+    });
+});
+</script>
+{% endblock %} 

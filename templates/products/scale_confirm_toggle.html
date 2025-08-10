@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate 'Alterar Status da Escala' %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        {% translate 'Confirmar Alteração de Status' %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">
+                        {% if scale.is_active %}
+                            {% translate 'Tem certeza que deseja desativar a escala' %} 
+                            <strong>"{{ scale.name }}"</strong>?
+                        {% else %}
+                            {% translate 'Tem certeza que deseja ativar a escala' %} 
+                            <strong>"{{ scale.name }}"</strong>?
+                        {% endif %}
+                    </p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        {% if scale.is_active %}
+                            {% translate 'Desativar uma escala irá ocultá-la das listas, mas não afetará produtos já cadastrados.' %}
+                        {% else %}
+                            {% translate 'Ativar uma escala irá torná-la disponível para uso em novos produtos.' %}
+                        {% endif %}
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'products:scale_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>{% translate 'Cancelar' %}
+                            </a>
+                            <button type="submit" class="btn {% if scale.is_active %}btn-warning{% else %}btn-success{% endif %}">
+                                <i class="fas {% if scale.is_active %}fa-eye-slash{% else %}fa-eye{% endif %} me-2"></i>
+                                {% if scale.is_active %}
+                                    {% translate 'Desativar' %}
+                                {% else %}
+                                    {% translate 'Ativar' %}
+                                {% endif %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

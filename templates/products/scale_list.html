@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate 'Escalas' %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">
+                    <i class="fas fa-ruler me-2"></i>{% translate 'Escalas' %}
+                </h1>
+                <a href="{% url 'products:scale_create' %}" class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>{% translate 'Nova Escala' %}
+                </a>
+            </div>
+
+            <!-- Barra de Pesquisa e Filtros -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="get" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="search" class="form-label">{% translate 'Pesquisar' %}</label>
+                            <input type="text" class="form-control" id="search" name="search" 
+                                   value="{{ request.GET.search }}" placeholder="{% translate 'Nome ou descrição...' %}">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="status" class="form-label">{% translate 'Status' %}</label>
+                            <select class="form-select" id="status" name="status" onchange="this.form.submit()">
+                                <option value="">{% translate 'Todos' %}</option>
+                                <option value="active" {% if status == 'active' %}selected{% endif %}>{% translate 'Ativos' %}</option>
+                                <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>{% translate 'Inativos' %}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary me-2">
+                                <i class="fas fa-search me-2"></i>{% translate 'Pesquisar' %}
+                            </button>
+                            <a href="{% url 'products:scale_list' %}" class="btn btn-outline-secondary">
+                                <i class="fas fa-times me-2"></i>{% translate 'Limpar' %}
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            {% if scales %}
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>{% translate 'Nome' %}</th>
+                                    <th>{% translate 'Descrição' %}</th>
+                                    <th>{% translate 'Status' %}</th>
+                                    <th>{% translate 'Ações' %}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for scale in scales %}
+                                <tr>
+                                    <td><strong>{{ scale.name }}</strong></td>
+                                    <td>{{ scale.description|default:'-' }}</td>
+                                    <td>
+                                        {% if scale.is_active %}
+                                            <span class="badge bg-success">
+                                                <i class="fas fa-check-circle me-1"></i>{% translate 'Ativo' %}
+                                            </span>
+                                        {% else %}
+                                            <span class="badge bg-secondary">
+                                                <i class="fas fa-times-circle me-1"></i>{% translate 'Inativo' %}
+                                            </span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'products:scale_edit' scale.pk %}" 
+                                           class="btn btn-sm btn-outline-primary" title="{% translate 'Editar' %}">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="fas fa-ruler fa-3x text-muted mb-3"></i>
+                    <h5 class="text-muted">{% translate 'Nenhuma escala encontrada' %}</h5>
+                    <p class="text-muted">{% translate 'Tente ajustar os filtros de pesquisa ou adicione uma nova escala.' %}</p>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

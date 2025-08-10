@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate 'Excluir Escala' %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">
+                    <i class="fas fa-trash me-2"></i>{% translate 'Excluir Escala' %}
+                </h1>
+                <a href="{% url 'products:scale_list' %}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>{% translate 'Voltar' %}
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5><i class="fas fa-exclamation-triangle me-2"></i>{% translate 'Atenção!' %}</h5>
+                        <p>{% translate 'Tem certeza que deseja excluir a escala' %} <strong>"{{ scale.name }}"</strong>?</p>
+                        <p class="mb-0">{% translate 'Esta ação não pode ser desfeita.' %}</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>{% translate 'Detalhes da Escala' %}</h6>
+                            <ul class="list-unstyled">
+                                <li><strong>{% translate 'Nome' %}:</strong> {{ scale.name }}</li>
+                                <li><strong>{% translate 'Descrição' %}:</strong> {{ scale.description|default:'-' }}</li>
+                                <li><strong>{% translate 'Status' %}:</strong> 
+                                    {% if scale.is_active %}
+                                        <span class="badge bg-success">{% translate 'Ativo' %}</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">{% translate 'Inativo' %}</span>
+                                    {% endif %}
+                                </li>
+                                <li><strong>{% translate 'Criado em' %}:</strong> {{ scale.created_at|date:"d/m/Y H:i" }}</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-end">
+                            <a href="{% url 'products:scale_list' %}" class="btn btn-outline-secondary me-2">
+                                {% translate 'Cancelar' %}
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash me-2"></i>{% translate 'Confirmar Exclusão' %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-03 23:35-0300\n"
+"POT-Creation-Date: 2025-08-05 14:18-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Usuários Verificados"
 msgid "Lista de usuários que têm acesso a esta empresa"
 msgstr ""
 
-#: .\core\admin.py:48 .\core\models.py:187
+#: .\core\admin.py:48 .\core\models.py:196
 msgid "Usuários"
 msgstr ""
 
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Usuários da Empresa"
 msgstr "Resumo da Empresa"
 
-#: .\core\admin.py:86 .\core\models.py:305 .\templates\core\dashboard.html:23
+#: .\core\admin.py:86 .\core\models.py:314 .\templates\core\dashboard.html:23
 msgid "Ativa"
 msgstr ""
 
@@ -54,8 +54,8 @@ msgstr ""
 msgid "Verificação"
 msgstr ""
 
-#: .\core\admin.py:187 .\core\admin.py:211 .\core\models.py:162
-#: .\core\models.py:175 .\templates\core\dashboard.html:60
+#: .\core\admin.py:187 .\core\admin.py:211 .\core\models.py:166
+#: .\core\models.py:179 .\templates\core\dashboard.html:60
 msgid "Empresas"
 msgstr "Empresas"
 
@@ -63,7 +63,7 @@ msgstr "Empresas"
 msgid "Empresas às quais este usuário tem acesso"
 msgstr ""
 
-#: .\core\admin.py:192 .\core\models.py:225
+#: .\core\admin.py:192 .\core\models.py:234
 msgid "Permissões"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgid ""
 "visualizar dados."
 msgstr ""
 
-#: .\core\forms.py:13 .\customers\forms.py:76 .\templates\core\register.html:65
+#: .\core\forms.py:13 .\customers\forms.py:80 .\templates\core\register.html:65
 msgid "E-mail *"
 msgstr "E-mail *"
 
@@ -135,11 +135,11 @@ msgstr ""
 msgid "Já existe um usuário com este telefone."
 msgstr ""
 
-#: .\core\forms.py:39 .\customers\forms.py:74 .\templates\core\register.html:77
+#: .\core\forms.py:39 .\customers\forms.py:78 .\templates\core\register.html:77
 msgid "País *"
 msgstr "País *"
 
-#: .\core\forms.py:42 .\core\forms.py:76 .\core\forms.py:187
+#: .\core\forms.py:42 .\core\forms.py:76 .\core\forms.py:197
 msgid "Selecione um país"
 msgstr "Selecione um país"
 
@@ -149,7 +149,7 @@ msgstr "Selecione um país"
 msgid "Data de nascimento *"
 msgstr "Data de nascimento"
 
-#: .\core\forms.py:57 .\core\models.py:430
+#: .\core\forms.py:57 .\core\models.py:439
 #, fuzzy
 #| msgid "Nome de usuário *"
 msgid "Nome de usuário"
@@ -211,16 +211,16 @@ msgstr "Nome de usuário ou E-mail"
 msgid "Sua senha"
 msgstr "Senha"
 
-#: .\core\forms.py:102 .\core\forms.py:114 .\core\models.py:180
+#: .\core\forms.py:102 .\core\forms.py:114 .\core\models.py:189
 msgid "Código de verificação"
 msgstr "Código de verificação"
 
-#: .\core\forms.py:120 .\core\models.py:177
-#: .\templates\core\profile_setup.html:144
+#: .\core\forms.py:120 .\core\models.py:186
+#: .\templates\core\profile_setup.html:243
 msgid "Site pessoal"
 msgstr "Site pessoal"
 
-#: .\core\forms.py:122
+#: .\core\forms.py:122 .\core\forms.py:141
 msgid "https://meusite.com"
 msgstr "https://meusite.com"
 
@@ -228,22 +228,50 @@ msgstr "https://meusite.com"
 msgid "Opcional. Seu site pessoal ou portfólio."
 msgstr "Opcional. Seu site pessoal ou portfólio."
 
-#: .\core\forms.py:143 .\core\models.py:176
+#: .\core\forms.py:136 .\customers\forms.py:49
+#, fuzzy
+#| msgid "Endereço completo (opcional)"
+msgid "Endereço completo"
+msgstr "Endereço completo (opcional)"
+
+#: .\core\forms.py:137 .\core\forms.py:171 .\core\models.py:153
+#: .\core\models.py:182 .\customers\forms.py:53 .\customers\forms.py:85
+#: .\customers\models.py:22
+msgid "Número"
+msgstr ""
+
+#: .\core\forms.py:138 .\core\forms.py:172 .\core\models.py:154
+#: .\core\models.py:183 .\customers\forms.py:57 .\customers\forms.py:86
+#: .\customers\models.py:23 .\templates\customers\customer_detail.html:290
+msgid "Cidade"
+msgstr ""
+
+#: .\core\forms.py:139 .\core\forms.py:173 .\core\models.py:155
+#: .\core\models.py:184 .\customers\forms.py:61 .\customers\forms.py:87
+#: .\customers\models.py:24
+msgid "Estado/Província"
+msgstr ""
+
+#: .\core\forms.py:140 .\core\forms.py:174 .\customers\forms.py:65
+msgid "00000-000"
+msgstr ""
+
+#: .\core\forms.py:149 .\core\models.py:180
 #: .\templates\core\profile_setup.html:128
 msgid "Data de nascimento"
 msgstr "Data de nascimento"
 
-#: .\core\forms.py:144
+#: .\core\forms.py:150
 #, fuzzy
 #| msgid "Data de nascimento"
 msgid "Sua data de nascimento."
 msgstr "Data de nascimento"
 
-#: .\core\forms.py:150
+#: .\core\forms.py:156
 msgid "Usar dados do meu registro"
 msgstr "Usar dados do meu registro"
 
-#: .\core\forms.py:153
+#: .\core\forms.py:159
 msgid ""
 "Marque para usar automaticamente seus dados de registro nos campos da "
 "empresa."
@@ -251,61 +279,70 @@ msgstr ""
 "Marque para usar automaticamente seus dados de registro nos campos da "
 "empresa."
 
-#: .\core\forms.py:160
+#: .\core\forms.py:166
 msgid "Nome da empresa ou nome fantasia"
 msgstr "Nome da empresa ou nome fantasia"
 
-#: .\core\forms.py:161
+#: .\core\forms.py:167
 msgid "CNPJ, CPF, RG, Passaporte, etc. (opcional)"
 msgstr ""
 
-#: .\core\forms.py:164
+#: .\core\forms.py:170
 msgid "Endereço completo (opcional)"
 msgstr "Endereço completo (opcional)"
 
-#: .\core\forms.py:177
+#: .\core\forms.py:187
 msgid "Nome da empresa"
 msgstr "Nome da empresa"
 
-#: .\core\forms.py:178 .\core\models.py:149
+#: .\core\forms.py:188 .\core\models.py:149
 msgid "Documento"
 msgstr ""
 
-#: .\core\forms.py:179 .\core\models.py:150 .\core\models.py:171
+#: .\core\forms.py:189 .\core\models.py:150 .\core\models.py:175
 #: .\customers\models.py:13 .\templates\core\password_reset_request.html:22
 #: .\templates\core\profile_setup.html:86
 #: .\templates\customers\customer_detail.html:227
 msgid "E-mail"
 msgstr "E-mail"
 
-#: .\core\forms.py:180 .\core\models.py:151 .\core\models.py:172
+#: .\core\forms.py:190 .\core\models.py:151 .\core\models.py:176
 #: .\customers\models.py:12 .\templates\core\profile.html:22
 #: .\templates\core\profile_setup.html:113
 #: .\templates\customers\customer_detail.html:217
 msgid "Telefone"
 msgstr "Telefone"
 
-#: .\core\forms.py:181 .\core\models.py:152 .\customers\admin.py:39
-#: .\customers\forms.py:80 .\customers\models.py:21
+#: .\core\forms.py:191 .\core\models.py:152 .\core\models.py:181
+#: .\customers\admin.py:39 .\customers\forms.py:84 .\customers\models.py:21
+#: .\templates\core\company_setup.html:121
+#: .\templates\core\profile_setup.html:145
 #: .\templates\customers\customer_detail.html:268
 #: .\templates\customers\customer_detail.html:276
 #: .\templates\customers\customer_form.html:206
 msgid "Endereço"
 msgstr "Endereço"
 
-#: .\core\forms.py:182 .\core\models.py:22 .\core\models.py:153
-#: .\core\models.py:173 .\customers\models.py:11
+#: .\core\forms.py:192 .\core\models.py:22 .\core\models.py:157
+#: .\core\models.py:177 .\customers\models.py:11
 #: .\templates\core\profile_setup.html:99
 #: .\templates\customers\customer_detail.html:161
 msgid "País"
 msgstr "País"
 
-#: .\core\forms.py:183 .\core\models.py:154
+#: .\core\forms.py:193 .\core\models.py:158
 msgid "Logo"
 msgstr "Logo"
 
 #: .\core\models.py:11 .\core\models.py:45 .\core\models.py:148
-#: .\templates\core\profile_setup.html:45
+#: .\products\forms.py:26 .\products\forms.py:113 .\products\models.py:11
+#: .\products\models.py:25 .\products\models.py:39 .\products\models.py:64
+#: .\products\models_backup.py:11 .\products\models_backup.py:25
+#: .\products\models_backup.py:39 .\products\models_complete.py:11
+#: .\products\models_complete.py:25 .\products\models_complete.py:39
+#: .\products\models_complete.py:64 .\templates\core\profile_setup.html:45
+#: .\templates\products\category_confirm_delete.html:34
+#: .\templates\products\product_confirm_delete.html:35
 msgid "Nome"
 msgstr "Nome"
 
@@ -317,7 +354,8 @@ msgstr ""
 msgid "Nome (Espanhol)"
 msgstr ""
 
-#: .\core\models.py:14
+#: .\core\models.py:14 .\products\models.py:10 .\products\models_backup.py:10
+#: .\products\models_complete.py:10
 msgid "Código"
 msgstr ""
 
@@ -331,12 +369,15 @@ msgstr ""
 msgid "Bandeira"
 msgstr ""
 
-#: .\core\models.py:17 .\core\models.py:59 .\core\models.py:156
-#: .\core\models.py:226 .\core\models.py:260 .\core\models.py:415
-#: .\customers\models.py:28 .\templates\core\profile.html:51
+#: .\core\models.py:17 .\core\models.py:59 .\core\models.py:160
+#: .\core\models.py:235 .\core\models.py:269 .\core\models.py:424
+#: .\customers\models.py:29 .\products\models.py:167
+#: .\products\models_complete.py:167 .\templates\core\profile.html:51
 #: .\templates\customers\customer_confirm_delete.html:117
 #: .\templates\customers\customer_detail.html:403
 #: .\templates\customers\customer_list.html:184
+#: .\templates\products\product_confirm_delete.html:49
+#: .\templates\products\product_detail.html:158
 msgid "Ativo"
 msgstr ""
 
@@ -344,7 +385,13 @@ msgstr ""
 msgid "Países"
 msgstr ""
 
-#: .\core\models.py:48 .\core\models.py:155
+#: .\core\models.py:48 .\core\models.py:159 .\products\forms.py:27
+#: .\products\forms.py:114 .\products\models.py:26 .\products\models.py:40
+#: .\products\models.py:65 .\products\models_backup.py:26
+#: .\products\models_backup.py:40 .\products\models_complete.py:26
+#: .\products\models_complete.py:40 .\products\models_complete.py:65
+#: .\templates\products\category_confirm_delete.html:36
+#: .\templates\products\product_confirm_delete.html:37
 msgid "Descrição"
 msgstr "Descrição"
 
@@ -395,8 +442,8 @@ msgstr ""
 msgid "Dias de trial"
 msgstr ""
 
-#: .\core\models.py:64 .\core\models.py:259 .\core\models.py:317
-#: .\core\models.py:407
+#: .\core\models.py:64 .\core\models.py:268 .\core\models.py:326
+#: .\core\models.py:416
 msgid "Plano"
 msgstr ""
 
@@ -404,183 +451,192 @@ msgstr ""
 msgid "Planos"
 msgstr ""
 
-#: .\core\models.py:161 .\core\models.py:223 .\customers\models.py:9
+#: .\core\models.py:156 .\core\models.py:185 .\customers\forms.py:88
+#: .\customers\models.py:25
+msgid "CEP/Código Postal"
+msgstr ""
+
+#: .\core\models.py:165 .\core\models.py:232 .\customers\models.py:9
 #: .\templates\base.html:172 .\templates\customers\customer_detail.html:364
 msgid "Empresa"
 msgstr ""
 
-#: .\core\models.py:178
+#: .\core\models.py:187
 msgid "Verificado"
 msgstr ""
 
-#: .\core\models.py:179
+#: .\core\models.py:188
 msgid "Primeiro acesso"
 msgstr ""
 
-#: .\core\models.py:181
+#: .\core\models.py:190
 msgid "Expiração da verificação"
 msgstr ""
 
-#: .\core\models.py:186 .\core\models.py:222 .\core\models.py:316
+#: .\core\models.py:195 .\core\models.py:231 .\core\models.py:325
 #: .\templates\core\profile_setup.html:73
 msgid "Usuário"
 msgstr ""
 
-#: .\core\models.py:216
+#: .\core\models.py:225
 msgid "Proprietário"
 msgstr ""
 
-#: .\core\models.py:217
+#: .\core\models.py:226
 msgid "Administrador"
 msgstr ""
 
-#: .\core\models.py:218
+#: .\core\models.py:227
 msgid "Gerente"
 msgstr ""
 
-#: .\core\models.py:219
+#: .\core\models.py:228
 #, fuzzy
 #| msgid "Membros"
 msgid "Membro"
 msgstr "Membros"
 
-#: .\core\models.py:224
+#: .\core\models.py:233
 msgid "Função"
 msgstr ""
 
-#: .\core\models.py:231
+#: .\core\models.py:240
 #, fuzzy
 #| msgid "Total de Usuários"
 msgid "Usuário-Empresa"
 msgstr "Total de Usuários"
 
-#: .\core\models.py:232
+#: .\core\models.py:241
 #, fuzzy
 #| msgid "Total de Usuários"
 msgid "Usuários-Empresas"
 msgstr "Total de Usuários"
 
-#: .\core\models.py:265
+#: .\core\models.py:274
 msgid "Conta"
 msgstr ""
 
-#: .\core\models.py:266
+#: .\core\models.py:275
 msgid "Contas"
 msgstr ""
 
-#: .\core\models.py:304 .\templates\base.html:162
+#: .\core\models.py:313 .\templates\base.html:162
 #: .\templates\core\register.html:157
 msgid "Trial"
 msgstr ""
 
-#: .\core\models.py:306
+#: .\core\models.py:315
 msgid "Período de Carência"
 msgstr ""
 
-#: .\core\models.py:307
+#: .\core\models.py:316
 msgid "Cancelada"
 msgstr ""
 
-#: .\core\models.py:308
+#: .\core\models.py:317
 msgid "Expirada"
 msgstr ""
 
-#: .\core\models.py:312 .\templates\core\home.html:137
+#: .\core\models.py:321 .\templates\core\home.html:137
 msgid "Mensal"
 msgstr ""
 
-#: .\core\models.py:313 .\templates\core\home.html:140
+#: .\core\models.py:322 .\templates\core\home.html:140
 msgid "Anual"
 msgstr ""
 
-#: .\core\models.py:318 .\templates\customers\customer_detail.html:400
-#: .\templates\customers\customer_form.html:304
+#: .\core\models.py:327 .\templates\customers\customer_detail.html:400
+#: .\templates\customers\customer_form.html:329
+#: .\templates\products\product_confirm_delete.html:47
+#: .\templates\products\product_detail.html:156
 msgid "Status"
 msgstr ""
 
-#: .\core\models.py:319
+#: .\core\models.py:328
 msgid "Ciclo de cobrança"
 msgstr ""
 
-#: .\core\models.py:320
+#: .\core\models.py:329
 #, fuzzy
 #| msgid "Data de nascimento"
 msgid "Data de início"
 msgstr "Data de nascimento"
 
-#: .\core\models.py:321
+#: .\core\models.py:330
 #, fuzzy
 #| msgid "Data de nascimento"
 msgid "Data de fim"
 msgstr "Data de nascimento"
 
-#: .\core\models.py:322
+#: .\core\models.py:331
 msgid "Próxima cobrança"
 msgstr ""
 
-#: .\core\models.py:323
+#: .\core\models.py:332
 msgid "Fim do período de carência"
 msgstr ""
 
-#: .\core\models.py:324
+#: .\core\models.py:333
 msgid "Última notificação enviada"
 msgstr ""
 
-#: .\core\models.py:325
+#: .\core\models.py:334
 msgid "Renovação automática"
 msgstr ""
 
-#: .\core\models.py:330 .\templates\core\dashboard.html:209
+#: .\core\models.py:339 .\templates\core\dashboard.html:209
 #, fuzzy
 #| msgid "Gerenciar Assinatura"
 msgid "Assinatura"
 msgstr "Gerenciar Assinatura"
 
-#: .\core\models.py:331
+#: .\core\models.py:340
 #, fuzzy
 #| msgid "Gerenciar Assinatura"
 msgid "Assinaturas"
 msgstr "Gerenciar Assinatura"
 
-#: .\core\models.py:408
+#: .\core\models.py:417 .\products\forms.py:119 .\products\models.py:15
+#: .\products\models.py:99 .\products\models_backup.py:15
+#: .\products\models_complete.py:15 .\products\models_complete.py:99
 msgid "Moeda"
 msgstr ""
 
-#: .\core\models.py:413
+#: .\core\models.py:422
 msgid "Preço Mensal"
 msgstr ""
 
-#: .\core\models.py:414
+#: .\core\models.py:423
 msgid "Preço Anual"
 msgstr ""
 
-#: .\core\models.py:421
+#: .\core\models.py:430
 msgid "Preço do Plano"
 msgstr ""
 
-#: .\core\models.py:422
+#: .\core\models.py:431
 msgid "Preços dos Planos"
 msgstr ""
 
-#: .\core\models.py:431
+#: .\core\models.py:440
 #, fuzzy
 #| msgid "Endereço"
 msgid "Endereço IP"
 msgstr "Endereço"
 
-#: .\core\models.py:432
+#: .\core\models.py:441
 msgid "Sucesso"
 msgstr ""
 
-#: .\core\models.py:434
+#: .\core\models.py:443
 msgid "User Agent"
 msgstr ""
 
-#: .\core\models.py:437
+#: .\core\models.py:446
 msgid "Tentativa de Login"
 msgstr ""
 
-#: .\core\models.py:438
+#: .\core\models.py:447
 #, fuzzy
 #| msgid "Tentativas restantes: {}"
 msgid "Tentativas de Login"
@@ -729,8 +785,10 @@ msgstr ""
 msgid "As senhas não coincidem."
 msgstr ""
 
-#: .\customers\admin.py:29 .\templates\customers\customer_detail.html:144
+#: .\customers\admin.py:29 .\products\admin.py:49
+#: .\templates\customers\customer_detail.html:144
 #: .\templates\customers\customer_form.html:52
+#: .\templates\products\product_form.html:36
 msgid "Informações Básicas"
 msgstr ""
 
@@ -742,9 +800,9 @@ msgstr ""
 msgid "Documentação"
 msgstr ""
 
-#: .\customers\admin.py:43 .\customers\forms.py:84 .\customers\models.py:27
+#: .\customers\admin.py:43 .\customers\forms.py:89 .\customers\models.py:28
 #: .\templates\customers\customer_detail.html:335
-#: .\templates\customers\customer_form.html:280
+#: .\templates\customers\customer_form.html:305
 msgid "Observações"
 msgstr ""
 
@@ -796,108 +854,89 @@ msgstr ""
 msgid "@usuario ou link da rede social"
 msgstr ""
 
-#: .\customers\forms.py:49
-#, fuzzy
-#| msgid "Endereço completo (opcional)"
-msgid "Endereço completo"
-msgstr "Endereço completo (opcional)"
-
-#: .\customers\forms.py:53 .\customers\forms.py:81 .\customers\models.py:22
-#: .\templates\customers\customer_detail.html:290
-msgid "Cidade"
-msgstr ""
-
-#: .\customers\forms.py:57 .\customers\forms.py:82 .\customers\models.py:23
-msgid "Estado/Província"
-msgstr ""
-
-#: .\customers\forms.py:61
-msgid "00000-000"
-msgstr ""
-
-#: .\customers\forms.py:66
+#: .\customers\forms.py:70
 msgid "Observações sobre o cliente"
 msgstr ""
 
-#: .\customers\forms.py:73
+#: .\customers\forms.py:77
 msgid "Nome/Razão Social *"
 msgstr ""
 
-#: .\customers\forms.py:75 .\templates\core\register.html:109
+#: .\customers\forms.py:79 .\templates\core\register.html:109
 #, fuzzy
 #| msgid "Telefone"
 msgid "Telefone *"
 msgstr "Telefone"
 
-#: .\customers\forms.py:77 .\customers\models.py:16
+#: .\customers\forms.py:81 .\customers\models.py:16
 #: .\templates\customers\customer_detail.html:184
 #, fuzzy
 #| msgid "Data de nascimento"
 msgid "Data de Nascimento"
 msgstr "Data de nascimento"
 
-#: .\customers\forms.py:78 .\customers\models.py:17
+#: .\customers\forms.py:82 .\customers\models.py:17
 #: .\templates\customers\customer_detail.html:172
 #, fuzzy
 #| msgid "CNPJ"
 msgid "CPF/CNPJ"
 msgstr "CNPJ"
 
-#: .\customers\forms.py:79 .\customers\models.py:18
+#: .\customers\forms.py:83 .\customers\models.py:18
 msgid "Instagram/Rede Social"
 msgstr ""
 
-#: .\customers\forms.py:83 .\customers\models.py:24
-msgid "CEP/Código Postal"
-msgstr ""
-
-#: .\customers\forms.py:85
+#: .\customers\forms.py:90
 #, fuzzy
 #| msgid "Meus Clientes"
 msgid "Cliente ativo"
 msgstr "Meus Clientes"
 
-#: .\customers\forms.py:88
+#: .\customers\forms.py:93
 msgid "Nome completo para pessoa física ou razão social para pessoa jurídica"
 msgstr ""
 
-#: .\customers\forms.py:89
+#: .\customers\forms.py:94
 msgid "Inclua o código do país se necessário"
 msgstr ""
 
-#: .\customers\forms.py:90
+#: .\customers\forms.py:95
 msgid "E-mail válido para comunicações"
 msgstr ""
 
-#: .\customers\forms.py:91
+#: .\customers\forms.py:96
 msgid "Opcional - útil para campanhas personalizadas"
 msgstr ""
 
-#: .\customers\forms.py:92
+#: .\customers\forms.py:97
 msgid "CPF para pessoa física ou CNPJ para pessoa jurídica"
 msgstr ""
 
-#: .\customers\forms.py:93
+#: .\customers\forms.py:98
 msgid "Instagram, Facebook, LinkedIn ou outra rede social"
 msgstr ""
 
-#: .\customers\forms.py:94
+#: .\customers\forms.py:99
 #, fuzzy
 #| msgid "Endereço completo (opcional)"
 msgid "Endereço completo para envio de materiais"
 msgstr "Endereço completo (opcional)"
 
-#: .\customers\forms.py:95
+#: .\customers\forms.py:100
+msgid "Número do endereço"
+msgstr ""
+
+#: .\customers\forms.py:101
 msgid "Informações adicionais sobre o cliente"
 msgstr ""
 
-#: .\customers\forms.py:126
+#: .\customers\forms.py:132
 #, fuzzy
 #| msgid "Sua senha deve conter pelo menos 8 caracteres."
 msgid "Telefone deve ter pelo menos 10 dígitos"
 msgstr "Sua senha deve conter pelo menos 8 caracteres."
 
-#: .\customers\forms.py:136
+#: .\customers\forms.py:142
 msgid "CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos"
 msgstr ""
 
@@ -905,13 +944,13 @@ msgstr ""
 msgid "Nome/Razão Social"
 msgstr ""
 
-#: .\customers\models.py:35
+#: .\customers\models.py:36
 #, fuzzy
 #| msgid "Meus Clientes"
 msgid "Cliente"
 msgstr "Meus Clientes"
 
-#: .\customers\models.py:36 .\templates\base.html:130
+#: .\customers\models.py:37 .\templates\base.html:130
 #: .\templates\core\dashboard.html:194
 #: .\templates\customers\customer_list.html:5
 #: .\templates\customers\customer_list.html:45
@@ -964,11 +1003,11 @@ msgstr ""
 msgid "Empresa não configurada"
 msgstr ""
 
-#: .\customers\views.py:181
+#: .\customers\views.py:181 .\products\views.py:190
 msgid "ativado"
 msgstr ""
 
-#: .\customers\views.py:181
+#: .\customers\views.py:181 .\products\views.py:190
 msgid "desativado"
 msgstr ""
 
@@ -980,13 +1019,306 @@ msgstr ""
 msgid "Método não permitido"
 msgstr ""
 
-#: .\templates\base.html:125 .\templates\core\dashboard.html:10
-msgid "Dashboard"
+#: .\products\admin.py:52 .\templates\products\product_form.html:78
+#, fuzzy
+#| msgid "Endereço"
+msgid "Preços"
+msgstr "Endereço"
+
+#: .\products\admin.py:55 .\templates\products\product_form.html:124
+msgid "Especificações"
 msgstr ""
 
+#: .\products\admin.py:58
+msgid "Peso e Tempo"
+msgstr ""
+
+#: .\products\admin.py:61 .\templates\products\product_confirm_delete.html:46
+#: .\templates\products\product_detail.html:109
+#: .\templates\products\product_list.html:122
+msgid "Estoque"
+msgstr ""
+
+#: .\products\admin.py:64
+msgid "Controle"
+msgstr ""
+
+#: .\products\forms.py:15
+#, fuzzy
+#| msgid "Nome da empresa"
+msgid "Nome da categoria"
+msgstr "Nome da empresa"
+
+#: .\products\forms.py:20
+#, fuzzy
+#| msgid "Descrição da empresa (opcional)"
+msgid "Descrição da categoria (opcional)"
+msgstr "Descrição da empresa (opcional)"
+
+#: .\products\forms.py:44
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Nome do produto"
+msgstr "Meus Produtos"
+
+#: .\products\forms.py:49
+#, fuzzy
+#| msgid "Descrição"
+msgid "Descrição do produto"
+msgstr "Descrição"
+
+#: .\products\forms.py:76
+msgid "ex: 1:100"
+msgstr ""
+
+#: .\products\forms.py:106
+msgid "ex: 2:30"
+msgstr ""
+
+#: .\products\forms.py:115 .\templates\products\product_confirm_delete.html:39
+#: .\templates\products\product_detail.html:90
+#: .\templates\products\product_list.html:38
+msgid "Tipo"
+msgstr ""
+
+#: .\products\forms.py:116 .\products\models.py:43 .\products\models.py:78
+#: .\products\models_backup.py:43 .\products\models_complete.py:43
+#: .\products\models_complete.py:78
+#: .\templates\products\product_confirm_delete.html:41
+#: .\templates\products\product_detail.html:96
+#: .\templates\products\product_list.html:49
+msgid "Categoria"
+msgstr ""
+
+#: .\products\forms.py:117 .\products\models.py:87
+#: .\products\models_complete.py:87
+#: .\templates\products\product_detail.html:124
+msgid "Preço de Custo"
+msgstr ""
+
+#: .\products\forms.py:118 .\products\models.py:94
+#: .\products\models_complete.py:94
+#: .\templates\products\product_detail.html:117
+msgid "Preço de Venda"
+msgstr ""
+
+#: .\products\forms.py:120 .\products\models.py:163
+#: .\products\models_complete.py:163
+msgid "Quantidade em Estoque"
+msgstr ""
+
+#: .\products\forms.py:121 .\products\models.py:106
+#: .\products\models_complete.py:106
+#: .\templates\products\product_detail.html:103
+#: .\templates\products\product_form.html:127
+msgid "Escala"
+msgstr ""
+
+#: .\products\forms.py:122 .\products\models.py:115
+#: .\products\models_complete.py:115 .\templates\products\product_form.html:135
+msgid "Largura"
+msgstr ""
+
+#: .\products\forms.py:123 .\products\models.py:122
+#: .\products\models_complete.py:122 .\templates\products\product_form.html:142
+#, fuzzy
+#| msgid "Gerenciar Assinatura"
+msgid "Altura"
+msgstr "Gerenciar Assinatura"
+
+#: .\products\forms.py:124 .\products\models.py:129
+#: .\products\models_complete.py:129 .\templates\products\product_form.html:149
+msgid "Profundidade"
+msgstr ""
+
+#: .\products\forms.py:125 .\products\models.py:135
+#: .\products\models_complete.py:135
+msgid "Unidade de Dimensão"
+msgstr ""
+
+#: .\products\forms.py:126 .\products\models.py:144
+#: .\products\models_complete.py:144
+#: .\templates\products\product_detail.html:143
+#: .\templates\products\product_form.html:159
+msgid "Peso"
+msgstr ""
+
+#: .\products\forms.py:127 .\products\models.py:150
+#: .\products\models_complete.py:150
+msgid "Unidade de Peso"
+msgstr ""
+
+#: .\products\forms.py:128 .\templates\products\product_detail.html:150
+#: .\templates\products\product_form.html:166
+#, fuzzy
+#| msgid "Membros da Empresa"
+msgid "Tempo de Impressão"
+msgstr "Membros da Empresa"
+
+#: .\products\forms.py:139
+msgid "Minutos devem ser menores que 60"
+msgstr ""
+
+#: .\products\forms.py:141
+msgid "Formato inválido. Use HH:MM (ex: 2:30)"
+msgstr ""
+
+#: .\products\forms.py:169 .\products\models.py:207
+#: .\products\models_complete.py:207
+msgid "Imagem"
+msgstr ""
+
+#: .\products\forms.py:170 .\products\models.py:211
+#: .\products\models_complete.py:211
+msgid "Imagem Principal"
+msgstr ""
+
+#: .\products\forms.py:171 .\products\models.py:215
+#: .\products\models_complete.py:215
+msgid "Ordem"
+msgstr ""
+
+#: .\products\models.py:12 .\products\models_backup.py:12
+#: .\products\models_complete.py:12
+msgid "Símbolo"
+msgstr ""
+
+#: .\products\models.py:16 .\products\models_backup.py:16
+#: .\products\models_complete.py:16
+msgid "Moedas"
+msgstr ""
+
+#: .\products\models.py:29 .\products\models.py:71
+#: .\products\models_backup.py:29 .\products\models_complete.py:29
+#: .\products\models_complete.py:71
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Tipo de Produto"
+msgstr "Meus Produtos"
+
+#: .\products\models.py:30 .\products\models_backup.py:30
+#: .\products\models_complete.py:30
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Tipos de Produto"
+msgstr "Meus Produtos"
+
+#: .\products\models.py:44 .\products\models_backup.py:44
+#: .\products\models_complete.py:44 .\templates\products\category_list.html:5
+#: .\templates\products\category_list.html:13
+#: .\templates\products\product_list.html:17
+msgid "Categorias"
+msgstr ""
+
+#: .\products\models.py:54 .\products\models_complete.py:54
+msgid "Milímetros"
+msgstr ""
+
+#: .\products\models.py:55 .\products\models_complete.py:55
+msgid "Centímetros"
+msgstr ""
+
+#: .\products\models.py:56 .\products\models_complete.py:56
+msgid "Polegadas"
+msgstr ""
+
+#: .\products\models.py:60 .\products\models_complete.py:60
+msgid "Gramas"
+msgstr ""
+
+#: .\products\models.py:61 .\products\models_complete.py:61
+msgid "Quilogramas"
+msgstr ""
+
+#: .\products\models.py:157 .\products\models_complete.py:157
+msgid "Tempo de Impressão Estimado"
+msgstr ""
+
+#: .\products\models.py:171 .\products\models_complete.py:171
+#: .\templates\products\product_detail.html:163
+msgid "Criado por"
+msgstr ""
+
+#: .\products\models.py:173 .\products\models.py:217
+#: .\products\models_complete.py:173 .\products\models_complete.py:217
+#: .\templates\customers\customer_detail.html:376
+#: .\templates\products\product_detail.html:168
+msgid "Criado em"
+msgstr ""
+
+#: .\products\models.py:174 .\products\models_complete.py:174
+#: .\templates\customers\customer_detail.html:388
+#: .\templates\products\product_detail.html:173
+msgid "Atualizado em"
+msgstr ""
+
+#: .\products\models.py:177 .\products\models.py:203
+#: .\products\models_complete.py:177 .\products\models_complete.py:203
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Produto"
+msgstr "Meus Produtos"
+
+#: .\products\models.py:178 .\products\models_complete.py:178
 #: .\templates\base.html:135 .\templates\core\dashboard.html:199
 #: .\templates\core\products.html:5 .\templates\core\products.html:14
+#: .\templates\products\category_list.html:17
+#: .\templates\products\product_list.html:5
+#: .\templates\products\product_list.html:13
 msgid "Produtos"
+msgstr ""
+
+#: .\products\models.py:220 .\products\models_complete.py:220
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Imagem do Produto"
+msgstr "Meus Produtos"
+
+#: .\products\models.py:221 .\products\models_complete.py:221
+#: .\templates\products\product_confirm_delete.html:57
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Imagens do Produto"
+msgstr "Meus Produtos"
+
+#: .\products\views.py:93
+msgid "Máximo 5 imagens permitidas"
+msgstr ""
+
+#: .\products\views.py:99
+msgid "Cada imagem deve ter no máximo 5MB"
+msgstr ""
+
+#: .\products\views.py:110
+msgid "Produto criado com sucesso!"
+msgstr ""
+
+#: .\products\views.py:149
+msgid "Produto atualizado com sucesso!"
+msgstr ""
+
+#: .\products\views.py:173
+msgid "Produto excluído com sucesso!"
+msgstr ""
+
+#: .\products\views.py:216
+msgid "Categoria criada com sucesso!"
+msgstr ""
+
+#: .\products\views.py:237
+msgid "Categoria atualizada com sucesso!"
+msgstr ""
+
+#: .\products\views.py:258
+msgid "Não é possível excluir uma categoria que possui produtos!"
+msgstr ""
+
+#: .\products\views.py:261
+msgid "Categoria excluída com sucesso!"
+msgstr ""
+
+#: .\templates\base.html:125 .\templates\core\dashboard.html:10
+msgid "Dashboard"
 msgstr ""
 
 #: .\templates\base.html:140 .\templates\core\dashboard.html:204
@@ -1051,35 +1383,45 @@ msgstr "Configure sua empresa"
 msgid "Você pode usar um nome fantasia se não tiver uma empresa formal."
 msgstr "Você pode usar um nome fantasia se não tiver uma empresa formal."
 
-#: .\templates\core\company_setup.html:140
+#: .\templates\core\company_setup.html:227
 msgid "Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB."
 msgstr ""
 
-#: .\templates\core\company_setup.html:148
-#: .\templates\core\profile_setup.html:161
+#: .\templates\core\company_setup.html:235
+#: .\templates\core\profile_setup.html:260
 #: .\templates\customers\customer_confirm_delete.html:61
 #: .\templates\customers\customer_detail.html:98
-#: .\templates\customers\customer_form.html:327
+#: .\templates\customers\customer_form.html:352
+#: .\templates\products\category_confirm_delete.html:16
+#: .\templates\products\category_form.html:17
+#: .\templates\products\product_confirm_delete.html:16
+#: .\templates\products\product_detail.html:17
+#: .\templates\products\product_form.html:17
 msgid "Voltar"
 msgstr ""
 
-#: .\templates\core\company_setup.html:153
-#: .\templates\core\company_setup.html:308
-#: .\templates\core\profile_setup.html:166
-#: .\templates\core\profile_setup.html:210
+#: .\templates\core\company_setup.html:240
+#: .\templates\core\company_setup.html:395
+#: .\templates\core\profile_setup.html:265
+#: .\templates\core\profile_setup.html:309
 #: .\templates\customers\customer_detail.html:102
+#: .\templates\products\category_list.html:36
+#: .\templates\products\product_detail.html:20
+#: .\templates\products\product_list.html:134
 #, fuzzy
 #| msgid "Editar Perfil"
 msgid "Editar"
 msgstr "Editar Perfil"
 
-#: .\templates\core\company_setup.html:158
-#: .\templates\core\profile_setup.html:171
+#: .\templates\core\company_setup.html:245
+#: .\templates\core\profile_setup.html:270
 msgid "Avançar"
 msgstr ""
 
-#: .\templates\core\company_setup.html:304
-#: .\templates\core\profile_setup.html:206
+#: .\templates\core\company_setup.html:391
+#: .\templates\core\profile_setup.html:305
+#: .\templates\products\category_form.html:54
+#: .\templates\products\product_form.html:206
 msgid "Salvar"
 msgstr ""
 
@@ -1674,6 +2016,8 @@ msgid "Confirme a exclusão do cliente"
 msgstr ""
 
 #: .\templates\customers\customer_confirm_delete.html:75
+#: .\templates\products\category_confirm_delete.html:24
+#: .\templates\products\product_confirm_delete.html:24
 msgid "Atenção!"
 msgstr ""
 
@@ -1696,6 +2040,8 @@ msgstr "Telefone"
 #: .\templates\customers\customer_confirm_delete.html:119
 #: .\templates\customers\customer_detail.html:405
 #: .\templates\customers\customer_list.html:186
+#: .\templates\products\product_confirm_delete.html:49
+#: .\templates\products\product_detail.html:158
 msgid "Inativo"
 msgstr ""
 
@@ -1743,10 +2089,16 @@ msgid ""
 msgstr ""
 
 #: .\templates\customers\customer_confirm_delete.html:214
+#: .\templates\products\category_confirm_delete.html:57
+#: .\templates\products\category_form.html:51
+#: .\templates\products\product_confirm_delete.html:88
+#: .\templates\products\product_form.html:203
 msgid "Cancelar"
 msgstr ""
 
 #: .\templates\customers\customer_confirm_delete.html:220
+#: .\templates\products\category_confirm_delete.html:61
+#: .\templates\products\product_confirm_delete.html:91
 msgid "Confirmar Exclusão"
 msgstr ""
 
@@ -1769,6 +2121,7 @@ msgid "Detalhes do cliente"
 msgstr ""
 
 #: .\templates\customers\customer_detail.html:106
+#: .\templates\products\category_list.html:40
 msgid "Excluir"
 msgstr ""
 
@@ -1830,14 +2183,6 @@ msgstr ""
 msgid "Informações do Sistema"
 msgstr ""
 
-#: .\templates\customers\customer_detail.html:376
-msgid "Criado em"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:388
-msgid "Atualizado em"
-msgstr ""
-
 #: .\templates\customers\customer_form.html:41
 msgid "Preencha as informações do cliente"
 msgstr ""
@@ -1879,6 +2224,7 @@ msgid "Buscar por nome, e-mail, telefone..."
 msgstr ""
 
 #: .\templates\customers\customer_list.html:141
+#: .\templates\products\product_list.html:33
 msgid "Buscar"
 msgstr ""
 
@@ -1930,11 +2276,239 @@ msgstr ""
 msgid "Erro ao alterar status"
 msgstr ""
 
+#: .\templates\products\category_confirm_delete.html:5
+#: .\templates\products\category_confirm_delete.html:13
+#, fuzzy
+#| msgid "Meus Clientes"
+msgid "Excluir Categoria"
+msgstr "Meus Clientes"
+
+#: .\templates\products\category_confirm_delete.html:27
+msgid "Você está prestes a excluir a categoria"
+msgstr ""
+
+#: .\templates\products\category_confirm_delete.html:32
+#, fuzzy
+#| msgid "Meus Clientes"
+msgid "Detalhes da Categoria"
+msgstr "Meus Clientes"
+
+#: .\templates\products\category_confirm_delete.html:38
+#: .\templates\products\category_list.html:55
+msgid "Produtos nesta categoria"
+msgstr ""
+
+#: .\templates\products\category_confirm_delete.html:45
+msgid "Não é possível excluir!"
+msgstr ""
+
+#: .\templates\products\category_confirm_delete.html:48
+msgid ""
+"Esta categoria possui produtos associados. Remova todos os produtos antes de "
+"excluir a categoria."
+msgstr ""
+
+#: .\templates\products\category_form.html:5
+#: .\templates\products\category_form.html:14
+#, fuzzy
+#| msgid "Editar Perfil"
+msgid "Editar Categoria"
+msgstr "Editar Perfil"
+
+#: .\templates\products\category_form.html:5
+#: .\templates\products\category_form.html:14
+#: .\templates\products\category_list.html:20
+msgid "Nova Categoria"
+msgstr ""
+
+#: .\templates\products\category_form.html:28
+#: .\templates\products\product_form.html:28
+msgid "Erro no formulário"
+msgstr ""
+
+#: .\templates\products\category_list.html:49
+#, fuzzy
+#| msgid "Descrição"
+msgid "Sem descrição"
+msgstr "Descrição"
+
+#: .\templates\products\category_list.html:68
+msgid "Nenhuma categoria encontrada"
+msgstr ""
+
+#: .\templates\products\category_list.html:69
+msgid "Crie a primeira categoria para organizar seus produtos."
+msgstr ""
+
+#: .\templates\products\category_list.html:71
+msgid "Criar Primeira Categoria"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:5
+#: .\templates\products\product_confirm_delete.html:13
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Excluir Produto"
+msgstr "Meus Produtos"
+
+#: .\templates\products\product_confirm_delete.html:27
+msgid "Você está prestes a excluir o produto"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:33
+#, fuzzy
+#| msgid "Meus Clientes"
+msgid "Detalhes do Produto"
+msgstr "Meus Clientes"
+
+#: .\templates\products\product_confirm_delete.html:44
+#, fuzzy
+#| msgid "Endereço"
+msgid "Preço"
+msgstr "Endereço"
+
+#: .\templates\products\product_confirm_delete.html:67
+msgid "e mais"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:67
+msgid "imagens"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:75
+msgid "O que acontece?"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:78
+msgid "O produto será marcado como inativo (não será excluído do banco)"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:79
+msgid "Todas as imagens associadas serão mantidas"
+msgstr ""
+
+#: .\templates\products\product_confirm_delete.html:80
+msgid "Você pode reativar o produto posteriormente"
+msgstr ""
+
+#: .\templates\products\product_detail.html:25
+#: .\templates\products\product_list.html:139
+msgid "Desativar"
+msgstr ""
+
+#: .\templates\products\product_detail.html:25
+#: .\templates\products\product_list.html:139
+msgid "Ativar"
+msgstr ""
+
+#: .\templates\products\product_detail.html:35
+#: .\templates\products\product_form.html:176
+msgid "Imagens"
+msgstr ""
+
+#: .\templates\products\product_detail.html:47
+msgid "Principal"
+msgstr ""
+
+#: .\templates\products\product_detail.html:56
+#: .\templates\products\product_list.html:156
+msgid "Anterior"
+msgstr ""
+
+#: .\templates\products\product_detail.html:60
+#: .\templates\products\product_list.html:176
+msgid "Próximo"
+msgstr ""
+
+#: .\templates\products\product_detail.html:67
+msgid "Nenhuma imagem disponível"
+msgstr ""
+
+#: .\templates\products\product_detail.html:78
+msgid "Informações"
+msgstr ""
+
+#: .\templates\products\product_detail.html:131
+msgid "Dimensões"
+msgstr ""
+
+#: .\templates\products\product_form.html:5
+#: .\templates\products\product_form.html:14
+#, fuzzy
+#| msgid "Editar Perfil"
+msgid "Editar Produto"
+msgstr "Editar Perfil"
+
+#: .\templates\products\product_form.html:5
+#: .\templates\products\product_form.html:14
+#: .\templates\products\product_list.html:20
+#, fuzzy
+#| msgid "Meus Produtos"
+msgid "Novo Produto"
+msgstr "Meus Produtos"
+
+#: .\templates\products\product_form.html:179
+#, fuzzy
+#| msgid "Selecione um país"
+msgid "Selecionar Imagens"
+msgstr "Selecione um país"
+
+#: .\templates\products\product_form.html:181
+msgid "Máximo 5 imagens. Primeira imagem será a principal."
+msgstr ""
+
+#: .\templates\products\product_form.html:186
+msgid "Imagens Atuais"
+msgstr ""
+
+#: .\templates\products\product_list.html:28
+msgid "Filtros"
+msgstr ""
+
+#: .\templates\products\product_list.html:35
+#, fuzzy
+#| msgid "Descrição"
+msgid "Nome, descrição..."
+msgstr "Descrição"
+
+#: .\templates\products\product_list.html:40
+msgid "Todos"
+msgstr ""
+
+#: .\templates\products\product_list.html:51
+msgid "Todas"
+msgstr ""
+
+#: .\templates\products\product_list.html:60
+msgid "Preço Mín."
+msgstr ""
+
+#: .\templates\products\product_list.html:65
+msgid "Preço Máx."
+msgstr ""
+
+#: .\templates\products\product_list.html:130
+msgid "Ver detalhes"
+msgstr ""
+
+#: .\templates\products\product_list.html:151
+msgid "Navegação de páginas"
+msgstr ""
+
+#: .\templates\products\product_list.html:187
+msgid "Nenhum produto encontrado"
+msgstr ""
+
+#: .\templates\products\product_list.html:188
+msgid "Tente ajustar os filtros ou criar um novo produto."
+msgstr ""
+
+#: .\templates\products\product_list.html:190
+msgid "Criar Primeiro Produto"
+msgstr ""
+
 #~ msgid "Opcional. Sua data de nascimento."
 #~ msgstr "Opcional. Sua data de nascimento."
-
-#~ msgid "Descrição da empresa (opcional)"
-#~ msgstr "Descrição da empresa (opcional)"
 
 #, fuzzy
 #~| msgid "Meus Projetos"

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% translate 'Alterar Status do País' %} - ForgeLock{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title mb-0">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        {% translate 'Confirmar Alteração de Status' %}
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <p class="mb-3">
+                        {% if country.is_active %}
+                            {% translate 'Tem certeza que deseja desativar o país' %} 
+                            <strong>"{{ country.name }}"</strong>?
+                        {% else %}
+                            {% translate 'Tem certeza que deseja ativar o país' %} 
+                            <strong>"{{ country.name }}"</strong>?
+                        {% endif %}
+                    </p>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        {% if country.is_active %}
+                            {% translate 'Desativar um país irá ocultá-lo das listas, mas não afetará dados já cadastrados.' %}
+                        {% else %}
+                            {% translate 'Ativar um país irá torná-lo disponível para uso em novos cadastros.' %}
+                        {% endif %}
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'products:country_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>{% translate 'Cancelar' %}
+                            </a>
+                            <button type="submit" class="btn {% if country.is_active %}btn-warning{% else %}btn-success{% endif %}">
+                                <i class="fas {% if country.is_active %}fa-eye-slash{% else %}fa-eye{% endif %} me-2"></i>
+                                {% if country.is_active %}
+                                    {% translate 'Desativar' %}
+                                {% else %}
+                                    {% translate 'Ativar' %}
+                                {% endif %}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -140,6 +140,25 @@
                                 <i class="fas fa-project-diagram me-1"></i>{% translate "Projetos" %}
                             </a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="utilitiesDropdown" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-tools me-1"></i>{% translate "Utilitários" %}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{% url 'products:scale_list' %}">
+                                    <i class="fas fa-ruler me-2"></i>{% translate "Escalas" %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="{% url 'products:product_type_list' %}">
+                                    <i class="fas fa-tags me-2"></i>{% translate "Tipos de Produto" %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="{% url 'products:category_list' %}">
+                                    <i class="fas fa-folder me-2"></i>{% translate "Categorias" %}
+                                </a></li>
+                                <li><a class="dropdown-item" href="{% url 'products:country_list' %}">
+                                    <i class="fas fa-globe me-2"></i>{% translate "Países" %}
+                                </a></li>
+                            </ul>
+                        </li>
                     {% endif %}
                 </ul>
                 
