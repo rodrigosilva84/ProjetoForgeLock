@@ -1,0 +1,5 @@
+[33m229883d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Implementa melhorias no menu de Utilitários: adiciona barra de pesquisa, filtro de status funcional e remove botão toggle confuso
+[33m93087b7[m feat: implementa automação de endereço com suporte multi-país
+[33mf1ffc45[m feat: implementação completa do módulo de clientes
+[33mc560f87[m feat: implementar sistema completo de assinaturas e melhorias de UI/UX
+[33m139a9b5[m feat: implementar padrão global de botões/links com gradiente azul-violeta

@@ -1,4 +1,4 @@
-﻿# SOME DESCRIPTIVE TITLE.
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -83,6 +83,12 @@ msgstr "Nome de usuário *"
 
 #: .\core\decorators.py:21 .\core\decorators.py:44 .\core\decorators.py:72
 msgid "Você precisa de uma assinatura ativa para acessar esta funcionalidade."
+msgstr ""
+
+#: .\core\decorators.py:49
+msgid ""
+"Sua assinatura expirou. Você está no período de carência e pode apenas "
+"visualizar dados."
 msgstr ""
 
 #: .\core\forms.py:13 .\customers\forms.py:80 .\templates\core\register.html:65
@@ -171,6 +177,16 @@ msgstr "Senha *"
 msgid "Confirme a senha *"
 msgstr "Confirme a senha *"
 
+#: .\core\forms.py:67 .\templates\core\register.html:54
+msgid ""
+"O nome de usuário pode ter no máximo 150 caracteres. Podem ser utilizados "
+"letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, "
+"admin@test"
+msgstr ""
+"O nome de usuário pode ter no máximo 150 caracteres. Podem ser utilizados "
+"letras, dígitos e símbolos especiais. Exemplo: joao.silva, user123, "
+"admin@test"
+
 #: .\core\forms.py:68 .\templates\core\register.html:125
 msgid "Sua senha deve conter pelo menos 8 caracteres."
 msgstr "Sua senha deve conter pelo menos 8 caracteres."
@@ -254,6 +270,14 @@ msgstr "Data de nascimento"
 #: .\core\forms.py:156
 msgid "Usar dados do meu registro"
 msgstr "Usar dados do meu registro"
+
+#: .\core\forms.py:159
+msgid ""
+"Marque para usar automaticamente seus dados de registro nos campos da "
+"empresa."
+msgstr ""
+"Marque para usar automaticamente seus dados de registro nos campos da "
+"empresa."
 
 #: .\core\forms.py:166
 msgid "Nome da empresa ou nome fantasia"
@@ -644,6 +668,11 @@ msgstr ""
 
 #: .\core\notifications.py:122
 msgid "Acesso bloqueado - Renove sua assinatura"
+msgstr ""
+
+#: .\core\notifications.py:134
+msgid ""
+"ForgeLock: Seu acesso foi bloqueado. Renove sua assinatura {} para continuar!"
 msgstr ""
 
 #: .\core\views.py:78
@@ -1530,6 +1559,12 @@ msgstr ""
 msgid "ForgeLock"
 msgstr ""
 
+#: .\templates\core\home.html:48
+msgid ""
+"Sistema completo de gestão empresarial para pequenas e médias empresas. "
+"Controle de clientes, produtos, projetos e muito mais."
+msgstr ""
+
 #: .\templates\core\home.html:51
 msgid "Começar Agora"
 msgstr ""
@@ -1550,8 +1585,18 @@ msgstr ""
 msgid "Gestão de Clientes"
 msgstr ""
 
+#: .\templates\core\home.html:83
+msgid ""
+"Organize seus clientes, histórico de vendas e interações em um só lugar."
+msgstr ""
+
 #: .\templates\core\home.html:94
 msgid "Controle de Produtos"
+msgstr ""
+
+#: .\templates\core\home.html:95
+msgid ""
+"Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos."
 msgstr ""
 
 #: .\templates\core\home.html:106
@@ -1691,6 +1736,11 @@ msgstr ""
 msgid "Em Construção"
 msgstr ""
 
+#: .\templates\core\products.html:23
+msgid ""
+"O módulo de produtos está sendo desenvolvido e estará disponível em breve."
+msgstr ""
+
 #: .\templates\core\products.html:26 .\templates\core\projects.html:26
 #: .\templates\core\subscription.html:56
 msgid "Voltar ao Dashboard"
@@ -1794,6 +1844,11 @@ msgstr "Vamos completar seu perfil para uma melhor experiência."
 msgid "Sobrenome"
 msgstr "Sobrenome *"
 
+#: .\templates\core\projects.html:23
+msgid ""
+"O módulo de projetos está sendo desenvolvido e estará disponível em breve."
+msgstr ""
+
 #: .\templates\core\register.html:5
 msgid "Registro - ForgeLock"
 msgstr ""
@@ -1809,6 +1864,14 @@ msgstr ""
 #: .\templates\core\register.html:164
 msgid "Plano Selecionado:"
 msgstr "Plano Selecionado:"
+
+#: .\templates\core\register.html:166
+msgid ""
+"Você começará com um trial gratuito deste plano. Após o período trial, será "
+"cobrado o valor normal."
+msgstr ""
+"Você começará com um trial gratuito deste plano. Após o período trial, será "
+"cobrado o valor normal."
 
 #: .\templates\core\register.html:173
 msgid "15 dias grátis"
@@ -1958,6 +2021,12 @@ msgstr ""
 msgid "Atenção!"
 msgstr ""
 
+#: .\templates\customers\customer_confirm_delete.html:77
+msgid ""
+"Esta ação não pode ser desfeita. O cliente será permanentemente removido do "
+"sistema."
+msgstr ""
+
 #: .\templates\customers\customer_confirm_delete.html:89
 msgid "Cliente a ser excluído"
 msgstr ""
@@ -2012,6 +2081,11 @@ msgstr ""
 
 #: .\templates\customers\customer_confirm_delete.html:184
 msgid "Histórico de interações será perdido"
+msgstr ""
+
+#: .\templates\customers\customer_confirm_delete.html:200
+msgid ""
+"Eu entendo que esta ação é irreversível e confirmo a exclusão do cliente"
 msgstr ""
 
 #: .\templates\customers\customer_confirm_delete.html:214
@@ -2228,6 +2302,12 @@ msgstr ""
 msgid "Não é possível excluir!"
 msgstr ""
 
+#: .\templates\products\category_confirm_delete.html:48
+msgid ""
+"Esta categoria possui produtos associados. Remova todos os produtos antes de "
+"excluir a categoria."
+msgstr ""
+
 #: .\templates\products\category_form.html:5
 #: .\templates\products\category_form.html:14
 #, fuzzy
@@ -2435,12 +2515,64 @@ msgstr ""
 msgid "Nome, código ou DDI..."
 msgstr ""
 
+#: .\templates\products\country_list.html:26
+msgid "Status"
+msgstr ""
+
+#: .\templates\products\country_list.html:28
+msgid "Todos"
+msgstr ""
+
+#: .\templates\products\country_list.html:29
+msgid "Ativos"
+msgstr ""
+
+#: .\templates\products\country_list.html:30
+msgid "Inativos"
+msgstr ""
+
+#: .\templates\products\country_list.html:35
+msgid "Pesquisar"
+msgstr ""
+
 #: .\templates\products\country_list.html:38
 msgid "Limpar"
 msgstr ""
 
+#: .\templates\products\country_list.html:52
+msgid "Bandeira"
+msgstr ""
+
+#: .\templates\products\country_list.html:53
+msgid "Nome"
+msgstr ""
+
+#: .\templates\products\country_list.html:54
+msgid "Código"
+msgstr ""
+
+#: .\templates\products\country_list.html:55
+msgid "DDI"
+msgstr ""
+
+#: .\templates\products\country_list.html:56
+msgid "Status"
+msgstr ""
+
 #: .\templates\products\country_list.html:57
 msgid "Ações"
+msgstr ""
+
+#: .\templates\products\country_list.html:87
+msgid "Ativo"
+msgstr ""
+
+#: .\templates\products\country_list.html:91
+msgid "Inativo"
+msgstr ""
+
+#: .\templates\products\country_list.html:97
+msgid "Editar"
 msgstr ""
 
 #: .\templates\products\country_list.html:112
@@ -2450,3 +2582,29 @@ msgstr ""
 #: .\templates\products\country_list.html:113
 msgid "Tente ajustar os filtros de pesquisa."
 msgstr ""
+
+#: .\templates\products\category_list.html:24
+msgid "Pesquisar"
+msgstr ""
+
+#: .\templates\products\category_list.html:38
+msgid "Pesquisar"
+msgstr ""
+
+#: .\templates\products\scale_list.html:24
+msgid "Pesquisar"
+msgstr ""
+
+#: .\templates\products\scale_list.html:38
+msgid "Pesquisar"
+msgstr ""
+
+#: .\templates\products\product_type_list.html:24
+msgid "Pesquisar"
+msgstr ""
+
+#: .\templates\products\product_type_list.html:38
+msgid "Pesquisar"
+msgstr ""
+
+#~ msgid "Opcional. Sua data de nascimento."
