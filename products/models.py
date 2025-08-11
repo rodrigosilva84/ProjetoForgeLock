@@ -7,13 +7,13 @@ User = get_user_model()
 
 class Currency(models.Model):
     """Modelo para moedas"""
-    code = models.CharField(max_length=3, unique=True, verbose_name=_('Código'))
-    name = models.CharField(max_length=50, verbose_name=_('Nome'))
-    symbol = models.CharField(max_length=5, verbose_name=_('Símbolo'))
+    code = models.CharField(max_length=3, unique=True, verbose_name=_('products.currency_code'))
+    name = models.CharField(max_length=50, verbose_name=_('products.currency_name'))
+    symbol = models.CharField(max_length=5, verbose_name=_('products.currency_symbol'))
     
     class Meta:
-        verbose_name = _('Moeda')
-        verbose_name_plural = _('Moedas')
+        verbose_name = _('products.currency_verbose')
+        verbose_name_plural = _('products.currency_verbose_plural')
         ordering = ['code']
     
     def __str__(self):
@@ -22,14 +22,14 @@ class Currency(models.Model):
 
 class ProductType(models.Model):
     """Modelo para tipos de produto"""
-    name = models.CharField(max_length=100, verbose_name=_('Nome'))
-    description = models.TextField(blank=True, verbose_name=_('Descrição'))
-    is_active = models.BooleanField(default=True, verbose_name=_('Ativo'))
-    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name=_('Criado em'))
+    name = models.CharField(max_length=100, verbose_name=_('common.name'))
+    description = models.TextField(blank=True, verbose_name=_('common.description'))
+    is_active = models.BooleanField(default=True, verbose_name=_('common.active'))
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name=_('products.created_at'))
     
     class Meta:
-        verbose_name = _('Tipo de Produto')
-        verbose_name_plural = _('Tipos de Produto')
+        verbose_name = _('products.product_type_verbose')
+        verbose_name_plural = _('products.product_type_verbose_plural')
         ordering = ['name']
     
     def __str__(self):
@@ -38,14 +38,14 @@ class ProductType(models.Model):
 
 class Category(models.Model):
     """Modelo para categorias de produto"""
-    name = models.CharField(max_length=100, verbose_name=_('Nome'))
-    description = models.TextField(blank=True, verbose_name=_('Descrição'))
-    is_active = models.BooleanField(default=True, verbose_name=_('Ativo'))
-    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name=_('Criado em'))
+    name = models.CharField(max_length=100, verbose_name=_('common.name'))
+    description = models.TextField(blank=True, verbose_name=_('common.description'))
+    is_active = models.BooleanField(default=True, verbose_name=_('common.active'))
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name=_('products.created_at'))
     
     class Meta:
-        verbose_name = _('Categoria')
-        verbose_name_plural = _('Categorias')
+        verbose_name = _('products.category_verbose')
+        verbose_name_plural = _('products.category_verbose_plural')
         ordering = ['name']
     
     def __str__(self):
@@ -54,14 +54,14 @@ class Category(models.Model):
 
 class Scale(models.Model):
     """Modelo para escalas padronizadas"""
-    name = models.CharField(max_length=50, unique=True, verbose_name=_('Nome'))
-    description = models.TextField(blank=True, verbose_name=_('Descrição'))
-    is_active = models.BooleanField(default=True, verbose_name=_('Ativo'))
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Criado em'))
+    name = models.CharField(max_length=50, unique=True, verbose_name=_('common.name'))
+    description = models.TextField(blank=True, verbose_name=_('common.description'))
+    is_active = models.BooleanField(default=True, verbose_name=_('common.active'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('products.created_at'))
     
     class Meta:
-        verbose_name = _('Escala')
-        verbose_name_plural = _('Escalas')
+        verbose_name = _('products.scale_verbose')
+        verbose_name_plural = _('products.scale_verbose_plural')
         ordering = ['name']
     
     def __str__(self):
@@ -71,36 +71,36 @@ class Scale(models.Model):
 class Product(models.Model):
     """Modelo para produtos"""
     DIMENSION_UNITS = [
-        ('mm', _('Milímetros')),
-        ('cm', _('Centímetros')),
-        ('in', _('Polegadas')),
+        ('mm', _('products.millimeters')),
+        ('cm', _('products.centimeters')),
+        ('in', _('products.inches')),
     ]
     
     WEIGHT_UNITS = [
-        ('g', _('Gramas')),
-        ('kg', _('Quilogramas')),
+        ('g', _('products.grams')),
+        ('kg', _('products.kilograms')),
     ]
     
-    name = models.CharField(max_length=255, verbose_name=_('Nome'))
-    description = models.TextField(blank=True, verbose_name=_('Descrição'))
+    name = models.CharField(max_length=255, verbose_name=_('common.name'))
+    description = models.TextField(blank=True, verbose_name=_('common.description'))
     
     # Relacionamentos
     company = models.ForeignKey(
         'core.Company', 
         on_delete=models.CASCADE, 
-        verbose_name=_('Empresa')
+        verbose_name=_('products.company')
     )
     product_type = models.ForeignKey(
         ProductType, 
         on_delete=models.CASCADE, 
-        verbose_name=_('Tipo de Produto')
+        verbose_name=_('products.product_type')
     )
     category = models.ForeignKey(
         Category, 
         on_delete=models.SET_NULL, 
         null=True, 
         blank=True, 
-        verbose_name=_('Categoria')
+        verbose_name=_('products.category')
     )
     
     # Preços e moeda
@@ -109,19 +109,19 @@ class Product(models.Model):
         decimal_places=2, 
         null=True, 
         blank=True, 
-        verbose_name=_('Preço de Custo')
+        verbose_name=_('products.cost_price')
     )
     sale_price = models.DecimalField(
         max_digits=10, 
         decimal_places=2, 
         null=True, 
         blank=True, 
-        verbose_name=_('Preço de Venda')
+        verbose_name=_('products.sale_price')
     )
     currency = models.ForeignKey(
         Currency, 
         on_delete=models.CASCADE, 
-        verbose_name=_('Moeda')
+        verbose_name=_('products.currency')
     )
     
     # Escala
@@ -130,7 +130,7 @@ class Product(models.Model):
         on_delete=models.SET_NULL, 
         null=True, 
         blank=True, 
-        verbose_name=_('Escala')
+        verbose_name=_('products.scale')
     )
     
     # Dimensões
@@ -139,27 +139,27 @@ class Product(models.Model):
         decimal_places=2, 
         null=True, 
         blank=True, 
-        verbose_name=_('Largura')
+        verbose_name=_('products.dimensions_x')
     )
     dimensions_y = models.DecimalField(
         max_digits=10, 
         decimal_places=2, 
         null=True, 
         blank=True, 
-        verbose_name=_('Altura')
+        verbose_name=_('products.dimensions_y')
     )
     dimensions_z = models.DecimalField(
         max_digits=10, 
         decimal_places=2, 
         null=True, 
         blank=True, 
-        verbose_name=_('Profundidade')
+        verbose_name=_('products.dimensions_z')
     )
     dimension_unit = models.CharField(
         max_length=2, 
         choices=DIMENSION_UNITS, 
         default='cm', 
-        verbose_name=_('Unidade de Dimensão')
+        verbose_name=_('products.dimension_unit')
     )
     
     # Peso
@@ -168,41 +168,41 @@ class Product(models.Model):
         decimal_places=2, 
         null=True, 
         blank=True, 
-        verbose_name=_('Peso')
+        verbose_name=_('products.weight')
     )
     weight_unit = models.CharField(
         max_length=2, 
         choices=WEIGHT_UNITS, 
         default='g', 
-        verbose_name=_('Unidade de Peso')
+        verbose_name=_('products.weight_unit')
     )
     
     # Tempo de impressão
     print_time_estimate = models.CharField(
         max_length=20, 
         blank=True, 
-        verbose_name=_('Tempo de Impressão Estimado')
+        verbose_name=_('products.print_time_estimate')
     )
     
     # Estoque
     stock_quantity = models.PositiveIntegerField(
         default=1, 
-        verbose_name=_('Quantidade em Estoque')
+        verbose_name=_('products.stock_quantity')
     )
     
     # Controle
-    is_active = models.BooleanField(default=True, verbose_name=_('Ativo'))
+    is_active = models.BooleanField(default=True, verbose_name=_('common.active'))
     created_by = models.ForeignKey(
         User, 
         on_delete=models.CASCADE, 
-        verbose_name=_('Criado por')
+        verbose_name=_('products.created_by')
     )
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Criado em'))
-    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('Atualizado em'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('products.created_at'))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_('products.updated_at'))
     
     class Meta:
-        verbose_name = _('Produto')
-        verbose_name_plural = _('Produtos')
+        verbose_name = _('products.product_verbose')
+        verbose_name_plural = _('products.product_verbose_plural')
         ordering = ['-created_at']
     
     def __str__(self):
@@ -227,25 +227,25 @@ class ProductImage(models.Model):
         Product, 
         on_delete=models.CASCADE, 
         related_name='images',
-        verbose_name=_('Produto')
+        verbose_name=_('products.product_verbose')
     )
     image = models.ImageField(
         upload_to='products/images/', 
-        verbose_name=_('Imagem')
+        verbose_name=_('products.images')
     )
     is_primary = models.BooleanField(
         default=False, 
-        verbose_name=_('Imagem Principal')
+        verbose_name=_('products.primary_image')
     )
     order_index = models.PositiveIntegerField(
         default=0, 
-        verbose_name=_('Ordem')
+        verbose_name=_('products.order')
     )
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Criado em'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('products.created_at'))
     
     class Meta:
-        verbose_name = _('Imagem do Produto')
-        verbose_name_plural = _('Imagens do Produto')
+        verbose_name = _('products.product_image_verbose')
+        verbose_name_plural = _('products.product_image_verbose_plural')
         ordering = ['order_index', 'created_at']
     
     def __str__(self):

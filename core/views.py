@@ -331,7 +331,7 @@ def dashboard(request):
     
     # Estatísticas do plano atual
     current_plan = user.account.plan if hasattr(user, 'account') and user.account else None
-    plan_name = current_plan.name if current_plan else _('Nenhum plano')
+    plan_name = current_plan.name if current_plan else _('core.subscription.no_plan')
     
     # Verificar se o usuário é admin (superuser ou staff)
     is_admin = user.is_superuser or user.is_staff

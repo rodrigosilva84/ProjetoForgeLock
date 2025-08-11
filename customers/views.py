@@ -15,7 +15,7 @@ def get_user_company(request):
     company = user.get_primary_company()
     
     if not company:
-        messages.error(request, _('Você precisa configurar uma empresa primeiro.'))
+        messages.error(request, _('customers.messages.company_required'))
         return None
     
     return company
@@ -79,21 +79,21 @@ def customer_create(request):
             # Verificar se já existe cliente com este e-mail na empresa
             email = form.cleaned_data.get('email')
             if email and Customer.objects.filter(company=company, email=email).exists():
-                form.add_error('email', _('Já existe um cliente com este e-mail'))
+                form.add_error('email', _('customers.form.validation.email_exists'))
             else:
                 customer = form.save(commit=False)
                 customer.company = company
                 customer.save()
                 
-                messages.success(request, _('Cliente criado com sucesso!'))
+                messages.success(request, _('customers.messages.created_success'))
                 return redirect('customers:customer_detail', pk=customer.pk)
     else:
         form = CustomerForm(user=request.user)
     
     context = {
         'form': form,
-        'title': _('Novo Cliente'),
-        'submit_text': _('Criar Cliente'),
+        'title': _('customers.form.new_customer'),
+        'submit_text': _('customers.form.create_customer'),
     }
     
     return render(request, 'customers/customer_form.html', context)
@@ -128,7 +128,7 @@ def customer_edit(request, pk):
         form = CustomerForm(request.POST, instance=customer, user=request.user)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Cliente atualizado com sucesso!'))
+            messages.success(request, _('customers.messages.updated_success'))
             return redirect('customers:customer_detail', pk=customer.pk)
     else:
         form = CustomerForm(instance=customer, user=request.user)
@@ -136,8 +136,8 @@ def customer_edit(request, pk):
     context = {
         'form': form,
         'customer': customer,
-        'title': _('Editar Cliente'),
-        'submit_text': _('Salvar Alterações'),
+        'title': _('customers.form.edit_customer'),
+        'submit_text': _('customers.form.save_changes'),
     }
     
     return render(request, 'customers/customer_form.html', context)
@@ -155,7 +155,7 @@ def customer_delete(request, pk):
     if request.method == 'POST':
         customer_name = customer.name
         customer.delete()
-        messages.success(request, _('Cliente "{}" excluído com sucesso!').format(customer_name))
+        messages.success(request, _('customers.messages.deleted_success').format(customer_name))
         return redirect('customers:customer_list')
     
     context = {
@@ -170,7 +170,7 @@ def customer_toggle_status(request, pk):
     """Ativar/desativar cliente"""
     company = get_user_company(request)
     if not company:
-        return JsonResponse({'success': False, 'message': _('Empresa não configurada')})
+        return JsonResponse({'success': False, 'message': _('customers.messages.company_not_configured')})
     
     customer = get_object_or_404(Customer, pk=pk, company=company)
     
@@ -178,14 +178,14 @@ def customer_toggle_status(request, pk):
         customer.is_active = not customer.is_active
         customer.save()
         
-        status_text = _('ativado') if customer.is_active else _('desativado')
+        status_text = _('customers.messages.status_activated') if customer.is_active else _('customers.messages.status_deactivated')
         return JsonResponse({
             'success': True,
-            'message': _('Cliente {} com sucesso!').format(status_text),
+            'message': _('customers.messages.status_changed_success').format(status_text),
             'is_active': customer.is_active
         })
     
-    return JsonResponse({'success': False, 'message': _('Método não permitido')})
+    return JsonResponse({'success': False, 'message': _('customers.messages.method_not_allowed')})
 
 
 @login_required

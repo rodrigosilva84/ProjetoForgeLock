@@ -42,7 +42,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="{{ form.first_name.id_for_label }}" class="form-label">{% translate "Nome" %}</label>
+                                <label for="{{ form.first_name.id_for_label }}" class="form-label">{% translate "common.name" %}</label>
                                 {{ form.first_name }}
                                 {% if form.first_name.errors %}
                                     <div class="invalid-feedback d-block">
@@ -70,7 +70,7 @@
                     
                     <!-- Usuário -->
                     <div class="mb-3">
-                        <label for="{{ form.username.id_for_label }}" class="form-label">{% translate "Usuário" %}</label>
+                        <label for="{{ form.username.id_for_label }}" class="form-label">{% translate "common.username" %}</label>
                         {{ form.username }}
                         {% if form.username.errors %}
                             <div class="invalid-feedback d-block">
@@ -83,7 +83,7 @@
                     
                     <!-- Email -->
                     <div class="mb-3">
-                        <label for="{{ form.email.id_for_label }}" class="form-label">{% translate "E-mail" %}</label>
+                        <label for="{{ form.email.id_for_label }}" class="form-label">{% translate "common.email" %}</label>
                         {{ form.email }}
                         {% if form.email.errors %}
                             <div class="invalid-feedback d-block">
@@ -96,7 +96,7 @@
                     
                     <!-- País (somente exibição) -->
                     <div class="mb-3">
-                        <label class="form-label">{% translate "País" %}</label>
+                        <label class="form-label">{% translate "common.country" %}</label>
                         <input type="text" class="form-control" value="{{ user.country.name }}" readonly>
                     </div>
                     
@@ -110,7 +110,7 @@
                         </div>
                         <div class="col-md-9">
                             <div class="mb-3">
-                                <label for="{{ form.phone_number.id_for_label }}" class="form-label">{% translate "Telefone" %}</label>
+                                <label for="{{ form.phone_number.id_for_label }}" class="form-label">{% translate "common.phone" %}</label>
                                 {{ form.phone_number }}
                                 {% if form.phone_number.errors %}
                                     <div class="invalid-feedback d-block">
@@ -125,7 +125,7 @@
                     
                     <!-- Data de Nascimento -->
                     <div class="mb-3">
-                        <label for="{{ form.birth_date.id_for_label }}" class="form-label">{% translate "Data de nascimento" %}</label>
+                        <label for="{{ form.birth_date.id_for_label }}" class="form-label">{% translate "common.birth_date" %}</label>
                         {{ form.birth_date }}
                         {% if form.birth_date.help_text %}
                             <div class="form-text">{{ form.birth_date.help_text }}</div>
@@ -142,7 +142,7 @@
                     <!-- Endereço -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-map-marker-alt me-2"></i>{% translate "Endereço" %}
+                            <i class="fas fa-map-marker-alt me-2"></i>{% translate "common.address" %}
                         </h5>
                         
                         <!-- CEP e Número lado a lado -->
@@ -257,17 +257,17 @@
                      <div class="d-flex justify-content-between align-items-center mt-4">
                          <!-- Botão Voltar -->
                          <a href="{% url 'dashboard' %}" class="btn {% if is_first_access %}btn-outline-secondary disabled{% else %}btn-gradient-outline{% endif %}" {% if is_first_access %}onclick="return false;"{% endif %}>
-                             <i class="fas fa-arrow-left"></i>{% translate "Voltar" %}
+                             <i class="fas fa-arrow-left"></i>{% translate "actions.back" %}
                          </a>
                          
                          <!-- Botão Editar/Salvar centralizado -->
                          <button type="button" class="btn btn-gradient-outline" id="edit-save-btn">
-                             <i class="fas fa-edit"></i>{% translate "Editar" %}
+                             <i class="fas fa-edit"></i>{% translate "common.edit" %}
                          </button>
                          
                          <!-- Botão Avançar -->
                          <button type="submit" name="action" value="avancar" class="btn {% if not is_first_access %}btn-outline-secondary disabled{% else %}btn-gradient-outline{% endif %}" {% if not is_first_access %}onclick="return false;"{% endif %}>
-                             <i class="fas fa-arrow-right"></i>{% translate "Avançar" %}
+                             <i class="fas fa-arrow-right"></i>{% translate "actions.continue" %}
                          </button>
                      </div>
                 </form>
@@ -302,11 +302,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Atualizar botão
         if (editSaveBtn) {
                                 if (editing) {
-                        editSaveBtn.innerHTML = '<i class="fas fa-save"></i>{% translate "Salvar" %}';
+                        editSaveBtn.innerHTML = '<i class="fas fa-save"></i>{% translate "common.save" %}';
                         editSaveBtn.className = 'btn btn-gradient-enabled';
                         editSaveBtn.type = 'submit';
                     } else {
-                        editSaveBtn.innerHTML = '<i class="fas fa-edit"></i>{% translate "Editar" %}';
+                        editSaveBtn.innerHTML = '<i class="fas fa-edit"></i>{% translate "common.edit" %}';
                         editSaveBtn.className = 'btn btn-gradient-outline';
                         editSaveBtn.type = 'button';
                     }

@@ -46,22 +46,22 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImageInline]
     
     fieldsets = (
-        (_('Informações Básicas'), {
+        (_('products.admin.basic_info'), {
             'fields': ('name', 'description', 'product_type', 'category')
         }),
-        (_('Preços'), {
+        (_('products.admin.prices'), {
             'fields': ('cost_price', 'sale_price', 'currency')
         }),
-        (_('Especificações'), {
+        (_('products.admin.specifications'), {
             'fields': ('scale', 'dimensions_x', 'dimensions_y', 'dimensions_z', 'dimension_unit')
         }),
-        (_('Peso e Tempo'), {
+        (_('products.admin.weight_and_time'), {
             'fields': ('weight', 'weight_unit', 'print_time_estimate')
         }),
-        (_('Estoque'), {
+        (_('products.admin.stock'), {
             'fields': ('stock_quantity',)
         }),
-        (_('Controle'), {
+        (_('products.admin.control'), {
             'fields': ('is_active', 'created_by', 'created_at', 'updated_at')
         }),
     )

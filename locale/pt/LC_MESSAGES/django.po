@@ -1,2452 +1,1960 @@
-﻿# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# PT translation of ForgeLock
+# Copyright (C) 2025 ForgeLock
+# This file is distributed under the same license as the ForgeLock package.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: ForgeLock 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-05 14:18-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2025-01-27 10:00+0000\n"
+"PO-Revision-Date: 2025-01-27 10:00+0000\n"
+"Last-Translator: \n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\core\admin.py:39
-#, fuzzy
-#| msgid "Usuários Verificados"
-msgid "Usuários Associados"
-msgstr "Usuários Verificados"
+msgid "common.search"
+msgstr "Pesquisar"
 
-#: .\core\admin.py:42
-msgid "Lista de usuários que têm acesso a esta empresa"
-msgstr ""
+msgid "common.clear"
+msgstr "Limpar"
 
-#: .\core\admin.py:48 .\core\models.py:196
-msgid "Usuários"
-msgstr ""
+msgid "common.status"
+msgstr "Status"
 
-#: .\core\admin.py:57
-msgid "Nenhum usuário associado"
-msgstr ""
+msgid "common.active"
+msgstr "Ativo"
 
-#: .\core\admin.py:66
-#, fuzzy
-#| msgid "Resumo da Empresa"
-msgid "Usuários da Empresa"
-msgstr "Resumo da Empresa"
+msgid "common.inactive"
+msgstr "Inativo"
 
-#: .\core\admin.py:86 .\core\models.py:314 .\templates\core\dashboard.html:23
-msgid "Ativa"
-msgstr ""
-
-#: .\core\admin.py:185
-msgid "Informações pessoais"
-msgstr ""
-
-#: .\core\admin.py:186
-msgid "Verificação"
-msgstr ""
-
-#: .\core\admin.py:187 .\core\admin.py:211 .\core\models.py:166
-#: .\core\models.py:179 .\templates\core\dashboard.html:60
-msgid "Empresas"
-msgstr "Empresas"
-
-#: .\core\admin.py:190
-msgid "Empresas às quais este usuário tem acesso"
-msgstr ""
-
-#: .\core\admin.py:192 .\core\models.py:234
-msgid "Permissões"
-msgstr ""
-
-#: .\core\admin.py:195
-msgid "Datas importantes"
-msgstr ""
-
-#: .\core\admin.py:220
-msgid "Nenhuma empresa associada"
-msgstr ""
-
-#: .\core\admin.py:229
-#, fuzzy
-#| msgid "Nome de usuário *"
-msgid "Empresas do Usuário"
-msgstr "Nome de usuário *"
-
-#: .\core\decorators.py:21 .\core\decorators.py:44 .\core\decorators.py:72
-msgid "Você precisa de uma assinatura ativa para acessar esta funcionalidade."
-msgstr ""
-
-#: .\core\forms.py:13 .\customers\forms.py:80 .\templates\core\register.html:65
-msgid "E-mail *"
-msgstr "E-mail *"
-
-#: .\core\forms.py:14 .\templates\core\password_reset_request.html:24
-msgid "Seu email"
-msgstr ""
-
-#: .\core\forms.py:16
-msgid "Já existe um usuário com este e-mail."
-msgstr ""
-
-#: .\core\forms.py:20 .\templates\core\register.html:25
-msgid "Nome *"
-msgstr "Nome *"
-
-#: .\core\forms.py:22
-#, fuzzy
-#| msgid "Sobrenome *"
-msgid "Seu nome"
-msgstr "Sobrenome *"
-
-#: .\core\forms.py:25 .\templates\core\register.html:38
-msgid "Sobrenome *"
-msgstr "Sobrenome *"
-
-#: .\core\forms.py:27
-#, fuzzy
-#| msgid "Sobrenome *"
-msgid "Seu sobrenome"
-msgstr "Sobrenome *"
-
-#: .\core\forms.py:30
-msgid "Telefone (DDD + Número) *"
-msgstr "Telefone (DDD + Número) *"
-
-#: .\core\forms.py:32 .\customers\forms.py:28
-msgid "(11) 99999-9999"
-msgstr ""
-
-#: .\core\forms.py:35
-msgid "Já existe um usuário com este telefone."
-msgstr ""
-
-#: .\core\forms.py:39 .\customers\forms.py:78 .\templates\core\register.html:77
-msgid "País *"
-msgstr "País *"
-
-#: .\core\forms.py:42 .\core\forms.py:76 .\core\forms.py:197
-msgid "Selecione um país"
-msgstr "Selecione um país"
-
-#: .\core\forms.py:46 .\templates\core\register.html:89
-#, fuzzy
-#| msgid "Data de nascimento"
-msgid "Data de nascimento *"
-msgstr "Data de nascimento"
-
-#: .\core\forms.py:57 .\core\models.py:439
-#, fuzzy
-#| msgid "Nome de usuário *"
-msgid "Nome de usuário"
-msgstr "Nome de usuário *"
-
-#: .\core\forms.py:58 .\core\forms.py:90 .\templates\core\login.html:30
-msgid "Senha"
-msgstr "Senha"
-
-#: .\core\forms.py:59
-#, fuzzy
-#| msgid "Confirme a senha *"
-msgid "Confirme a senha"
-msgstr "Confirme a senha *"
-
-#: .\core\forms.py:62 .\templates\core\register.html:52
-msgid "Nome de usuário *"
-msgstr "Nome de usuário *"
-
-#: .\core\forms.py:63 .\templates\core\register.html:123
-msgid "Senha *"
-msgstr "Senha *"
-
-#: .\core\forms.py:64 .\templates\core\register.html:136
-msgid "Confirme a senha *"
-msgstr "Confirme a senha *"
-
-#: .\core\forms.py:68 .\templates\core\register.html:125
-msgid "Sua senha deve conter pelo menos 8 caracteres."
-msgstr "Sua senha deve conter pelo menos 8 caracteres."
-
-#: .\core\forms.py:69 .\templates\core\register.html:138
-msgid "Digite a mesma senha novamente para verificação."
-msgstr "Digite a mesma senha novamente para verificação."
-
-#: .\core\forms.py:86 .\core\forms.py:96 .\templates\core\login.html:18
-msgid "Nome de usuário ou E-mail"
-msgstr "Nome de usuário ou E-mail"
-
-#: .\core\forms.py:87
-#, fuzzy
-#| msgid "Nome de usuário ou E-mail"
-msgid "Nome de usuário ou e-mail"
-msgstr "Nome de usuário ou E-mail"
-
-#: .\core\forms.py:91
-#, fuzzy
-#| msgid "Senha"
-msgid "Sua senha"
-msgstr "Senha"
-
-#: .\core\forms.py:102 .\core\forms.py:114 .\core\models.py:189
-msgid "Código de verificação"
-msgstr "Código de verificação"
-
-#: .\core\forms.py:120 .\core\models.py:186
-#: .\templates\core\profile_setup.html:243
-msgid "Site pessoal"
-msgstr "Site pessoal"
-
-#: .\core\forms.py:122 .\core\forms.py:141
-msgid "https://meusite.com"
-msgstr "https://meusite.com"
-
-#: .\core\forms.py:123
-msgid "Opcional. Seu site pessoal ou portfólio."
-msgstr "Opcional. Seu site pessoal ou portfólio."
-
-#: .\core\forms.py:136 .\customers\forms.py:49
-#, fuzzy
-#| msgid "Endereço completo (opcional)"
-msgid "Endereço completo"
-msgstr "Endereço completo (opcional)"
-
-#: .\core\forms.py:137 .\core\forms.py:171 .\core\models.py:153
-#: .\core\models.py:182 .\customers\forms.py:53 .\customers\forms.py:85
-#: .\customers\models.py:22
-msgid "Número"
-msgstr ""
-
-#: .\core\forms.py:138 .\core\forms.py:172 .\core\models.py:154
-#: .\core\models.py:183 .\customers\forms.py:57 .\customers\forms.py:86
-#: .\customers\models.py:23 .\templates\customers\customer_detail.html:290
-msgid "Cidade"
-msgstr ""
-
-#: .\core\forms.py:139 .\core\forms.py:173 .\core\models.py:155
-#: .\core\models.py:184 .\customers\forms.py:61 .\customers\forms.py:87
-#: .\customers\models.py:24
-msgid "Estado/Província"
-msgstr ""
-
-#: .\core\forms.py:140 .\core\forms.py:174 .\customers\forms.py:65
-msgid "00000-000"
-msgstr ""
-
-#: .\core\forms.py:149 .\core\models.py:180
-#: .\templates\core\profile_setup.html:128
-msgid "Data de nascimento"
-msgstr "Data de nascimento"
-
-#: .\core\forms.py:150
-#, fuzzy
-#| msgid "Data de nascimento"
-msgid "Sua data de nascimento."
-msgstr "Data de nascimento"
-
-#: .\core\forms.py:156
-msgid "Usar dados do meu registro"
-msgstr "Usar dados do meu registro"
-
-#: .\core\forms.py:166
-msgid "Nome da empresa ou nome fantasia"
-msgstr "Nome da empresa ou nome fantasia"
-
-#: .\core\forms.py:167
-msgid "CNPJ, CPF, RG, Passaporte, etc. (opcional)"
-msgstr ""
-
-#: .\core\forms.py:170
-msgid "Endereço completo (opcional)"
-msgstr "Endereço completo (opcional)"
-
-#: .\core\forms.py:187
-msgid "Nome da empresa"
-msgstr "Nome da empresa"
-
-#: .\core\forms.py:188 .\core\models.py:149
-msgid "Documento"
-msgstr ""
-
-#: .\core\forms.py:189 .\core\models.py:150 .\core\models.py:175
-#: .\customers\models.py:13 .\templates\core\password_reset_request.html:22
-#: .\templates\core\profile_setup.html:86
-#: .\templates\customers\customer_detail.html:227
-msgid "E-mail"
-msgstr "E-mail"
-
-#: .\core\forms.py:190 .\core\models.py:151 .\core\models.py:176
-#: .\customers\models.py:12 .\templates\core\profile.html:22
-#: .\templates\core\profile_setup.html:113
-#: .\templates\customers\customer_detail.html:217
-msgid "Telefone"
-msgstr "Telefone"
-
-#: .\core\forms.py:191 .\core\models.py:152 .\core\models.py:181
-#: .\customers\admin.py:39 .\customers\forms.py:84 .\customers\models.py:21
-#: .\templates\core\company_setup.html:121
-#: .\templates\core\profile_setup.html:145
-#: .\templates\customers\customer_detail.html:268
-#: .\templates\customers\customer_detail.html:276
-#: .\templates\customers\customer_form.html:206
-msgid "Endereço"
-msgstr "Endereço"
-
-#: .\core\forms.py:192 .\core\models.py:22 .\core\models.py:157
-#: .\core\models.py:177 .\customers\models.py:11
-#: .\templates\core\profile_setup.html:99
-#: .\templates\customers\customer_detail.html:161
-msgid "País"
-msgstr "País"
-
-#: .\core\forms.py:193 .\core\models.py:158
-msgid "Logo"
-msgstr "Logo"
-
-#: .\core\models.py:11 .\core\models.py:45 .\core\models.py:148
-#: .\products\forms.py:26 .\products\forms.py:113 .\products\models.py:11
-#: .\products\models.py:25 .\products\models.py:39 .\products\models.py:64
-#: .\products\models_backup.py:11 .\products\models_backup.py:25
-#: .\products\models_backup.py:39 .\products\models_complete.py:11
-#: .\products\models_complete.py:25 .\products\models_complete.py:39
-#: .\products\models_complete.py:64 .\templates\core\profile_setup.html:45
-#: .\templates\products\category_confirm_delete.html:34
-#: .\templates\products\product_confirm_delete.html:35
-msgid "Nome"
+msgid "common.name"
 msgstr "Nome"
 
-#: .\core\models.py:12 .\core\models.py:46
-msgid "Nome (Inglês)"
-msgstr ""
+msgid "common.code"
+msgstr "Código"
 
-#: .\core\models.py:13 .\core\models.py:47
-msgid "Nome (Espanhol)"
-msgstr ""
+msgid "common.edit"
+msgstr "Editar"
 
-#: .\core\models.py:14 .\products\models.py:10 .\products\models_backup.py:10
-#: .\products\models_complete.py:10
-msgid "Código"
-msgstr ""
+msgid "common.delete"
+msgstr "Excluir"
 
-#: .\core\models.py:15 .\templates\core\company_setup.html:87
-#: .\templates\core\profile_setup.html:107 .\templates\core\register.html:103
-#: .\templates\customers\customer_form.html:99
-msgid "DDI"
-msgstr ""
+msgid "common.save"
+msgstr "Salvar"
 
-#: .\core\models.py:16
-msgid "Bandeira"
-msgstr ""
+msgid "common.cancel"
+msgstr "Cancelar"
 
-#: .\core\models.py:17 .\core\models.py:59 .\core\models.py:160
-#: .\core\models.py:235 .\core\models.py:269 .\core\models.py:424
-#: .\customers\models.py:29 .\products\models.py:167
-#: .\products\models_complete.py:167 .\templates\core\profile.html:51
-#: .\templates\customers\customer_confirm_delete.html:117
-#: .\templates\customers\customer_detail.html:403
-#: .\templates\customers\customer_list.html:184
-#: .\templates\products\product_confirm_delete.html:49
-#: .\templates\products\product_detail.html:158
-msgid "Ativo"
-msgstr ""
+msgid "common.back"
+msgstr "Voltar"
 
-#: .\core\models.py:23
-msgid "Países"
-msgstr ""
+msgid "common.confirm"
+msgstr "Confirmar"
 
-#: .\core\models.py:48 .\core\models.py:159 .\products\forms.py:27
-#: .\products\forms.py:114 .\products\models.py:26 .\products\models.py:40
-#: .\products\models.py:65 .\products\models_backup.py:26
-#: .\products\models_backup.py:40 .\products\models_complete.py:26
-#: .\products\models_complete.py:40 .\products\models_complete.py:65
-#: .\templates\products\category_confirm_delete.html:36
-#: .\templates\products\product_confirm_delete.html:37
-msgid "Descrição"
+msgid "common.actions"
+msgstr "Ações"
+
+msgid "common.filters"
+msgstr "Filtros"
+
+msgid "common.all"
+msgstr "Todos"
+
+msgid "common.none"
+msgstr "Nenhum"
+
+msgid "common.found"
+msgstr "Encontrado"
+
+msgid "common.not_found"
+msgstr "Não encontrado"
+
+msgid "common.description"
 msgstr "Descrição"
 
-#: .\core\models.py:49
-#, fuzzy
-#| msgid "Descrição"
-msgid "Descrição (Inglês)"
-msgstr "Descrição"
+msgid "common.date"
+msgstr "Data"
 
-#: .\core\models.py:50
-#, fuzzy
-#| msgid "Descrição"
-msgid "Descrição (Espanhol)"
-msgstr "Descrição"
-
-#: .\core\models.py:51
-msgid "Máximo de usuários"
-msgstr ""
-
-#: .\core\models.py:52
-#, fuzzy
-#| msgid "Membros da Empresa"
-msgid "Máximo de empresas"
-msgstr "Membros da Empresa"
-
-#: .\core\models.py:53
-msgid "Máximo de clientes"
-msgstr ""
-
-#: .\core\models.py:54
-msgid "Máximo de produtos"
-msgstr ""
-
-#: .\core\models.py:55
-msgid "Máximo de projetos"
-msgstr ""
-
-#: .\core\models.py:56 .\templates\core\home.html:153
-#: .\templates\core\home.html:155 .\templates\core\register.html:183
-msgid "Segurança STL"
-msgstr ""
-
-#: .\core\models.py:57
-msgid "É plano trial"
-msgstr ""
-
-#: .\core\models.py:58
-msgid "Dias de trial"
-msgstr ""
-
-#: .\core\models.py:64 .\core\models.py:268 .\core\models.py:326
-#: .\core\models.py:416
-msgid "Plano"
-msgstr ""
-
-#: .\core\models.py:65
-msgid "Planos"
-msgstr ""
-
-#: .\core\models.py:156 .\core\models.py:185 .\customers\forms.py:88
-#: .\customers\models.py:25
-msgid "CEP/Código Postal"
-msgstr ""
-
-#: .\core\models.py:165 .\core\models.py:232 .\customers\models.py:9
-#: .\templates\base.html:172 .\templates\customers\customer_detail.html:364
-msgid "Empresa"
-msgstr ""
-
-#: .\core\models.py:187
-msgid "Verificado"
-msgstr ""
-
-#: .\core\models.py:188
-msgid "Primeiro acesso"
-msgstr ""
-
-#: .\core\models.py:190
-msgid "Expiração da verificação"
-msgstr ""
-
-#: .\core\models.py:195 .\core\models.py:231 .\core\models.py:325
-#: .\templates\core\profile_setup.html:73
-msgid "Usuário"
-msgstr ""
-
-#: .\core\models.py:225
-msgid "Proprietário"
-msgstr ""
-
-#: .\core\models.py:226
-msgid "Administrador"
-msgstr ""
-
-#: .\core\models.py:227
-msgid "Gerente"
-msgstr ""
-
-#: .\core\models.py:228
-#, fuzzy
-#| msgid "Membros"
-msgid "Membro"
-msgstr "Membros"
-
-#: .\core\models.py:233
-msgid "Função"
-msgstr ""
-
-#: .\core\models.py:240
-#, fuzzy
-#| msgid "Total de Usuários"
-msgid "Usuário-Empresa"
-msgstr "Total de Usuários"
-
-#: .\core\models.py:241
-#, fuzzy
-#| msgid "Total de Usuários"
-msgid "Usuários-Empresas"
-msgstr "Total de Usuários"
-
-#: .\core\models.py:274
-msgid "Conta"
-msgstr ""
-
-#: .\core\models.py:275
-msgid "Contas"
-msgstr ""
-
-#: .\core\models.py:313 .\templates\base.html:162
-#: .\templates\core\register.html:157
-msgid "Trial"
-msgstr ""
-
-#: .\core\models.py:315
-msgid "Período de Carência"
-msgstr ""
-
-#: .\core\models.py:316
-msgid "Cancelada"
-msgstr ""
-
-#: .\core\models.py:317
-msgid "Expirada"
-msgstr ""
-
-#: .\core\models.py:321 .\templates\core\home.html:137
-msgid "Mensal"
-msgstr ""
-
-#: .\core\models.py:322 .\templates\core\home.html:140
-msgid "Anual"
-msgstr ""
-
-#: .\core\models.py:327 .\templates\customers\customer_detail.html:400
-#: .\templates\customers\customer_form.html:329
-#: .\templates\products\product_confirm_delete.html:47
-#: .\templates\products\product_detail.html:156
-msgid "Status"
-msgstr ""
-
-#: .\core\models.py:328
-msgid "Ciclo de cobrança"
-msgstr ""
-
-#: .\core\models.py:329
-#, fuzzy
-#| msgid "Data de nascimento"
-msgid "Data de início"
-msgstr "Data de nascimento"
-
-#: .\core\models.py:330
-#, fuzzy
-#| msgid "Data de nascimento"
-msgid "Data de fim"
-msgstr "Data de nascimento"
-
-#: .\core\models.py:331
-msgid "Próxima cobrança"
-msgstr ""
-
-#: .\core\models.py:332
-msgid "Fim do período de carência"
-msgstr ""
-
-#: .\core\models.py:333
-msgid "Última notificação enviada"
-msgstr ""
-
-#: .\core\models.py:334
-msgid "Renovação automática"
-msgstr ""
-
-#: .\core\models.py:339 .\templates\core\dashboard.html:209
-#, fuzzy
-#| msgid "Gerenciar Assinatura"
-msgid "Assinatura"
-msgstr "Gerenciar Assinatura"
-
-#: .\core\models.py:340
-#, fuzzy
-#| msgid "Gerenciar Assinatura"
-msgid "Assinaturas"
-msgstr "Gerenciar Assinatura"
-
-#: .\core\models.py:417 .\products\forms.py:119 .\products\models.py:15
-#: .\products\models.py:99 .\products\models_backup.py:15
-#: .\products\models_complete.py:15 .\products\models_complete.py:99
-msgid "Moeda"
-msgstr ""
-
-#: .\core\models.py:422
-msgid "Preço Mensal"
-msgstr ""
-
-#: .\core\models.py:423
-msgid "Preço Anual"
-msgstr ""
-
-#: .\core\models.py:430
-msgid "Preço do Plano"
-msgstr ""
-
-#: .\core\models.py:431
-msgid "Preços dos Planos"
-msgstr ""
-
-#: .\core\models.py:440
-#, fuzzy
-#| msgid "Endereço"
-msgid "Endereço IP"
-msgstr "Endereço"
-
-#: .\core\models.py:441
-msgid "Sucesso"
-msgstr ""
-
-#: .\core\models.py:443
-msgid "User Agent"
-msgstr ""
-
-#: .\core\models.py:446
-msgid "Tentativa de Login"
-msgstr ""
-
-#: .\core\models.py:447
-#, fuzzy
-#| msgid "Tentativas restantes: {}"
-msgid "Tentativas de Login"
-msgstr "Tentativas restantes: {}"
-
-#: .\core\notifications.py:47
-msgid "Sua assinatura vence em {} dias"
-msgstr ""
-
-#: .\core\notifications.py:60
-msgid "ForgeLock: Sua assinatura {} vence em {} dias. Renove agora!"
-msgstr ""
-
-#: .\core\notifications.py:72
-msgid "Sua assinatura expirou"
-msgstr ""
-
-#: .\core\notifications.py:84
-msgid "ForgeLock: Sua assinatura {} expirou. Renove para continuar usando!"
-msgstr ""
-
-#: .\core\notifications.py:97
-msgid "Período de carência - {} dias restantes"
-msgstr ""
-
-#: .\core\notifications.py:110
-msgid "ForgeLock: Você tem {} dias de carência. Renove sua assinatura {}!"
-msgstr ""
-
-#: .\core\notifications.py:122
-msgid "Acesso bloqueado - Renove sua assinatura"
-msgstr ""
-
-#: .\core\views.py:78
-#, fuzzy
-#| msgid "Plano Selecionado:"
-msgid "Plano não encontrado."
-msgstr "Plano Selecionado:"
-
-#: .\core\views.py:95
-#, fuzzy
-#| msgid "Plano Selecionado:"
-msgid "Plano Basic não encontrado. Contate o suporte."
-msgstr "Plano Selecionado:"
-
-#: .\core\views.py:126
-msgid "Conta criada com sucesso! Verifique seu telefone."
-msgstr ""
-
-#: .\core\views.py:137
-msgid "Nenhum plano disponível. Contate o suporte."
-msgstr ""
-
-#: .\core\views.py:161 .\core\views.py:217
-msgid "Sessão expirada. Faça o registro novamente."
-msgstr ""
-
-#: .\core\views.py:167 .\core\views.py:214
-msgid "Usuário não encontrado."
-msgstr ""
-
-#: .\core\views.py:177
-msgid "Conta verificada com sucesso! Bem-vindo ao ForgeLock."
-msgstr ""
-
-#: .\core\views.py:182
-msgid "Código expirado. Um novo código foi enviado."
-msgstr ""
-
-#: .\core\views.py:185
-msgid "Código inválido. Tente novamente."
-msgstr ""
-
-#: .\core\views.py:210
-msgid "Novo código enviado com sucesso!"
-msgstr ""
-
-#: .\core\views.py:212
-msgid "Erro ao enviar código. Tente novamente."
-msgstr ""
-
-#: .\core\views.py:268
-msgid "Login realizado com sucesso!"
-msgstr ""
-
-#: .\core\views.py:273
-msgid "Conta não verificada. Verifique seu telefone."
-msgstr ""
-
-#: .\core\views.py:291
-#, fuzzy
-#| msgid "Tentativas restantes: {}"
-msgid "Senha incorreta. Tentativas restantes: {}"
-msgstr "Tentativas restantes: {}"
-
-#: .\core\views.py:293
-msgid "Senha incorreta."
-msgstr ""
-
-#: .\core\views.py:297
-msgid "Usuário não encontrado. Verifique o nome de usuário ou email."
-msgstr ""
-
-#: .\core\views.py:307
-msgid "Logout realizado com sucesso!"
-msgstr ""
-
-#: .\core\views.py:325
-msgid "Configure sua empresa para começar a usar o sistema."
-msgstr ""
-
-#: .\core\views.py:334
-msgid "Nenhum plano"
-msgstr ""
-
-#: .\core\views.py:426 .\core\views.py:432
-msgid "Perfil atualizado com sucesso!"
-msgstr ""
-
-#: .\core\views.py:438
-msgid "Por favor, corrija os erros no formulário."
-msgstr ""
-
-#: .\core\views.py:523 .\core\views.py:539
-msgid "Empresa configurada com sucesso!"
-msgstr ""
-
-#: .\core\views.py:600
-msgid "Email de recuperação enviado com sucesso!"
-msgstr ""
-
-#: .\core\views.py:603
-msgid "Email não encontrado no sistema."
-msgstr ""
-
-#: .\core\views.py:622
-msgid "Senha alterada com sucesso!"
-msgstr ""
-
-#: .\core\views.py:625
-msgid "As senhas não coincidem."
-msgstr ""
-
-#: .\customers\admin.py:29 .\products\admin.py:49
-#: .\templates\customers\customer_detail.html:144
-#: .\templates\customers\customer_form.html:52
-#: .\templates\products\product_form.html:36
-msgid "Informações Básicas"
-msgstr ""
-
-#: .\customers\admin.py:32
-msgid "Contato"
-msgstr ""
-
-#: .\customers\admin.py:35 .\templates\customers\customer_form.html:181
-msgid "Documentação"
-msgstr ""
-
-#: .\customers\admin.py:43 .\customers\forms.py:89 .\customers\models.py:28
-#: .\templates\customers\customer_detail.html:335
-#: .\templates\customers\customer_form.html:305
-msgid "Observações"
-msgstr ""
-
-#: .\customers\admin.py:47
-msgid "Timestamps"
-msgstr ""
-
-#: .\customers\admin.py:63
-msgid "Idade"
-msgstr ""
-
-#: .\customers\admin.py:79
-msgid "{} cliente(s) ativado(s) com sucesso."
-msgstr ""
-
-#: .\customers\admin.py:81
-msgid "Ativar clientes selecionados"
-msgstr ""
-
-#: .\customers\admin.py:88
-msgid "{} cliente(s) desativado(s) com sucesso."
-msgstr ""
-
-#: .\customers\admin.py:90
-msgid "Desativar clientes selecionados"
-msgstr ""
-
-#: .\customers\admin.py:96
-msgid "Funcionalidade de exportação será implementada em breve."
-msgstr ""
-
-#: .\customers\admin.py:98
-msgid "Exportar clientes selecionados"
-msgstr ""
-
-#: .\customers\forms.py:21
-msgid "Nome completo ou razão social"
-msgstr ""
-
-#: .\customers\forms.py:32
-msgid "cliente@exemplo.com"
-msgstr ""
-
-#: .\customers\forms.py:40
-msgid "000.000.000-00 ou 00.000.000/0000-00"
-msgstr ""
-
-#: .\customers\forms.py:44
-msgid "@usuario ou link da rede social"
-msgstr ""
-
-#: .\customers\forms.py:70
-msgid "Observações sobre o cliente"
-msgstr ""
-
-#: .\customers\forms.py:77
-msgid "Nome/Razão Social *"
-msgstr ""
-
-#: .\customers\forms.py:79 .\templates\core\register.html:109
-#, fuzzy
-#| msgid "Telefone"
-msgid "Telefone *"
+msgid "common.phone"
 msgstr "Telefone"
 
-#: .\customers\forms.py:81 .\customers\models.py:16
-#: .\templates\customers\customer_detail.html:184
-#, fuzzy
-#| msgid "Data de nascimento"
-msgid "Data de Nascimento"
-msgstr "Data de nascimento"
+msgid "common.email"
+msgstr "E-mail"
 
-#: .\customers\forms.py:82 .\customers\models.py:17
-#: .\templates\customers\customer_detail.html:172
-#, fuzzy
-#| msgid "CNPJ"
-msgid "CPF/CNPJ"
-msgstr "CNPJ"
-
-#: .\customers\forms.py:83 .\customers\models.py:18
-msgid "Instagram/Rede Social"
-msgstr ""
-
-#: .\customers\forms.py:90
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Cliente ativo"
-msgstr "Meus Clientes"
-
-#: .\customers\forms.py:93
-msgid "Nome completo para pessoa física ou razão social para pessoa jurídica"
-msgstr ""
-
-#: .\customers\forms.py:94
-msgid "Inclua o código do país se necessário"
-msgstr ""
-
-#: .\customers\forms.py:95
-msgid "E-mail válido para comunicações"
-msgstr ""
-
-#: .\customers\forms.py:96
-msgid "Opcional - útil para campanhas personalizadas"
-msgstr ""
-
-#: .\customers\forms.py:97
-msgid "CPF para pessoa física ou CNPJ para pessoa jurídica"
-msgstr ""
-
-#: .\customers\forms.py:98
-msgid "Instagram, Facebook, LinkedIn ou outra rede social"
-msgstr ""
-
-#: .\customers\forms.py:99
-#, fuzzy
-#| msgid "Endereço completo (opcional)"
-msgid "Endereço completo para envio de materiais"
-msgstr "Endereço completo (opcional)"
-
-#: .\customers\forms.py:100
-msgid "Número do endereço"
-msgstr ""
-
-#: .\customers\forms.py:101
-msgid "Informações adicionais sobre o cliente"
-msgstr ""
-
-#: .\customers\forms.py:132
-#, fuzzy
-#| msgid "Sua senha deve conter pelo menos 8 caracteres."
-msgid "Telefone deve ter pelo menos 10 dígitos"
-msgstr "Sua senha deve conter pelo menos 8 caracteres."
-
-#: .\customers\forms.py:142
-msgid "CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos"
-msgstr ""
-
-#: .\customers\models.py:10 .\templates\customers\customer_detail.html:151
-msgid "Nome/Razão Social"
-msgstr ""
-
-#: .\customers\models.py:36
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Cliente"
-msgstr "Meus Clientes"
-
-#: .\customers\models.py:37 .\templates\base.html:130
-#: .\templates\core\dashboard.html:194
-#: .\templates\customers\customer_list.html:5
-#: .\templates\customers\customer_list.html:45
-msgid "Clientes"
-msgstr ""
-
-#: .\customers\views.py:18
-msgid "Você precisa configurar uma empresa primeiro."
-msgstr ""
-
-#: .\customers\views.py:82
-msgid "Já existe um cliente com este e-mail"
-msgstr ""
-
-#: .\customers\views.py:88
-msgid "Cliente criado com sucesso!"
-msgstr ""
-
-#: .\customers\views.py:95 .\templates\customers\customer_list.html:54
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Novo Cliente"
-msgstr "Meus Clientes"
-
-#: .\customers\views.py:96
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Criar Cliente"
-msgstr "Meus Clientes"
-
-#: .\customers\views.py:131
-msgid "Cliente atualizado com sucesso!"
-msgstr ""
-
-#: .\customers\views.py:139
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Editar Cliente"
-msgstr "Meus Clientes"
-
-#: .\customers\views.py:140
-msgid "Salvar Alterações"
-msgstr ""
-
-#: .\customers\views.py:158
-msgid "Cliente \"{}\" excluído com sucesso!"
-msgstr ""
-
-#: .\customers\views.py:173
-msgid "Empresa não configurada"
-msgstr ""
-
-#: .\customers\views.py:181 .\products\views.py:190
-msgid "ativado"
-msgstr ""
-
-#: .\customers\views.py:181 .\products\views.py:190
-msgid "desativado"
-msgstr ""
-
-#: .\customers\views.py:184
-msgid "Cliente {} com sucesso!"
-msgstr ""
-
-#: .\customers\views.py:188
-msgid "Método não permitido"
-msgstr ""
-
-#: .\products\admin.py:52 .\templates\products\product_form.html:78
-#, fuzzy
-#| msgid "Endereço"
-msgid "Preços"
-msgstr "Endereço"
-
-#: .\products\admin.py:55 .\templates\products\product_form.html:124
-msgid "Especificações"
-msgstr ""
-
-#: .\products\admin.py:58
-msgid "Peso e Tempo"
-msgstr ""
-
-#: .\products\admin.py:61 .\templates\products\product_confirm_delete.html:46
-#: .\templates\products\product_detail.html:109
-#: .\templates\products\product_list.html:122
-msgid "Estoque"
-msgstr ""
-
-#: .\products\admin.py:64
-msgid "Controle"
-msgstr ""
-
-#: .\products\forms.py:15
-#, fuzzy
-#| msgid "Nome da empresa"
-msgid "Nome da categoria"
-msgstr "Nome da empresa"
-
-#: .\products\forms.py:20
-#, fuzzy
-#| msgid "Descrição da empresa (opcional)"
-msgid "Descrição da categoria (opcional)"
-msgstr "Descrição da empresa (opcional)"
-
-#: .\products\forms.py:44
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Nome do produto"
-msgstr "Meus Produtos"
-
-#: .\products\forms.py:49
-#, fuzzy
-#| msgid "Descrição"
-msgid "Descrição do produto"
-msgstr "Descrição"
-
-#: .\products\forms.py:76
-msgid "ex: 1:100"
-msgstr ""
-
-#: .\products\forms.py:106
-msgid "ex: 2:30"
-msgstr ""
-
-#: .\products\forms.py:115 .\templates\products\product_confirm_delete.html:39
-#: .\templates\products\product_detail.html:90
-#: .\templates\products\product_list.html:38
-msgid "Tipo"
-msgstr ""
-
-#: .\products\forms.py:116 .\products\models.py:43 .\products\models.py:78
-#: .\products\models_backup.py:43 .\products\models_complete.py:43
-#: .\products\models_complete.py:78
-#: .\templates\products\product_confirm_delete.html:41
-#: .\templates\products\product_detail.html:96
-#: .\templates\products\product_list.html:49
-msgid "Categoria"
-msgstr ""
-
-#: .\products\forms.py:117 .\products\models.py:87
-#: .\products\models_complete.py:87
-#: .\templates\products\product_detail.html:124
-msgid "Preço de Custo"
-msgstr ""
-
-#: .\products\forms.py:118 .\products\models.py:94
-#: .\products\models_complete.py:94
-#: .\templates\products\product_detail.html:117
-msgid "Preço de Venda"
-msgstr ""
-
-#: .\products\forms.py:120 .\products\models.py:163
-#: .\products\models_complete.py:163
-msgid "Quantidade em Estoque"
-msgstr ""
-
-#: .\products\forms.py:121 .\products\models.py:106
-#: .\products\models_complete.py:106
-#: .\templates\products\product_detail.html:103
-#: .\templates\products\product_form.html:127
-msgid "Escala"
-msgstr ""
-
-#: .\products\forms.py:122 .\products\models.py:115
-#: .\products\models_complete.py:115 .\templates\products\product_form.html:135
-msgid "Largura"
-msgstr ""
-
-#: .\products\forms.py:123 .\products\models.py:122
-#: .\products\models_complete.py:122 .\templates\products\product_form.html:142
-#, fuzzy
-#| msgid "Gerenciar Assinatura"
-msgid "Altura"
-msgstr "Gerenciar Assinatura"
-
-#: .\products\forms.py:124 .\products\models.py:129
-#: .\products\models_complete.py:129 .\templates\products\product_form.html:149
-msgid "Profundidade"
-msgstr ""
-
-#: .\products\forms.py:125 .\products\models.py:135
-#: .\products\models_complete.py:135
-msgid "Unidade de Dimensão"
-msgstr ""
-
-#: .\products\forms.py:126 .\products\models.py:144
-#: .\products\models_complete.py:144
-#: .\templates\products\product_detail.html:143
-#: .\templates\products\product_form.html:159
-msgid "Peso"
-msgstr ""
-
-#: .\products\forms.py:127 .\products\models.py:150
-#: .\products\models_complete.py:150
-msgid "Unidade de Peso"
-msgstr ""
-
-#: .\products\forms.py:128 .\templates\products\product_detail.html:150
-#: .\templates\products\product_form.html:166
-#, fuzzy
-#| msgid "Membros da Empresa"
-msgid "Tempo de Impressão"
-msgstr "Membros da Empresa"
-
-#: .\products\forms.py:139
-msgid "Minutos devem ser menores que 60"
-msgstr ""
-
-#: .\products\forms.py:141
-msgid "Formato inválido. Use HH:MM (ex: 2:30)"
-msgstr ""
-
-#: .\products\forms.py:169 .\products\models.py:207
-#: .\products\models_complete.py:207
-msgid "Imagem"
-msgstr ""
-
-#: .\products\forms.py:170 .\products\models.py:211
-#: .\products\models_complete.py:211
-msgid "Imagem Principal"
-msgstr ""
-
-#: .\products\forms.py:171 .\products\models.py:215
-#: .\products\models_complete.py:215
-msgid "Ordem"
-msgstr ""
-
-#: .\products\models.py:12 .\products\models_backup.py:12
-#: .\products\models_complete.py:12
-msgid "Símbolo"
-msgstr ""
-
-#: .\products\models.py:16 .\products\models_backup.py:16
-#: .\products\models_complete.py:16
-msgid "Moedas"
-msgstr ""
-
-#: .\products\models.py:29 .\products\models.py:71
-#: .\products\models_backup.py:29 .\products\models_complete.py:29
-#: .\products\models_complete.py:71
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Tipo de Produto"
-msgstr "Meus Produtos"
-
-#: .\products\models.py:30 .\products\models_backup.py:30
-#: .\products\models_complete.py:30
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Tipos de Produto"
-msgstr "Meus Produtos"
-
-#: .\products\models.py:44 .\products\models_backup.py:44
-#: .\products\models_complete.py:44 .\templates\products\category_list.html:5
-#: .\templates\products\category_list.html:13
-#: .\templates\products\product_list.html:17
-msgid "Categorias"
-msgstr ""
-
-#: .\products\models.py:54 .\products\models_complete.py:54
-msgid "Milímetros"
-msgstr ""
-
-#: .\products\models.py:55 .\products\models_complete.py:55
-msgid "Centímetros"
-msgstr ""
-
-#: .\products\models.py:56 .\products\models_complete.py:56
-msgid "Polegadas"
-msgstr ""
-
-#: .\products\models.py:60 .\products\models_complete.py:60
-msgid "Gramas"
-msgstr ""
-
-#: .\products\models.py:61 .\products\models_complete.py:61
-msgid "Quilogramas"
-msgstr ""
-
-#: .\products\models.py:157 .\products\models_complete.py:157
-msgid "Tempo de Impressão Estimado"
-msgstr ""
-
-#: .\products\models.py:171 .\products\models_complete.py:171
-#: .\templates\products\product_detail.html:163
-msgid "Criado por"
-msgstr ""
-
-#: .\products\models.py:173 .\products\models.py:217
-#: .\products\models_complete.py:173 .\products\models_complete.py:217
-#: .\templates\customers\customer_detail.html:376
-#: .\templates\products\product_detail.html:168
-msgid "Criado em"
-msgstr ""
-
-#: .\products\models.py:174 .\products\models_complete.py:174
-#: .\templates\customers\customer_detail.html:388
-#: .\templates\products\product_detail.html:173
-msgid "Atualizado em"
-msgstr ""
-
-#: .\products\models.py:177 .\products\models.py:203
-#: .\products\models_complete.py:177 .\products\models_complete.py:203
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Produto"
-msgstr "Meus Produtos"
-
-#: .\products\models.py:178 .\products\models_complete.py:178
-#: .\templates\base.html:135 .\templates\core\dashboard.html:199
-#: .\templates\core\products.html:5 .\templates\core\products.html:14
-#: .\templates\products\category_list.html:17
-#: .\templates\products\product_list.html:5
-#: .\templates\products\product_list.html:13
-msgid "Produtos"
-msgstr ""
-
-#: .\products\models.py:220 .\products\models_complete.py:220
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Imagem do Produto"
-msgstr "Meus Produtos"
-
-#: .\products\models.py:221 .\products\models_complete.py:221
-#: .\templates\products\product_confirm_delete.html:57
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Imagens do Produto"
-msgstr "Meus Produtos"
-
-#: .\products\views.py:93
-msgid "Máximo 5 imagens permitidas"
-msgstr ""
-
-#: .\products\views.py:99
-msgid "Cada imagem deve ter no máximo 5MB"
-msgstr ""
-
-#: .\products\views.py:110
-msgid "Produto criado com sucesso!"
-msgstr ""
-
-#: .\products\views.py:149
-msgid "Produto atualizado com sucesso!"
-msgstr ""
-
-#: .\products\views.py:173
-msgid "Produto excluído com sucesso!"
-msgstr ""
-
-#: .\products\views.py:216
-msgid "Categoria criada com sucesso!"
-msgstr ""
-
-#: .\products\views.py:237
-msgid "Categoria atualizada com sucesso!"
-msgstr ""
-
-#: .\products\views.py:258
-msgid "Não é possível excluir uma categoria que possui produtos!"
-msgstr ""
-
-#: .\products\views.py:261
-msgid "Categoria excluída com sucesso!"
-msgstr ""
-
-#: .\templates\base.html:125 .\templates\core\dashboard.html:10
-msgid "Dashboard"
-msgstr ""
-
-#: .\templates\base.html:140 .\templates\core\dashboard.html:204
-#: .\templates\core\projects.html:5 .\templates\core\projects.html:14
-msgid "Projetos"
-msgstr ""
-
-#: .\templates\base.html:156 .\templates\core\dashboard.html:66
-#: .\templates\core\dashboard.html:110 .\templates\core\dashboard.html:280
-msgid "Plano Atual"
-msgstr ""
-
-#: .\templates\base.html:162 .\templates\core\dashboard.html:20
-#: .\templates\core\dashboard.html:23
-#, fuzzy
-#| msgid "Tentativas restantes: {}"
-msgid "dias restantes"
-msgstr "Tentativas restantes: {}"
-
-#: .\templates\base.html:171
-msgid "Perfil"
-msgstr ""
-
-#: .\templates\base.html:175 .\templates\core\dashboard.html:167
-msgid "Gerenciar Assinatura"
-msgstr "Gerenciar Assinatura"
-
-#: .\templates\base.html:179
-msgid "Sair"
-msgstr ""
-
-#: .\templates\base.html:185 .\templates\core\login.html:11
-#: .\templates\core\login.html:49
-msgid "Entrar"
-msgstr ""
-
-#: .\templates\base.html:190
-msgid "Registrar"
-msgstr ""
-
-#: .\templates\base.html:270
-msgid "Sistema de gestão empresarial"
-msgstr ""
-
-#: .\templates\base.html:273
-msgid "Todos os direitos reservados."
-msgstr ""
-
-#: .\templates\core\company_setup.html:5
-msgid "Configurar Empresa - ForgeLock"
-msgstr ""
-
-#: .\templates\core\company_setup.html:14 .\templates\core\dashboard.html:162
-msgid "Configurar Empresa"
-msgstr ""
-
-#: .\templates\core\company_setup.html:19
-msgid "Configure sua empresa"
-msgstr "Configure sua empresa"
-
-#: .\templates\core\company_setup.html:21
-msgid "Você pode usar um nome fantasia se não tiver uma empresa formal."
-msgstr "Você pode usar um nome fantasia se não tiver uma empresa formal."
-
-#: .\templates\core\company_setup.html:227
-msgid "Formatos aceitos: JPG, PNG, GIF. Tamanho máximo: 2MB."
-msgstr ""
-
-#: .\templates\core\company_setup.html:235
-#: .\templates\core\profile_setup.html:260
-#: .\templates\customers\customer_confirm_delete.html:61
-#: .\templates\customers\customer_detail.html:98
-#: .\templates\customers\customer_form.html:352
-#: .\templates\products\category_confirm_delete.html:16
-#: .\templates\products\category_form.html:17
-#: .\templates\products\product_confirm_delete.html:16
-#: .\templates\products\product_detail.html:17
-#: .\templates\products\product_form.html:17
-msgid "Voltar"
-msgstr ""
-
-#: .\templates\core\company_setup.html:240
-#: .\templates\core\company_setup.html:395
-#: .\templates\core\profile_setup.html:265
-#: .\templates\core\profile_setup.html:309
-#: .\templates\customers\customer_detail.html:102
-#: .\templates\products\category_list.html:36
-#: .\templates\products\product_detail.html:20
-#: .\templates\products\product_list.html:134
-#, fuzzy
-#| msgid "Editar Perfil"
-msgid "Editar"
-msgstr "Editar Perfil"
-
-#: .\templates\core\company_setup.html:245
-#: .\templates\core\profile_setup.html:270
-msgid "Avançar"
-msgstr ""
-
-#: .\templates\core\company_setup.html:391
-#: .\templates\core\profile_setup.html:305
-#: .\templates\products\category_form.html:54
-#: .\templates\products\product_form.html:206
-msgid "Salvar"
-msgstr ""
-
-#: .\templates\core\dashboard.html:4
-msgid "Dashboard - ForgeLock"
-msgstr ""
-
-#: .\templates\core\dashboard.html:12
-msgid "Bem-vindo ao ForgeLock"
-msgstr ""
-
-#: .\templates\core\dashboard.html:18
-#, fuzzy
-#| msgid "Gerenciar Assinatura"
-msgid "Status da Assinatura"
-msgstr "Gerenciar Assinatura"
-
-#: .\templates\core\dashboard.html:20 .\templates\core\subscription.html:24
-msgid "Trial Ativo"
-msgstr ""
-
-#: .\templates\core\dashboard.html:21
-msgid "Após o trial, escolha um plano para continuar"
-msgstr ""
-
-#: .\templates\core\dashboard.html:25
-msgid "PERÍODO DE CARÊNCIA"
-msgstr ""
-
-#: .\templates\core\dashboard.html:26 .\templates\core\dashboard.html:31
-msgid "Sua assinatura expirou e não foi renovada!"
-msgstr ""
-
-#: .\templates\core\dashboard.html:27
-msgid "Você tem"
-msgstr ""
-
-#: .\templates\core\dashboard.html:27
-msgid "dias para renovar antes do bloqueio total"
-msgstr ""
-
-#: .\templates\core\dashboard.html:28
-msgid "Durante a carência, você pode apenas visualizar dados (sem editar)"
-msgstr ""
-
-#: .\templates\core\dashboard.html:30
-msgid "EXPIRADA"
-msgstr ""
-
-#: .\templates\core\dashboard.html:32
-msgid "Renove agora para continuar usando o sistema"
-msgstr ""
-
-#: .\templates\core\dashboard.html:48
-msgid "Usuários Verificados"
-msgstr "Usuários Verificados"
-
-#: .\templates\core\dashboard.html:54 .\templates\core\dashboard.html:104
-msgid "Membros da Empresa"
-msgstr "Membros da Empresa"
-
-#: .\templates\core\dashboard.html:76
-msgid "Total de Usuários"
-msgstr "Total de Usuários"
-
-#: .\templates\core\dashboard.html:82
-msgid "Usuários Pendentes"
-msgstr "Usuários Pendentes"
-
-#: .\templates\core\dashboard.html:88
-msgid "Planos Disponíveis"
-msgstr "Planos Disponíveis"
-
-#: .\templates\core\dashboard.html:94
-msgid "Países Suportados"
-msgstr "Países Suportados"
-
-#: .\templates\core\dashboard.html:116
-msgid "Meus Clientes"
-msgstr "Meus Clientes"
-
-#: .\templates\core\dashboard.html:126
-msgid "Meus Produtos"
-msgstr "Meus Produtos"
-
-#: .\templates\core\dashboard.html:132
-msgid "Meus Projetos"
-msgstr "Meus Projetos"
-
-#: .\templates\core\dashboard.html:138
-msgid "Atividades Hoje"
-msgstr "Atividades Hoje"
-
-#: .\templates\core\dashboard.html:150
-msgid "Ações Rápidas"
-msgstr ""
-
-#: .\templates\core\dashboard.html:157 .\templates\core\profile.html:65
-msgid "Editar Perfil"
-msgstr "Editar Perfil"
-
-#: .\templates\core\dashboard.html:172
-msgid "Ver Perfil"
-msgstr "Ver Perfil"
-
-#: .\templates\core\dashboard.html:187
-msgid "Módulos do Sistema"
-msgstr ""
-
-#: .\templates\core\dashboard.html:225
-msgid "Informações da Empresa"
-msgstr ""
-
-#: .\templates\core\dashboard.html:257
-msgid "Atividade Recente"
-msgstr ""
-
-#: .\templates\core\dashboard.html:261
-msgid "Nenhuma atividade recente"
-msgstr ""
-
-#: .\templates\core\dashboard.html:269
-msgid "Resumo da Empresa"
-msgstr "Resumo da Empresa"
-
-#: .\templates\core\dashboard.html:276
-msgid "Membros"
-msgstr "Membros"
-
-#: .\templates\core\home.html:4
-msgid "ForgeLock - Sistema de Gestão Empresarial"
-msgstr ""
-
-#: .\templates\core\home.html:47
-msgid "ForgeLock"
-msgstr ""
-
-#: .\templates\core\home.html:51
-msgid "Começar Agora"
-msgstr ""
-
-#: .\templates\core\home.html:54
-msgid "Saiba Mais"
-msgstr ""
-
-#: .\templates\core\home.html:70
-msgid "Por que escolher o ForgeLock?"
-msgstr ""
-
-#: .\templates\core\home.html:71
-msgid "Tudo que sua empresa precisa em uma única plataforma"
-msgstr ""
-
-#: .\templates\core\home.html:82
-msgid "Gestão de Clientes"
-msgstr ""
-
-#: .\templates\core\home.html:94
-msgid "Controle de Produtos"
-msgstr ""
-
-#: .\templates\core\home.html:106
-msgid "Gestão de Projetos"
-msgstr ""
-
-#: .\templates\core\home.html:107
-msgid "Acompanhe projetos, cronogramas e recursos de forma eficiente."
-msgstr ""
-
-#: .\templates\core\home.html:120
-msgid "Planos e Preços"
-msgstr ""
-
-#: .\templates\core\home.html:121
-msgid "Escolha o plano ideal para sua empresa"
-msgstr ""
-
-#: .\templates\core\home.html:148 .\templates\core\register.html:174
-#, fuzzy
-#| msgid "Nome de usuário *"
-msgid "usuário"
-msgstr "Nome de usuário *"
-
-#: .\templates\core\home.html:149 .\templates\core\register.html:175
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "clientes"
-msgstr "Meus Clientes"
-
-#: .\templates\core\home.html:150 .\templates\core\register.html:180
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "produtos"
-msgstr "Meus Produtos"
-
-#: .\templates\core\home.html:151 .\templates\core\register.html:181
-#, fuzzy
-#| msgid "Meus Projetos"
-msgid "projetos"
-msgstr "Meus Projetos"
-
-#: .\templates\core\home.html:159
-msgid "Escolher"
-msgstr ""
-
-#: .\templates\core\home.html:172
-msgid "Pronto para começar?"
-msgstr ""
-
-#: .\templates\core\home.html:173
-msgid "Junte-se a centenas de empresas que já confiam no ForgeLock"
-msgstr ""
-
-#: .\templates\core\home.html:175
-msgid "Criar Conta Grátis"
-msgstr ""
-
-#: .\templates\core\login.html:4
-msgid "Login - ForgeLock"
-msgstr ""
-
-#: .\templates\core\login.html:43
-msgid "Esqueceu sua senha?"
-msgstr ""
-
-#: .\templates\core\login.html:57
-msgid "Não tem uma conta?"
-msgstr ""
-
-#: .\templates\core\login.html:58
-msgid "Registre-se"
-msgstr ""
-
-#: .\templates\core\password_reset_confirm.html:4
-#, fuzzy
-#| msgid "Completar Perfil - ForgeLock"
-msgid "Nova Senha - ForgeLock"
-msgstr "Completar Perfil - ForgeLock"
-
-#: .\templates\core\password_reset_confirm.html:11
-#: .\templates\core\password_reset_confirm.html:22
-#, fuzzy
-#| msgid "Senha"
-msgid "Nova Senha"
+msgid "common.password"
 msgstr "Senha"
 
-#: .\templates\core\password_reset_confirm.html:15
-msgid "Digite sua nova senha."
-msgstr ""
+msgid "common.username"
+msgstr "Usuário"
 
-#: .\templates\core\password_reset_confirm.html:24
-msgid "Sua nova senha"
-msgstr ""
+msgid "common.company"
+msgstr "Empresa"
 
-#: .\templates\core\password_reset_confirm.html:28
-#, fuzzy
-#| msgid "Confirme a senha *"
-msgid "Confirmar Nova Senha"
-msgstr "Confirme a senha *"
+msgid "common.country"
+msgstr "País"
 
-#: .\templates\core\password_reset_confirm.html:30
-#, fuzzy
-#| msgid "Confirme a senha *"
-msgid "Confirme sua nova senha"
-msgstr "Confirme a senha *"
-
-#: .\templates\core\password_reset_confirm.html:35
-#: .\templates\core\profile.html:68
-msgid "Alterar Senha"
-msgstr ""
-
-#: .\templates\core\password_reset_confirm.html:45
-#: .\templates\core\password_reset_request.html:39
-msgid "Voltar ao Login"
-msgstr ""
-
-#: .\templates\core\password_reset_request.html:4
-#, fuzzy
-#| msgid "Completar Perfil - ForgeLock"
-msgid "Recuperar Senha - ForgeLock"
-msgstr "Completar Perfil - ForgeLock"
-
-#: .\templates\core\password_reset_request.html:11
-msgid "Recuperar Senha"
-msgstr ""
-
-#: .\templates\core\password_reset_request.html:15
-msgid "Digite seu email para receber instruções de recuperação de senha."
-msgstr ""
-
-#: .\templates\core\password_reset_request.html:29
-msgid "Enviar Email"
-msgstr ""
-
-#: .\templates\core\products.html:21 .\templates\core\projects.html:21
-msgid "Em Construção"
-msgstr ""
-
-#: .\templates\core\products.html:26 .\templates\core\projects.html:26
-#: .\templates\core\subscription.html:56
-msgid "Voltar ao Dashboard"
-msgstr ""
-
-#: .\templates\core\profile.html:4
-msgid "Perfil - ForgeLock"
-msgstr ""
-
-#: .\templates\core\profile.html:12
-msgid "Meu Perfil"
-msgstr ""
-
-#: .\templates\core\profile.html:18
-msgid "Informações Pessoais"
-msgstr ""
-
-#: .\templates\core\profile.html:19
-#: .\templates\customers\customer_confirm_delete.html:96
-msgid "Nome:"
-msgstr ""
-
-#: .\templates\core\profile.html:20
-msgid "Usuário:"
-msgstr ""
-
-#: .\templates\core\profile.html:21
-#: .\templates\customers\customer_confirm_delete.html:100
-msgid "E-mail:"
-msgstr ""
-
-#: .\templates\core\profile.html:23
-#: .\templates\customers\customer_confirm_delete.html:110
-msgid "País:"
-msgstr ""
-
-#: .\templates\core\profile.html:24
-msgid "Data de nascimento:"
-msgstr "Data de nascimento:"
-
-#: .\templates\core\profile.html:28 .\templates\core\profile.html:35
-#: .\templates\customers\customer_detail.html:253
-msgid "Não informado"
-msgstr ""
-
-#: .\templates\core\profile.html:31
-msgid "Site pessoal:"
-msgstr "Site pessoal:"
-
-#: .\templates\core\profile.html:38
-msgid "Verificado:"
-msgstr ""
-
-#: .\templates\core\profile.html:40
-msgid "Sim"
-msgstr ""
-
-#: .\templates\core\profile.html:42
-msgid "Não"
-msgstr ""
-
-#: .\templates\core\profile.html:47
-msgid "Informações da Conta"
-msgstr ""
-
-#: .\templates\core\profile.html:48
-msgid "Plano:"
-msgstr ""
-
-#: .\templates\core\profile.html:49
-msgid "Trial:"
-msgstr ""
-
-#: .\templates\core\profile.html:53
-msgid "Expirado"
-msgstr ""
-
-#: .\templates\core\profile.html:56
-msgid "Membro desde:"
-msgstr ""
-
-#: .\templates\core\profile.html:57
-msgid "Último login:"
-msgstr ""
-
-#: .\templates\core\profile_setup.html:5 .\templates\core\profile_setup.html:28
-msgid "Completar Perfil"
-msgstr "Completar Perfil"
-
-#: .\templates\core\profile_setup.html:33
-msgid "Bem-vindo ao ForgeLock!"
-msgstr "Bem-vindo ao ForgeLock!"
-
-#: .\templates\core\profile_setup.html:35
-msgid "Vamos completar seu perfil para uma melhor experiência."
-msgstr "Vamos completar seu perfil para uma melhor experiência."
-
-#: .\templates\core\profile_setup.html:58
-#, fuzzy
-#| msgid "Sobrenome *"
-msgid "Sobrenome"
-msgstr "Sobrenome *"
-
-#: .\templates\core\register.html:5
-msgid "Registro - ForgeLock"
-msgstr ""
-
-#: .\templates\core\register.html:13 .\templates\core\register.html:200
-msgid "Criar Conta"
-msgstr ""
-
-#: .\templates\core\register.html:154
-msgid "Plano Trial Gratuito"
-msgstr ""
-
-#: .\templates\core\register.html:164
-msgid "Plano Selecionado:"
-msgstr "Plano Selecionado:"
-
-#: .\templates\core\register.html:173
-msgid "15 dias grátis"
-msgstr ""
-
-#: .\templates\core\register.html:185
-msgid "Após 15 dias, escolha um plano para continuar"
-msgstr ""
-
-#: .\templates\core\register.html:192
-msgid "Escolher outro plano"
-msgstr "Escolher outro plano"
-
-#: .\templates\core\register.html:208
-msgid "Já tem uma conta?"
-msgstr ""
-
-#: .\templates\core\register.html:209
-msgid "Faça login"
-msgstr ""
-
-#: .\templates\core\subscription.html:4
-msgid "Assinatura - ForgeLock"
-msgstr ""
-
-#: .\templates\core\subscription.html:12
-#, fuzzy
-#| msgid "Gerenciar Assinatura"
-msgid "Minha Assinatura"
-msgstr "Gerenciar Assinatura"
-
-#: .\templates\core\subscription.html:18
-msgid "Informações do Plano"
-msgstr ""
-
-#: .\templates\core\subscription.html:19
-msgid "Plano Atual:"
-msgstr ""
-
-#: .\templates\core\subscription.html:22
-#: .\templates\customers\customer_confirm_delete.html:114
-msgid "Status:"
-msgstr ""
-
-#: .\templates\core\subscription.html:26
-msgid "Trial Expirado"
-msgstr ""
-
-#: .\templates\core\subscription.html:29
-msgid "Validade:"
-msgstr ""
-
-#: .\templates\core\subscription.html:33
-msgid "Não definida"
-msgstr ""
-
-#: .\templates\core\subscription.html:38
-msgid "Limites do Plano"
-msgstr ""
-
-#: .\templates\core\subscription.html:39
-#, fuzzy
-#| msgid "Total de Usuários"
-msgid "Usuários:"
-msgstr "Total de Usuários"
-
-#: .\templates\core\subscription.html:40
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Clientes:"
-msgstr "Meus Clientes"
-
-#: .\templates\core\subscription.html:41
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Produtos:"
-msgstr "Meus Produtos"
-
-#: .\templates\core\subscription.html:42
-#, fuzzy
-#| msgid "Meus Projetos"
-msgid "Projetos:"
-msgstr "Meus Projetos"
-
-#: .\templates\core\subscription.html:44
-msgid "Segurança STL:"
-msgstr ""
-
-#: .\templates\core\subscription.html:44
-msgid "Incluído"
-msgstr ""
-
-#: .\templates\core\subscription.html:53
-msgid "Alterar Plano"
-msgstr ""
-
-#: .\templates\core\verify_sms.html:4
-msgid "Verificação SMS - ForgeLock"
-msgstr "Verificação SMS - ForgeLock"
-
-#: .\templates\core\verify_sms.html:17
-msgid "Verificação SMS"
-msgstr "Verificação SMS"
-
-#: .\templates\core\verify_sms.html:21
-msgid "Enviamos um código de verificação para:"
-msgstr "Enviamos um código de verificação para:"
-
-#: .\templates\core\verify_sms.html:23
-msgid "O código expira em"
-msgstr "O código expira em"
-
-#: .\templates\core\verify_sms.html:23
-msgid "minutos"
-msgstr "minutos"
-
-#: .\templates\core\verify_sms.html:43
-msgid "Verificar Código"
-msgstr "Verificar Código"
-
-#: .\templates\core\verify_sms.html:52
-msgid "Reenviar Código"
-msgstr "Reenviar Código"
-
-#: .\templates\core\verify_sms.html:61
-msgid "Problemas com a verificação?"
-msgstr "Problemas com a verificação?"
-
-#: .\templates\core\verify_sms.html:62
-msgid "Tente novamente"
-msgstr "Tente novamente"
-
-#: .\templates\customers\customer_confirm_delete.html:5
-#: .\templates\customers\customer_confirm_delete.html:52
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Excluir Cliente"
-msgstr "Meus Clientes"
-
-#: .\templates\customers\customer_confirm_delete.html:55
-msgid "Confirme a exclusão do cliente"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:75
-#: .\templates\products\category_confirm_delete.html:24
-#: .\templates\products\product_confirm_delete.html:24
-msgid "Atenção!"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:89
-msgid "Cliente a ser excluído"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:104
-#, fuzzy
-#| msgid "Telefone"
-msgid "Telefone:"
-msgstr "Telefone"
-
-#: .\templates\customers\customer_confirm_delete.html:119
-#: .\templates\customers\customer_detail.html:405
-#: .\templates\customers\customer_list.html:186
-#: .\templates\products\product_confirm_delete.html:49
-#: .\templates\products\product_detail.html:158
-msgid "Inativo"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:124
-msgid "Cadastrado em:"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:134
-msgid "Documento:"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:145
-#, fuzzy
-#| msgid "Endereço"
-msgid "Endereço:"
+msgid "common.address"
 msgstr "Endereço"
 
-#: .\templates\customers\customer_confirm_delete.html:161
-msgid "Observações:"
-msgstr ""
+msgid "common.city"
+msgstr "Cidade"
 
-#: .\templates\customers\customer_confirm_delete.html:178
-msgid "O que acontecerá após a exclusão?"
-msgstr ""
+msgid "common.state"
+msgstr "Estado"
 
-#: .\templates\customers\customer_confirm_delete.html:181
-msgid "O cliente será permanentemente removido do banco de dados"
-msgstr ""
+msgid "common.zip_code"
+msgstr "CEP"
 
-#: .\templates\customers\customer_confirm_delete.html:182
-msgid "Todos os dados associados serão perdidos"
-msgstr ""
+msgid "common.website"
+msgstr "Website"
 
-#: .\templates\customers\customer_confirm_delete.html:183
-msgid "Não será possível recuperar as informações"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:184
-msgid "Histórico de interações será perdido"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:214
-#: .\templates\products\category_confirm_delete.html:57
-#: .\templates\products\category_form.html:51
-#: .\templates\products\product_confirm_delete.html:88
-#: .\templates\products\product_form.html:203
-msgid "Cancelar"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:220
-#: .\templates\products\category_confirm_delete.html:61
-#: .\templates\products\product_confirm_delete.html:91
-msgid "Confirmar Exclusão"
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:245
-msgid "Você deve confirmar a exclusão para continuar."
-msgstr ""
-
-#: .\templates\customers\customer_confirm_delete.html:249
-msgid "Tem certeza que deseja excluir permanentemente este cliente?"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:6
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Detalhes do Cliente"
-msgstr "Meus Clientes"
-
-#: .\templates\customers\customer_detail.html:92
-msgid "Detalhes do cliente"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:106
-#: .\templates\products\category_list.html:40
-msgid "Excluir"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:119
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Status do Cliente"
-msgstr "Meus Clientes"
-
-#: .\templates\customers\customer_detail.html:123
-msgid "Cliente ativo e disponível para operações"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:125
-msgid "Cliente inativo - não aparecerá em listas e operações"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:131
-msgid "ATIVO"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:133
-msgid "INATIVO"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:188
-#: .\templates\customers\customer_list.html:216
-msgid "anos"
-msgstr ""
-
-#: .\templates\customers\customer_detail.html:200
-#, fuzzy
-#| msgid "Data de nascimento"
-msgid "Data de Cadastro"
+msgid "common.birth_date"
 msgstr "Data de nascimento"
 
-#: .\templates\customers\customer_detail.html:210
-#: .\templates\customers\customer_form.html:92
-msgid "Informações de Contato"
-msgstr ""
+msgid "common.error"
+msgstr "Erro"
 
-#: .\templates\customers\customer_detail.html:242
-msgid "Rede Social"
-msgstr ""
+msgid "common.app_name"
+msgstr "ForgeLock"
 
-#: .\templates\customers\customer_detail.html:304
-msgid "Estado"
-msgstr ""
+msgid "navigation.dashboard"
+msgstr "Dashboard"
 
-#: .\templates\customers\customer_detail.html:318
-msgid "CEP"
-msgstr ""
+msgid "navigation.dashboard_title"
+msgstr "Dashboard - ForgeLock"
 
-#: .\templates\customers\customer_detail.html:342
-msgid "Notas sobre o cliente"
-msgstr ""
+msgid "navigation.customers"
+msgstr "Clientes"
 
-#: .\templates\customers\customer_detail.html:355
-msgid "Informações do Sistema"
-msgstr ""
+msgid "navigation.products"
+msgstr "Produtos"
 
-#: .\templates\customers\customer_form.html:41
-msgid "Preencha as informações do cliente"
-msgstr ""
+msgid "navigation.projects"
+msgstr "Projetos"
 
-#: .\templates\customers\customer_form.html:43
-msgid "Informações completas para melhor atendimento."
-msgstr ""
+msgid "navigation.utilities"
+msgstr "Utilitários"
 
-#: .\templates\customers\customer_list.html:48
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Gerencie seus clientes"
-msgstr "Meus Clientes"
+msgid "navigation.scales"
+msgstr "Escalas"
 
-#: .\templates\customers\customer_list.html:69
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Total de Clientes"
-msgstr "Meus Clientes"
+msgid "navigation.product_types"
+msgstr "Tipos de Produto"
 
-#: .\templates\customers\customer_list.html:84
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Clientes Ativos"
-msgstr "Meus Clientes"
+msgid "navigation.categories"
+msgstr "Categorias"
 
-#: .\templates\customers\customer_list.html:99
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Clientes Inativos"
-msgstr "Meus Clientes"
+msgid "navigation.countries"
+msgstr "Países"
 
-#: .\templates\customers\customer_list.html:114
-msgid "Resultados"
-msgstr ""
+msgid "navigation.profile"
+msgstr "Perfil"
 
-#: .\templates\customers\customer_list.html:139
-msgid "Buscar por nome, e-mail, telefone..."
-msgstr ""
+msgid "navigation.logout"
+msgstr "Sair"
 
-#: .\templates\customers\customer_list.html:141
-#: .\templates\products\product_list.html:33
-msgid "Buscar"
-msgstr ""
+msgid "navigation.login"
+msgstr "Entrar"
 
-#: .\templates\customers\customer_list.html:147
-msgid "Todos os Status"
-msgstr ""
+msgid "navigation.register"
+msgstr "Registrar"
 
-#: .\templates\customers\customer_list.html:149
-msgid "Ativos"
-msgstr ""
+msgid "utilities.scales.title"
+msgstr "Escalas"
 
-#: .\templates\customers\customer_list.html:152
-msgid "Inativos"
-msgstr ""
+msgid "utilities.product_types.title"
+msgstr "Tipos de Produto"
 
-#: .\templates\customers\customer_list.html:159
-msgid "Ordenar por Nome"
-msgstr ""
+msgid "utilities.categories.title"
+msgstr "Categorias"
 
-#: .\templates\customers\customer_list.html:162
-msgid "Ordenar por E-mail"
-msgstr ""
+msgid "utilities.countries.title"
+msgstr "Países"
 
-#: .\templates\customers\customer_list.html:165
-msgid "Ordenar por Data"
-msgstr ""
+msgid "utilities.scales.add_new"
+msgstr "Nova Escala"
 
-#: .\templates\customers\customer_list.html:258
-msgid "Nenhum cliente encontrado"
-msgstr ""
+msgid "utilities.product_types.add_new"
+msgstr "Novo Tipo de Produto"
 
-#: .\templates\customers\customer_list.html:261
-msgid "Tente ajustar os filtros de busca."
-msgstr ""
+msgid "utilities.categories.add_new"
+msgstr "Nova Categoria"
 
-#: .\templates\customers\customer_list.html:263
-msgid "Comece criando seu primeiro cliente."
-msgstr ""
+msgid "utilities.countries.add_new"
+msgstr "Novo País"
 
-#: .\templates\customers\customer_list.html:269
-msgid "Criar Primeiro Cliente"
-msgstr ""
+msgid "utilities.scales.edit"
+msgstr "Editar Escala"
 
-#: .\templates\customers\customer_list.html:288
-msgid "Deseja alterar o status deste cliente?"
-msgstr ""
+msgid "utilities.product_types.edit"
+msgstr "Editar Tipo de Produto"
 
-#: .\templates\customers\customer_list.html:305
-msgid "Erro ao alterar status"
-msgstr ""
+msgid "utilities.categories.edit"
+msgstr "Editar Categoria"
 
-#: .\templates\products\category_confirm_delete.html:5
-#: .\templates\products\category_confirm_delete.html:13
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Excluir Categoria"
-msgstr "Meus Clientes"
+msgid "utilities.countries.edit"
+msgstr "Editar País"
 
-#: .\templates\products\category_confirm_delete.html:27
-msgid "Você está prestes a excluir a categoria"
-msgstr ""
+msgid "utilities.scales.delete"
+msgstr "Excluir Escala"
 
-#: .\templates\products\category_confirm_delete.html:32
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Detalhes da Categoria"
-msgstr "Meus Clientes"
+msgid "utilities.product_types.delete"
+msgstr "Excluir Tipo de Produto"
 
-#: .\templates\products\category_confirm_delete.html:38
-#: .\templates\products\category_list.html:55
-msgid "Produtos nesta categoria"
-msgstr ""
+msgid "utilities.categories.delete"
+msgstr "Excluir Categoria"
 
-#: .\templates\products\category_confirm_delete.html:45
-msgid "Não é possível excluir!"
-msgstr ""
+msgid "utilities.countries.delete"
+msgstr "Excluir País"
 
-#: .\templates\products\category_form.html:5
-#: .\templates\products\category_form.html:14
-#, fuzzy
-#| msgid "Editar Perfil"
-msgid "Editar Categoria"
-msgstr "Editar Perfil"
+msgid "utilities.scales.toggle_status"
+msgstr "Alterar Status da Escala"
 
-#: .\templates\products\category_form.html:5
-#: .\templates\products\category_form.html:14
-#: .\templates\products\category_list.html:20
-msgid "Nova Categoria"
-msgstr ""
+msgid "utilities.product_types.toggle_status"
+msgstr "Alterar Status do Tipo de Produto"
 
-#: .\templates\products\category_form.html:28
-#: .\templates\products\product_form.html:28
-msgid "Erro no formulário"
-msgstr ""
+msgid "utilities.categories.toggle_status"
+msgstr "Alterar Status da Categoria"
 
-#: .\templates\products\category_list.html:49
-#, fuzzy
-#| msgid "Descrição"
-msgid "Sem descrição"
-msgstr "Descrição"
+msgid "utilities.countries.toggle_status"
+msgstr "Alterar Status do País"
 
-#: .\templates\products\category_list.html:68
-msgid "Nenhuma categoria encontrada"
-msgstr ""
+msgid "utilities.search.placeholder"
+msgstr "Nome ou descrição..."
 
-#: .\templates\products\category_list.html:69
-msgid "Crie a primeira categoria para organizar seus produtos."
-msgstr ""
+msgid "utilities.search.placeholder.countries"
+msgstr "Nome, código ou DDI..."
 
-#: .\templates\products\category_list.html:71
-msgid "Criar Primeira Categoria"
-msgstr ""
+msgid "utilities.search.placeholder.products"
+msgstr "Nome, descrição..."
 
-#: .\templates\products\product_confirm_delete.html:5
-#: .\templates\products\product_confirm_delete.html:13
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Excluir Produto"
-msgstr "Meus Produtos"
+msgid "utilities.categories.not_found"
+msgstr "Nenhuma categoria encontrada"
 
-#: .\templates\products\product_confirm_delete.html:27
-msgid "Você está prestes a excluir o produto"
-msgstr ""
+msgid "utilities.scales.not_found"
+msgstr "Nenhuma escala encontrada"
 
-#: .\templates\products\product_confirm_delete.html:33
-#, fuzzy
-#| msgid "Meus Clientes"
-msgid "Detalhes do Produto"
-msgstr "Meus Clientes"
+msgid "utilities.product_types.not_found"
+msgstr "Nenhum tipo de produto encontrado"
 
-#: .\templates\products\product_confirm_delete.html:44
-#, fuzzy
-#| msgid "Endereço"
-msgid "Preço"
+msgid "utilities.countries.not_found"
+msgstr "Nenhum país encontrado"
+
+msgid "utilities.search.adjust_filters"
+msgstr "Tente ajustar os filtros de pesquisa"
+
+msgid "utilities.search.or_add_new"
+msgstr "ou adicione uma nova"
+
+msgid "utilities.items.no_description"
+msgstr "Sem descrição"
+
+msgid "utilities.status.confirm_change"
+msgstr "Confirmar Alteração de Status"
+
+msgid "utilities.status.confirm_deactivate"
+msgstr "Tem certeza que deseja desativar"
+
+msgid "utilities.status.confirm_activate"
+msgstr "Tem certeza que deseja ativar"
+
+msgid "utilities.status.deactivate_warning"
+msgstr "Desativar irá ocultar das listas"
+
+msgid "utilities.status.deactivate_note"
+msgstr "mas não afetará dados já cadastrados"
+
+msgid "utilities.status.activate_warning"
+msgstr "Ativar irá torná-lo disponível"
+
+msgid "utilities.status.activate_note"
+msgstr "para uso em novos cadastros"
+
+msgid "utilities.items.code_immutable"
+msgstr "Código não pode ser alterado"
+
+msgid "utilities.upload.accepted_formats"
+msgstr "Formatos aceitos: JPG, PNG, GIF"
+
+msgid "utilities.upload.max_size"
+msgstr "Tamanho máximo: 2MB"
+
+msgid "products.title"
+msgstr "Produtos"
+
+msgid "products.add_new"
+msgstr "Novo Produto"
+
+msgid "products.edit"
+msgstr "Editar Produto"
+
+msgid "products.delete"
+msgstr "Excluir Produto"
+
+msgid "products.basic_info"
+msgstr "Informações Básicas"
+
+msgid "products.prices"
+msgstr "Preços"
+
+msgid "products.images"
+msgstr "Imagens do Produto"
+
+msgid "products.category"
+msgstr "Categoria"
+
+msgid "products.type"
+msgstr "Tipo"
+
+msgid "products.scale"
+msgstr "Escala"
+
+msgid "products.price"
+msgstr "Preço"
+
+msgid "products.yearly_price"
+msgstr "Preço Anual"
+
+msgid "products.currency"
+msgstr "Moeda"
+
+msgid "products.stock"
+msgstr "Estoque"
+
+msgid "products.weight"
+msgstr "Peso"
+
+msgid "products.dimensions"
+msgstr "Dimensões"
+
+msgid "products.height"
+msgstr "Altura"
+
+msgid "products.width"
+msgstr "Largura"
+
+msgid "products.depth"
+msgstr "Profundidade"
+
+msgid "products.specifications"
+msgstr "Especificações"
+
+msgid "products.weight_and_time"
+msgstr "Peso e Tempo"
+
+msgid "products.control"
+msgstr "Controle"
+
+msgid "products.primary_image"
+msgstr "Imagem Principal"
+
+msgid "products.order"
+msgstr "Ordem"
+
+msgid "products.dimension_unit"
+msgstr "Unidade de Dimensão"
+
+msgid "products.weight_unit"
+msgstr "Unidade de Peso"
+
+msgid "products.print_time_estimate"
+msgstr "Tempo de Impressão Estimado"
+
+msgid "products.cost_price"
+msgstr "Preço de Custo"
+
+msgid "products.sale_price"
+msgstr "Preço de Venda"
+
+msgid "products.stock_quantity"
+msgstr "Quantidade em Estoque"
+
+msgid "products.created_by"
+msgstr "Criado por"
+
+msgid "products.created_at"
+msgstr "Criado em"
+
+msgid "products.updated_at"
+msgstr "Atualizado em"
+
+msgid "products.millimeters"
+msgstr "Milímetros"
+
+msgid "products.centimeters"
+msgstr "Centímetros"
+
+msgid "products.inches"
+msgstr "Polegadas"
+
+msgid "products.grams"
+msgstr "Gramas"
+
+msgid "products.kilograms"
+msgstr "Quilogramas"
+
+msgid "products.company"
+msgstr "Empresa"
+
+msgid "products.product_type"
+msgstr "Tipo de Produto"
+
+msgid "products.dimensions_x"
+msgstr "Largura"
+
+msgid "products.dimensions_y"
+msgstr "Altura"
+
+msgid "products.dimensions_z"
+msgstr "Profundidade"
+
+msgid "products.currency_code"
+msgstr "Código"
+
+msgid "products.currency_name"
+msgstr "Nome"
+
+msgid "products.currency_symbol"
+msgstr "Símbolo"
+
+msgid "products.currency_verbose"
+msgstr "Moeda"
+
+msgid "products.currency_verbose_plural"
+msgstr "Moedas"
+
+msgid "products.product_type_verbose"
+msgstr "Tipo de Produto"
+
+msgid "products.product_type_verbose_plural"
+msgstr "Tipos de Produto"
+
+msgid "products.category_verbose"
+msgstr "Categoria"
+
+msgid "products.category_verbose_plural"
+msgstr "Categorias"
+
+msgid "products.scale_verbose"
+msgstr "Escala"
+
+msgid "products.scale_verbose_plural"
+msgstr "Escalas"
+
+msgid "products.product_verbose"
+msgstr "Produto"
+
+msgid "products.product_verbose_plural"
+msgstr "Produtos"
+
+msgid "products.product_image_verbose"
+msgstr "Imagem do Produto"
+
+msgid "products.product_image_verbose_plural"
+msgstr "Imagens do Produto"
+
+msgid "products.form.name_placeholder"
+msgstr "Nome do produto"
+
+msgid "products.form.description_placeholder"
+msgstr "Descrição do produto"
+
+msgid "products.form.category_placeholder"
+msgstr "Nome da categoria"
+
+msgid "products.form.category_description_placeholder"
+msgstr "Descrição da categoria (opcional)"
+
+msgid "products.form.product_type_placeholder"
+msgstr "Nome do tipo de produto"
+
+msgid "products.form.product_type_description_placeholder"
+msgstr "Descrição do tipo de produto (opcional)"
+
+msgid "products.form.scale_placeholder"
+msgstr "Nome da escala"
+
+msgid "products.form.scale_description_placeholder"
+msgstr "Descrição da escala (opcional)"
+
+msgid "products.form.decimal_separator_info"
+msgstr "Use ponto como separador decimal (ex: 10.50)"
+
+msgid "products.form.dimensions_info"
+msgstr "Use ponto como separador decimal (ex: 15.25)"
+
+msgid "products.form.max_images_info"
+msgstr "Máximo 5 imagens permitidas"
+
+msgid "products.form.max_size_info"
+msgstr "Cada imagem deve ter no máximo 10MB"
+
+msgid "products.form.images_help"
+msgstr "Adicione até 5 imagens do produto"
+
+msgid "products.form.primary_image_help"
+msgstr "Marque uma imagem como principal"
+
+msgid "products.form.order_help"
+msgstr "Ordem de exibição das imagens"
+
+msgid "products.form.edit_title"
+msgstr "Editar Produto"
+
+msgid "products.form.create_title"
+msgstr "Novo Produto"
+
+msgid "products.form.error_title"
+msgstr "Erro no formulário"
+
+msgid "products.form.decimal_separator_help"
+msgstr "Use ponto como separador decimal (ex: 10.50)"
+
+msgid "products.form.dimension_help"
+msgstr "Use ponto como separador decimal (ex: 15.25)"
+
+msgid "products.form.weight_help"
+msgstr "Use ponto como separador decimal (ex: 250.75)"
+
+msgid "products.form.select_images"
+msgstr "Selecionar Imagens"
+
+msgid "products.form.image_preview"
+msgstr "Preview das Imagens"
+
+msgid "products.form.current_images"
+msgstr "Imagens Atuais"
+
+msgid "products.form.basic_info"
+msgstr "Informações Básicas"
+
+msgid "products.form.prices"
+msgstr "Preços"
+
+msgid "products.form.specifications"
+msgstr "Especificações"
+
+msgid "products.form.images"
+msgstr "Imagens"
+
+msgid "products.messages.company_required"
+msgstr "Você precisa configurar uma empresa primeiro."
+
+msgid "products.messages.product_created"
+msgstr "Produto criado com sucesso!"
+
+msgid "products.messages.product_updated"
+msgstr "Produto atualizado com sucesso!"
+
+msgid "products.messages.product_deleted"
+msgstr "Produto excluído com sucesso!"
+
+msgid "products.messages.product_status_changed"
+msgstr "Produto {} com sucesso!"
+
+msgid "products.messages.category_created"
+msgstr "Categoria criada com sucesso!"
+
+msgid "products.messages.category_updated"
+msgstr "Categoria atualizada com sucesso!"
+
+msgid "products.messages.category_deleted"
+msgstr "Categoria excluída com sucesso!"
+
+msgid "products.messages.category_status_changed"
+msgstr "Categoria {} com sucesso!"
+
+msgid "products.messages.category_has_products"
+msgstr "Não é possível excluir uma categoria que possui produtos!"
+
+msgid "products.messages.scale_created"
+msgstr "Escala criada com sucesso!"
+
+msgid "products.messages.scale_updated"
+msgstr "Escala atualizada com sucesso!"
+
+msgid "products.messages.scale_deleted"
+msgstr "Escala excluída com sucesso!"
+
+msgid "products.messages.scale_status_changed"
+msgstr "Escala {} com sucesso!"
+
+msgid "products.messages.product_type_created"
+msgstr "Tipo de produto criado com sucesso!"
+
+msgid "products.messages.product_type_updated"
+msgstr "Tipo de produto atualizado com sucesso!"
+
+msgid "products.messages.product_type_status_changed"
+msgstr "Tipo de produto {} com sucesso!"
+
+msgid "products.messages.country_flag_updated"
+msgstr "Bandeira atualizada com sucesso!"
+
+msgid "products.messages.country_flag_error"
+msgstr "Erro ao salvar a bandeira."
+
+msgid "products.messages.country_flag_upload_error"
+msgstr "Erro ao processar o upload da bandeira: {}"
+
+msgid "products.messages.country_flag_format_error"
+msgstr "Formato de arquivo não suportado. Use apenas imagens (PNG, JPG, SVG)."
+
+msgid "products.messages.country_updated"
+msgstr "País atualizado com sucesso!"
+
+msgid "products.messages.country_name_required"
+msgstr "Nome é obrigatório."
+
+msgid "products.messages.country_status_changed"
+msgstr "País {} com sucesso!"
+
+msgid "products.country_flag"
+msgstr "Bandeira"
+
+msgid "products.admin.basic_info"
+msgstr "Informações Básicas"
+
+msgid "products.admin.prices"
+msgstr "Preços"
+
+msgid "products.admin.specifications"
+msgstr "Especificações"
+
+msgid "products.admin.weight_and_time"
+msgstr "Peso e Tempo"
+
+msgid "products.admin.stock"
+msgstr "Estoque"
+
+msgid "products.admin.control"
+msgstr "Controle"
+
+msgid "products.list.filters"
+msgstr "Filtros"
+
+msgid "products.list.search"
+msgstr "Buscar"
+
+msgid "products.list.product_type_filter"
+msgstr "Tipo"
+
+msgid "products.list.category_filter"
+msgstr "Categoria"
+
+msgid "products.list.status_filter"
+msgstr "Status"
+
+msgid "products.list.min_price"
+msgstr "Preço Mín."
+
+msgid "products.list.max_price"
+msgstr "Preço Máx."
+
+msgid "products.list.filter_button"
+msgstr "Filtrar"
+
+msgid "products.list.clear_filters"
+msgstr "Limpar Filtros"
+
+msgid "products.list.stock_label"
+msgstr "Estoque"
+
+msgid "products.list.view_details"
+msgstr "Ver detalhes"
+
+msgid "products.list.edit"
+msgstr "Editar"
+
+msgid "products.list.deactivate"
+msgstr "Desativar"
+
+msgid "products.list.activate"
+msgstr "Ativar"
+
+msgid "products.list.confirm_deactivate"
+msgstr "Tem certeza que deseja desativar este produto?"
+
+msgid "products.list.confirm_activate"
+msgstr "Tem certeza que deseja ativar este produto?"
+
+msgid "products.list.pagination_navigation"
+msgstr "Navegação de páginas"
+
+msgid "products.list.previous"
+msgstr "Anterior"
+
+msgid "products.list.next"
+msgstr "Próximo"
+
+msgid "products.list.no_products_found"
+msgstr "Nenhum produto encontrado"
+
+msgid "products.list.adjust_filters_message"
+msgstr "Tente ajustar os filtros ou criar um novo produto."
+
+msgid "products.list.create_first_product"
+msgstr "Criar Primeiro Produto"
+
+msgid "products.list.categories_button"
+msgstr "Categorias"
+
+msgid "products.list.scales_button"
+msgstr "Escalas"
+
+msgid "products.list.product_types_button"
+msgstr "Tipos de Produto"
+
+msgid "products.detail.product_details"
+msgstr "Detalhes do Produto"
+
+msgid "products.detail.product_images"
+msgstr "Imagens do Produto"
+
+msgid "products.detail.and_more_images"
+msgstr "e mais {} imagens"
+
+msgid "products.detail.and_more_images_plural"
+msgstr "e mais {} imagens"
+
+msgid "products.detail.what_happens"
+msgstr "O que acontece?"
+
+msgid "products.detail.product_marked_inactive"
+msgstr "O produto será marcado como inativo (não será excluído do banco)"
+
+msgid "products.detail.images_maintained"
+msgstr "Todas as imagens associadas serão mantidas"
+
+msgid "products.detail.can_reactivate"
+msgstr "Você pode reativar o produto posteriormente"
+
+msgid "products.detail.confirm_deletion"
+msgstr "Confirmar Exclusão"
+
+msgid "products.detail.attention"
+msgstr "Atenção!"
+
+msgid "products.detail.about_to_delete"
+msgstr "Você está prestes a excluir o produto"
+
+msgid "products.detail.utilities"
+msgstr "Utilitários"
+
+msgid "products.detail.utilities.scales"
+msgstr "Escalas"
+
+msgid "products.detail.utilities.product_types"
+msgstr "Tipos de Produto"
+
+msgid "products.detail.utilities.categories"
+msgstr "Categorias"
+
+msgid "products.detail.utilities.countries"
+msgstr "Países"
+
+msgid "products.detail.no_images_available"
+msgstr "Nenhuma imagem disponível"
+
+msgid "customers.title"
+msgstr "Clientes"
+
+msgid "customers.add_new"
+msgstr "Novo Cliente"
+
+msgid "customers.edit"
+msgstr "Editar Cliente"
+
+msgid "customers.delete"
+msgstr "Excluir Cliente"
+
+msgid "customers.trade_name"
+msgstr "Nome Fantasia"
+
+msgid "customers.company_name"
+msgstr "Razão Social"
+
+msgid "customers.cnpj"
+msgstr "CNPJ"
+
+msgid "customers.cpf"
+msgstr "CPF"
+
+msgid "customers.rg"
+msgstr "RG"
+
+msgid "customers.state_registration"
+msgstr "Inscrição Estadual"
+
+msgid "customers.municipal_registration"
+msgstr "Inscrição Municipal"
+
+msgid "customers.manage_description"
+msgstr "Gerencie seus clientes"
+
+msgid "customers.total_customers"
+msgstr "Total de Clientes"
+
+msgid "customers.active_customers"
+msgstr "Clientes Ativos"
+
+msgid "customers.inactive_customers"
+msgstr "Clientes Inativos"
+
+msgid "customers.results"
+msgstr "Resultados"
+
+msgid "customers.search_placeholder"
+msgstr "Buscar por nome, e-mail, telefone..."
+
+msgid "customers.search_button"
+msgstr "Buscar"
+
+msgid "customers.all_statuses"
+msgstr "Todos os Status"
+
+msgid "customers.active"
+msgstr "Ativos"
+
+msgid "customers.inactive"
+msgstr "Inativos"
+
+msgid "customers.sort_by_name"
+msgstr "Ordenar por Nome"
+
+msgid "customers.sort_by_email"
+msgstr "Ordenar por E-mail"
+
+msgid "customers.sort_by_date"
+msgstr "Ordenar por Data"
+
+msgid "customers.years"
+msgstr "anos"
+
+msgid "customers.no_customers_found"
+msgstr "Nenhum cliente encontrado"
+
+msgid "customers.adjust_search_filters"
+msgstr "Tente ajustar os filtros de busca."
+
+msgid "customers.create_first_customer"
+msgstr "Comece criando seu primeiro cliente."
+
+msgid "customers.create_first_customer_button"
+msgstr "Criar Primeiro Cliente"
+
+msgid "customers.confirm_status_change"
+msgstr "Deseja alterar o status deste cliente?"
+
+msgid "customers.status_change_error"
+msgstr "Erro ao alterar status"
+
+msgid "customers.company_not_configured"
+msgstr "Você precisa configurar uma empresa primeiro."
+
+msgid "customers.email_already_exists"
+msgstr "Já existe um cliente com este e-mail"
+
+msgid "customers.created_success"
+msgstr "Cliente criado com sucesso!"
+
+msgid "customers.new_customer"
+msgstr "Novo Cliente"
+
+msgid "customers.create_customer"
+msgstr "Criar Cliente"
+
+msgid "customers.updated_success"
+msgstr "Cliente atualizado com sucesso!"
+
+msgid "customers.edit_customer"
+msgstr "Editar Cliente"
+
+msgid "customers.save_changes"
+msgstr "Salvar Alterações"
+
+msgid "customers.deleted_success"
+msgstr "Cliente {} excluído com sucesso!"
+
+msgid "customers.activated"
+msgstr "ativado"
+
+msgid "customers.deactivated"
+msgstr "desativado"
+
+msgid "customers.status_changed_success"
+msgstr "Cliente {} com sucesso!"
+
+msgid "customers.method_not_allowed"
+msgstr "Método não permitido"
+
+msgid "customers.name_placeholder"
+msgstr "Nome completo ou razão social"
+
+msgid "customers.phone_placeholder"
+msgstr "(11) 99999-9999"
+
+msgid "customers.email_placeholder"
+msgstr "cliente@exemplo.com"
+
+msgid "customers.document_placeholder"
+msgstr "000.000.000-00 ou 00.000.000/0000-00"
+
+msgid "customers.social_network_placeholder"
+msgstr "@usuario ou link da rede social"
+
+msgid "customers.address_placeholder"
+msgstr "Endereço completo"
+
+msgid "customers.address_number_placeholder"
+msgstr "Número"
+
+msgid "customers.city_placeholder"
+msgstr "Cidade"
+
+msgid "customers.state_placeholder"
+msgstr "Estado/Província"
+
+msgid "customers.zip_code_placeholder"
+msgstr "00000-000"
+
+msgid "customers.notes_placeholder"
+msgstr "Observações sobre o cliente"
+
+msgid "customers.name_label"
+msgstr "Nome/Razão Social *"
+
+msgid "customers.country_label"
+msgstr "País *"
+
+msgid "customers.phone_label"
+msgstr "Telefone *"
+
+msgid "customers.email_label"
+msgstr "E-mail *"
+
+msgid "customers.birth_date_label"
+msgstr "Data de Nascimento"
+
+msgid "customers.document_label"
+msgstr "CPF/CNPJ"
+
+msgid "customers.social_network_label"
+msgstr "Instagram/Rede Social"
+
+msgid "customers.address_label"
 msgstr "Endereço"
 
-#: .\templates\products\product_confirm_delete.html:67
-msgid "e mais"
-msgstr ""
+msgid "customers.address_number_label"
+msgstr "Número"
 
-#: .\templates\products\product_confirm_delete.html:67
-msgid "imagens"
-msgstr ""
+msgid "customers.city_label"
+msgstr "Cidade"
 
-#: .\templates\products\product_confirm_delete.html:75
-msgid "O que acontece?"
-msgstr ""
+msgid "customers.state_label"
+msgstr "Estado/Província"
 
-#: .\templates\products\product_confirm_delete.html:78
-msgid "O produto será marcado como inativo (não será excluído do banco)"
-msgstr ""
+msgid "customers.zip_code_label"
+msgstr "CEP/Código Postal"
 
-#: .\templates\products\product_confirm_delete.html:79
-msgid "Todas as imagens associadas serão mantidas"
-msgstr ""
+msgid "customers.notes_label"
+msgstr "Observações"
 
-#: .\templates\products\product_confirm_delete.html:80
-msgid "Você pode reativar o produto posteriormente"
-msgstr ""
+msgid "customers.is_active_label"
+msgstr "Cliente ativo"
 
-#: .\templates\products\product_detail.html:25
-#: .\templates\products\product_list.html:139
-msgid "Desativar"
-msgstr ""
+msgid "customers.name_help"
+msgstr "Nome completo para pessoa física ou razão social para pessoa jurídica"
 
-#: .\templates\products\product_detail.html:25
-#: .\templates\products\product_list.html:139
-msgid "Ativar"
-msgstr ""
+msgid "customers.phone_help"
+msgstr "Inclua o código do país se necessário"
 
-#: .\templates\products\product_detail.html:35
-#: .\templates\products\product_form.html:176
-msgid "Imagens"
-msgstr ""
+msgid "customers.email_help"
+msgstr "E-mail válido para comunicações"
 
-#: .\templates\products\product_detail.html:47
-msgid "Principal"
-msgstr ""
+msgid "customers.birth_date_help"
+msgstr "Opcional - útil para campanhas personalizadas"
 
-#: .\templates\products\product_detail.html:56
-#: .\templates\products\product_list.html:156
-msgid "Anterior"
-msgstr ""
+msgid "customers.document_help"
+msgstr "CPF para pessoa física ou CNPJ para pessoa jurídica"
 
-#: .\templates\products\product_detail.html:60
-#: .\templates\products\product_list.html:176
-msgid "Próximo"
-msgstr ""
+msgid "customers.social_network_help"
+msgstr "Instagram, Facebook, LinkedIn ou outra rede social"
 
-#: .\templates\products\product_detail.html:67
-msgid "Nenhuma imagem disponível"
-msgstr ""
+msgid "customers.address_help"
+msgstr "Endereço completo para envio de materiais"
 
-#: .\templates\products\product_detail.html:78
-msgid "Informações"
-msgstr ""
+msgid "customers.address_number_help"
+msgstr "Número do endereço"
 
-#: .\templates\products\product_detail.html:131
-msgid "Dimensões"
-msgstr ""
+msgid "customers.notes_help"
+msgstr "Informações adicionais sobre o cliente"
 
-#: .\templates\products\product_form.html:5
-#: .\templates\products\product_form.html:14
-#, fuzzy
-#| msgid "Editar Perfil"
-msgid "Editar Produto"
+msgid "customers.phone_validation_error"
+msgstr "Telefone deve ter pelo menos 10 dígitos"
+
+msgid "customers.document_validation_error"
+msgstr "CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos"
+
+msgid "customers.header"
+msgstr "Cabeçalho"
+
+msgid "customers.statistics"
+msgstr "Estatísticas"
+
+msgid "customers.search_and_filters"
+msgstr "Busca e Filtros"
+
+msgid "customers.customer_list"
+msgstr "Lista de Clientes"
+
+msgid "customers.form.fill_info"
+msgstr "Preencha as informações do cliente"
+
+msgid "customers.form.complete_info"
+msgstr "Informações completas para melhor atendimento."
+
+msgid "customers.form.basic_info"
+msgstr "Informações Básicas"
+
+msgid "customers.form.name_social_name_comment"
+msgstr "Nome/Razão Social"
+
+msgid "customers.form.country_comment"
+msgstr "País"
+
+msgid "customers.form.contact_info"
+msgstr "Informações de Contato"
+
+msgid "customers.form.ddi"
+msgstr "DDI"
+
+msgid "customers.form.email_comment"
+msgstr "Email"
+
+msgid "customers.form.documentation"
+msgstr "Documentação"
+
+msgid "customers.form.observations"
+msgstr "Observações"
+
+msgid "customers.form.customer_details"
+msgstr "Detalhes do cliente"
+
+msgid "customers.form.customer_status"
+msgstr "Status do Cliente"
+
+msgid "customers.form.active_available"
+msgstr "Cliente ativo e disponível para operações"
+
+msgid "customers.form.inactive_not_available"
+msgstr "Cliente inativo - não aparecerá em listas e operações"
+
+msgid "customers.form.active_badge"
+msgstr "ATIVO"
+
+msgid "customers.form.inactive_badge"
+msgstr "INATIVO"
+
+msgid "customers.form.name_reason"
+msgstr "Nome/Razão Social"
+
+msgid "customers.form.cpf_cnpj"
+msgstr "CPF/CNPJ"
+
+msgid "customers.form.birth_date"
+msgstr "Data de Nascimento"
+
+msgid "customers.form.registration_date"
+msgstr "Data de Cadastro"
+
+msgid "customers.form.social_network"
+msgstr "Rede Social"
+
+msgid "customers.form.not_informed"
+msgstr "Não informado"
+
+msgid "customers.form.system_info"
+msgstr "Informações do Sistema"
+
+msgid "customers.form.created_at"
+msgstr "Criado em"
+
+msgid "customers.form.updated_at"
+msgstr "Atualizado em"
+
+msgid "customers.form.customer_to_delete"
+msgstr "Cliente a ser excluído"
+
+msgid "customers.form.name_label"
+msgstr "Nome:"
+
+msgid "customers.form.email_label"
+msgstr "E-mail:"
+
+msgid "customers.form.phone_label"
+msgstr "Telefone:"
+
+msgid "customers.form.country_label"
+msgstr "País:"
+
+msgid "customers.form.status_label"
+msgstr "Status:"
+
+msgid "customers.form.registered_at"
+msgstr "Cadastrado em:"
+
+msgid "customers.form.document_label"
+msgstr "Documento:"
+
+msgid "customers.form.address_label"
+msgstr "Endereço:"
+
+msgid "customers.form.observations_label"
+msgstr "Observações:"
+
+msgid "customers.form.what_happens_after"
+msgstr "O que acontecerá após a exclusão?"
+
+msgid "customers.form.permanently_removed"
+msgstr "O cliente será permanentemente removido do banco de dados"
+
+msgid "customers.form.all_data_lost"
+msgstr "Todos os dados associados serão perdidos"
+
+msgid "customers.form.cannot_recover"
+msgstr "Não será possível recuperar as informações"
+
+msgid "customers.form.interaction_history_lost"
+msgstr "Histórico de interações será perdido"
+
+msgid "customers.form.confirm_irreversible"
+msgstr "Eu entendo que esta ação é irreversível e confirmo a exclusão do cliente"
+
+msgid "customers.form.confirm_deletion"
+msgstr "Confirmar Exclusão"
+
+msgid "customers.form.must_confirm"
+msgstr "Você deve confirmar a exclusão para continuar."
+
+msgid "customers.form.sure_delete_permanently"
+msgstr "Tem certeza que deseja excluir permanentemente este cliente?"
+
+msgid "customers.form.error_fetching_ddi"
+msgstr "Erro ao buscar DDI:"
+
+msgid "customers.form.years"
+msgstr "anos"
+
+msgid "customers.form.customer_notes"
+msgstr "Notas sobre o cliente"
+
+msgid "customers.form.company_label"
+msgstr "Empresa:"
+
+msgid "customers.form.zip_code_label"
+msgstr "CEP/Código Postal:"
+
+msgid "customers.form.city_label"
+msgstr "Cidade:"
+
+msgid "customers.form.state_label"
+msgstr "Estado/Província:"
+
+msgid "customers.form.address_number_label"
+msgstr "Número:"
+
+msgid "customers.form.address_label_short"
+msgstr "Endereço:"
+
+msgid "customers.form.instagram_social"
+msgstr "Instagram/Rede Social"
+
+msgid "customers.form.cep_postal"
+msgstr "CEP/Código Postal"
+
+msgid "customers.form.state_province"
+msgstr "Estado/Província"
+
+msgid "customers.form.customer_active"
+msgstr "Cliente ativo"
+
+msgid "customers.form.address"
+msgstr "Endereço"
+
+msgid "customers.form.document_number"
+msgstr "CPF/CNPJ"
+
+msgid "customers.form.zip_code"
+msgstr "CEP/Código Postal"
+
+msgid "customers.form.address_number"
+msgstr "Número"
+
+msgid "customers.form.city"
+msgstr "Cidade"
+
+msgid "customers.form.name_reason_help"
+msgstr "Nome completo para pessoa física ou razão social para pessoa jurídica"
+
+msgid "customers.form.phone_help"
+msgstr "Inclua o código do país se necessário"
+
+msgid "customers.form.email_help"
+msgstr "E-mail válido para comunicações"
+
+msgid "customers.form.birth_date_help"
+msgstr "Opcional - útil para campanhas personalizadas"
+
+msgid "customers.form.document_help"
+msgstr "CPF para pessoa física ou CNPJ para pessoa jurídica"
+
+msgid "customers.form.social_network_help"
+msgstr "Instagram, Facebook, LinkedIn ou outra rede social"
+
+msgid "customers.form.address_help"
+msgstr "Endereço completo para envio de materiais"
+
+msgid "customers.form.address_number_help"
+msgstr "Número do endereço"
+
+msgid "customers.form.notes_help"
+msgstr "Informações adicionais sobre o cliente"
+
+msgid "customers.form.phone_placeholder"
+msgstr "(11) 99999-9999"
+
+msgid "customers.form.email_placeholder"
+msgstr "cliente@exemplo.com"
+
+msgid "customers.form.document_placeholder"
+msgstr "000.000.000-00 ou 00.000.000/0000-00"
+
+msgid "customers.form.social_placeholder"
+msgstr "@usuario ou link da rede social"
+
+msgid "customers.form.address_placeholder"
+msgstr "Endereço completo"
+
+msgid "customers.form.number_placeholder"
+msgstr "Número"
+
+msgid "customers.form.city_placeholder"
+msgstr "Cidade"
+
+msgid "customers.form.state_placeholder"
+msgstr "Estado/Província"
+
+msgid "customers.form.zip_placeholder"
+msgstr "00000-000"
+
+msgid "customers.form.notes_placeholder"
+msgstr "Observações sobre o cliente"
+
+msgid "customers.form.name_reason_required"
+msgstr "Nome/Razão Social *"
+
+msgid "customers.form.country_required"
+msgstr "País *"
+
+msgid "customers.form.phone_required"
+msgstr "Telefone *"
+
+msgid "customers.form.email_required"
+msgstr "E-mail *"
+
+msgid "customers.form.confirm_delete_customer"
+msgstr "Confirme a exclusão do cliente"
+
+msgid "customers.form.warning_title"
+msgstr "ATENÇÃO!"
+
+msgid "customers.form.action_cannot_undone"
+msgstr "Esta ação não pode ser desfeita. O cliente será permanentemente removido do sistema."
+
+msgid "customers.form.delete_customer"
+msgstr "Excluir Cliente"
+
+msgid "customers.form.details_customer"
+msgstr "Detalhes do Cliente"
+
+msgid "customers.form.new_customer"
+msgstr "Novo Cliente"
+
+msgid "customers.form.edit_customer"
+msgstr "Editar Cliente"
+
+msgid "customers.form.create_customer"
+msgstr "Criar Cliente"
+
+msgid "customers.form.save_changes"
+msgstr "Salvar Alterações"
+
+msgid "customers.form.you_need_company"
+msgstr "Você precisa configurar uma empresa primeiro."
+
+msgid "customers.form.email_already_exists"
+msgstr "Já existe um cliente com este e-mail"
+
+msgid "customers.form.customer_created_success"
+msgstr "Cliente criado com sucesso!"
+
+msgid "customers.form.customer_updated_success"
+msgstr "Cliente atualizado com sucesso!"
+
+msgid "customers.form.customer_deleted_success"
+msgstr "Cliente {} excluído com sucesso!"
+
+msgid "customers.form.company_not_configured"
+msgstr "Empresa não configurada"
+
+msgid "customers.form.customer_activated"
+msgstr "Cliente ativado com sucesso!"
+
+msgid "customers.form.customer_deactivated"
+msgstr "Cliente desativado com sucesso!"
+
+msgid "customers.form.method_not_allowed"
+msgstr "Método não permitido"
+
+msgid "customers.form.activated"
+msgstr "ativado"
+
+msgid "customers.form.deactivated"
+msgstr "desativado"
+
+msgid "customers.form.customer_status_success"
+msgstr "Cliente {} com sucesso!"
+
+msgid "customers.form.basic_info_comment"
+msgstr "Informações Básicas"
+
+msgid "customers.form.contact_info_comment"
+msgstr "Informações de Contato"
+
+msgid "customers.form.documentation_comment"
+msgstr "Documentação"
+
+msgid "customers.form.address_comment"
+msgstr "Endereço"
+
+msgid "customers.form.observations_comment"
+msgstr "Observações"
+
+msgid "customers.form.status_comment"
+msgstr "Status"
+
+msgid "customers.form.script_address_automation_comment"
+msgstr "Script de automação de endereço"
+
+msgid "customers.form.init_address_automation_comment"
+msgstr "Inicializar automação de endereço"
+
+msgid "customers.form.ddi_phone_side_comment"
+msgstr "DDI e Telefone lado a lado"
+
+msgid "customers.form.cpf_cnpj_comment"
+msgstr "CPF/CNPJ"
+
+msgid "customers.form.cep_number_side_comment"
+msgstr "CEP e Número lado a lado"
+
+msgid "customers.form.instagram_social_comment"
+msgstr "Instagram/Rede Social"
+
+msgid "customers.form.birth_date_comment"
+msgstr "Data de Nascimento"
+
+msgid "customers.form.city_state_side_comment"
+msgstr "Cidade e Estado lado a lado"
+
+msgid "customers.form.action_buttons_comment"
+msgstr "Botões de Ação"
+
+msgid "customers.form.form_validation_comment"
+msgstr "Validação do formulário"
+
+msgid "customers.form.phone_mask_comment"
+msgstr "Máscara para telefone"
+
+msgid "customers.form.document_mask_comment"
+msgstr "Máscara para documento (CPF/CNPJ)"
+
+msgid "customers.form.cep_mask_comment"
+msgstr "Máscara para CEP"
+
+msgid "customers.form.update_country_ddi_comment"
+msgstr "Atualizar DDI do país"
+
+msgid "customers.form.update_initial_ddi_comment"
+msgstr "Atualizar DDI inicial"
+
+msgid "customers.form.cpf_comment"
+msgstr "CPF"
+
+msgid "customers.form.cnpj_comment"
+msgstr "CNPJ"
+
+msgid "customers.form.state"
+msgstr "Estado"
+
+msgid "customers.form.notes"
+msgstr "Observações"
+
+msgid "customers.form.is_active"
+msgstr "Ativo"
+
+msgid "customers.admin.basic_info"
+msgstr "Informações Básicas"
+
+msgid "customers.admin.contact"
+msgstr "Contato"
+
+msgid "customers.admin.documentation"
+msgstr "Documentação"
+
+msgid "customers.admin.address"
+msgstr "Endereço"
+
+msgid "customers.admin.observations"
+msgstr "Observações"
+
+msgid "customers.admin.timestamps"
+msgstr "Timestamps"
+
+msgid "customers.admin.age"
+msgstr "Idade"
+
+msgid "customers.admin.activate_selected"
+msgstr "Ativar clientes selecionados"
+
+msgid "customers.admin.deactivate_selected"
+msgstr "Desativar clientes selecionados"
+
+msgid "customers.admin.export_selected"
+msgstr "Exportar clientes selecionados"
+
+msgid "customers.admin.activate_success"
+msgstr "{} cliente(s) ativado(s) com sucesso."
+
+msgid "customers.admin.deactivate_success"
+msgstr "{} cliente(s) desativado(s) com sucesso."
+
+msgid "customers.admin.export_placeholder"
+msgstr "Funcionalidade de exportação será implementada em breve."
+
+msgid "customers.model.company"
+msgstr "Empresa"
+
+msgid "customers.model.name"
+msgstr "Nome/Razão Social"
+
+msgid "customers.model.country"
+msgstr "País"
+
+msgid "customers.model.phone"
+msgstr "Telefone"
+
+msgid "customers.model.email"
+msgstr "E-mail"
+
+msgid "customers.model.birth_date"
+msgstr "Data de Nascimento"
+
+msgid "customers.model.document_number"
+msgstr "CPF/CNPJ"
+
+msgid "customers.model.social_network"
+msgstr "Instagram/Rede Social"
+
+msgid "customers.model.address"
+msgstr "Endereço"
+
+msgid "customers.model.address_number"
+msgstr "Número"
+
+msgid "customers.model.city"
+msgstr "Cidade"
+
+msgid "customers.model.state"
+msgstr "Estado/Província"
+
+msgid "customers.model.zip_code"
+msgstr "CEP/Código Postal"
+
+msgid "customers.model.notes"
+msgstr "Observações"
+
+msgid "customers.model.is_active"
+msgstr "Ativo"
+
+msgid "customers.model.customer"
+msgstr "Cliente"
+
+msgid "customers.model.customers"
+msgstr "Clientes"
+
+msgid "customers.detail.customer_details"
+msgstr "Detalhes do cliente"
+
+msgid "customers.detail.customer_status"
+msgstr "Status do Cliente"
+
+msgid "customers.detail.active_available"
+msgstr "Cliente ativo e disponível para operações"
+
+msgid "customers.detail.inactive_hidden"
+msgstr "Cliente inativo - não aparecerá em listas e operações"
+
+msgid "customers.detail.basic_info"
+msgstr "Informações Básicas"
+
+msgid "customers.detail.contact_info"
+msgstr "Informações de Contato"
+
+msgid "customers.detail.years"
+msgstr "anos"
+
+msgid "customers.detail.registration_date"
+msgstr "Data de Cadastro"
+
+msgid "customers.detail.social_network"
+msgstr "Rede Social"
+
+msgid "customers.detail.not_informed"
+msgstr "Não informado"
+
+msgid "customers.detail.system_info"
+msgstr "Informações do Sistema"
+
+msgid "customers.detail.created_at"
+msgstr "Criado em"
+
+msgid "customers.detail.updated_at"
+msgstr "Atualizado em"
+
+msgid "customers.detail.customer_notes"
+msgstr "Notas sobre o cliente"
+
+msgid "customers.delete.confirm_deletion"
+msgstr "Confirme a exclusão do cliente"
+
+msgid "customers.delete.warning_title"
+msgstr "ATENÇÃO!"
+
+msgid "customers.delete.irreversible_action"
+msgstr "Esta ação não pode ser desfeita. O cliente será permanentemente removido do sistema."
+
+msgid "customers.delete.customer_to_delete"
+msgstr "Cliente a ser excluído"
+
+msgid "customers.delete.name_label"
+msgstr "Nome:"
+
+msgid "customers.delete.email_label"
+msgstr "E-mail:"
+
+msgid "customers.delete.phone_label"
+msgstr "Telefone:"
+
+msgid "customers.delete.country_label"
+msgstr "País:"
+
+msgid "customers.delete.status_label"
+msgstr "Status:"
+
+msgid "customers.delete.registered_at"
+msgstr "Cadastrado em:"
+
+msgid "customers.delete.document_label"
+msgstr "Documento:"
+
+msgid "customers.delete.address_label"
+msgstr "Endereço:"
+
+msgid "customers.delete.observations_label"
+msgstr "Observações:"
+
+msgid "customers.delete.what_happens_after"
+msgstr "O que acontecerá após a exclusão?"
+
+msgid "customers.delete.permanently_removed"
+msgstr "O cliente será permanentemente removido do banco de dados"
+
+msgid "customers.delete.all_data_lost"
+msgstr "Todos os dados associados serão perdidos"
+
+msgid "customers.delete.cannot_recover"
+msgstr "Não será possível recuperar as informações"
+
+msgid "customers.delete.history_lost"
+msgstr "Histórico de interações será perdido"
+
+msgid "customers.delete.confirm_checkbox"
+msgstr "Eu entendo que esta ação é irreversível e confirmo a exclusão do cliente"
+
+msgid "customers.delete.must_confirm"
+msgstr "Você deve confirmar a exclusão para continuar."
+
+msgid "customers.delete.final_confirmation"
+msgstr "Tem certeza que deseja excluir permanentemente este cliente?"
+
+msgid "core.brand_name"
+msgstr "ForgeLock"
+
+msgid "core.tagline"
+msgstr "Sistema de gestão empresarial"
+
+msgid "core.copyright"
+msgstr "Todos os direitos reservados."
+
+msgid "core.welcome_message"
+msgstr "Bem-vindo ao ForgeLock"
+
+msgid "core.subscription.status"
+msgstr "Status da Assinatura"
+
+msgid "core.subscription.status_section"
+msgstr "Status da Assinatura"
+
+msgid "core.subscription.trial_active"
+msgstr "Trial Ativo"
+
+msgid "core.subscription.active"
+msgstr "Ativa"
+
+msgid "core.subscription.expired"
+msgstr "EXPIRADA"
+
+msgid "core.subscription.days_remaining"
+msgstr "dias restantes"
+
+msgid "core.subscription.trial"
+msgstr "Trial"
+
+msgid "core.subscription.current_plan"
+msgstr "Plano Atual"
+
+msgid "core.subscription.manage"
+msgstr "Gerenciar Assinatura"
+
+msgid "core.subscription.grace_period"
+msgstr "PERÍODO DE CARÊNCIA"
+
+msgid "core.subscription.expired_not_renewed"
+msgstr "Sua assinatura expirou e não foi renovada!"
+
+msgid "core.subscription.days_before_block"
+msgstr "Você tem"
+
+msgid "core.subscription.grace_period_view_only"
+msgstr "Durante a carência, você pode apenas visualizar dados (sem editar)"
+
+msgid "core.subscription.renew_now"
+msgstr "Renove agora para continuar usando o sistema"
+
+msgid "core.subscription.after_trial_choose_plan"
+msgstr "Após o trial, escolha um plano para continuar"
+
+msgid "core.subscription.title"
+msgstr "Assinatura"
+
+msgid "core.company.setup"
+msgstr "Configurar Empresa"
+
+msgid "core.company.members"
+msgstr "Membros da Empresa"
+
+msgid "core.company.info"
+msgstr "Informações da Empresa"
+
+msgid "core.profile.title"
+msgstr "Meu Perfil"
+
+msgid "core.profile.edit"
 msgstr "Editar Perfil"
 
-#: .\templates\products\product_form.html:5
-#: .\templates\products\product_form.html:14
-#: .\templates\products\product_list.html:20
-#, fuzzy
-#| msgid "Meus Produtos"
-msgid "Novo Produto"
+msgid "core.profile.view"
+msgstr "Ver Perfil"
+
+msgid "core.profile.personal_info"
+msgstr "Informações Pessoais"
+
+msgid "core.profile.not_informed"
+msgstr "Não informado"
+
+msgid "core.dashboard.quick_actions"
+msgstr "Ações Rápidas"
+
+msgid "core.dashboard.system_modules"
+msgstr "Módulos do Sistema"
+
+msgid "core.dashboard.my_customers"
+msgstr "Meus Clientes"
+
+msgid "core.dashboard.my_products"
 msgstr "Meus Produtos"
 
-#: .\templates\products\product_form.html:179
-#, fuzzy
-#| msgid "Selecione um país"
-msgid "Selecionar Imagens"
-msgstr "Selecione um país"
+msgid "core.dashboard.my_projects"
+msgstr "Meus Projetos"
 
-#: .\templates\products\product_form.html:181
-msgid "Máximo 5 imagens. Primeira imagem será a principal."
-msgstr ""
+msgid "core.dashboard.today_activities"
+msgstr "Atividades Hoje"
 
-#: .\templates\products\product_form.html:186
-msgid "Imagens Atuais"
-msgstr ""
+msgid "core.dashboard.recent_activity"
+msgstr "Atividade Recente"
 
-#: .\templates\products\product_list.html:28
-msgid "Filtros"
-msgstr ""
+msgid "core.dashboard.no_recent_activity"
+msgstr "Nenhuma atividade recente"
 
-#: .\templates\products\product_list.html:35
-#, fuzzy
-#| msgid "Descrição"
-msgid "Nome, descrição..."
-msgstr "Descrição"
+msgid "core.dashboard.company_summary"
+msgstr "Resumo da Empresa"
 
-#: .\templates\products\product_list.html:40
-msgid "Todos"
-msgstr ""
+msgid "core.dashboard.admin_section"
+msgstr "Dashboard para Administradores"
 
-#: .\templates\products\product_list.html:51
-msgid "Todas"
-msgstr ""
+msgid "core.dashboard.client_section"
+msgstr "Dashboard para Usuários Clientes"
 
-#: .\templates\products\product_list.html:60
-msgid "Preço Mín."
-msgstr ""
+msgid "core.admin.verified_users"
+msgstr "Usuários Verificados"
 
-#: .\templates\products\product_list.html:65
-msgid "Preço Máx."
-msgstr ""
+msgid "core.admin.companies"
+msgstr "Empresas"
 
-#: .\templates\products\product_list.html:130
-msgid "Ver detalhes"
-msgstr ""
+msgid "core.admin.total_users"
+msgstr "Total de Usuários"
 
-#: .\templates\products\product_list.html:151
-msgid "Navegação de páginas"
-msgstr ""
+msgid "core.admin.pending_users"
+msgstr "Usuários Pendentes"
 
-#: .\templates\products\product_list.html:187
-msgid "Nenhum produto encontrado"
-msgstr ""
+msgid "core.admin.available_plans"
+msgstr "Planos Disponíveis"
 
-#: .\templates\products\product_list.html:188
-msgid "Tente ajustar os filtros ou criar um novo produto."
-msgstr ""
+msgid "core.admin.supported_countries"
+msgstr "Países Suportados"
 
-#: .\templates\products\product_list.html:190
-msgid "Criar Primeiro Produto"
-msgstr ""
+msgid "core.messages.plan_not_found"
+msgstr "Plano não encontrado."
 
-#: .\templates\products\country_list.html:21
-msgid "Pesquisar"
-msgstr ""
+msgid "core.messages.basic_plan_not_found"
+msgstr "Plano Basic não encontrado. Contate o suporte."
 
-#: .\templates\products\country_list.html:23
-msgid "Nome, código ou DDI..."
-msgstr ""
+msgid "core.messages.account_created_success"
+msgstr "Conta criada com sucesso! Verifique seu telefone."
 
-#: .\templates\products\country_list.html:38
-msgid "Limpar"
-msgstr ""
+msgid "core.messages.no_plans_available"
+msgstr "Nenhum plano disponível. Contate o suporte."
 
-#: .\templates\products\country_list.html:57
-msgid "Ações"
-msgstr ""
+msgid "core.messages.session_expired"
+msgstr "Sessão expirada. Faça o registro novamente."
 
-#: .\templates\products\country_list.html:112
-msgid "Nenhum país encontrado"
-msgstr ""
+msgid "core.messages.user_not_found"
+msgstr "Usuário não encontrado."
 
-#: .\templates\products\country_list.html:113
-msgid "Tente ajustar os filtros de pesquisa."
-msgstr ""
+msgid "core.messages.account_verified_success"
+msgstr "Conta verificada com sucesso! Bem-vindo ao ForgeLock."
+
+msgid "core.messages.code_expired"
+msgstr "Código expirado. Um novo código foi enviado."
+
+msgid "core.messages.invalid_code"
+msgstr "Código inválido. Tente novamente."
+
+msgid "core.messages.new_code_sent"
+msgstr "Novo código enviado com sucesso!"
+
+msgid "core.messages.error_sending_code"
+msgstr "Erro ao enviar código. Tente novamente."
+
+msgid "core.messages.login_success"
+msgstr "Login realizado com sucesso!"
+
+msgid "core.messages.account_not_verified"
+msgstr "Conta não verificada. Verifique seu telefone."
+
+msgid "core.messages.incorrect_password_attempts"
+msgstr "Senha incorreta. Tentativas restantes: {}"
+
+msgid "core.messages.incorrect_password"
+msgstr "Senha incorreta."
+
+msgid "core.messages.user_not_found_login"
+msgstr "Usuário não encontrado. Verifique o nome de usuário ou email."
+
+msgid "core.messages.logout_success"
+msgstr "Logout realizado com sucesso!"
+
+msgid "core.messages.configure_company"
+msgstr "Configure sua empresa para começar a usar o sistema."
+
+msgid "core.messages.profile_updated_success"
+msgstr "Perfil atualizado com sucesso!"
+
+msgid "core.messages.form_errors"
+msgstr "Por favor, corrija os erros no formulário."
+
+msgid "core.messages.company_configured_success"
+msgstr "Empresa configurada com sucesso!"
+
+msgid "core.messages.recovery_email_sent"
+msgstr "Email de recuperação enviado com sucesso!"
+
+msgid "core.messages.email_not_found"
+msgstr "Email não encontrado no sistema."
+
+msgid "core.messages.password_changed_success"
+msgstr "Senha alterada com sucesso!"
+
+msgid "core.messages.passwords_dont_match"
+msgstr "As senhas não coincidem."
+
+msgid "forms.errors.title"
+msgstr "Erro no formulário"
+
+msgid "forms.validation.required"
+msgstr "Campo obrigatório"
+
+msgid "forms.validation.invalid_format"
+msgstr "Formato inválido"
+
+msgid "forms.validation.already_exists"
+msgstr "Já existe"
+
+msgid "forms.validation.password_confirm"
+msgstr "Confirmação de senha"
+
+msgid "forms.validation.password_mismatch"
+msgstr "As senhas não coincidem"
+
+msgid "messages.warning.title"
+msgstr "Atenção!"
+
+msgid "messages.success.title"
+msgstr "Sucesso!"
+
+msgid "messages.error.title"
+msgstr "Erro!"
+
+msgid "messages.info.title"
+msgstr "Informação"
+
+msgid "messages.confirmation.prefix"
+msgstr "Tem certeza que deseja"
+
+msgid "messages.confirmation.irreversible"
+msgstr "Esta ação não pode ser desfeita"
+
+msgid "messages.confirmation.are_you_sure"
+msgstr "Você tem certeza?"
+
+msgid "time.days"
+msgstr "dias"
+
+msgid "time.days_remaining"
+msgstr "dias restantes"
+
+msgid "time.days_to_renew"
+msgstr "dias para renovar"
+
+msgid "time.grace_period.during"
+msgstr "Durante a carência"
+
+msgid "time.trial.after"
+msgstr "Após o trial"
+
+msgid "time.grace_period.before_block"
+msgstr "Antes do bloqueio total"
+
+msgid "actions.create_account"
+msgstr "Criar Conta"
+
+msgid "actions.create_free_account"
+msgstr "Criar Conta Grátis"
+
+msgid "actions.start_now"
+msgstr "Começar Agora"
+
+msgid "actions.learn_more"
+msgstr "Saiba Mais"
+
+msgid "actions.choose"
+msgstr "Escolher"
+
+msgid "actions.change_password"
+msgstr "Alterar Senha"
+
+msgid "actions.new_password"
+msgstr "Nova Senha"
+
+msgid "actions.confirm_new_password"
+msgstr "Confirmar Nova Senha"
+
+msgid "actions.forgot_password"
+msgstr "Esqueceu sua senha?"
+
+msgid "actions.back_to_login"
+msgstr "Voltar ao Login"
+
+msgid "actions.back"
+msgstr "Voltar"
+
+msgid "actions.next"
+msgstr "Avançar"
+
+msgid "actions.continue"
+msgstr "Avançar"
+
+msgid "features.customers.title"
+msgstr "Gestão de Clientes"
+
+msgid "features.products.title"
+msgstr "Controle de Produtos"
+
+msgid "features.projects.title"
+msgstr "Gestão de Projetos"
+
+msgid "features.customers.description"
+msgstr "Organize seus clientes"
+
+msgid "features.products.description"
+msgstr "Gerencie estoque"
+
+msgid "features.projects.description"
+msgstr "Acompanhe projetos"
+
+msgid "features.why_choose.title"
+msgstr "Por que escolher o ForgeLock?"
+
+msgid "features.why_choose.subtitle"
+msgstr "Tudo que sua empresa precisa"
+
+msgid "features.pricing.title"
+msgstr "Planos e Preços"
+
+msgid "features.pricing.subtitle"
+msgstr "Escolha o plano ideal"
+
+msgid "features.pricing.monthly"
+msgstr "Mensal"
+
+msgid "features.pricing.yearly"
+msgstr "Anual"
+
+msgid "features.pricing.user_singular"
+msgstr "usuário"
+
+msgid "features.pricing.user_plural"
+msgstr "usuários"
+
+msgid "features.security.stl"
+msgstr "Segurança STL"
+
+msgid "features.cta.title"
+msgstr "Pronto para começar?"
+
+msgid "features.cta.subtitle"
+msgstr "Junte-se a centenas de empresas"
+

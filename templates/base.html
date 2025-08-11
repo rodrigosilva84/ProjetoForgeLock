@@ -122,40 +122,40 @@
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'dashboard' %}">
-                                <i class="fas fa-tachometer-alt me-1"></i>{% translate "Dashboard" %}
+                                <i class="fas fa-tachometer-alt me-1"></i>{% translate "navigation.dashboard" %}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'customers:customer_list' %}">
-                                <i class="fas fa-users me-1"></i>{% translate "Clientes" %}
+                                <i class="fas fa-users me-1"></i>{% translate "customers.title" %}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'products:product_list' %}">
-                                <i class="fas fa-box me-1"></i>{% translate "Produtos" %}
+                                <i class="fas fa-box me-1"></i>{% translate "products.title" %}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'projects:project_list' %}">
-                                <i class="fas fa-project-diagram me-1"></i>{% translate "Projetos" %}
+                                <i class="fas fa-project-diagram me-1"></i>{% translate "navigation.projects" %}
                             </a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="utilitiesDropdown" role="button" data-bs-toggle="dropdown">
-                                <i class="fas fa-tools me-1"></i>{% translate "Utilitários" %}
+                                <i class="fas fa-tools me-1"></i>{% translate "navigation.utilities" %}
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{% url 'products:scale_list' %}">
-                                    <i class="fas fa-ruler me-2"></i>{% translate "Escalas" %}
+                                    <i class="fas fa-ruler me-2"></i>{% translate "utilities.scales.title" %}
                                 </a></li>
                                 <li><a class="dropdown-item" href="{% url 'products:product_type_list' %}">
-                                    <i class="fas fa-tags me-2"></i>{% translate "Tipos de Produto" %}
+                                    <i class="fas fa-tags me-2"></i>{% translate "utilities.product_types.title" %}
                                 </a></li>
                                 <li><a class="dropdown-item" href="{% url 'products:category_list' %}">
-                                    <i class="fas fa-folder me-2"></i>{% translate "Categorias" %}
+                                    <i class="fas fa-folder me-2"></i>{% translate "utilities.categories.title" %}
                                 </a></li>
                                 <li><a class="dropdown-item" href="{% url 'products:country_list' %}">
-                                    <i class="fas fa-globe me-2"></i>{% translate "Países" %}
+                                    <i class="fas fa-globe me-2"></i>{% translate "utilities.countries.title" %}
                                 </a></li>
                             </ul>
                         </li>
@@ -172,13 +172,13 @@
                                 <!-- Informações do Plano -->
                                 {% if user.account %}
                                     <li><div class="dropdown-header">
-                                        <i class="fas fa-crown me-2"></i>{% translate "Plano Atual" %}
+                                        <i class="fas fa-crown me-2"></i>{% translate "core.subscription.current_plan" %}
                                     </div></li>
                                     <li><div class="dropdown-item-text">
                                         <small class="text-muted">
                                             <i class="fas fa-calendar me-1"></i>
                                             {% if user.account.is_trial_active %}
-                                                {% translate "Trial" %}: {{ user.account.get_trial_days_remaining }} {% translate "dias restantes" %}
+                                                {% translate "core.subscription.trial" %}: {{ user.account.get_trial_days_remaining }} {% translate "time.days_remaining" %}
                                             {% else %}
                                                 {{ user.account.plan.name }}
                                             {% endif %}
@@ -187,26 +187,26 @@
                                     <li><hr class="dropdown-divider"></li>
                                 {% endif %}
                                 
-                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'profile' %}"><i class="fas fa-user-edit"></i>{% translate "Perfil" %}</a></li>
-                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'company_setup' %}"><i class="fas fa-building"></i>{% translate "Empresa" %}</a></li>
+                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'profile' %}"><i class="fas fa-user-edit"></i>{% translate "navigation.profile" %}</a></li>
+                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'company_setup' %}"><i class="fas fa-building"></i>{% translate "common.company" %}</a></li>
                                 
                                 {% if user.account %}
-                                    <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'subscription' %}"><i class="fas fa-credit-card"></i>{% translate "Gerenciar Assinatura" %}</a></li>
+                                    <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'subscription' %}"><i class="fas fa-credit-card"></i>{% translate "core.subscription.manage" %}</a></li>
                                 {% endif %}
                                 
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>{% translate "Sair" %}</a></li>
+                                <li><a class="dropdown-item btn-gradient-enabled" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>{% translate "navigation.logout" %}</a></li>
                             </ul>
                         </li>
                     {% else %}
                         <li class="nav-item">
                             <a class="nav-link btn-gradient-enabled" href="{% url 'login' %}">
-                                <i class="fas fa-sign-in-alt"></i>{% translate "Entrar" %}
+                                <i class="fas fa-sign-in-alt"></i>{% translate "navigation.login" %}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'register' %}">
-                                <i class="fas fa-user-plus me-1"></i>{% translate "Registrar" %}
+                                <i class="fas fa-user-plus me-1"></i>{% translate "navigation.register" %}
                             </a>
                         </li>
                     {% endif %}
@@ -286,10 +286,10 @@
             <div class="row">
                 <div class="col-md-6">
                     <h5><i class="fas fa-lock me-2"></i>ForgeLock</h5>
-                    <p class="mb-0">{% translate "Sistema de gestão empresarial" %}</p>
+                    <p class="mb-0">{% translate "core.tagline" %}</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p class="mb-0">&copy; 2025 ForgeLock. {% translate "Todos os direitos reservados." %}</p>
+                    <p class="mb-0">&copy; 2025 ForgeLock. {% translate "core.copyright" %}</p>
                 </div>
             </div>
         </div>

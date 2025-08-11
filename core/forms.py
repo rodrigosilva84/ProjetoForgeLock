@@ -55,7 +55,7 @@ class UserRegistrationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control', 'placeholder': _("Nome de usuário")})
-        self.fields['password1'].widget.attrs.update({'class': 'form-control', 'placeholder': _("Senha")})
+        self.fields['password1'].widget.attrs.update({'class': 'form-control', 'placeholder': _("common.password")})
         self.fields['password2'].widget.attrs.update({'class': 'form-control', 'placeholder': _("Confirme a senha")})
         
         # Traduzir labels
@@ -87,7 +87,7 @@ class UserLoginForm(forms.Form):
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': _("Nome de usuário ou e-mail")})
     )
     password = forms.CharField(
-        label=_("Senha"),
+        label=_("common.password"),
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': _("Sua senha")})
     )
     
@@ -146,7 +146,7 @@ class UserProfileForm(forms.ModelForm):
         # Removendo traduções duplicadas - agora usamos template translations
         
         # Configurar labels e help texts
-        self.fields['birth_date'].label = _("Data de nascimento")
+        self.fields['birth_date'].label = _("common.birth_date")
         self.fields['birth_date'].help_text = _("Sua data de nascimento.")
 
 
@@ -186,10 +186,10 @@ class CompanyForm(forms.ModelForm):
         # Traduzir labels
         self.fields['name'].label = _("Nome da empresa")
         self.fields['cnpj'].label = _("Documento")
-        self.fields['email'].label = _("E-mail")
-        self.fields['phone'].label = _("Telefone")
-        self.fields['address'].label = _("Endereço")
-        self.fields['country'].label = _("País")
+        self.fields['email'].label = _("common.email")
+        self.fields['phone'].label = _("common.phone")
+        self.fields['address'].label = _("common.address")
+        self.fields['country'].label = _("common.country")
         self.fields['logo'].label = _("Logo")
         
         # Filtrar países ativos

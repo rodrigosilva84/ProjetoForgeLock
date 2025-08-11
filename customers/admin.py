@@ -26,25 +26,25 @@ class CustomerAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'updated_at']
     
     fieldsets = (
-        (_('Informações Básicas'), {
+        (_('customers.admin.basic_info'), {
             'fields': ('company', 'name', 'country', 'is_active')
         }),
-        (_('Contato'), {
+        (_('customers.admin.contact'), {
             'fields': ('email', 'phone', 'social_network')
         }),
-        (_('Documentação'), {
+        (_('customers.admin.documentation'), {
             'fields': ('birth_date', 'document_number'),
             'classes': ('collapse',)
         }),
-        (_('Endereço'), {
+        (_('customers.admin.address'), {
             'fields': ('address', 'city', 'state', 'zip_code'),
             'classes': ('collapse',)
         }),
-        (_('Observações'), {
+        (_('customers.admin.observations'), {
             'fields': ('notes',),
             'classes': ('collapse',)
         }),
-        (_('Timestamps'), {
+        (_('customers.admin.timestamps'), {
             'fields': ('created_at', 'updated_at'),
             'classes': ('collapse',)
         }),
@@ -60,7 +60,7 @@ class CustomerAdmin(admin.ModelAdmin):
         if age is not None:
             return f"{age} anos"
         return "-"
-    get_age_display.short_description = _('Idade')
+    get_age_display.short_description = _('customers.admin.age')
     
     def get_queryset(self, request):
         """Filtra clientes por empresa se o usuário não for superuser"""
@@ -76,26 +76,26 @@ class CustomerAdmin(admin.ModelAdmin):
         updated = queryset.update(is_active=True)
         self.message_user(
             request, 
-            _('{} cliente(s) ativado(s) com sucesso.').format(updated)
+            _('customers.admin.activate_success').format(updated)
         )
-    activate_customers.short_description = _('Ativar clientes selecionados')
+    activate_customers.short_description = _('customers.admin.activate_selected')
     
     def deactivate_customers(self, request, queryset):
         """Desativar clientes selecionados"""
         updated = queryset.update(is_active=False)
         self.message_user(
             request, 
-            _('{} cliente(s) desativado(s) com sucesso.').format(updated)
+            _('customers.admin.deactivate_success').format(updated)
         )
-    deactivate_customers.short_description = _('Desativar clientes selecionados')
+    deactivate_customers.short_description = _('customers.admin.deactivate_selected')
     
     def export_customers(self, request, queryset):
         """Exportar clientes selecionados (placeholder)"""
         self.message_user(
             request, 
-            _('Funcionalidade de exportação será implementada em breve.')
+            _('customers.admin.export_placeholder')
         )
-    export_customers.short_description = _('Exportar clientes selecionados')
+    export_customers.short_description = _('customers.admin.export_selected')
     
     def get_list_display(self, request):
         """Personaliza a exibição baseada no usuário"""

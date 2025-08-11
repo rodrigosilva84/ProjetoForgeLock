@@ -5,8 +5,6 @@ from core.models import Country
 
 
 class CustomerForm(forms.ModelForm):
-    """Formulário para criação e edição de clientes"""
-    
     class Meta:
         model = Customer
         fields = [
@@ -18,18 +16,18 @@ class CustomerForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Nome completo ou razão social')
+                'placeholder': _('customers.form.name_reason_help')
             }),
             'country': forms.Select(attrs={
                 'class': 'form-control'
             }),
             'phone': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('(11) 99999-9999')
+                'placeholder': _('customers.form.phone_placeholder')
             }),
             'email': forms.EmailInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('cliente@exemplo.com')
+                'placeholder': _('customers.form.email_placeholder')
             }),
             'birth_date': forms.DateInput(attrs={
                 'class': 'form-control',
@@ -37,68 +35,68 @@ class CustomerForm(forms.ModelForm):
             }),
             'document_number': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('000.000.000-00 ou 00.000.000/0000-00')
+                'placeholder': _('customers.form.document_placeholder')
             }),
             'social_network': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('@usuario ou link da rede social')
+                'placeholder': _('customers.form.social_placeholder')
             }),
-                                    'address': forms.Textarea(attrs={
-                            'class': 'form-control',
-                            'rows': 3,
-                            'placeholder': _('Endereço completo')
-                        }),
-                        'address_number': forms.TextInput(attrs={
-                            'class': 'form-control',
-                            'placeholder': _('Número')
-                        }),
+            'address': forms.Textarea(attrs={
+                'class': 'form-control',
+                'rows': 3,
+                'placeholder': _('customers.form.address_placeholder')
+            }),
+            'address_number': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': _('customers.form.number_placeholder')
+            }),
             'city': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Cidade')
+                'placeholder': _('customers.form.city_placeholder')
             }),
             'state': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Estado/Província')
+                'placeholder': _('customers.form.state_placeholder')
             }),
             'zip_code': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('00000-000')
+                'placeholder': _('customers.form.zip_placeholder')
             }),
             'notes': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 4,
-                'placeholder': _('Observações sobre o cliente')
+                'placeholder': _('customers.form.notes_placeholder')
             }),
             'is_active': forms.CheckboxInput(attrs={
                 'class': 'form-check-input'
             })
         }
         labels = {
-            'name': _('Nome/Razão Social *'),
-            'country': _('País *'),
-            'phone': _('Telefone *'),
-            'email': _('E-mail *'),
-            'birth_date': _('Data de Nascimento'),
-            'document_number': _('CPF/CNPJ'),
-            'social_network': _('Instagram/Rede Social'),
-                                    'address': _('Endereço'),
-                        'address_number': _('Número'),
-            'city': _('Cidade'),
-            'state': _('Estado/Província'),
-            'zip_code': _('CEP/Código Postal'),
-            'notes': _('Observações'),
-            'is_active': _('Cliente ativo')
+            'name': _('customers.form.name_reason_required'),
+            'country': _('customers.form.country_required'),
+            'phone': _('customers.form.phone_required'),
+            'email': _('customers.form.email_required'),
+            'birth_date': _('customers.form.birth_date'),
+            'document_number': _('customers.form.document_number'),
+            'social_network': _('customers.form.social_network'),
+            'address': _('customers.form.address'),
+            'address_number': _('customers.form.address_number'),
+            'city': _('customers.form.city'),
+            'state': _('customers.form.state'),
+            'zip_code': _('customers.form.zip_code'),
+            'notes': _('customers.form.notes'),
+            'is_active': _('customers.form.is_active')
         }
         help_texts = {
-            'name': _('Nome completo para pessoa física ou razão social para pessoa jurídica'),
-            'phone': _('Inclua o código do país se necessário'),
-            'email': _('E-mail válido para comunicações'),
-            'birth_date': _('Opcional - útil para campanhas personalizadas'),
-            'document_number': _('CPF para pessoa física ou CNPJ para pessoa jurídica'),
-                                    'social_network': _('Instagram, Facebook, LinkedIn ou outra rede social'),
-                        'address': _('Endereço completo para envio de materiais'),
-                        'address_number': _('Número do endereço'),
-            'notes': _('Informações adicionais sobre o cliente')
+            'name': _('customers.form.name_reason_help'),
+            'phone': _('customers.form.phone_help'),
+            'email': _('customers.form.email_help'),
+            'birth_date': _('customers.form.birth_date_help'),
+            'document_number': _('customers.form.document_help'),
+            'social_network': _('customers.form.social_network_help'),
+            'address': _('customers.form.address_help'),
+            'address_number': _('customers.form.address_number_help'),
+            'notes': _('customers.form.notes_help')
         }
     
     def __init__(self, *args, **kwargs):
@@ -129,7 +127,7 @@ class CustomerForm(forms.ModelForm):
             # Remove caracteres não numéricos para validação
             phone_clean = ''.join(filter(str.isdigit, phone))
             if len(phone_clean) < 10:
-                raise forms.ValidationError(_('Telefone deve ter pelo menos 10 dígitos'))
+                raise forms.ValidationError(_('customers.form.validation.phone_min_digits'))
         return phone
     
     def clean_document_number(self):
@@ -139,7 +137,7 @@ class CustomerForm(forms.ModelForm):
             # Remove caracteres não numéricos
             doc_clean = ''.join(filter(str.isdigit, document))
             if len(doc_clean) not in [11, 14]:
-                raise forms.ValidationError(_('CPF deve ter 11 dígitos ou CNPJ deve ter 14 dígitos'))
+                raise forms.ValidationError(_('customers.form.validation.document_length'))
         return document
     
     def clean_email(self):

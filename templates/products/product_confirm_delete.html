@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% translate 'Excluir Produto' %} - ForgeLock{% endblock %}
+{% block title %}{% translate 'products.delete' %} - {% translate 'common.app_name' %}{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
@@ -10,10 +10,10 @@
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1 class="h3 mb-0">
-                    <i class="fas fa-trash me-2"></i>{% translate 'Excluir Produto' %}
+                    <i class="fas fa-trash me-2"></i>{% translate 'products.delete' %}
                 </h1>
                 <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-left me-2"></i>{% translate 'Voltar' %}
+                    <i class="fas fa-arrow-left me-2"></i>{% translate 'common.back' %}
                 </a>
             </div>
 
@@ -21,32 +21,32 @@
                 <div class="card-body">
                     <div class="alert alert-warning">
                         <h5 class="alert-heading">
-                            <i class="fas fa-exclamation-triangle me-2"></i>{% translate 'Atenção!' %}
+                            <i class="fas fa-exclamation-triangle me-2"></i>{% translate 'products.detail.attention' %}
                         </h5>
                         <p class="mb-0">
-                            {% translate 'Você está prestes a excluir o produto' %} <strong>"{{ product.name }}"</strong>.
+                            {% translate 'products.detail.about_to_delete' %} <strong>"{{ product.name }}"</strong>.
                         </p>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
-                            <h5>{% translate 'Detalhes do Produto' %}</h5>
+                            <h5>{% translate 'products.detail.product_details' %}</h5>
                             <ul class="list-unstyled">
-                                <li><strong>{% translate 'Nome' %}:</strong> {{ product.name }}</li>
+                                <li><strong>{% translate 'common.name' %}:</strong> {{ product.name }}</li>
                                 {% if product.description %}
-                                <li><strong>{% translate 'Descrição' %}:</strong> {{ product.description|truncatewords:20 }}</li>
+                                <li><strong>{% translate 'common.description' %}:</strong> {{ product.description|truncatewords:20 }}</li>
                                 {% endif %}
-                                <li><strong>{% translate 'Tipo' %}:</strong> {{ product.product_type.name }}</li>
+                                <li><strong>{% translate 'products.type' %}:</strong> {{ product.product_type.name }}</li>
                                 {% if product.category %}
-                                <li><strong>{% translate 'Categoria' %}:</strong> {{ product.category.name }}</li>
+                                <li><strong>{% translate 'products.category' %}:</strong> {{ product.category.name }}</li>
                                 {% endif %}
                                 {% if product.sale_price %}
-                                <li><strong>{% translate 'Preço' %}:</strong> {{ product.currency.symbol }} {{ product.sale_price|floatformat:2 }}</li>
+                                <li><strong>{% translate 'products.sale_price' %}:</strong> {{ product.currency.symbol }} {{ product.sale_price|floatformat:2 }}</li>
                                 {% endif %}
-                                <li><strong>{% translate 'Estoque' %}:</strong> {{ product.stock_quantity }}</li>
-                                <li><strong>{% translate 'Status' %}:</strong> 
+                                <li><strong>{% translate 'products.stock_quantity' %}:</strong> {{ product.stock_quantity }}</li>
+                                <li><strong>{% translate 'common.status' %}:</strong> 
                                     <span class="badge bg-{% if product.is_active %}success{% else %}danger{% endif %}">
-                                        {% if product.is_active %}{% translate 'Ativo' %}{% else %}{% translate 'Inativo' %}{% endif %}
+                                        {% if product.is_active %}{% translate 'common.active' %}{% else %}{% translate 'common.inactive' %}{% endif %}
                                     </span>
                                 </li>
                             </ul>
@@ -54,7 +54,7 @@
 
                         <div class="col-md-6">
                             {% if product.images.exists %}
-                            <h5>{% translate 'Imagens do Produto' %}</h5>
+                            <h5>{% translate 'products.detail.product_images' %}</h5>
                             <div class="row">
                                 {% for image in product.images.all|slice:":3" %}
                                 <div class="col-md-4 mb-2">
@@ -64,7 +64,7 @@
                                 {% endfor %}
                             </div>
                             {% if product.images.count > 3 %}
-                            <small class="text-muted">{% translate 'e mais' %} {{ product.images.count|add:"-3" }} {% translate 'imagens' %}</small>
+                            <small class="text-muted">{% translate 'products.detail.and_more_images'|format:product.images.count|add:"-3" %}</small>
                             {% endif %}
                             {% endif %}
                         </div>
@@ -72,12 +72,12 @@
 
                     <div class="alert alert-info">
                         <h6 class="alert-heading">
-                            <i class="fas fa-info-circle me-2"></i>{% translate 'O que acontece?' %}
+                            <i class="fas fa-info-circle me-2"></i>{% translate 'products.detail.what_happens' %}
                         </h6>
                         <ul class="mb-0">
-                            <li>{% translate 'O produto será marcado como inativo (não será excluído do banco)' %}</li>
-                            <li>{% translate 'Todas as imagens associadas serão mantidas' %}</li>
-                            <li>{% translate 'Você pode reativar o produto posteriormente' %}</li>
+                            <li>{% translate 'products.detail.product_marked_inactive' %}</li>
+                            <li>{% translate 'products.detail.images_maintained' %}</li>
+                            <li>{% translate 'products.detail.can_reactivate' %}</li>
                         </ul>
                     </div>
 
@@ -85,10 +85,10 @@
                         {% csrf_token %}
                         <div class="d-flex justify-content-end">
                             <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary me-2">
-                                {% translate 'Cancelar' %}
+                                {% translate 'common.cancel' %}
                             </a>
                             <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-trash me-2"></i>{% translate 'Confirmar Exclusão' %}
+                                <i class="fas fa-trash me-2"></i>{% translate 'products.detail.confirm_deletion' %}
                             </button>
                         </div>
                     </form>

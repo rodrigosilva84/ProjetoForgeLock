@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load customer_filters %}
 
-{% block title %}{{ customer.name }} - {% translate "Detalhes do Cliente" %} - ForgeLock{% endblock %}
+{% block title %}{{ customer.name }} - {% translate "customers.details" %} - {% translate "common.app_name" %}{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -89,21 +89,21 @@
                     {{ customer.name }}
                 </h1>
                 <p class="text-muted mb-0">
-                    {% translate "Detalhes do cliente" %}
+                    {% translate "customers.detail.customer_details" %}
                 </p>
             </div>
             <div class="d-flex gap-2">
                 <a href="{% url 'customers:customer_list' %}" class="btn btn-outline-secondary">
                     <i class="fas fa-arrow-left me-2"></i>
-                    {% translate "Voltar" %}
+                    {% translate "actions.back" %}
                 </a>
                 <a href="{% url 'customers:customer_edit' customer.pk %}" class="btn btn-gradient-enabled">
                     <i class="fas fa-edit me-2"></i>
-                    {% translate "Editar" %}
+                    {% translate "common.edit" %}
                 </a>
                 <a href="{% url 'customers:customer_delete' customer.pk %}" class="btn btn-outline-danger">
                     <i class="fas fa-trash me-2"></i>
-                    {% translate "Excluir" %}
+                    {% translate "common.delete" %}
                 </a>
             </div>
         </div>
@@ -116,21 +116,21 @@
                 <div>
                     <h6 class="mb-1">
                         <i class="fas fa-{% if customer.is_active %}check-circle{% else %}pause-circle{% endif %} me-2"></i>
-                        {% translate "Status do Cliente" %}
+                        {% translate "customers.detail.customer_status" %}
                     </h6>
                     <p class="mb-0">
                         {% if customer.is_active %}
-                            {% translate "Cliente ativo e disponível para operações" %}
+                            {% translate "customers.detail.active_available" %}
                         {% else %}
-                            {% translate "Cliente inativo - não aparecerá em listas e operações" %}
+                            {% translate "customers.detail.inactive_hidden" %}
                         {% endif %}
                     </p>
                 </div>
                 <span class="status-badge badge {% if customer.is_active %}bg-success{% else %}bg-secondary{% endif %}">
                     {% if customer.is_active %}
-                        {% translate "ATIVO" %}
+                        {% translate "customers.form.active_badge" %}
                     {% else %}
-                        {% translate "INATIVO" %}
+                        {% translate "customers.form.inactive_badge" %}
                     {% endif %}
                 </span>
             </div>
@@ -141,14 +141,14 @@
         <!-- Informações Básicas -->
         <div class="col-lg-6">
             <div class="detail-section">
-                <h5><i class="fas fa-user me-2"></i>{% translate "Informações Básicas" %}</h5>
+                <h5><i class="fas fa-user me-2"></i>{% translate "customers.detail.basic_info" %}</h5>
                 
                 <div class="info-item">
                     <div class="info-icon bg-primary">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Nome/Razão Social" %}</div>
+                        <div class="info-label">{% translate "customers.form.name_reason" %}</div>
                         <div class="info-value">{{ customer.name }}</div>
                     </div>
                 </div>
@@ -158,7 +158,7 @@
                         <i class="fas fa-flag"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "País" %}</div>
+                        <div class="info-label">{% translate "common.country" %}</div>
                         <div class="info-value">{{ customer.country.name }}</div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
                         <i class="fas fa-id-card"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "CPF/CNPJ" %}</div>
+                        <div class="info-label">{% translate "customers.form.cpf_cnpj" %}</div>
                         <div class="info-value">{{ customer.get_document_display }}</div>
                     </div>
                 </div>
@@ -181,11 +181,11 @@
                         <i class="fas fa-birthday-cake"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Data de Nascimento" %}</div>
+                        <div class="info-label">{% translate "customers.form.birth_date" %}</div>
                         <div class="info-value">
                             {{ customer.birth_date|date:"d/m/Y" }}
                             {% if customer.get_age %}
-                                ({{ customer.get_age }} {% translate "anos" %})
+                                ({{ customer.get_age }} {% translate "customers.detail.years" %})
                             {% endif %}
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                         <i class="fas fa-calendar"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Data de Cadastro" %}</div>
+                        <div class="info-label">{% translate "customers.detail.registration_date" %}</div>
                         <div class="info-value">{{ customer.created_at|date:"d/m/Y H:i" }}</div>
                     </div>
                 </div>
@@ -207,14 +207,14 @@
         <!-- Informações de Contato -->
         <div class="col-lg-6">
             <div class="detail-section">
-                <h5><i class="fas fa-phone me-2"></i>{% translate "Informações de Contato" %}</h5>
+                <h5><i class="fas fa-phone me-2"></i>{% translate "customers.detail.contact_info" %}</h5>
                 
                 <div class="info-item">
                     <div class="info-icon bg-primary">
                         <i class="fas fa-phone"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Telefone" %}</div>
+                        <div class="info-label">{% translate "common.phone" %}</div>
                         <div class="info-value">{{ customer.phone }}</div>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "E-mail" %}</div>
+                        <div class="info-label">{% translate "common.email" %}</div>
                         <div class="info-value">
                             <a href="mailto:{{ customer.email }}" class="text-decoration-none">
                                 {{ customer.email }}
@@ -239,7 +239,7 @@
                         <i class="fas fa-share-alt"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Rede Social" %}</div>
+                        <div class="info-label">{% translate "customers.detail.social_network" %}</div>
                         <div class="info-value">
                             {% if customer.social_network %}
                                 {% if customer.social_network|starts_with_http %}
@@ -250,7 +250,7 @@
                                     {{ customer.social_network }}
                                 {% endif %}
                             {% else %}
-                                <span class="text-muted">{% translate "Não informado" %}</span>
+                                <span class="text-muted">{% translate "customers.detail.not_informed" %}</span>
                             {% endif %}
                         </div>
                     </div>
@@ -265,7 +265,7 @@
     <div class="row">
         <div class="col-12">
             <div class="detail-section">
-                <h5><i class="fas fa-map-marker-alt me-2"></i>{% translate "Endereço" %}</h5>
+                <h5><i class="fas fa-map-marker-alt me-2"></i>{% translate "customers.form.address" %}</h5>
                 
                 {% if customer.address %}
                 <div class="info-item">
@@ -273,7 +273,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Endereço" %}</div>
+                        <div class="info-label">{% translate "common.address" %}</div>
                         <div class="info-value">{{ customer.address }}</div>
                     </div>
                 </div>
@@ -287,7 +287,7 @@
                                 <i class="fas fa-city"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "Cidade" %}</div>
+                                <div class="info-label">{% translate "common.city" %}</div>
                                 <div class="info-value">{{ customer.city }}</div>
                             </div>
                         </div>
@@ -301,7 +301,7 @@
                                 <i class="fas fa-map"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "Estado" %}</div>
+                                <div class="info-label">{% translate "common.state" %}</div>
                                 <div class="info-value">{{ customer.state }}</div>
                             </div>
                         </div>
@@ -315,7 +315,7 @@
                                 <i class="fas fa-mail-bulk"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "CEP" %}</div>
+                                <div class="info-label">{% translate "common.zip_code" %}</div>
                                 <div class="info-value">{{ customer.zip_code }}</div>
                             </div>
                         </div>
@@ -332,14 +332,14 @@
     <div class="row">
         <div class="col-12">
             <div class="detail-section">
-                <h5><i class="fas fa-sticky-note me-2"></i>{% translate "Observações" %}</h5>
+                <h5><i class="fas fa-sticky-note me-2"></i>{% translate "customers.form.observations" %}</h5>
                 
                 <div class="info-item">
                     <div class="info-icon bg-info">
                         <i class="fas fa-sticky-note"></i>
                     </div>
                     <div class="info-content">
-                        <div class="info-label">{% translate "Notas sobre o cliente" %}</div>
+                        <div class="info-label">{% translate "customers.detail.customer_notes" %}</div>
                         <div class="info-value">{{ customer.notes|linebreaks }}</div>
                     </div>
                 </div>
@@ -352,7 +352,7 @@
     <div class="row">
         <div class="col-12">
             <div class="detail-section">
-                <h5><i class="fas fa-cogs me-2"></i>{% translate "Informações do Sistema" %}</h5>
+                <h5><i class="fas fa-cogs me-2"></i>{% translate "customers.detail.system_info" %}</h5>
                 
                 <div class="row">
                     <div class="col-md-3">
@@ -361,7 +361,7 @@
                                 <i class="fas fa-building"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "Empresa" %}</div>
+                                <div class="info-label">{% translate "common.company" %}</div>
                                 <div class="info-value">{{ customer.company.name }}</div>
                             </div>
                         </div>
@@ -373,7 +373,7 @@
                                 <i class="fas fa-calendar-plus"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "Criado em" %}</div>
+                                <div class="info-label">{% translate "customers.detail.created_at" %}</div>
                                 <div class="info-value">{{ customer.created_at|date:"d/m/Y" }}</div>
                             </div>
                         </div>
@@ -385,7 +385,7 @@
                                 <i class="fas fa-calendar-edit"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "Atualizado em" %}</div>
+                                <div class="info-label">{% translate "customers.detail.updated_at" %}</div>
                                 <div class="info-value">{{ customer.updated_at|date:"d/m/Y" }}</div>
                             </div>
                         </div>
@@ -397,12 +397,12 @@
                                 <i class="fas fa-toggle-{% if customer.is_active %}on{% else %}off{% endif %}"></i>
                             </div>
                             <div class="info-content">
-                                <div class="info-label">{% translate "Status" %}</div>
+                                <div class="info-label">{% translate "common.status" %}</div>
                                 <div class="info-value">
                                     {% if customer.is_active %}
-                                        {% translate "Ativo" %}
+                                        {% translate "common.active" %}
                                     {% else %}
-                                        {% translate "Inativo" %}
+                                        {% translate "common.inactive" %}
                                     {% endif %}
                                 </div>
                             </div>

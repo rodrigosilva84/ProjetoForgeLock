@@ -23,7 +23,7 @@ PRODUCT_TYPE_TRANSLATIONS = {
 # Traduções para categorias
 CATEGORY_TRANSLATIONS = {
     'Action Figures': {
-        'pt': 'Action Figures',
+        'pt': 'Figuras de Ação',
         'en': 'Action Figures',
         'es': 'Figuras de Acción',
     },
@@ -43,9 +43,9 @@ CATEGORY_TRANSLATIONS = {
         'es': 'Herramientas',
     },
     'Gospel': {
-        'pt': 'Gospel',
+        'pt': 'Evangélico',
         'en': 'Gospel',
-        'es': 'Gospel',
+        'es': 'Evangélico',
     },
     'Modelagem': {
         'pt': 'Modelagem',

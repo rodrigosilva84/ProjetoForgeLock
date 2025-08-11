@@ -6,35 +6,35 @@ class Customer(models.Model):
     """Modelo para clientes das empresas"""
     
     # Campos obrigatórios
-    company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_("Empresa"))
-    name = models.CharField(_("Nome/Razão Social"), max_length=200)
-    country = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name=_("País"))
-    phone = models.CharField(_("Telefone"), max_length=20)
-    email = models.EmailField(_("E-mail"))
+    company = models.ForeignKey(Company, on_delete=models.CASCADE, verbose_name=_("customers.model.company"))
+    name = models.CharField(_("customers.model.name"), max_length=200)
+    country = models.ForeignKey(Country, on_delete=models.PROTECT, verbose_name=_("customers.model.country"))
+    phone = models.CharField(_("customers.model.phone"), max_length=20)
+    email = models.EmailField(_("customers.model.email"))
     
     # Campos opcionais
-    birth_date = models.DateField(_("Data de Nascimento"), null=True, blank=True)
-    document_number = models.CharField(_("CPF/CNPJ"), max_length=20, blank=True)
-    social_network = models.CharField(_("Instagram/Rede Social"), max_length=100, blank=True)
+    birth_date = models.DateField(_("customers.model.birth_date"), null=True, blank=True)
+    document_number = models.CharField(_("customers.model.document_number"), max_length=20, blank=True)
+    social_network = models.CharField(_("customers.model.social_network"), max_length=100, blank=True)
     
     # Endereço (opcional)
-    address = models.TextField(_("Endereço"), blank=True)
-    address_number = models.CharField(_("Número"), max_length=20, blank=True)
-    city = models.CharField(_("Cidade"), max_length=100, blank=True)
-    state = models.CharField(_("Estado/Província"), max_length=100, blank=True)
-    zip_code = models.CharField(_("CEP/Código Postal"), max_length=20, blank=True)
+    address = models.TextField(_("customers.model.address"), blank=True)
+    address_number = models.CharField(_("customers.model.address_number"), max_length=20, blank=True)
+    city = models.CharField(_("customers.model.city"), max_length=100, blank=True)
+    state = models.CharField(_("customers.model.state"), max_length=100, blank=True)
+    zip_code = models.CharField(_("customers.model.zip_code"), max_length=20, blank=True)
     
     # Controle
-    notes = models.TextField(_("Observações"), blank=True)
-    is_active = models.BooleanField(_("Ativo"), default=True)
+    notes = models.TextField(_("customers.model.notes"), blank=True)
+    is_active = models.BooleanField(_("customers.model.is_active"), default=True)
     
     # Timestamps
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
-        verbose_name = _("Cliente")
-        verbose_name_plural = _("Clientes")
+        verbose_name = _("customers.model.customer")
+        verbose_name_plural = _("customers.model.customers")
         ordering = ['name']
         unique_together = ['company', 'name']  # Nome único por empresa
     

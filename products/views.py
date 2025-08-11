@@ -21,7 +21,7 @@ def get_user_company(request):
     company = user.get_primary_company()
     
     if not company:
-        messages.error(request, _('Você precisa configurar uma empresa primeiro.'))
+        messages.error(request, _('products.messages.company_required'))
         return None
     
     return company
@@ -140,13 +140,13 @@ def product_create(request):
             # Processa as imagens
             images = request.FILES.getlist('images')
             if len(images) > 5:
-                messages.error(request, _('Máximo 5 imagens permitidas'))
+                messages.error(request, _('products.form.max_images_info'))
                 product.delete()
                 return render(request, 'products/product_form.html', {'form': form})
             
             for i, image in enumerate(images):
                 if image.size > 10 * 1024 * 1024:  # 10MB
-                    messages.error(request, _('Cada imagem deve ter no máximo 10MB'))
+                    messages.error(request, _('products.form.max_size_info'))
                     product.delete()
                     return render(request, 'products/product_form.html', {'form': form})
                 
@@ -157,7 +157,7 @@ def product_create(request):
                     order_index=i
                 )
             
-            messages.success(request, _('Produto criado com sucesso!'))
+            messages.success(request, _('products.messages.product_created'))
             return redirect('products:product_detail', pk=product.pk)
     else:
         form = ProductForm()
@@ -216,7 +216,7 @@ def product_edit(request, pk):
                         order_index=i
                     )
             
-            messages.success(request, _('Produto atualizado com sucesso!'))
+            messages.success(request, _('products.messages.product_updated'))
             return redirect('products:product_detail', pk=product.pk)
     else:
         form = ProductForm(instance=product)
@@ -260,7 +260,7 @@ def product_delete(request, pk):
     if request.method == 'POST':
         product.is_active = False
         product.save()
-        messages.success(request, _('Produto excluído com sucesso!'))
+        messages.success(request, _('products.messages.product_deleted'))
         return redirect('products:product_list')
     
     context = {
@@ -282,7 +282,7 @@ def product_toggle_status(request, pk):
     product.save()
     
     status = _('ativado') if product.is_active else _('desativado')
-    messages.success(request, _(f'Produto {status} com sucesso!'))
+    messages.success(request, _('products.messages.product_status_changed').format(status))
     
     return redirect('products:product_list')
 
@@ -325,7 +325,7 @@ def category_create(request):
         form = CategoryForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Categoria criada com sucesso!'))
+            messages.success(request, _('products.messages.category_created'))
             return redirect('products:category_list')
     else:
         form = CategoryForm()
@@ -346,7 +346,7 @@ def category_edit(request, pk):
         form = CategoryForm(request.POST, instance=category)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Categoria atualizada com sucesso!'))
+            messages.success(request, _('products.messages.category_updated'))
             return redirect('products:category_list')
     else:
         form = CategoryForm(instance=category)
@@ -367,10 +367,10 @@ def category_delete(request, pk):
     if request.method == 'POST':
         # Verificar se há produtos usando esta categoria
         if Product.objects.filter(category=category).exists():
-            messages.error(request, _('Não é possível excluir uma categoria que possui produtos!'))
+            messages.error(request, _('products.messages.category_has_products'))
         else:
             category.delete()
-            messages.success(request, _('Categoria excluída com sucesso!'))
+            messages.success(request, _('products.messages.category_deleted'))
         
         return redirect('products:category_list')
     
@@ -391,7 +391,7 @@ def category_toggle_status(request, pk):
         category.save()
         
         status_text = _('ativada') if category.is_active else _('desativada')
-        messages.success(request, _('Categoria {} com sucesso!').format(status_text))
+        messages.success(request, _('products.messages.category_status_changed').format(status_text))
         return redirect('products:category_list')
     
     return render(request, 'products/category_confirm_toggle.html', {'category': category})
@@ -433,7 +433,7 @@ def scale_create(request):
         form = ScaleForm(request.POST)
         if form.is_valid():
             scale = form.save()
-            messages.success(request, _('Escala criada com sucesso!'))
+            messages.success(request, _('products.messages.scale_created'))
             return redirect('products:scale_list')
     else:
         form = ScaleForm()
@@ -448,7 +448,7 @@ def scale_edit(request, pk):
         form = ScaleForm(request.POST, instance=scale)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Escala atualizada com sucesso!'))
+            messages.success(request, _('products.messages.scale_updated'))
             return redirect('products:scale_list')
     else:
         form = ScaleForm(instance=scale)
@@ -461,7 +461,7 @@ def scale_delete(request, pk):
     scale = get_object_or_404(Scale, pk=pk)
     if request.method == 'POST':
         scale.delete()
-        messages.success(request, _('Escala excluída com sucesso!'))
+        messages.success(request, _('products.messages.scale_deleted'))
         return redirect('products:scale_list')
     
     return render(request, 'products/scale_confirm_delete.html', {'scale': scale})
@@ -476,7 +476,7 @@ def scale_toggle_status(request, pk):
         scale.save()
         
         status_text = _('ativada') if scale.is_active else _('desativada')
-        messages.success(request, _('Escala {} com sucesso!').format(status_text))
+        messages.success(request, _('products.messages.scale_status_changed').format(status_text))
         return redirect('products:scale_list')
     
     return render(request, 'products/scale_confirm_toggle.html', {'scale': scale})
@@ -588,7 +588,7 @@ def product_type_create(request):
         form = ProductTypeForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Tipo de produto criado com sucesso!'))
+            messages.success(request, _('products.messages.product_type_created'))
             return redirect('products:product_type_list')
     else:
         form = ProductTypeForm()
@@ -605,7 +605,7 @@ def product_type_edit(request, pk):
         form = ProductTypeForm(request.POST, instance=product_type)
         if form.is_valid():
             form.save()
-            messages.success(request, _('Tipo de produto atualizado com sucesso!'))
+            messages.success(request, _('products.messages.product_type_updated'))
             return redirect('products:product_type_list')
     else:
         form = ProductTypeForm(instance=product_type)
@@ -623,7 +623,7 @@ def product_type_toggle_status(request, pk):
         product_type.save()
         
         status_text = _('ativado') if product_type.is_active else _('desativado')
-        messages.success(request, _('Tipo de produto {} com sucesso!').format(status_text))
+        messages.success(request, _('products.messages.product_type_status_changed').format(status_text))
         return redirect('products:product_type_list')
     
     return render(request, 'products/product_type_confirm_toggle.html', {'product_type': product_type})
@@ -642,7 +642,7 @@ def category_toggle_status(request, pk):
         category.save()
         
         status_text = _('ativada') if category.is_active else _('desativada')
-        messages.success(request, _('Categoria {} com sucesso!').format(status_text))
+        messages.success(request, _('products.messages.category_status_changed').format(status_text))
         return redirect('products:category_list')
     
     return render(request, 'products/category_confirm_toggle.html', {'category': category})
@@ -725,19 +725,19 @@ def country_edit(request, pk):
                         if os.path.exists(flag_path) and os.path.getsize(flag_path) > 0:
                             # Atualizar campo flag no modelo (apenas o código do país)
                             country.flag = country.code.lower()
-                            messages.success(request, _('Bandeira atualizada com sucesso!'))
+                            messages.success(request, _('products.messages.country_flag_updated'))
                         else:
-                            messages.error(request, _('Erro ao salvar a bandeira.'))
+                            messages.error(request, _('products.messages.country_flag_error'))
                     except Exception as e:
-                        messages.error(request, _('Erro ao processar o upload da bandeira: {}').format(str(e)))
+                        messages.error(request, _('products.messages.country_flag_upload_error').format(str(e)))
                 else:
-                    messages.error(request, _('Formato de arquivo não suportado. Use apenas imagens (PNG, JPG, SVG).'))
+                    messages.error(request, _('products.messages.country_flag_format_error'))
             
             country.save()
-            messages.success(request, _('País atualizado com sucesso!'))
+            messages.success(request, _('products.messages.country_updated'))
             return redirect('products:country_list')
         else:
-            messages.error(request, _('Nome é obrigatório.'))
+            messages.error(request, _('products.messages.country_name_required'))
     
     # Preparar dados para o form
     form_data = {
@@ -760,7 +760,7 @@ def country_toggle_status(request, pk):
         country.save()
         
         status_text = _('ativado') if country.is_active else _('desativado')
-        messages.success(request, _('País {} com sucesso!').format(status_text))
+        messages.success(request, _('products.messages.country_status_changed').format(status_text))
         return redirect('products:country_list')
     
     return render(request, 'products/country_confirm_toggle.html', {'country': country})

@@ -1,35 +1,35 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %}{% translate "Dashboard - ForgeLock" %}{% endblock %}
+{% block title %}{% translate "navigation.dashboard_title" %}{% endblock %}
 
 {% block content %}
 <div class="row mb-4">
     <div class="col-12">
         <h1 class="h3">
-            <i class="fas fa-tachometer-alt me-2"></i>{% translate "Dashboard" %}
+            <i class="fas fa-tachometer-alt me-2"></i>{% translate "navigation.dashboard" %}
         </h1>
-        <p class="text-muted">{% translate "Bem-vindo ao ForgeLock" %}, {{ user.get_full_name|default:user.username }}!</p>
+        <p class="text-muted">{% translate "core.welcome_message" %}, {{ user.get_full_name|default:user.username }}!</p>
         
-        <!-- Status da Assinatura -->
+        <!-- {% translate "core.subscription.status_section" %} -->
         {% if subscription_status %}
         <div class="alert {% if subscription_status == 'trial' %}alert-info{% elif subscription_status == 'active' %}alert-success{% elif subscription_status == 'grace_period' %}alert-warning{% elif subscription_status == 'expired' %}alert-danger{% else %}alert-secondary{% endif %} mb-3">
             <i class="fas fa-info-circle me-2"></i>
-            <strong>{% translate "Status da Assinatura" %}:</strong>
+            <strong>{% translate "core.subscription.status" %}:</strong>
             {% if subscription_status == 'trial' %}
-                <span class="badge bg-info">{% translate "Trial Ativo" %}</span> - {{ days_remaining }} {% translate "dias restantes" %}
-                <br><small class="text-muted">{% translate "Após o trial, escolha um plano para continuar" %}</small>
+                <span class="badge bg-info">{% translate "core.subscription.trial_active" %}</span> - {{ days_remaining }} {% translate "time.days_remaining" %}
+                <br><small class="text-muted">{% translate "core.subscription.after_trial_choose_plan" %}</small>
             {% elif subscription_status == 'active' %}
-                <span class="badge bg-success">{% translate "Ativa" %}</span> - {{ days_remaining }} {% translate "dias restantes" %}
+                <span class="badge bg-success">{% translate "core.subscription.active" %}</span> - {{ days_remaining }} {% translate "time.days_remaining" %}
             {% elif subscription_status == 'grace_period' %}
-                <span class="badge bg-warning">{% translate "PERÍODO DE CARÊNCIA" %}</span>
-                <br><strong>{% translate "Sua assinatura expirou e não foi renovada!" %}</strong>
-                <br>{% translate "Você tem" %} {{ grace_period_days }} {% translate "dias para renovar antes do bloqueio total" %}
-                <br><small class="text-muted">{% translate "Durante a carência, você pode apenas visualizar dados (sem editar)" %}</small>
+                <span class="badge bg-warning">{% translate "core.subscription.grace_period" %}</span>
+                <br><strong>{% translate "core.subscription.expired_not_renewed" %}</strong>
+                <br>{% translate "core.subscription.days_before_block" %} {{ grace_period_days }} {% translate "time.days_to_renew" %}
+                <br><small class="text-muted">{% translate "core.subscription.grace_period_view_only" %}</small>
             {% elif subscription_status == 'expired' %}
-                <span class="badge bg-danger">{% translate "EXPIRADA" %}</span>
-                <br><strong>{% translate "Sua assinatura expirou e não foi renovada!" %}</strong>
-                <br>{% translate "Renove agora para continuar usando o sistema" %}
+                <span class="badge bg-danger">{% translate "core.subscription.expired" %}</span>
+                <br><strong>{% translate "core.subscription.expired_not_renewed" %}</strong>
+                <br>{% translate "core.subscription.renew_now" %}
             {% else %}
                 {{ subscription_status|title }}
             {% endif %}
@@ -40,30 +40,30 @@
 
 <!-- Stats Cards -->
 {% if is_admin %}
-<!-- Dashboard para Administradores -->
+        <!-- {% translate "core.dashboard.admin_section" %} -->
 <div class="row mb-4">
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-number">{{ verified_users }}</div>
-            <div class="stat-label">{% translate "Usuários Verificados" %}</div>
+            <div class="stat-label">{% translate "core.admin.verified_users" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-number">{{ company_members }}</div>
-            <div class="stat-label">{% translate "Membros da Empresa" %}</div>
+            <div class="stat-label">{% translate "core.company.members" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-number">{{ total_companies }}</div>
-            <div class="stat-label">{% translate "Empresas" %}</div>
+            <div class="stat-label">{% translate "core.admin.companies" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card">
             <div class="stat-number">{{ plan_name }}</div>
-            <div class="stat-label">{% translate "Plano Atual" %}</div>
+            <div class="stat-label">{% translate "core.subscription.current_plan" %}</div>
         </div>
     </div>
 </div>
@@ -73,47 +73,47 @@
     <div class="col-md-3">
         <div class="stat-card bg-light">
             <div class="stat-number">{{ total_users }}</div>
-            <div class="stat-label">{% translate "Total de Usuários" %}</div>
+            <div class="stat-label">{% translate "core.admin.total_users" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card bg-light">
             <div class="stat-number">{{ unverified_users }}</div>
-            <div class="stat-label">{% translate "Usuários Pendentes" %}</div>
+            <div class="stat-label">{% translate "core.admin.pending_users" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card bg-light">
             <div class="stat-number">{{ total_plans }}</div>
-            <div class="stat-label">{% translate "Planos Disponíveis" %}</div>
+            <div class="stat-label">{% translate "core.admin.available_plans" %}</div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="stat-card bg-light">
             <div class="stat-number">{{ total_countries }}</div>
-            <div class="stat-label">{% translate "Países Suportados" %}</div>
+            <div class="stat-label">{% translate "core.admin.supported_countries" %}</div>
         </div>
     </div>
 </div>
 {% else %}
-<!-- Dashboard para Usuários Clientes -->
+        <!-- {% translate "core.dashboard.client_section" %} -->
 <div class="row mb-4">
     <div class="col-md-4">
         <div class="stat-card">
             <div class="stat-number">{{ company_members }}</div>
-            <div class="stat-label">{% translate "Membros da Empresa" %}</div>
+            <div class="stat-label">{% translate "core.company.members" %}</div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="stat-card">
             <div class="stat-number">{{ plan_name }}</div>
-            <div class="stat-label">{% translate "Plano Atual" %}</div>
+            <div class="stat-label">{% translate "core.subscription.current_plan" %}</div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="stat-card">
             <div class="stat-number">{{ customers_count }}</div>
-            <div class="stat-label">{% translate "Meus Clientes" %}</div>
+            <div class="stat-label">{% translate "core.dashboard.my_customers" %}</div>
         </div>
     </div>
 </div>
@@ -123,19 +123,19 @@
     <div class="col-md-4">
         <div class="stat-card bg-light">
             <div class="stat-number">{{ products_count }}</div>
-            <div class="stat-label">{% translate "Meus Produtos" %}</div>
+            <div class="stat-label">{% translate "core.dashboard.my_products" %}</div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="stat-card bg-light">
             <div class="stat-number">{{ projects_count }}</div>
-            <div class="stat-label">{% translate "Meus Projetos" %}</div>
+            <div class="stat-label">{% translate "core.dashboard.my_projects" %}</div>
         </div>
     </div>
     <div class="col-md-4">
         <div class="stat-card bg-light">
             <div class="stat-number">0</div>
-            <div class="stat-label">{% translate "Atividades Hoje" %}</div>
+            <div class="stat-label">{% translate "core.dashboard.today_activities" %}</div>
         </div>
     </div>
 </div>
@@ -147,29 +147,29 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-bolt me-2"></i>{% translate "Ações Rápidas" %}
+                    <i class="fas fa-bolt me-2"></i>{% translate "core.dashboard.quick_actions" %}
                 </h5>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'profile_setup' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-user-edit"></i>{% translate "Editar Perfil" %}
+                            <i class="fas fa-user-edit"></i>{% translate "core.profile.edit" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'company_setup' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-building"></i>{% translate "Configurar Empresa" %}
+                            <i class="fas fa-building"></i>{% translate "core.company.setup" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'subscription' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-credit-card"></i>{% translate "Gerenciar Assinatura" %}
+                            <i class="fas fa-credit-card"></i>{% translate "core.subscription.manage" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'profile' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-user"></i>{% translate "Ver Perfil" %}
+                            <i class="fas fa-user"></i>{% translate "core.profile.view" %}
                         </a>
                     </div>
                 </div>
@@ -184,29 +184,29 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-cubes me-2"></i>{% translate "Módulos do Sistema" %}
+                    <i class="fas fa-cubes me-2"></i>{% translate "core.dashboard.system_modules" %}
                 </h5>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'customers:customer_list' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-users"></i>{% translate "Clientes" %}
+                            <i class="fas fa-users"></i>{% translate "customers.title" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'products:product_list' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-box"></i>{% translate "Produtos" %}
+                            <i class="fas fa-box"></i>{% translate "products.title" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'projects:project_list' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-project-diagram"></i>{% translate "Projetos" %}
+                            <i class="fas fa-project-diagram"></i>{% translate "navigation.projects" %}
                         </a>
                     </div>
                     <div class="col-md-3 mb-3">
                         <a href="{% url 'subscription' %}" class="btn btn-gradient-outline w-100">
-                            <i class="fas fa-credit-card"></i>{% translate "Assinatura" %}
+                            <i class="fas fa-credit-card"></i>{% translate "core.subscription.title" %}
                         </a>
                     </div>
                 </div>
@@ -222,7 +222,7 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-building me-2"></i>{% translate "Informações da Empresa" %}
+                    <i class="fas fa-building me-2"></i>{% translate "core.company.info" %}
                 </h5>
             </div>
             <div class="card-body">
@@ -254,11 +254,11 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-clock me-2"></i>{% translate "Atividade Recente" %}
+                    <i class="fas fa-clock me-2"></i>{% translate "core.dashboard.recent_activity" %}
                 </h5>
             </div>
             <div class="card-body">
-                <p class="text-muted">{% translate "Nenhuma atividade recente" %}</p>
+                <p class="text-muted">{% translate "core.dashboard.no_recent_activity" %}</p>
             </div>
         </div>
     </div>
@@ -266,18 +266,18 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-chart-line me-2"></i>{% translate "Resumo da Empresa" %}
+                    <i class="fas fa-chart-line me-2"></i>{% translate "core.dashboard.company_summary" %}
                 </h5>
             </div>
             <div class="card-body">
                 <div class="row text-center">
                     <div class="col-6">
                         <h4 class="text-primary">{{ company_members }}</h4>
-                        <small class="text-muted">{% translate "Membros" %}</small>
+                        <small class="text-muted">{% translate "core.company.members" %}</small>
                     </div>
                     <div class="col-6">
                         <h4 class="text-success">{{ plan_name }}</h4>
-                        <small class="text-muted">{% translate "Plano Atual" %}</small>
+                        <small class="text-muted">{% translate "core.subscription.current_plan" %}</small>
                     </div>
                 </div>
             </div>

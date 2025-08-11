@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{{ title }} - ForgeLock{% endblock %}
+{% block title %}{{ title }} - {% translate "common.app_name" %}{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -38,21 +38,21 @@
                 
                 <div class="alert alert-info mb-4">
                     <i class="fas fa-info-circle me-2"></i>
-                    <strong>{% translate "Preencha as informações do cliente" %}</strong>
+                    <strong>{% translate "customers.form.fill_info" %}</strong>
                     <br>
-                    <small>{% translate "Informações completas para melhor atendimento." %}</small>
+                    <small>{% translate "customers.form.complete_info" %}</small>
                 </div>
                 
                 <form method="post" novalidate>
                     {% csrf_token %}
                     
-                    <!-- Informações Básicas -->
+                    <!-- {% translate "customers.form.basic_info_comment" %} -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-user me-2"></i>{% translate "Informações Básicas" %}
+                            <i class="fas fa-user me-2"></i>{% translate "customers.form.basic_info" %}
                         </h5>
                         
-                        <!-- Nome/Razão Social -->
+                        <!-- {% translate "customers.form.name_social_name_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.name.id_for_label }}" class="form-label required-field">
                                 {{ form.name.label }}
@@ -70,7 +70,7 @@
                             {% endif %}
                         </div>
                         
-                        <!-- País -->
+                        <!-- {% translate "customers.form.country_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.country.id_for_label }}" class="form-label optional-field">
                                 {{ form.country.label }}
@@ -86,17 +86,17 @@
                         </div>
                     </div>
                     
-                    <!-- Informações de Contato -->
+                    <!-- {% translate "customers.form.contact_info_comment" %} -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-phone me-2"></i>{% translate "Informações de Contato" %}
+                            <i class="fas fa-phone me-2"></i>{% translate "customers.form.contact_info" %}
                         </h5>
                         
-                        <!-- DDI e Telefone lado a lado -->
+                        <!-- {% translate "customers.form.ddi_phone_side_comment" %} -->
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="mb-3">
-                                    <label class="form-label">{% translate "DDI" %}</label>
+                                    <label class="form-label">{% translate "customers.form.ddi" %}</label>
                                     <input type="text" class="form-control" id="ddi-field" readonly>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                         
-                        <!-- Email -->
+                        <!-- {% translate "customers.form.email_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.email.id_for_label }}" class="form-label required-field">
                                 {{ form.email.label }}
@@ -138,7 +138,7 @@
                             {% endif %}
                         </div>
                         
-                        <!-- Instagram/Rede Social -->
+                        <!-- {% translate "customers.form.instagram_social_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.social_network.id_for_label }}" class="form-label">
                                 {{ form.social_network.label }}
@@ -156,7 +156,7 @@
                             {% endif %}
                         </div>
                         
-                        <!-- Data de Nascimento -->
+                        <!-- {% translate "customers.form.birth_date_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.birth_date.id_for_label }}" class="form-label">
                                 {{ form.birth_date.label }}
@@ -175,13 +175,13 @@
                         </div>
                     </div>
                     
-                    <!-- Documentação -->
+                    <!-- {% translate "customers.form.documentation_comment" %} -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-id-card me-2"></i>{% translate "Documentação" %}
+                            <i class="fas fa-id-card me-2"></i>{% translate "customers.form.documentation" %}
                         </h5>
                         
-                        <!-- CPF/CNPJ -->
+                        <!-- {% translate "customers.form.cpf_cnpj_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.document_number.id_for_label }}" class="form-label">
                                 {{ form.document_number.label }}
@@ -200,13 +200,13 @@
                         </div>
                     </div>
                     
-                    <!-- Endereço -->
+                    <!-- {% translate "customers.form.address_comment" %} -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-map-marker-alt me-2"></i>{% translate "Endereço" %}
+                            <i class="fas fa-map-marker-alt me-2"></i>{% translate "common.address" %}
                         </h5>
                         
-                        <!-- CEP e Número lado a lado -->
+                        <!-- {% translate "customers.form.cep_number_side_comment" %} -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -246,7 +246,7 @@
                             </div>
                         </div>
                         
-                        <!-- Endereço -->
+                        <!-- {% translate "customers.form.address_comment" %} -->
                         <div class="mb-3">
                             <label for="{{ form.address.id_for_label }}" class="form-label">
                                 {{ form.address.label }}
@@ -264,7 +264,7 @@
                             {% endif %}
                         </div>
                         
-                        <!-- Cidade e Estado lado a lado -->
+                        <!-- {% translate "customers.form.city_state_side_comment" %} -->
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -299,10 +299,10 @@
                         </div>
                     </div>
                     
-                    <!-- Observações -->
+                    <!-- {% translate "customers.form.observations_comment" %} -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-sticky-note me-2"></i>{% translate "Observações" %}
+                            <i class="fas fa-sticky-note me-2"></i>{% translate "customers.form.observations" %}
                         </h5>
                         
                         <div class="mb-3">
@@ -323,10 +323,10 @@
                         </div>
                     </div>
                     
-                    <!-- Status -->
+                    <!-- {% translate "customers.form.status_comment" %} -->
                     <div class="mb-4">
                         <h5 class="mb-3">
-                            <i class="fas fa-toggle-on me-2"></i>{% translate "Status" %}
+                            <i class="fas fa-toggle-on me-2"></i>{% translate "common.status" %}
                         </h5>
                         
                         <div class="mb-3">
@@ -346,10 +346,10 @@
                         </div>
                     </div>
                     
-                    <!-- Botões de Ação -->
+                    <!-- {% translate "customers.form.action_buttons_comment" %} -->
                     <div class="d-flex justify-content-between align-items-center mt-4">
                         <a href="{% url 'customers:customer_list' %}" class="btn btn-outline-secondary">
-                            <i class="fas fa-arrow-left me-2"></i>{% translate "Voltar" %}
+                            <i class="fas fa-arrow-left me-2"></i>{% translate "actions.back" %}
                         </a>
                         <button type="submit" class="btn btn-gradient-enabled">
                             <i class="fas fa-save me-2"></i>{{ submit_text }}
@@ -365,7 +365,7 @@
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Validação do formulário
+    // {% translate "customers.form.form_validation_comment" %}
     const form = document.querySelector('form');
     
     form.addEventListener('submit', function(event) {
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function() {
         form.classList.add('was-validated');
     });
     
-    // Máscara para telefone
+    // {% translate "customers.form.phone_mask_comment" %}
     const phoneInput = document.getElementById('{{ form.phone.id_for_label }}');
     if (phoneInput) {
         phoneInput.addEventListener('input', function(e) {
@@ -396,15 +396,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Máscara para documento (CPF/CNPJ)
+    // {% translate "customers.form.document_mask_comment" %}
     const documentInput = document.getElementById('{{ form.document_number.id_for_label }}');
     if (documentInput) {
         documentInput.addEventListener('input', function(e) {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length > 0) {
-                if (value.length <= 11) { // CPF
+                if (value.length <= 11) { // {% translate "customers.form.cpf_comment" %}
                     value = value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-                } else if (value.length <= 14) { // CNPJ
+                } else if (value.length <= 14) { // {% translate "customers.form.cnpj_comment" %}
                     value = value.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
                 }
             }
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Máscara para CEP
+    // {% translate "customers.form.cep_mask_comment" %}
     const zipInput = document.getElementById('{{ form.zip_code.id_for_label }}');
     if (zipInput) {
         zipInput.addEventListener('input', function(e) {
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Atualizar DDI do país
+    // {% translate "customers.form.update_country_ddi_comment" %}
     const countrySelect = document.getElementById('{{ form.country.id_for_label }}');
     const ddiField = document.getElementById('ddi-field');
     
@@ -439,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 })
                 .catch(error => {
-                    console.error('Erro ao buscar DDI:', error);
+                    console.error('{% translate "customers.form.error_fetching_ddi" %}', error);
                     ddiField.value = '';
                 });
         } else {
@@ -449,17 +449,18 @@ document.addEventListener('DOMContentLoaded', function() {
     
     countrySelect.addEventListener('change', updateDDI);
     
-    // Atualizar DDI inicial
+    // {% translate "customers.form.update_initial_ddi_comment" %}
     updateDDI();
     
 });
+
 </script>
 
-<!-- Script de automação de endereço -->
+<!-- {% translate "customers.form.script_address_automation_comment" %} -->
 <script src="{% static 'js/address-autocomplete.js' %}"></script>
 
 <script>
-    // Inicializar automação de endereço
+    // {% translate "customers.form.init_address_automation_comment" %}
     initAddressAutocomplete({
         postalCodeField: '#{{ form.zip_code.id_for_label }}',
         addressField: '#{{ form.address.id_for_label }}',

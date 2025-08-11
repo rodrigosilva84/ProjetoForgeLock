@@ -9,30 +9,30 @@
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title mb-0">
-                    <i class="fas fa-user me-2"></i>{% translate "Meu Perfil" %}
+                    <i class="fas fa-user me-2"></i>{% translate "core.profile.title" %}
                 </h5>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <h6>{% translate "Informações Pessoais" %}</h6>
+                        <h6>{% translate "core.profile.personal_info" %}</h6>
                         <p><strong>{% translate "Nome:" %}</strong> {{ user.get_full_name }}</p>
                         <p><strong>{% translate "Usuário:" %}</strong> {{ user.username }}</p>
                         <p><strong>{% translate "E-mail:" %}</strong> {{ user.email }}</p>
-                        <p><strong>{% translate "Telefone" %}</strong> {{ user.phone_number }}</p>
+                        <p><strong>{% translate "common.phone" %}</strong> {{ user.phone_number }}</p>
                         <p><strong>{% translate "País:" %}</strong> {{ user.country.name }}</p>
                         <p><strong>{% translate "Data de nascimento:" %}</strong> 
                             {% if user.date_of_birth %}
                                 {{ user.date_of_birth|date:"d/m/Y" }}
                             {% else %}
-                                <em>{% translate "Não informado" %}</em>
+                                <em>{% translate "core.profile.not_informed" %}</em>
                             {% endif %}
                         </p>
                         <p><strong>{% translate "Site pessoal:" %}</strong> 
                             {% if user.website %}
                                 <a href="{{ user.website }}" target="_blank">{{ user.website }}</a>
                             {% else %}
-                                <em>{% translate "Não informado" %}</em>
+                                <em>{% translate "core.profile.not_informed" %}</em>
                             {% endif %}
                         </p>
                         <p><strong>{% translate "Verificado:" %}</strong> 
@@ -48,7 +48,7 @@
                         <p><strong>{% translate "Plano:" %}</strong> {{ user.account.plan.name }}</p>
                         <p><strong>{% translate "Trial:" %}</strong> 
                             {% if user.is_trial_active %}
-                                <span class="badge bg-info">{% translate "Ativo" %}</span>
+                                <span class="badge bg-info">{% translate "common.active" %}</span>
                             {% else %}
                                 <span class="badge bg-secondary">{% translate "Expirado" %}</span>
                             {% endif %}
@@ -65,7 +65,7 @@
                         <i class="fas fa-edit"></i>{% translate "Editar Perfil" %}
                     </a>
                     <a href="#" class="btn btn-gradient-outline">
-                        <i class="fas fa-key"></i>{% translate "Alterar Senha" %}
+                        <i class="fas fa-key"></i>{% translate "actions.change_password" %}
                     </a>
                 </div>
             </div>

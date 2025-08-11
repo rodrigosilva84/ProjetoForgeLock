@@ -12,12 +12,12 @@ class CategoryForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Nome da categoria')
+                'placeholder': _('products.form.category_placeholder')
             }),
             'description': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 3,
-                'placeholder': _('Descrição da categoria (opcional)')
+                'placeholder': _('products.form.category_description_placeholder')
             }),
             'is_active': forms.CheckboxInput(attrs={
                 'class': 'form-check-input'
@@ -26,9 +26,9 @@ class CategoryForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].label = _('Nome') + ' *'
-        self.fields['description'].label = _('Descrição')
-        self.fields['is_active'].label = _('Ativo')
+        self.fields['name'].label = _('common.name') + ' *'
+        self.fields['description'].label = _('common.description')
+        self.fields['is_active'].label = _('common.active')
 
 
 class ProductForm(forms.ModelForm):
@@ -45,12 +45,12 @@ class ProductForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': _('Nome do produto')
+                'placeholder': _('products.form.name_placeholder')
             }),
             'description': forms.Textarea(attrs={
                 'class': 'form-control',
                 'rows': 3,
-                'placeholder': _('Descrição do produto')
+                'placeholder': _('products.form.description_placeholder')
             }),
             'product_type': forms.Select(attrs={
                 'class': 'form-select'
@@ -119,22 +119,22 @@ class ProductForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # Labels traduzidos
-        self.fields['name'].label = _('Nome') + ' *'
-        self.fields['description'].label = _('Descrição')
-        self.fields['product_type'].label = _('Tipo') + ' *'
-        self.fields['category'].label = _('Categoria')
-        self.fields['cost_price'].label = _('Preço de Custo')
-        self.fields['sale_price'].label = _('Preço de Venda')
-        self.fields['currency'].label = _('Moeda') + ' *'
-        self.fields['stock_quantity'].label = _('Quantidade em Estoque')
-        self.fields['scale'].label = _('Escala')
-        self.fields['dimensions_x'].label = _('Largura')
-        self.fields['dimensions_y'].label = _('Altura')
-        self.fields['dimensions_z'].label = _('Profundidade')
-        self.fields['dimension_unit'].label = _('Unidade de Dimensão')
-        self.fields['weight'].label = _('Peso')
-        self.fields['weight_unit'].label = _('Unidade de Peso')
-        self.fields['print_time_estimate'].label = _('Tempo de Impressão')
+        self.fields['name'].label = _('common.name') + ' *'
+        self.fields['description'].label = _('common.description')
+        self.fields['product_type'].label = _('products.product_type') + ' *'
+        self.fields['category'].label = _('products.category')
+        self.fields['cost_price'].label = _('products.cost_price')
+        self.fields['sale_price'].label = _('products.sale_price')
+        self.fields['currency'].label = _('products.currency') + ' *'
+        self.fields['stock_quantity'].label = _('products.stock_quantity')
+        self.fields['scale'].label = _('products.scale')
+        self.fields['dimensions_x'].label = _('products.dimensions_x')
+        self.fields['dimensions_y'].label = _('products.dimensions_y')
+        self.fields['dimensions_z'].label = _('products.dimensions_z')
+        self.fields['dimension_unit'].label = _('products.dimension_unit')
+        self.fields['weight'].label = _('products.weight')
+        self.fields['weight_unit'].label = _('products.weight_unit')
+        self.fields['print_time_estimate'].label = _('products.print_time_estimate')
         
         # Definir valores padrão para campos obrigatórios
         if not self.instance.pk:  # Apenas para novos produtos
@@ -185,9 +185,9 @@ class ProductImageForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['image'].label = _('Imagem')
-        self.fields['is_primary'].label = _('Imagem Principal')
-        self.fields['order_index'].label = _('Ordem') 
+        self.fields['image'].label = _('products.images')
+        self.fields['is_primary'].label = _('products.primary_image')
+        self.fields['order_index'].label = _('products.order')
 
 
 class ProductTypeForm(forms.ModelForm):
@@ -213,9 +213,9 @@ class ProductTypeForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].label = _('Nome') + ' *'
-        self.fields['description'].label = _('Descrição')
-        self.fields['is_active'].label = _('Ativo')
+        self.fields['name'].label = _('common.name') + ' *'
+        self.fields['description'].label = _('common.description')
+        self.fields['is_active'].label = _('common.active')
 
 
 class ScaleForm(forms.ModelForm):
@@ -241,9 +241,9 @@ class ScaleForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].label = _('Nome') + ' *'
-        self.fields['description'].label = _('Descrição')
-        self.fields['is_active'].label = _('Ativo') 
+        self.fields['name'].label = _('common.name') + ' *'
+        self.fields['description'].label = _('common.description')
+        self.fields['is_active'].label = _('common.active')
 
 
 class CountryForm(forms.ModelForm):
@@ -276,9 +276,9 @@ class CountryForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].label = _('Nome (Português)') + ' *'
-        self.fields['name_en'].label = _('Nome (Inglês)')
-        self.fields['name_es'].label = _('Nome (Espanhol)')
-        self.fields['is_active'].label = _('Ativo')
-        self.fields['flag'].label = _('Bandeira')
+        self.fields['name'].label = _('common.name') + ' (Português) *'
+        self.fields['name_en'].label = _('common.name') + ' (Inglês)'
+        self.fields['name_es'].label = _('common.name') + ' (Espanhol)'
+        self.fields['is_active'].label = _('common.active')
+        self.fields['flag'].label = _('products.country_flag')
         self.fields['flag'].required = False 

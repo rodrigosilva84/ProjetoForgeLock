@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% translate "Clientes" %} - ForgeLock{% endblock %}
+{% block title %}{% translate "customers.title" %} - {% translate "common.app_name" %}{% endblock %}
 
 {% block extra_css %}
 <style>
@@ -35,30 +35,30 @@
 
 {% block content %}
 <div class="container-fluid">
-    <!-- Header -->
+    <!-- {% translate "customers.header" %} -->
     <div class="row mb-4">
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <h1 class="h3 mb-0">
                         <i class="fas fa-users me-2"></i>
-                        {% translate "Clientes" %}
+                        {% translate "customers.title" %}
                     </h1>
                     <p class="text-muted mb-0">
-                        {% translate "Gerencie seus clientes" %}
+                        {% translate "customers.manage_description" %}
                     </p>
                 </div>
                 <div>
                     <a href="{% url 'customers:customer_create' %}" class="btn btn-gradient-enabled">
                         <i class="fas fa-plus me-2"></i>
-                        {% translate "Novo Cliente" %}
+                        {% translate "customers.add_new" %}
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Estatísticas -->
+    <!-- {% translate "customers.statistics" %} -->
     <div class="row mb-4">
         <div class="col-md-3">
             <div class="card bg-primary text-white">
@@ -66,7 +66,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <h4 class="mb-0">{{ total_customers }}</h4>
-                            <small>{% translate "Total de Clientes" %}</small>
+                            <small>{% translate "customers.total_customers" %}</small>
                         </div>
                         <div class="align-self-center">
                             <i class="fas fa-users fa-2x"></i>
@@ -81,7 +81,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <h4 class="mb-0">{{ active_customers }}</h4>
-                            <small>{% translate "Clientes Ativos" %}</small>
+                            <small>{% translate "customers.active_customers" %}</small>
                         </div>
                         <div class="align-self-center">
                             <i class="fas fa-check-circle fa-2x"></i>
@@ -96,7 +96,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <h4 class="mb-0">{{ total_customers|add:"-"|add:active_customers|add:"0" }}</h4>
-                            <small>{% translate "Clientes Inativos" %}</small>
+                            <small>{% translate "customers.inactive_customers" %}</small>
                         </div>
                         <div class="align-self-center">
                             <i class="fas fa-pause-circle fa-2x"></i>
@@ -111,7 +111,7 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <h4 class="mb-0">{{ customers.count }}</h4>
-                            <small>{% translate "Resultados" %}</small>
+                            <small>{% translate "customers.results" %}</small>
                         </div>
                         <div class="align-self-center">
                             <i class="fas fa-search fa-2x"></i>
@@ -122,7 +122,7 @@
         </div>
     </div>
 
-    <!-- Busca e Filtros -->
+    <!-- {% translate "customers.search_and_filters" %} -->
     <div class="row mb-4">
         <div class="col-12">
             <div class="search-box">
@@ -136,33 +136,33 @@
                                    class="form-control" 
                                    name="search" 
                                    value="{{ search }}"
-                                   placeholder="{% translate 'Buscar por nome, e-mail, telefone...' %}">
+                                   placeholder="{% translate 'customers.search_placeholder' %}">
                             <button type="submit" class="btn btn-light">
-                                {% translate "Buscar" %}
+                                {% translate "customers.search_button" %}
                             </button>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <select name="status" class="form-control">
-                            <option value="">{% translate "Todos os Status" %}</option>
+                            <option value="">{% translate "customers.all_statuses" %}</option>
                             <option value="active" {% if status_filter == 'active' %}selected{% endif %}>
-                                {% translate "Ativos" %}
+                                {% translate "customers.active" %}
                             </option>
                             <option value="inactive" {% if status_filter == 'inactive' %}selected{% endif %}>
-                                {% translate "Inativos" %}
+                                {% translate "customers.inactive" %}
                             </option>
                         </select>
                     </div>
                     <div class="col-md-3">
                         <select name="order_by" class="form-control">
                             <option value="name" {% if order_by == 'name' %}selected{% endif %}>
-                                {% translate "Ordenar por Nome" %}
+                                {% translate "customers.sort_by_name" %}
                             </option>
                             <option value="email" {% if order_by == 'email' %}selected{% endif %}>
-                                {% translate "Ordenar por E-mail" %}
+                                {% translate "customers.sort_by_email" %}
                             </option>
                             <option value="created_at" {% if order_by == 'created_at' %}selected{% endif %}>
-                                {% translate "Ordenar por Data" %}
+                                {% translate "customers.sort_by_date" %}
                             </option>
                         </select>
                     </div>
@@ -171,7 +171,7 @@
         </div>
     </div>
 
-    <!-- Lista de Clientes -->
+    <!-- {% translate "customers.customer_list" %} -->
     <div class="row">
         {% if customers %}
             {% for customer in customers %}
@@ -181,9 +181,9 @@
                         <h6 class="mb-0">{{ customer.name }}</h6>
                         <span class="status-badge badge {% if customer.is_active %}bg-success{% else %}bg-secondary{% endif %}">
                             {% if customer.is_active %}
-                                {% translate "Ativo" %}
+                                {% translate "common.active" %}
                             {% else %}
-                                {% translate "Inativo" %}
+                                {% translate "common.inactive" %}
                             {% endif %}
                         </span>
                     </div>
@@ -213,7 +213,7 @@
                             {% if customer.birth_date %}
                             <div class="d-flex align-items-center mb-1">
                                 <i class="fas fa-birthday-cake text-muted me-2"></i>
-                                <small>{{ customer.birth_date|date:"d/m/Y" }} ({{ customer.get_age }} {% translate "anos" %})</small>
+                                <small>{{ customer.birth_date|date:"d/m/Y" }} ({{ customer.get_age }} {% translate "customers.years" %})</small>
                             </div>
                             {% endif %}
                         </div>
@@ -255,18 +255,18 @@
             <div class="col-12">
                 <div class="text-center py-5">
                     <i class="fas fa-users fa-3x text-muted mb-3"></i>
-                    <h4 class="text-muted">{% translate "Nenhum cliente encontrado" %}</h4>
+                    <h4 class="text-muted">{% translate "customers.no_customers_found" %}</h4>
                     <p class="text-muted">
                         {% if search %}
-                            {% translate "Tente ajustar os filtros de busca." %}
+                            {% translate "customers.adjust_search_filters" %}
                         {% else %}
-                            {% translate "Comece criando seu primeiro cliente." %}
+                            {% translate "customers.create_first_customer" %}
                         {% endif %}
                     </p>
                     {% if not search %}
                     <a href="{% url 'customers:customer_create' %}" class="btn btn-gradient-enabled">
                         <i class="fas fa-plus me-2"></i>
-                        {% translate "Criar Primeiro Cliente" %}
+                        {% translate "customers.create_first_customer_button" %}
                     </a>
                     {% endif %}
                 </div>
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const customerId = this.dataset.customerId;
             const currentStatus = this.dataset.currentStatus === 'true';
             
-            if (confirm('{% translate "Deseja alterar o status deste cliente?" %}')) {
+            if (confirm('{% translate "customers.confirm_status_change" %}')) {
                 fetch(`/customers/${customerId}/toggle-status/`, {
                     method: 'POST',
                     headers: {
@@ -297,12 +297,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (data.success) {
                         location.reload();
                     } else {
-                        alert('Erro: ' + data.message);
+                        alert('{% translate "common.error" %}: ' + data.message);
                     }
                 })
                 .catch(error => {
-                    console.error('Erro:', error);
-                    alert('{% translate "Erro ao alterar status" %}');
+                    console.error('{% translate "common.error" %}:', error);
+                                            alert('{% translate "customers.status_change_error" %}');
                 });
             }
         });

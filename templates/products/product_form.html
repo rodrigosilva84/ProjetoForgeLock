@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% if product %}{% translate 'Editar Produto' %}{% else %}{% translate 'Novo Produto' %}{% endif %} - ForgeLock{% endblock %}
+{% block title %}{% if product %}{% translate 'products.form.edit_title' %}{% else %}{% translate 'products.form.create_title' %}{% endif %} - {% translate 'common.app_name' %}{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
@@ -11,10 +11,10 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1 class="h3 mb-0">
                     <i class="fas fa-{% if product %}edit{% else %}plus{% endif %} me-2"></i>
-                    {% if product %}{% translate 'Editar Produto' %}{% else %}{% translate 'Novo Produto' %}{% endif %}
+                    {% if product %}{% translate 'products.form.edit_title' %}{% else %}{% translate 'products.form.create_title' %}{% endif %}
                 </h1>
                 <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary">
-                    <i class="fas fa-arrow-left me-2"></i>{% translate 'Voltar' %}
+                    <i class="fas fa-arrow-left me-2"></i>{% translate 'common.back' %}
                 </a>
             </div>
 
@@ -25,7 +25,7 @@
                         
                         {% if form.errors %}
                         <div class="alert alert-danger">
-                            <h6>{% translate 'Erro no formulário' %}</h6>
+                            <h6>{% translate 'products.form.error_title' %}</h6>
                             {{ form.errors }}
                         </div>
                         {% endif %}
@@ -33,7 +33,7 @@
                         <div class="row">
                             <!-- Informações Básicas -->
                             <div class="col-md-6">
-                                <h5 class="mb-3">{% translate 'Informações Básicas' %}</h5>
+                                <h5 class="mb-3">{% translate 'products.form.basic_info' %}</h5>
                                 
                                 <div class="mb-3">
                                     {{ form.name.label_tag }}
@@ -87,7 +87,7 @@
                             
                             <!-- Preços -->
                             <div class="col-md-6">
-                                <h5 class="mb-3">{% translate 'Preços' %}</h5>
+                                <h5 class="mb-3">{% translate 'products.form.prices' %}</h5>
                                 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -95,7 +95,7 @@
                                             {{ form.cost_price.label_tag }}
                                             {{ form.cost_price }}
                                             <small class="form-text text-muted">
-                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 10.50)' %}
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'products.form.decimal_separator_help' %}
                                             </small>
                                             {% if form.cost_price.errors %}
                                             <div class="text-danger small">{{ form.cost_price.errors }}</div>
@@ -107,7 +107,7 @@
                                             {{ form.sale_price.label_tag }}
                                             {{ form.sale_price }}
                                             <small class="form-text text-muted">
-                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 10.50)' %}
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'products.form.decimal_separator_help' %}
                                             </small>
                                             {% if form.sale_price.errors %}
                                             <div class="text-danger small">{{ form.sale_price.errors }}</div>
@@ -139,7 +139,7 @@
                         <div class="row">
                             <!-- Especificações -->
                             <div class="col-md-6">
-                                <h5 class="mb-3">{% translate 'Especificações' %}</h5>
+                                <h5 class="mb-3">{% translate 'products.form.specifications' %}</h5>
                                 
                                 <div class="mb-3">
                                     {{ form.scale.label_tag }}
@@ -161,7 +161,7 @@
                                             {{ form.dimensions_x.label_tag }}
                                             {{ form.dimensions_x }}
                                             <small class="form-text text-muted">
-                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 15.25)' %}
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'products.form.dimension_help' %}
                                             </small>
                                             {% if form.dimensions_x.errors %}
                                             <div class="text-danger small">{{ form.dimensions_x.errors }}</div>
@@ -173,7 +173,7 @@
                                             {{ form.dimensions_y.label_tag }}
                                             {{ form.dimensions_y }}
                                             <small class="form-text text-muted">
-                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 15.25)' %}
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'products.form.dimension_help' %}
                                             </small>
                                             {% if form.dimensions_y.errors %}
                                             <div class="text-danger small">{{ form.dimensions_y.errors }}</div>
@@ -185,7 +185,7 @@
                                             {{ form.dimensions_z.label_tag }}
                                             {{ form.dimensions_z }}
                                             <small class="form-text text-muted">
-                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 15.25)' %}
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'products.form.dimension_help' %}
                                             </small>
                                             {% if form.dimensions_z.errors %}
                                             <div class="text-danger small">{{ form.dimensions_z.errors }}</div>
@@ -209,7 +209,7 @@
                                             {{ form.weight.label_tag }}
                                             {{ form.weight }}
                                             <small class="form-text text-muted">
-                                                <i class="fas fa-info-circle me-1"></i>{% translate 'Use ponto como separador decimal (ex: 250.75)' %}
+                                                <i class="fas fa-info-circle me-1"></i>{% translate 'products.form.weight_help' %}
                                             </small>
                                             {% if form.weight.errors %}
                                             <div class="text-danger small">{{ form.weight.errors }}</div>
@@ -239,23 +239,23 @@
                             
                                                          <!-- Imagens -->
                              <div class="col-md-6">
-                                 <h5 class="mb-3">{% translate 'Imagens' %}</h5>
+                                 <h5 class="mb-3">{% translate 'products.form.images' %}</h5>
                                  
                                  <div class="mb-3">
-                                     <label for="images" class="form-label">{% translate 'Selecionar Imagens' %}</label>
+                                     <label for="images" class="form-label">{% translate 'products.form.select_images' %}</label>
                                      <input type="file" class="form-control" id="images" name="images" multiple accept="image/*">
-                                     <div class="form-text">{% translate 'Máximo 5 imagens. Primeira imagem será a principal.' %}</div>
+                                     <div class="form-text">{% translate 'products.form.images_help' %}</div>
                                  </div>
                                  
                                  <!-- Preview das imagens selecionadas -->
                                  <div id="image-preview" class="mb-3" style="display: none;">
-                                     <label class="form-label">{% translate 'Preview das Imagens' %}</label>
+                                     <label class="form-label">{% translate 'products.form.image_preview' %}</label>
                                      <div class="row" id="preview-images"></div>
                                  </div>
                                  
                                  {% if product and product.images.exists %}
                                  <div class="mb-3">
-                                     <label class="form-label">{% translate 'Imagens Atuais' %}</label>
+                                     <label class="form-label">{% translate 'products.form.current_images' %}</label>
                                      <div class="row">
                                          {% for image in product.images.all %}
                                          <div class="col-md-4 mb-2">
@@ -272,10 +272,10 @@
                         
                         <div class="d-flex justify-content-end">
                             <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary me-2">
-                                {% translate 'Cancelar' %}
+                                {% translate 'common.cancel' %}
                             </a>
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-save me-2"></i>{% translate 'Salvar' %}
+                                <i class="fas fa-save me-2"></i>{% translate 'common.save' %}
                             </button>
                         </div>
                     </form>
@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert(data.message);
                 } else {
                     // Mostrar erros
-                    alert('Erro: ' + JSON.stringify(data.errors));
+                    alert('{% translate "common.error" %}: ' + JSON.stringify(data.errors));
                 }
             });
         }
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert(data.message);
                 } else {
                     // Mostrar erros
-                    alert('Erro: ' + JSON.stringify(data.errors));
+                    alert('{% translate "common.error" %}: ' + JSON.stringify(data.errors));
                 }
             });
         }
@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert(data.message);
                 } else {
                     // Mostrar erros
-                    alert('Erro: ' + JSON.stringify(data.errors));
+                    alert('{% translate "common.error" %}: ' + JSON.stringify(data.errors));
                 }
             });
         }

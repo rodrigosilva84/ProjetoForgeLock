@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{{ product.name }} - ForgeLock{% endblock %}
+{% block title %}{{ product.name }} - {% translate 'common.app_name' %}{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
@@ -15,10 +15,10 @@
                 </h1>
                 <div>
                     <a href="{% url 'products:product_edit' product.pk %}" class="btn btn-primary me-2">
-                        <i class="fas fa-edit me-2"></i>{% translate 'Editar' %}
+                        <i class="fas fa-edit me-2"></i>{% translate 'common.edit' %}
                     </a>
                     <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary">
-                        <i class="fas fa-arrow-left me-2"></i>{% translate 'Voltar' %}
+                        <i class="fas fa-arrow-left me-2"></i>{% translate 'common.back' %}
                     </a>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">{% translate 'Imagens do Produto' %}</h5>
+                            <h5 class="mb-0">{% translate 'products.detail.product_images' %}</h5>
                         </div>
                         <div class="card-body">
                             {% if product.images.exists %}
@@ -46,11 +46,11 @@
                                     {% if product.images.count > 1 %}
                                         <button class="carousel-control-prev" type="button" data-bs-target="#productImageCarousel" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">{% translate 'Anterior' %}</span>
+                                            <span class="visually-hidden">{% translate 'products.list.previous' %}</span>
                                         </button>
                                         <button class="carousel-control-next" type="button" data-bs-target="#productImageCarousel" data-bs-slide="next">
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span class="visually-hidden">{% translate 'Próximo' %}</span>
+                                            <span class="visually-hidden">{% translate 'products.list.next' %}</span>
                                         </button>
                                     {% endif %}
                                 </div>
@@ -67,7 +67,7 @@
                                                          alt="Thumbnail {{ forloop.counter }}">
                                                     {% if image.is_primary %}
                                                         <div class="position-absolute top-0 start-0 bg-primary text-white px-1 rounded">
-                                                            <small>{% translate 'Principal' %}</small>
+                                                            <small>{% translate 'products.primary_image' %}</small>
                                                         </div>
                                                     {% endif %}
                                                 </div>
@@ -78,7 +78,7 @@
                             {% else %}
                                 <div class="text-center py-5">
                                     <i class="fas fa-image fa-3x text-muted mb-3"></i>
-                                    <p class="text-muted">{% translate 'Nenhuma imagem disponível' %}</p>
+                                    <p class="text-muted">{% translate 'products.detail.no_images_available' %}</p>
                                 </div>
                             {% endif %}
                         </div>
@@ -89,7 +89,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h5 class="mb-0">{% translate 'Informações do Produto' %}</h5>
+                            <h5 class="mb-0">{% translate 'products.detail.product_details' %}</h5>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -106,11 +106,11 @@
                             <!-- Informações Básicas -->
                             <div class="row">
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Tipo' %}:</strong>
+                                    <strong>{% translate 'products.type' %}:</strong>
                                     <p>{{ product.product_type.name }}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Categoria' %}:</strong>
+                                    <strong>{% translate 'products.category' %}:</strong>
                                     <p>{% if product.category %}{{ product.category.name }}{% else %}-{% endif %}</p>
                                 </div>
                             </div>
@@ -118,11 +118,11 @@
                             <!-- Preços -->
                             <div class="row">
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Preço de Custo' %}:</strong>
+                                    <strong>{% translate 'products.cost_price' %}:</strong>
                                     <p>{% if product.cost_price %}{{ product.cost_price|floatformat:2 }} {{ product.currency.symbol }}{% else %}-{% endif %}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <h6>{% translate 'Preço de Venda' %}</h6>
+                                    <h6>{% translate 'products.sale_price' %}</h6>
                                     <p>{% if product.sale_price %}{{ product.sale_price|floatformat:2 }} {{ product.currency.symbol }}{% else %}-{% endif %}</p>
                                 </div>
                             </div>
@@ -130,12 +130,12 @@
                             <!-- Especificações -->
                             {% if product.scale or product.dimensions_x or product.weight %}
                                 <hr>
-                                <h6>{% translate 'Especificações' %}</h6>
+                                <h6>{% translate 'products.specifications' %}</h6>
                                 
                                 {% if product.scale %}
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <strong>{% translate 'Escala' %}:</strong>
+                                            <strong>{% translate 'products.scale' %}:</strong>
                                             <p>{{ product.scale }}</p>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                 {% if product.dimensions_x or product.dimensions_y or product.dimensions_z %}
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <strong>{% translate 'Dimensões' %}:</strong>
+                                            <strong>{% translate 'products.dimensions' %}:</strong>
                                             <p>
                                                 {% if product.dimensions_x %}{{ product.dimensions_x|floatformat:2 }}{% endif %}
                                                 {% if product.dimensions_y %} x {{ product.dimensions_y|floatformat:2 }}{% endif %}
@@ -158,7 +158,7 @@
                                 {% if product.weight %}
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <strong>{% translate 'Peso' %}:</strong>
+                                            <strong>{% translate 'products.weight' %}:</strong>
                                             <p>{{ product.weight|floatformat:2 }} {{ product.get_weight_unit_display }}</p>
                                         </div>
                                     </div>
@@ -167,7 +167,7 @@
                                 {% if product.print_time_estimate %}
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <strong>{% translate 'Tempo de Impressão' %}:</strong>
+                                            <strong>{% translate 'products.print_time_estimate' %}:</strong>
                                             <p>{{ product.print_time_estimate }}</p>
                                         </div>
                                     </div>
@@ -178,16 +178,16 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Quantidade em Estoque' %}:</strong>
+                                    <strong>{% translate 'products.stock_quantity' %}:</strong>
                                     <p>{{ product.stock_quantity }}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Status' %}:</strong>
+                                    <strong>{% translate 'common.status' %}:</strong>
                                     <p>
                                         {% if product.is_active %}
-                                            <span class="badge bg-success">{% translate 'Ativo' %}</span>
+                                            <span class="badge bg-success">{% translate 'common.active' %}</span>
                                         {% else %}
-                                            <span class="badge bg-secondary">{% translate 'Inativo' %}</span>
+                                            <span class="badge bg-secondary">{% translate 'common.inactive' %}</span>
                                         {% endif %}
                                     </p>
                                 </div>
@@ -197,11 +197,11 @@
                             <hr>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Criado por' %}:</strong>
+                                    <strong>{% translate 'products.created_by' %}:</strong>
                                     <p>{{ product.created_by.get_full_name|default:product.created_by.username }}</p>
                                 </div>
                                 <div class="col-md-6">
-                                    <strong>{% translate 'Criado em' %}:</strong>
+                                    <strong>{% translate 'products.created_at' %}:</strong>
                                     <p>{{ product.created_at|date:"d/m/Y H:i" }}</p>
                                 </div>
                             </div>

@@ -44,14 +44,14 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <h1>{% translate "ForgeLock" %}</h1>
+                <h1>{% translate "core.brand_name" %}</h1>
                 <p class="lead">{% translate "Sistema completo de gestão empresarial para pequenas e médias empresas. Controle de clientes, produtos, projetos e muito mais." %}</p>
                 <div class="d-flex gap-3">
                     <a href="{% url 'register' %}" class="btn btn-gradient-enabled btn-lg">
-                        <i class="fas fa-rocket"></i>{% translate "Começar Agora" %}
+                        <i class="fas fa-rocket"></i>{% translate "actions.start_now" %}
                     </a>
                     <a href="#features" class="btn btn-gradient-outline btn-lg">
-                        <i class="fas fa-info-circle"></i>{% translate "Saiba Mais" %}
+                        <i class="fas fa-info-circle"></i>{% translate "actions.learn_more" %}
                     </a>
                 </div>
             </div>
@@ -67,7 +67,7 @@
     <div class="container">
         <div class="row text-center mb-5">
             <div class="col-12">
-                <h2>{% translate "Por que escolher o ForgeLock?" %}</h2>
+                <h2>{% translate "features.why_choose.title" %}</h2>
                 <p class="lead">{% translate "Tudo que sua empresa precisa em uma única plataforma" %}</p>
             </div>
         </div>
@@ -79,7 +79,7 @@
                         <div class="card-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h5 class="card-title">{% translate "Gestão de Clientes" %}</h5>
+                        <h5 class="card-title">{% translate "features.customers.title" %}</h5>
                         <p class="card-text">{% translate "Organize seus clientes, histórico de vendas e interações em um só lugar." %}</p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                         <div class="card-icon">
                             <i class="fas fa-box"></i>
                         </div>
-                        <h5 class="card-title">{% translate "Controle de Produtos" %}</h5>
+                        <h5 class="card-title">{% translate "features.products.title" %}</h5>
                         <p class="card-text">{% translate "Gerencie estoque, preços, categorias e histórico de vendas dos seus produtos." %}</p>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                         <div class="card-icon">
                             <i class="fas fa-project-diagram"></i>
                         </div>
-                        <h5 class="card-title">{% translate "Gestão de Projetos" %}</h5>
+                        <h5 class="card-title">{% translate "features.projects.title" %}</h5>
                         <p class="card-text">{% translate "Acompanhe projetos, cronogramas e recursos de forma eficiente." %}</p>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
     <div class="container">
         <div class="row text-center mb-5">
             <div class="col-12">
-                <h2>{% translate "Planos e Preços" %}</h2>
+                <h2>{% translate "features.pricing.title" %}</h2>
                 <p class="lead">{% translate "Escolha o plano ideal para sua empresa" %}</p>
             </div>
         </div>
@@ -134,10 +134,10 @@
                          <div class="pricing-toggle mb-3">
                              <div class="btn-group btn-group-sm" role="group">
                                  <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="monthly_{{ forloop.counter }}" checked>
-                                 <label class="btn btn-gradient-enabled btn-sm" for="monthly_{{ forloop.counter }}">{% translate "Mensal" %}</label>
+                                 <label class="btn btn-gradient-enabled btn-sm" for="monthly_{{ forloop.counter }}">{% translate "features.pricing.monthly" %}</label>
                                 
                                 <input type="radio" class="btn-check" name="billing_{{ forloop.counter }}" id="yearly_{{ forloop.counter }}">
-                                <label class="btn btn-gradient-outline btn-sm" for="yearly_{{ forloop.counter }}">{% translate "Anual" %}</label>
+                                <label class="btn btn-gradient-outline btn-sm" for="yearly_{{ forloop.counter }}">{% translate "features.pricing.yearly" %}</label>
                              </div>
                          </div>
                          
@@ -145,18 +145,18 @@
                           <h2 class="text-primary yearly-price" style="display: none;">{{ plan.get_currency_display }}{{ plan.get_yearly_price }}</h2>
                          <p class="text-muted">{{ plan.get_localized_description }}</p>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_users }} {% translate "usuário" %}{% if plan.max_users > 1 %}s{% endif %}</li>
+                            <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_users }} {% translate "features.pricing.user_singular" %}{% if plan.max_users > 1 %}s{% endif %}</li>
                             <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_customers }} {% translate "clientes" %}</li>
                             <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_products }} {% translate "produtos" %}</li>
                             <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_projects }} {% translate "projetos" %}</li>
                             {% if plan.has_stl_security %}
-                                <li><i class="fas fa-check text-success me-2"></i>{% translate "Segurança STL" %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{% translate "features.security.stl" %}</li>
                             {% else %}
-                                <li><i class="fas fa-times text-muted me-2"></i>{% translate "Segurança STL" %}</li>
+                                <li><i class="fas fa-times text-muted me-2"></i>{% translate "features.security.stl" %}</li>
                             {% endif %}
                         </ul>
                                                                            <a href="{% url 'register_with_plan' plan.id %}" class="btn {% if forloop.first %}btn-gradient-enabled{% else %}btn-gradient-outline{% endif %}">
-                              {% translate "Escolher" %} {{ plan.get_localized_name }}
+                              {% translate "actions.choose" %} {{ plan.get_localized_name }}
                           </a>
                     </div>
                 </div>
@@ -169,10 +169,10 @@
 <!-- CTA Section -->
 <section class="py-5">
     <div class="container text-center">
-        <h2>{% translate "Pronto para começar?" %}</h2>
+        <h2>{% translate "features.cta.title" %}</h2>
         <p class="lead">{% translate "Junte-se a centenas de empresas que já confiam no ForgeLock" %}</p>
         <a href="{% url 'register' %}" class="btn btn-gradient-enabled btn-lg">
-            <i class="fas fa-rocket"></i>{% translate "Criar Conta Grátis" %}
+            <i class="fas fa-rocket"></i>{% translate "actions.create_free_account" %}
         </a>
          </div>
  </section>

@@ -10,7 +10,7 @@
     <div class="col-md-8 col-lg-6">
         <div class="form-container">
             <h2 class="text-center mb-4">
-                <i class="fas fa-user-plus me-2"></i>{% translate "Criar Conta" %}
+                <i class="fas fa-user-plus me-2"></i>{% translate "actions.create_account" %}
             </h2>
             
             <!-- Cache-busting parameter -->
@@ -154,7 +154,7 @@
                             <strong>{% translate "Plano Trial Gratuito" %}</strong>
                         {% else %}
                             <i class="fas fa-star me-2"></i>
-                            <strong>{{ plan.get_localized_name }} - {% translate "Trial" %}</strong>
+                            <strong>{{ plan.get_localized_name }} - {% translate "core.subscription.trial" %}</strong>
                         {% endif %}
                     </div>
                     
@@ -171,7 +171,7 @@
                         <div class="col-md-6">
                             <ul class="list-unstyled mb-0">
                                 <li><i class="fas fa-check text-success me-2"></i>{% translate "15 dias grátis" %}</li>
-                                <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_users }} {% translate "usuário" %}{% if plan.max_users > 1 %}s{% endif %}</li>
+                                <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_users }} {% translate "features.pricing.user_singular" %}{% if plan.max_users > 1 %}s{% endif %}</li>
                                 <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_customers }} {% translate "clientes" %}</li>
                             </ul>
                         </div>
@@ -180,7 +180,7 @@
                                 <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_products }} {% translate "produtos" %}</li>
                                 <li><i class="fas fa-check text-success me-2"></i>{{ plan.max_projects }} {% translate "projetos" %}</li>
                                 {% if plan.has_stl_security %}
-                                    <li><i class="fas fa-check text-success me-2"></i>{% translate "Segurança STL" %}</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>{% translate "features.security.stl" %}</li>
                                 {% endif %}
                                 <li><i class="fas fa-exclamation-triangle text-warning me-2"></i>{% translate "Após 15 dias, escolha um plano para continuar" %}</li>
                             </ul>
@@ -197,7 +197,7 @@
                 
                 <div class="d-grid">
                                     <button type="submit" class="btn btn-gradient-enabled btn-lg">
-                    <i class="fas fa-user-plus"></i>{% translate "Criar Conta" %}
+                    <i class="fas fa-user-plus"></i>{% translate "actions.create_account" %}
                 </button>
                 </div>
             </form>

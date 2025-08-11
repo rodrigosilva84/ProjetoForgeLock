@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}{% translate 'Produtos' %} - ForgeLock{% endblock %}
+{% block title %}{% translate 'products.title' %} - {% translate 'common.app_name' %}{% endblock %}
 
 {% block content %}
 <div class="container-fluid">
@@ -10,17 +10,17 @@
         <div class="col-12">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1 class="h3 mb-0">
-                    <i class="fas fa-box me-2"></i>{% translate 'Produtos' %}
+                    <i class="fas fa-box me-2"></i>{% translate 'products.title' %}
                 </h1>
                 <div>
                     <a href="{% url 'products:category_list' %}" class="btn btn-outline-secondary me-2">
-                        <i class="fas fa-tags me-2"></i>{% translate 'Categorias' %}
+                        <i class="fas fa-tags me-2"></i>{% translate 'products.list.categories_button' %}
                     </a>
                     <a href="{% url 'products:scale_list' %}" class="btn btn-outline-secondary me-2">
-                        <i class="fas fa-ruler me-2"></i>{% translate 'Escalas' %}
+                        <i class="fas fa-ruler me-2"></i>{% translate 'products.list.scales_button' %}
                     </a>
                     <a href="{% url 'products:product_create' %}" class="btn btn-primary">
-                        <i class="fas fa-plus me-2"></i>{% translate 'Novo Produto' %}
+                        <i class="fas fa-plus me-2"></i>{% translate 'products.add_new' %}
                     </a>
                 </div>
             </div>
@@ -28,19 +28,19 @@
             <!-- Filtros -->
             <div class="card mb-4">
                 <div class="card-header">
-                    <h5 class="mb-0"><i class="fas fa-filter me-2"></i>{% translate 'Filtros' %}</h5>
+                    <h5 class="mb-0"><i class="fas fa-filter me-2"></i>{% translate 'products.list.filters' %}</h5>
                 </div>
                 <div class="card-body">
                     <form method="get" class="row g-3">
                         <div class="col-md-2">
-                            <label for="search" class="form-label">{% translate 'Buscar' %}</label>
+                            <label for="search" class="form-label">{% translate 'products.list.search' %}</label>
                             <input type="text" class="form-control" id="search" name="search" 
-                                   value="{{ search|default:'' }}" placeholder="{% translate 'Nome, descrição...' %}">
+                                   value="{{ search|default:'' }}" placeholder="{% translate 'utilities.search.placeholder.products' %}">
                         </div>
                         <div class="col-md-2">
-                            <label for="product_type" class="form-label">{% translate 'Tipo' %}</label>
+                            <label for="product_type" class="form-label">{% translate 'products.list.product_type_filter' %}</label>
                             <select class="form-select" id="product_type" name="product_type" onchange="this.form.submit()">
-                                <option value="">{% translate 'Todos' %}</option>
+                                <option value="">{% translate 'common.all' %}</option>
                                 {% for type in product_types %}
                                 <option value="{{ type.id }}" {% if product_type == type.id|stringformat:"s" %}selected{% endif %}>
                                     {% if type.translated_name %}{{ type.translated_name }}{% else %}{{ type.name }}{% endif %}
@@ -49,9 +49,9 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label for="category" class="form-label">{% translate 'Categoria' %}</label>
+                            <label for="category" class="form-label">{% translate 'products.list.category_filter' %}</label>
                             <select class="form-select" id="category" name="category" onchange="this.form.submit()">
-                                <option value="">{% translate 'Todas' %}</option>
+                                <option value="">{% translate 'common.all' %}</option>
                                 {% for cat in categories %}
                                 <option value="{{ cat.id }}" {% if category == cat.id|stringformat:"s" %}selected{% endif %}>
                                     {% if cat.translated_name %}{{ cat.translated_name }}{% else %}{{ cat.name }}{% endif %}
@@ -60,29 +60,29 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label for="status" class="form-label">{% translate 'Status' %}</label>
+                            <label for="status" class="form-label">{% translate 'products.list.status_filter' %}</label>
                             <select class="form-select" id="status" name="status" onchange="this.form.submit()">
-                                <option value="">{% translate 'Todos' %}</option>
-                                <option value="active" {% if status == 'active' %}selected{% endif %}>{% translate 'Ativo' %}</option>
-                                <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>{% translate 'Inativo' %}</option>
+                                <option value="">{% translate 'common.all' %}</option>
+                                <option value="active" {% if status == 'active' %}selected{% endif %}>{% translate 'common.active' %}</option>
+                                <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>{% translate 'common.inactive' %}</option>
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <label for="min_price" class="form-label">{% translate 'Preço Mín.' %}</label>
+                            <label for="min_price" class="form-label">{% translate 'products.list.min_price' %}</label>
                             <input type="number" class="form-control" id="min_price" name="min_price" 
                                    value="{{ min_price|default:'' }}" step="0.01" onchange="this.form.submit()">
                         </div>
                         <div class="col-md-2">
-                            <label for="max_price" class="form-label">{% translate 'Preço Máx.' %}</label>
+                            <label for="max_price" class="form-label">{% translate 'products.list.max_price' %}</label>
                             <input type="number" class="form-control" id="max_price" name="max_price" 
                                    value="{{ max_price|default:'' }}" step="0.01" onchange="this.form.submit()">
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-search me-2"></i>{% translate 'Filtrar' %}
+                                <i class="fas fa-search me-2"></i>{% translate 'products.list.filter_button' %}
                             </button>
                             <a href="{% url 'products:product_list' %}" class="btn btn-outline-secondary">
-                                <i class="fas fa-times me-2"></i>{% translate 'Limpar Filtros' %}
+                                <i class="fas fa-times me-2"></i>{% translate 'products.list.clear_filters' %}
                             </a>
                         </div>
                     </form>
@@ -137,16 +137,16 @@
                             
                             <div class="mb-2">
                                 <small class="text-muted">
-                                    <i class="fas fa-cubes me-1"></i>{% translate 'Estoque' %}: {{ product.stock_quantity|default:0 }}
+                                    <i class="fas fa-cubes me-1"></i>{% translate 'products.list.stock_label' %}: {{ product.stock_quantity|default:0 }}
                                 </small>
                             </div>
                             
                             <!-- Status do produto -->
                             <div class="mb-2">
                                 {% if product.is_active %}
-                                    <span class="badge bg-success">{% translate 'Ativo' %}</span>
+                                    <span class="badge bg-success">{% translate 'common.active' %}</span>
                                 {% else %}
-                                    <span class="badge bg-secondary">{% translate 'Inativo' %}</span>
+                                    <span class="badge bg-secondary">{% translate 'common.inactive' %}</span>
                                 {% endif %}
                             </div>
                         </div>
@@ -154,21 +154,21 @@
                         <div class="card-footer">
                             <div class="btn-group w-100" role="group">
                                 <a href="{% url 'products:product_detail' product.pk %}" 
-                                   class="btn btn-outline-primary btn-sm" title="{% translate 'Ver detalhes' %}">
+                                   class="btn btn-outline-primary btn-sm" title="{% translate 'products.list.view_details' %}">
                                     <i class="fas fa-eye"></i>
                                 </a>
                                 <a href="{% url 'products:product_edit' product.pk %}" 
-                                   class="btn btn-outline-warning btn-sm" title="{% translate 'Editar' %}">
+                                   class="btn btn-outline-warning btn-sm" title="{% translate 'products.list.edit' %}">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 {% if product.is_active %}
-                                    {% translate 'Tem certeza que deseja desativar este produto?' as confirm_text %}
+                                    {% translate 'products.list.confirm_deactivate' as confirm_text %}
                                 {% else %}
-                                    {% translate 'Tem certeza que deseja ativar este produto?' as confirm_text %}
+                                    {% translate 'products.list.confirm_activate' as confirm_text %}
                                 {% endif %}
                                 <a href="{% url 'products:product_toggle_status' product.pk %}" 
                                    class="btn btn-outline-{% if product.is_active %}danger{% else %}success{% endif %} btn-sm"
-                                   title="{% if product.is_active %}{% translate 'Desativar' %}{% else %}{% translate 'Ativar' %}{% endif %}"
+                                   title="{% if product.is_active %}{% translate 'products.list.deactivate' %}{% else %}{% translate 'products.list.activate' %}{% endif %}"
                                    onclick="return confirm('{{ confirm_text }}')">
                                     <i class="fas fa-{% if product.is_active %}times{% else %}check{% endif %}"></i>
                                 </a>
@@ -181,12 +181,12 @@
 
             <!-- Paginação -->
             {% if page_obj.has_other_pages %}
-            <nav aria-label="{% translate 'Navegação de páginas' %}">
+            <nav aria-label="{% translate 'products.list.pagination_navigation' %}">
                 <ul class="pagination justify-content-center">
                     {% if page_obj.has_previous %}
                     <li class="page-item">
                         <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">
-                            {% translate 'Anterior' %}
+                            {% translate 'products.list.previous' %}
                         </a>
                     </li>
                     {% endif %}
@@ -206,7 +206,7 @@
                     {% if page_obj.has_next %}
                     <li class="page-item">
                         <a class="page-link" href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">
-                            {% translate 'Próximo' %}
+                            {% translate 'products.list.next' %}
                         </a>
                     </li>
                     {% endif %}
@@ -217,10 +217,10 @@
             {% else %}
             <div class="text-center py-5">
                 <i class="fas fa-box fa-3x text-muted mb-3"></i>
-                <h4 class="text-muted">{% translate 'Nenhum produto encontrado' %}</h4>
-                <p class="text-muted">{% translate 'Tente ajustar os filtros ou criar um novo produto.' %}</p>
+                <h4 class="text-muted">{% translate 'products.list.no_products_found' %}</h4>
+                <p class="text-muted">{% translate 'products.list.adjust_filters_message' %}</p>
                 <a href="{% url 'products:product_create' %}" class="btn btn-primary">
-                    <i class="fas fa-plus me-2"></i>{% translate 'Criar Primeiro Produto' %}
+                    <i class="fas fa-plus me-2"></i>{% translate 'products.list.create_first_product' %}
                 </a>
             </div>
             {% endif %}
