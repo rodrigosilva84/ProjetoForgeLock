@@ -1,0 +1,1682 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-07-31T22:13:27.013Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "16",
+    "object_repr": "rasilva84@test.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-07-31T22:14:00.708Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "16",
+    "object_repr": "rasilva84@test.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Pa\\u00eds\", \"Data de nascimento\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-07-31T22:17:15.635Z",
+    "user": 16,
+    "content_type": 13,
+    "object_id": "7",
+    "object_repr": "rasilva84@test.com - Admin (Ativa)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-07-31T22:17:44.005Z",
+    "user": 16,
+    "content_type": 10,
+    "object_id": "14",
+    "object_repr": "Conta de rasilva84@test.com",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-07-31T23:19:23.122Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Vitalicio",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-07-31T23:21:34.116Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "17",
+    "object_repr": "rasilva84@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-07-31T23:30:11.881Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "18",
+    "object_repr": "rodrigoa_silva@hotmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-08-01T00:27:08.223Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "19",
+    "object_repr": "rodrigoa_silva@hotmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-08-01T00:38:19.585Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"M\\u00e1ximo de usu\\u00e1rios\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-08-01T00:38:37.512Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Dias de trial\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-08-01T00:40:36.951Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "20",
+    "object_repr": "rodrigoa_silva@hotmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-08-01T01:23:52.347Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "21",
+    "object_repr": "rodrigoa_silva@hotmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-08-01T13:17:33.218Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Basic",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-08-01T13:17:44.224Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Premium",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-08-01T13:26:32.553Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "Vitalicio",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-08-01T14:05:37.304Z",
+    "user": 16,
+    "content_type": 12,
+    "object_id": "10",
+    "object_repr": "Basic - BRL (89.99)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\", \"Pre\\u00e7o Anual\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-08-01T14:06:07.484Z",
+    "user": 16,
+    "content_type": 12,
+    "object_id": "11",
+    "object_repr": "Premium - BRL (129.99)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-08-01T14:06:19.910Z",
+    "user": 16,
+    "content_type": 12,
+    "object_id": "12",
+    "object_repr": "Admin - BRL (0)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\", \"Pre\\u00e7o Anual\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-08-01T14:06:25.091Z",
+    "user": 16,
+    "content_type": 12,
+    "object_id": "13",
+    "object_repr": "Vitalício - BRL (0)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\", \"Pre\\u00e7o Anual\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-08-01T14:17:18.715Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Basico",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-08-01T14:18:55.444Z",
+    "user": 16,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Básico",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\", \"Nome (Ingl\\u00eas)\", \"Nome (Espanhol)\", \"Descri\\u00e7\\u00e3o (Ingl\\u00eas)\", \"Descri\\u00e7\\u00e3o (Espanhol)\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-08-01T16:18:22.083Z",
+    "user": 16,
+    "content_type": 6,
+    "object_id": "10",
+    "object_repr": "RC Imports",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-08-01T16:30:17.097Z",
+    "user": 16,
+    "content_type": 6,
+    "object_id": "7",
+    "object_repr": "ADM Company",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\", \"Telefone\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-08-01T16:31:28.781Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "22",
+    "object_repr": "michael_jackson@hotmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"E-mail\", \"Telefone\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-08-04T00:49:58.404Z",
+    "user": 16,
+    "content_type": 6,
+    "object_id": "11",
+    "object_repr": "Pato Donald",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-08-04T01:36:55.401Z",
+    "user": 16,
+    "content_type": 13,
+    "object_id": "15",
+    "object_repr": "rasilva84@test.com - Enterprise (Ativa)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-08-06T14:38:07.511Z",
+    "user": 16,
+    "content_type": 19,
+    "object_id": "6",
+    "object_repr": "Religioso",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2025-08-06T14:42:30.473Z",
+    "user": 16,
+    "content_type": 19,
+    "object_id": "7",
+    "object_repr": "Decoração",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Descri\\u00e7\\u00e3o\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2025-08-06T14:42:52.772Z",
+    "user": 16,
+    "content_type": 19,
+    "object_id": "5",
+    "object_repr": "Ímãs de Geladeira",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2025-08-06T14:43:25.062Z",
+    "user": 16,
+    "content_type": 19,
+    "object_id": "8",
+    "object_repr": "Utilidades",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2025-08-06T14:49:23.251Z",
+    "user": 16,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "Arquivo STL",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2025-08-06T14:49:54.599Z",
+    "user": 16,
+    "content_type": 16,
+    "object_id": "2",
+    "object_repr": "Modelo Físico",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Descri\\u00e7\\u00e3o\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2025-08-07T00:28:51.351Z",
+    "user": 16,
+    "content_type": 9,
+    "object_id": "22",
+    "object_repr": "michael_jackson@hotmail.com",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2025-08-10T21:37:34.015Z",
+    "user": 16,
+    "content_type": 14,
+    "object_id": "6",
+    "object_repr": "michael_jackson@hotmail.com - Pato Donald (Administrador)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4e08jq7dghrj8va291juh1e4yij2smaj",
+  "fields": {
+    "session_data": ".eJxVjrEOgzAQQ_8lcxXdcU0gHbvzDdGRXIAWBYnAVPXfCypDu3iwny2_lOdtHfxWZPFjVDdVkbr8mh2Hp-QjiQ_O_azDnNdl7PSB6DMtup2jTPeT_RsYuAx721QMbCjaxJacMYYSSAd1QnGpMtYiYIhXQeAGsAbCAI5IGkRmJ8er7wE_7bpxL_uoZPX-AD9oPvw:1ulXLY:BwZrxD8P5qO53d19DG8x7PH1tXd-jK9oIHY2ZojbgfM",
+    "expire_date": "2025-08-25T18:34:12.851Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "bfabrci1i2a5zdyli5btkzg4qkw71gtt",
+  "fields": {
+    "session_data": "eyJkamFuZ29fbGFuZ3VhZ2UiOiJlcyJ9:1uhWFt:K9qoCKntYDFfFfzPHEVw7i9Cn2qC0dYhcglmbQMH92I",
+    "expire_date": "2025-08-14T16:35:45.792Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dnuqtz4eft271dldvjlp3g671s08zaua",
+  "fields": {
+    "session_data": ".eJxVjr0OgyAUhd-FuSEiyE_H7n0GcrlcxdaoEZyavnsxdWiXM5yfL-fFPOwl-T3T5sfIrkxodvk1A-CT5iOJD5iHheMyl20M_KjwM838vkSabmf3D5Agp7q20QAqFTqH0ikRGi2ArJHQN8pK1fYOwWiCDrV1kVpBxiqhsZWInRSyQr8H_FR1h4EqdC3s_QFhhD-V:1ujoV1:rxPh9ZkfFvDLXGIiD6Lp2PoD5SdTag8F63l7NsebvIE",
+    "expire_date": "2025-08-21T00:28:51.367Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gg7xcw3prfq3auzrn91oj8mv0qtcvyl6",
+  "fields": {
+    "session_data": ".eJxVjEEOgjAQRe_StWlmGKdQl-45AxnaqaCmTSisjHdXEha6_e-9_zKDbOs0bFWXYY7mYhoyp99xlPDQvJN4l3wrNpS8LvNod8UetNq-RH1eD_fvYJI6fWtuBIQpuiSOPDNTAh2hTag-NewcAoZ4VgTpAFsgDOCJtEMU8Urm_QHteTcl:1uldFt:NYqVpKS-hlfDOYmBLZgc_2RXEmBt7Qcq7eovUT1kEUM",
+    "expire_date": "2025-08-26T00:52:45.551Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "iu3lixhanypvycav3we740jq2d2dnoe2",
+  "fields": {
+    "session_data": "eyJ1c2VyX2lkIjo3LCJkamFuZ29fbGFuZ3VhZ2UiOiJlbiJ9:1ugtdJ:MhfJyh4mqd0mwdvE_t5UXmegEFNWXX550APmshhgaIk",
+    "expire_date": "2025-08-12T23:21:21.575Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jxdedtd5jjlmoanzecc8jmddhrwwovgc",
+  "fields": {
+    "session_data": "eyJkamFuZ29fbGFuZ3VhZ2UiOiJlcyJ9:1uglEV:FOdsmPY4RCpp-COvCDleF5xuZR3dMkCCofF5s4IPyJo",
+    "expire_date": "2025-08-12T14:23:11.887Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xsjhkzf7801hri6izcg1td1o3t23d0yw",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlmxvf5R0nMGa73e4ABypDipEHeHSCmgfTPzXiLhtta0dV7SVMRZKCdOv2NGenDbSblju82S5rYuU5a7Ig_a5XUu_Lwc7t9BxV6_dSgeCSDbSCaCyoNTyMEbHAcIBvQYCb1jtORCLKwV-wDKkTZE1igj3h8DLjet:1uldHa:tA-hhcDc9IT2lfFBF_Kf6UovKvWMuKBi-7_UPvFvR7c",
+    "expire_date": "2025-08-26T00:54:30.665Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yqactds2nd7husgaqfhmr3yx6ve9ze8f",
+  "fields": {
+    "session_data": "eyJ1c2VyX2lkIjo3LCJkamFuZ29fbGFuZ3VhZ2UiOiJlbiJ9:1ugte6:Q3ziRMwXG5r-OsYF96zTwQ29F7dQsQPdpfZxdqGBhGs",
+    "expire_date": "2025-08-12T23:22:10.395Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zaq8q9jbse7pefji7odpvcgslywmspi6",
+  "fields": {
+    "session_data": "eyJkamFuZ29fbGFuZ3VhZ2UiOiJlbiJ9:1uglWN:pPRH4Xt5d12qDa8Y0vJglOrxpOTJZKgPzCpMz0dezCs",
+    "expire_date": "2025-08-12T14:41:39.746Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 1,
+  "fields": {
+    "name": "Brasil",
+    "name_en": "Brazil",
+    "name_es": "Brasil",
+    "code": "BR",
+    "ddi": "+55",
+    "flag": "br",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.325Z",
+    "updated_at": "2025-07-29T15:19:09.727Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 2,
+  "fields": {
+    "name": "Estados Unidos",
+    "name_en": "United States",
+    "name_es": "Estados Unidos",
+    "code": "US",
+    "ddi": "+1",
+    "flag": "us",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.330Z",
+    "updated_at": "2025-07-29T15:19:09.731Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 3,
+  "fields": {
+    "name": "Argentina",
+    "name_en": "Argentina",
+    "name_es": "Argentina",
+    "code": "AR",
+    "ddi": "+54",
+    "flag": "ar",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.335Z",
+    "updated_at": "2025-07-29T15:19:09.736Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 4,
+  "fields": {
+    "name": "Chile",
+    "name_en": "Chile",
+    "name_es": "Chile",
+    "code": "CL",
+    "ddi": "+56",
+    "flag": "cl",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.340Z",
+    "updated_at": "2025-07-29T15:19:09.740Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 5,
+  "fields": {
+    "name": "Colômbia",
+    "name_en": "Colombia",
+    "name_es": "Colombia",
+    "code": "CO",
+    "ddi": "+57",
+    "flag": "co",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.344Z",
+    "updated_at": "2025-07-29T15:19:09.744Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 6,
+  "fields": {
+    "name": "México",
+    "name_en": "Mexico",
+    "name_es": "México",
+    "code": "MX",
+    "ddi": "+52",
+    "flag": "mx",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.348Z",
+    "updated_at": "2025-07-29T15:19:09.749Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 7,
+  "fields": {
+    "name": "Peru",
+    "name_en": "Peru",
+    "name_es": "Perú",
+    "code": "PE",
+    "ddi": "+51",
+    "flag": "pe",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.352Z",
+    "updated_at": "2025-07-29T15:19:09.753Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 8,
+  "fields": {
+    "name": "Uruguai",
+    "name_en": "Uruguay",
+    "name_es": "Uruguay",
+    "code": "UY",
+    "ddi": "+598",
+    "flag": "uy",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.357Z",
+    "updated_at": "2025-07-29T15:19:09.757Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 9,
+  "fields": {
+    "name": "Venezuela",
+    "name_en": "Venezuela",
+    "name_es": "Venezuela",
+    "code": "VE",
+    "ddi": "+58",
+    "flag": "ve",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.361Z",
+    "updated_at": "2025-07-29T15:19:09.762Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 10,
+  "fields": {
+    "name": "Espanha",
+    "name_en": "Spain",
+    "name_es": "España",
+    "code": "ES",
+    "ddi": "+34",
+    "flag": "es",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.365Z",
+    "updated_at": "2025-07-29T15:19:09.766Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 11,
+  "fields": {
+    "name": "Portugal",
+    "name_en": "Portugal",
+    "name_es": "Portugal",
+    "code": "PT",
+    "ddi": "+351",
+    "flag": "pt",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.370Z",
+    "updated_at": "2025-07-29T15:19:09.770Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 12,
+  "fields": {
+    "name": "Reino Unido",
+    "name_en": "United Kingdom",
+    "name_es": "Reino Unido",
+    "code": "GB",
+    "ddi": "+44",
+    "flag": "gb",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.375Z",
+    "updated_at": "2025-07-29T15:19:09.775Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 13,
+  "fields": {
+    "name": "França",
+    "name_en": "France",
+    "name_es": "Francia",
+    "code": "FR",
+    "ddi": "+33",
+    "flag": "fr",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.379Z",
+    "updated_at": "2025-07-29T15:19:09.779Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 14,
+  "fields": {
+    "name": "Alemanha",
+    "name_en": "Germany",
+    "name_es": "Alemania",
+    "code": "DE",
+    "ddi": "+49",
+    "flag": "de",
+    "is_active": false,
+    "created_at": "2025-07-29T11:30:59.383Z",
+    "updated_at": "2025-08-10T19:52:07.750Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 15,
+  "fields": {
+    "name": "Itália",
+    "name_en": "Italy",
+    "name_es": "Italia",
+    "code": "IT",
+    "ddi": "+39",
+    "flag": "it",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.387Z",
+    "updated_at": "2025-08-08T20:12:36.046Z"
+  }
+},
+{
+  "model": "core.plan",
+  "pk": 10,
+  "fields": {
+    "name": "Basic",
+    "name_en": "Basic",
+    "name_es": "Basic",
+    "description": "Ideal para quem transforma arquivos digitais em arte física. Gerencie sua produção e suas vendas de forma simples e eficiente, sem se preocupar com limites de clientes ou projetos.",
+    "description_en": "Ideal for those who transform digital files into physical art. Manage your production and sales simply and efficiently, without worrying about client or project limits.",
+    "description_es": "Ideal para quienes transforman archivos digitales en arte física. Gestiona tu producción y ventas de forma simple y eficiente, sin preocuparte por límites de clientes o proyectos.",
+    "max_users": 1,
+    "max_companies": 1,
+    "max_customers": -1,
+    "max_products": -1,
+    "max_projects": -1,
+    "has_stl_security": false,
+    "is_trial": false,
+    "trial_days": 15,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.569Z",
+    "updated_at": "2025-08-01T16:38:09.667Z"
+  }
+},
+{
+  "model": "core.plan",
+  "pk": 11,
+  "fields": {
+    "name": "Pro",
+    "name_en": "Pro",
+    "name_es": "Pro",
+    "description": "A solução completa para quem vive de criar arquivos 3D. Proteja seu portfólio digital contra pirataria, garanta a exclusividade de suas criações e gerencie seu negócio com segurança.",
+    "description_en": "The complete solution for those who live by creating 3D files. Protect your digital portfolio against piracy, guarantee the exclusivity of your creations and manage your business securely.",
+    "description_es": "La solución completa para quienes viven creando archivos 3D. Protege tu portafolio digital contra la piratería, garantiza la exclusividad de tus creaciones y gestiona tu negocio con seguridad.",
+    "max_users": 1,
+    "max_companies": 1,
+    "max_customers": -1,
+    "max_products": -1,
+    "max_projects": -1,
+    "has_stl_security": true,
+    "is_trial": false,
+    "trial_days": 15,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.573Z",
+    "updated_at": "2025-08-01T16:38:09.673Z"
+  }
+},
+{
+  "model": "core.plan",
+  "pk": 12,
+  "fields": {
+    "name": "Enterprise",
+    "name_en": "Enterprise",
+    "name_es": "Enterprise",
+    "description": "Feito para equipes que criam e comercializam em grande escala. Organize a gestão de projetos com até 5 usuários, centralize a comunicação e proteja os arquivos digitais da sua empresa contra pirataria.",
+    "description_en": "Made for teams that create and commercialize on a large scale. Organize project management with up to 5 users, centralize communication and protect your company's digital files against piracy.",
+    "description_es": "Hecho para equipos que crean y comercializan a gran escala. Organiza la gestión de proyectos con hasta 5 usuarios, centraliza la comunicación y protege los archivos digitales de tu empresa contra la piratería.",
+    "max_users": 5,
+    "max_companies": 1,
+    "max_customers": -1,
+    "max_products": -1,
+    "max_projects": -1,
+    "has_stl_security": true,
+    "is_trial": false,
+    "trial_days": 15,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.578Z",
+    "updated_at": "2025-08-01T16:38:09.678Z"
+  }
+},
+{
+  "model": "core.company",
+  "pk": 7,
+  "fields": {
+    "name": "ADM Company",
+    "cnpj": null,
+    "email": "rasilva84@test.com",
+    "phone": "11999999999",
+    "address": "Teste",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "country": 1,
+    "logo": "company_logos/bender_futurama_A0SWHet.jpeg",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-07-31T22:16:10.854Z",
+    "updated_at": "2025-08-01T16:30:17.096Z"
+  }
+},
+{
+  "model": "core.company",
+  "pk": 10,
+  "fields": {
+    "name": "RC Imports",
+    "cnpj": null,
+    "email": "rodrigoa_silva@hotmail.com",
+    "phone": "17981839329",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "country": 1,
+    "logo": "company_logos/logorec.jpeg",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-01T02:39:59.719Z",
+    "updated_at": "2025-08-01T16:18:57.950Z"
+  }
+},
+{
+  "model": "core.company",
+  "pk": 12,
+  "fields": {
+    "name": "Pato Donald",
+    "cnpj": null,
+    "email": "pato.donald@gmail.com",
+    "phone": "17981839329",
+    "address": "Rua Chade Rezek",
+    "address_number": "258",
+    "city": "Barretos",
+    "state": "SP",
+    "zip_code": "14781262",
+    "country": 1,
+    "logo": "company_logos/papai_noel_bebado_Vv3CM2M.jpeg",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-01T19:05:36.302Z",
+    "updated_at": "2025-08-05T11:44:41.522Z"
+  }
+},
+{
+  "model": "core.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$uIPbHPEkHqjGbuYnGR3zmj$9SNM5iKLqYbzPwc3Rh11vIxtQXi5fJKoKZJ0yu4TEBI=",
+    "last_login": "2025-08-12T00:54:30.661Z",
+    "is_superuser": true,
+    "username": "rasilva84",
+    "first_name": "Rodrigo",
+    "last_name": "Silva",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-31T22:11:49Z",
+    "email": "rasilva84@test.com",
+    "phone_number": "(11) 99999-9999",
+    "country": 1,
+    "birth_date": "1981-12-01",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "website": "http://www.teste.com.br",
+    "is_verified": false,
+    "is_first_access": false,
+    "verification_code": "",
+    "verification_expires_at": null,
+    "created_at": "2025-07-31T22:11:49.635Z",
+    "updated_at": "2025-08-01T02:44:43.351Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$TkIZwJ0JKkoetWJwDMWepP$EdAmNEAx0RZlIyhEnI14hBfk6QJ2Kcb1dx9aAu16K54=",
+    "last_login": "2025-08-07T00:30:01.976Z",
+    "is_superuser": false,
+    "username": "tech_admin",
+    "first_name": "Michael",
+    "last_name": "Jackson",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T02:39:17Z",
+    "email": "michael_jackson@hotmail.com",
+    "phone_number": "17999999999",
+    "country": 1,
+    "birth_date": "1980-12-01",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "website": "",
+    "is_verified": true,
+    "is_first_access": false,
+    "verification_code": "",
+    "verification_expires_at": null,
+    "created_at": "2025-08-01T02:39:18.096Z",
+    "updated_at": "2025-08-07T00:28:51.346Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5Ro3dKOA2jSwW6VFyOSCmE$PsY1aifEDlaPdJX3SbqKWj0U363L/7GNLgZL3MWQegY=",
+    "last_login": "2025-08-12T00:52:45.537Z",
+    "is_superuser": false,
+    "username": "pato_donald",
+    "first_name": "Pato",
+    "last_name": "Donald",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:56:24.987Z",
+    "email": "pato.donald@gmail.com",
+    "phone_number": "17981839329",
+    "country": 1,
+    "birth_date": "1980-01-01",
+    "address": "Rua Chade Rezek",
+    "address_number": "135",
+    "city": "Barretos",
+    "state": "SP",
+    "zip_code": "14781-262",
+    "website": "http://www.teste.com.br",
+    "is_verified": true,
+    "is_first_access": false,
+    "verification_code": "",
+    "verification_expires_at": null,
+    "created_at": "2025-08-01T18:56:25.883Z",
+    "updated_at": "2025-08-04T17:40:56.333Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.usercompany",
+  "pk": 3,
+  "fields": {
+    "user": 16,
+    "company": 7,
+    "role": "owner",
+    "permissions": {},
+    "is_active": true,
+    "created_at": "2025-08-01T13:04:20.292Z",
+    "updated_at": "2025-08-01T13:04:20.292Z"
+  }
+},
+{
+  "model": "core.usercompany",
+  "pk": 4,
+  "fields": {
+    "user": 22,
+    "company": 10,
+    "role": "owner",
+    "permissions": {},
+    "is_active": true,
+    "created_at": "2025-08-01T13:04:20.299Z",
+    "updated_at": "2025-08-01T13:04:20.299Z"
+  }
+},
+{
+  "model": "core.usercompany",
+  "pk": 5,
+  "fields": {
+    "user": 23,
+    "company": 12,
+    "role": "owner",
+    "permissions": {},
+    "is_active": true,
+    "created_at": "2025-08-01T19:05:36.307Z",
+    "updated_at": "2025-08-01T19:05:36.307Z"
+  }
+},
+{
+  "model": "core.account",
+  "pk": 20,
+  "fields": {
+    "user": 22,
+    "plan": 12,
+    "is_active": true,
+    "created_at": "2025-08-01T02:39:18.103Z",
+    "updated_at": "2025-08-01T15:27:48.637Z"
+  }
+},
+{
+  "model": "core.account",
+  "pk": 21,
+  "fields": {
+    "user": 16,
+    "plan": 12,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.643Z",
+    "updated_at": "2025-08-01T15:27:48.643Z"
+  }
+},
+{
+  "model": "core.account",
+  "pk": 22,
+  "fields": {
+    "user": 23,
+    "plan": 12,
+    "is_active": true,
+    "created_at": "2025-08-01T18:56:25.889Z",
+    "updated_at": "2025-08-01T18:56:25.889Z"
+  }
+},
+{
+  "model": "core.subscription",
+  "pk": 14,
+  "fields": {
+    "user": 23,
+    "plan": 12,
+    "status": "grace_period",
+    "billing_cycle": "monthly",
+    "start_date": "2025-08-01T18:56:25.894Z",
+    "end_date": "2025-08-03T00:47:38.350Z",
+    "next_billing_date": "2025-08-16T18:56:25.894Z",
+    "grace_period_until": "2025-08-19T00:55:02.159Z",
+    "last_notification_sent": null,
+    "auto_renew": true,
+    "created_at": "2025-08-01T18:56:25.894Z",
+    "updated_at": "2025-08-04T00:55:02.159Z"
+  }
+},
+{
+  "model": "core.subscription",
+  "pk": 15,
+  "fields": {
+    "user": 16,
+    "plan": 12,
+    "status": "active",
+    "billing_cycle": "yearly",
+    "start_date": "2025-08-04T01:36:30Z",
+    "end_date": "9999-12-31T03:00:00Z",
+    "next_billing_date": "9999-12-31T03:00:00Z",
+    "grace_period_until": null,
+    "last_notification_sent": null,
+    "auto_renew": true,
+    "created_at": "2025-08-04T01:36:55.399Z",
+    "updated_at": "2025-08-04T01:36:55.399Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 18,
+  "fields": {
+    "plan": 10,
+    "currency": "BRL",
+    "price": "69.99",
+    "yearly_price": "699.99",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.583Z",
+    "updated_at": "2025-08-01T15:27:48.583Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 19,
+  "fields": {
+    "plan": 10,
+    "currency": "USD",
+    "price": "14.00",
+    "yearly_price": "140.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.588Z",
+    "updated_at": "2025-08-01T15:27:48.588Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 20,
+  "fields": {
+    "plan": 10,
+    "currency": "EUR",
+    "price": "12.60",
+    "yearly_price": "126.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.593Z",
+    "updated_at": "2025-08-01T15:27:48.594Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 21,
+  "fields": {
+    "plan": 11,
+    "currency": "BRL",
+    "price": "119.99",
+    "yearly_price": "1199.99",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.600Z",
+    "updated_at": "2025-08-01T15:27:48.600Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 22,
+  "fields": {
+    "plan": 11,
+    "currency": "USD",
+    "price": "24.00",
+    "yearly_price": "240.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.606Z",
+    "updated_at": "2025-08-01T15:27:48.606Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 23,
+  "fields": {
+    "plan": 11,
+    "currency": "EUR",
+    "price": "21.60",
+    "yearly_price": "216.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.612Z",
+    "updated_at": "2025-08-01T15:27:48.612Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 24,
+  "fields": {
+    "plan": 12,
+    "currency": "BRL",
+    "price": "249.99",
+    "yearly_price": "2499.99",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.618Z",
+    "updated_at": "2025-08-01T15:27:48.618Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 25,
+  "fields": {
+    "plan": 12,
+    "currency": "USD",
+    "price": "50.00",
+    "yearly_price": "500.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.623Z",
+    "updated_at": "2025-08-01T15:27:48.623Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 26,
+  "fields": {
+    "plan": 12,
+    "currency": "EUR",
+    "price": "45.00",
+    "yearly_price": "450.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.629Z",
+    "updated_at": "2025-08-01T15:27:48.629Z"
+  }
+},
+{
+  "model": "customers.customer",
+  "pk": 1,
+  "fields": {
+    "company": 12,
+    "name": "Michael Jackson",
+    "country": 1,
+    "phone": "(11) 99999-9999",
+    "email": "mjackson@gmail.com",
+    "birth_date": "1979-01-01",
+    "document_number": "",
+    "social_network": "mjackson256",
+    "address": "Rua MP 22 - Dercy Novaes",
+    "address_number": "258",
+    "city": "Barretos",
+    "state": "SP",
+    "zip_code": "14782-030",
+    "notes": "",
+    "is_active": true,
+    "created_at": "2025-08-04T02:10:53.034Z",
+    "updated_at": "2025-08-05T11:44:02.664Z"
+  }
+},
+{
+  "model": "customers.customer",
+  "pk": 2,
+  "fields": {
+    "company": 12,
+    "name": "Mickey Mousae",
+    "country": 2,
+    "phone": "(12) 36547-9652",
+    "email": "micke@gmail.com",
+    "birth_date": null,
+    "document_number": "",
+    "social_network": "",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "notes": "",
+    "is_active": true,
+    "created_at": "2025-08-10T22:27:24.548Z",
+    "updated_at": "2025-08-10T22:27:24.548Z"
+  }
+},
+{
+  "model": "products.currency",
+  "pk": 1,
+  "fields": {
+    "code": "BRL",
+    "name": "Real Brasileiro",
+    "symbol": "R$"
+  }
+},
+{
+  "model": "products.currency",
+  "pk": 2,
+  "fields": {
+    "code": "USD",
+    "name": "Dólar Americano",
+    "symbol": "$"
+  }
+},
+{
+  "model": "products.currency",
+  "pk": 3,
+  "fields": {
+    "code": "EUR",
+    "name": "Euro",
+    "symbol": "€"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 1,
+  "fields": {
+    "name": "Arquivo STL",
+    "description": "Arquivo digital para impressão 3D",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 2,
+  "fields": {
+    "name": "Modelo Físico",
+    "description": "Produto já impresso/confecionado. Estátuas, dioramas e outros.",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 3,
+  "fields": {
+    "name": "Serviço",
+    "description": "Impressão 3D, modelagem, etc.",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 4,
+  "fields": {
+    "name": "Outros",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Modelagem",
+    "description": "Modelos 3D para impressão",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "Action Figures",
+    "description": "Figuras de ação",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Dioramas",
+    "description": "Cenários e composições",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "RPG",
+    "description": "Itens para role-playing games",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "Religioso",
+    "description": "Itens religiosos",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "name": "Decoração",
+    "description": "Itens decorativos. Vasos, imãs, quadros, etc.",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 8,
+  "fields": {
+    "name": "Utilidades",
+    "description": "Utilitários",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 9,
+  "fields": {
+    "name": "Outros",
+    "description": "Categoria genérica",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 10,
+  "fields": {
+    "name": "Bustos",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 1,
+  "fields": {
+    "name": "1:1",
+    "description": "Escala real (tamanho original)",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.109Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 2,
+  "fields": {
+    "name": "1:4",
+    "description": "Escala 1 para 4",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.114Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 3,
+  "fields": {
+    "name": "1:6",
+    "description": "Escala 1 para 6",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.119Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 4,
+  "fields": {
+    "name": "1:8",
+    "description": "Escala 1 para 8",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.123Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 5,
+  "fields": {
+    "name": "1:10",
+    "description": "Escala 1 para 10",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.127Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 6,
+  "fields": {
+    "name": "Outros",
+    "description": "Outras escalas personalizadas",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.132Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 7,
+  "fields": {
+    "name": "1:20",
+    "description": "Escala 1 para 20",
+    "is_active": true,
+    "created_at": "2025-08-08T00:58:40.501Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 8,
+  "fields": {
+    "name": "1:12",
+    "description": "Escala 1 para 12",
+    "is_active": true,
+    "created_at": "2025-08-08T01:06:25.892Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "WOLVERINE | X-Men '97 | STL FILE",
+    "description": "Teste",
+    "company": 12,
+    "product_type": 1,
+    "category": 1,
+    "cost_price": "15.02",
+    "sale_price": "50.00",
+    "currency": 1,
+    "scale": null,
+    "dimensions_x": null,
+    "dimensions_y": null,
+    "dimensions_z": null,
+    "dimension_unit": "mm",
+    "weight": null,
+    "weight_unit": "g",
+    "print_time_estimate": "",
+    "stock_quantity": 1,
+    "is_active": false,
+    "created_by": 23,
+    "created_at": "2025-08-06T00:40:58.976Z",
+    "updated_at": "2025-08-07T00:51:15.524Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Baiano",
+    "description": "Teste",
+    "company": 12,
+    "product_type": 1,
+    "category": 2,
+    "cost_price": "15.00",
+    "sale_price": "20.00",
+    "currency": 3,
+    "scale": 2,
+    "dimensions_x": null,
+    "dimensions_y": null,
+    "dimensions_z": null,
+    "dimension_unit": "cm",
+    "weight": null,
+    "weight_unit": "g",
+    "print_time_estimate": "",
+    "stock_quantity": 1,
+    "is_active": true,
+    "created_by": 23,
+    "created_at": "2025-08-06T13:46:31.866Z",
+    "updated_at": "2025-08-08T01:00:12.419Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Teste Valores",
+    "description": "",
+    "company": 12,
+    "product_type": 4,
+    "category": 2,
+    "cost_price": "15.50",
+    "sale_price": "150.20",
+    "currency": 1,
+    "scale": 8,
+    "dimensions_x": "1.00",
+    "dimensions_y": "2.00",
+    "dimensions_z": "55.00",
+    "dimension_unit": "cm",
+    "weight": null,
+    "weight_unit": "g",
+    "print_time_estimate": "",
+    "stock_quantity": 1,
+    "is_active": true,
+    "created_by": 23,
+    "created_at": "2025-08-07T14:40:45.956Z",
+    "updated_at": "2025-08-08T01:06:36.133Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 4,
+    "image": "products/images/00_POSTER.jpg",
+    "is_primary": true,
+    "order_index": 0,
+    "created_at": "2025-08-06T13:46:31.888Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 4,
+    "image": "products/images/01.jpg",
+    "is_primary": false,
+    "order_index": 1,
+    "created_at": "2025-08-06T13:46:31.905Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 4,
+    "image": "products/images/04.jpg",
+    "is_primary": false,
+    "order_index": 2,
+    "created_at": "2025-08-06T13:46:31.921Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "image": "products/images/07.jpg",
+    "is_primary": false,
+    "order_index": 3,
+    "created_at": "2025-08-06T13:46:31.937Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 4,
+    "image": "products/images/10.jpg",
+    "is_primary": false,
+    "order_index": 4,
+    "created_at": "2025-08-06T13:46:31.952Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 1,
+    "image": "products/images/01_JOoAORm.jpg",
+    "is_primary": true,
+    "order_index": 0,
+    "created_at": "2025-08-06T13:48:16.110Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 1,
+    "image": "products/images/04_KngNE2j.jpg",
+    "is_primary": false,
+    "order_index": 1,
+    "created_at": "2025-08-06T13:48:16.123Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 1,
+    "image": "products/images/07_M7VjQ7L.jpg",
+    "is_primary": false,
+    "order_index": 2,
+    "created_at": "2025-08-06T13:48:16.137Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 1,
+    "image": "products/images/08.jpg",
+    "is_primary": false,
+    "order_index": 3,
+    "created_at": "2025-08-06T13:48:16.150Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 1,
+    "image": "products/images/11.jpg",
+    "is_primary": false,
+    "order_index": 4,
+    "created_at": "2025-08-06T13:48:16.164Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 5,
+    "image": "products/images/16.jpg",
+    "is_primary": true,
+    "order_index": 0,
+    "created_at": "2025-08-07T14:40:45.967Z"
+  }
+}
+]

@@ -1,0 +1,683 @@
+[
+{
+  "model": "core.country",
+  "pk": 1,
+  "fields": {
+    "name": "Brasil",
+    "name_en": "Brazil",
+    "name_es": "Brasil",
+    "code": "BR",
+    "ddi": "+55",
+    "flag": "br",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.325Z",
+    "updated_at": "2025-07-29T15:19:09.727Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 2,
+  "fields": {
+    "name": "Estados Unidos",
+    "name_en": "United States",
+    "name_es": "Estados Unidos",
+    "code": "US",
+    "ddi": "+1",
+    "flag": "us",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.330Z",
+    "updated_at": "2025-07-29T15:19:09.731Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 3,
+  "fields": {
+    "name": "Argentina",
+    "name_en": "Argentina",
+    "name_es": "Argentina",
+    "code": "AR",
+    "ddi": "+54",
+    "flag": "ar",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.335Z",
+    "updated_at": "2025-07-29T15:19:09.736Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 4,
+  "fields": {
+    "name": "Chile",
+    "name_en": "Chile",
+    "name_es": "Chile",
+    "code": "CL",
+    "ddi": "+56",
+    "flag": "cl",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.340Z",
+    "updated_at": "2025-07-29T15:19:09.740Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 5,
+  "fields": {
+    "name": "Colômbia",
+    "name_en": "Colombia",
+    "name_es": "Colombia",
+    "code": "CO",
+    "ddi": "+57",
+    "flag": "co",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.344Z",
+    "updated_at": "2025-07-29T15:19:09.744Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 6,
+  "fields": {
+    "name": "México",
+    "name_en": "Mexico",
+    "name_es": "México",
+    "code": "MX",
+    "ddi": "+52",
+    "flag": "mx",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.348Z",
+    "updated_at": "2025-07-29T15:19:09.749Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 7,
+  "fields": {
+    "name": "Peru",
+    "name_en": "Peru",
+    "name_es": "Perú",
+    "code": "PE",
+    "ddi": "+51",
+    "flag": "pe",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.352Z",
+    "updated_at": "2025-07-29T15:19:09.753Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 8,
+  "fields": {
+    "name": "Uruguai",
+    "name_en": "Uruguay",
+    "name_es": "Uruguay",
+    "code": "UY",
+    "ddi": "+598",
+    "flag": "uy",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.357Z",
+    "updated_at": "2025-07-29T15:19:09.757Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 9,
+  "fields": {
+    "name": "Venezuela",
+    "name_en": "Venezuela",
+    "name_es": "Venezuela",
+    "code": "VE",
+    "ddi": "+58",
+    "flag": "ve",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.361Z",
+    "updated_at": "2025-07-29T15:19:09.762Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 10,
+  "fields": {
+    "name": "Espanha",
+    "name_en": "Spain",
+    "name_es": "España",
+    "code": "ES",
+    "ddi": "+34",
+    "flag": "es",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.365Z",
+    "updated_at": "2025-07-29T15:19:09.766Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 11,
+  "fields": {
+    "name": "Portugal",
+    "name_en": "Portugal",
+    "name_es": "Portugal",
+    "code": "PT",
+    "ddi": "+351",
+    "flag": "pt",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.370Z",
+    "updated_at": "2025-07-29T15:19:09.770Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 12,
+  "fields": {
+    "name": "Reino Unido",
+    "name_en": "United Kingdom",
+    "name_es": "Reino Unido",
+    "code": "GB",
+    "ddi": "+44",
+    "flag": "gb",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.375Z",
+    "updated_at": "2025-07-29T15:19:09.775Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 13,
+  "fields": {
+    "name": "França",
+    "name_en": "France",
+    "name_es": "Francia",
+    "code": "FR",
+    "ddi": "+33",
+    "flag": "fr",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.379Z",
+    "updated_at": "2025-07-29T15:19:09.779Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 14,
+  "fields": {
+    "name": "Alemanha",
+    "name_en": "Germany",
+    "name_es": "Alemania",
+    "code": "DE",
+    "ddi": "+49",
+    "flag": "de",
+    "is_active": false,
+    "created_at": "2025-07-29T11:30:59.383Z",
+    "updated_at": "2025-08-10T19:52:07.750Z"
+  }
+},
+{
+  "model": "core.country",
+  "pk": 15,
+  "fields": {
+    "name": "Itália",
+    "name_en": "Italy",
+    "name_es": "Italia",
+    "code": "IT",
+    "ddi": "+39",
+    "flag": "it",
+    "is_active": true,
+    "created_at": "2025-07-29T11:30:59.387Z",
+    "updated_at": "2025-08-08T20:12:36.046Z"
+  }
+},
+{
+  "model": "core.plan",
+  "pk": 10,
+  "fields": {
+    "name": "Basic",
+    "name_en": "Basic",
+    "name_es": "Basic",
+    "description": "Ideal para quem transforma arquivos digitais em arte física. Gerencie sua produção e suas vendas de forma simples e eficiente, sem se preocupar com limites de clientes ou projetos.",
+    "description_en": "Ideal for those who transform digital files into physical art. Manage your production and sales simply and efficiently, without worrying about client or project limits.",
+    "description_es": "Ideal para quienes transforman archivos digitales en arte física. Gestiona tu producción y ventas de forma simple y eficiente, sin preocuparte por límites de clientes o proyectos.",
+    "max_users": 1,
+    "max_companies": 1,
+    "max_customers": -1,
+    "max_products": -1,
+    "max_projects": -1,
+    "has_stl_security": false,
+    "is_trial": false,
+    "trial_days": 15,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.569Z",
+    "updated_at": "2025-08-01T16:38:09.667Z"
+  }
+},
+{
+  "model": "core.plan",
+  "pk": 11,
+  "fields": {
+    "name": "Pro",
+    "name_en": "Pro",
+    "name_es": "Pro",
+    "description": "A solução completa para quem vive de criar arquivos 3D. Proteja seu portfólio digital contra pirataria, garanta a exclusividade de suas criações e gerencie seu negócio com segurança.",
+    "description_en": "The complete solution for those who live by creating 3D files. Protect your digital portfolio against piracy, guarantee the exclusivity of your creations and manage your business securely.",
+    "description_es": "La solución completa para quienes viven creando archivos 3D. Protege tu portafolio digital contra la piratería, garantiza la exclusividad de tus creaciones y gestiona tu negocio con seguridad.",
+    "max_users": 1,
+    "max_companies": 1,
+    "max_customers": -1,
+    "max_products": -1,
+    "max_projects": -1,
+    "has_stl_security": true,
+    "is_trial": false,
+    "trial_days": 15,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.573Z",
+    "updated_at": "2025-08-01T16:38:09.673Z"
+  }
+},
+{
+  "model": "core.plan",
+  "pk": 12,
+  "fields": {
+    "name": "Enterprise",
+    "name_en": "Enterprise",
+    "name_es": "Enterprise",
+    "description": "Feito para equipes que criam e comercializam em grande escala. Organize a gestão de projetos com até 5 usuários, centralize a comunicação e proteja os arquivos digitais da sua empresa contra pirataria.",
+    "description_en": "Made for teams that create and commercialize on a large scale. Organize project management with up to 5 users, centralize communication and protect your company's digital files against piracy.",
+    "description_es": "Hecho para equipos que crean y comercializan a gran escala. Organiza la gestión de proyectos con hasta 5 usuarios, centraliza la comunicación y protege los archivos digitales de tu empresa contra la piratería.",
+    "max_users": 5,
+    "max_companies": 1,
+    "max_customers": -1,
+    "max_products": -1,
+    "max_projects": -1,
+    "has_stl_security": true,
+    "is_trial": false,
+    "trial_days": 15,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.578Z",
+    "updated_at": "2025-08-01T16:38:09.678Z"
+  }
+},
+{
+  "model": "core.company",
+  "pk": 7,
+  "fields": {
+    "name": "ADM Company",
+    "cnpj": null,
+    "email": "rasilva84@test.com",
+    "phone": "11999999999",
+    "address": "Teste",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "country": 1,
+    "logo": "company_logos/bender_futurama_A0SWHet.jpeg",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-07-31T22:16:10.854Z",
+    "updated_at": "2025-08-01T16:30:17.096Z"
+  }
+},
+{
+  "model": "core.company",
+  "pk": 10,
+  "fields": {
+    "name": "RC Imports",
+    "cnpj": null,
+    "email": "rodrigoa_silva@hotmail.com",
+    "phone": "17981839329",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "country": 1,
+    "logo": "company_logos/logorec.jpeg",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-01T02:39:59.719Z",
+    "updated_at": "2025-08-01T16:18:57.950Z"
+  }
+},
+{
+  "model": "core.company",
+  "pk": 12,
+  "fields": {
+    "name": "Pato Donald",
+    "cnpj": null,
+    "email": "pato.donald@gmail.com",
+    "phone": "17981839329",
+    "address": "Rua Chade Rezek",
+    "address_number": "258",
+    "city": "Barretos",
+    "state": "SP",
+    "zip_code": "14781262",
+    "country": 1,
+    "logo": "company_logos/papai_noel_bebado_Vv3CM2M.jpeg",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-01T19:05:36.302Z",
+    "updated_at": "2025-08-05T11:44:41.522Z"
+  }
+},
+{
+  "model": "core.user",
+  "pk": 16,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$uIPbHPEkHqjGbuYnGR3zmj$9SNM5iKLqYbzPwc3Rh11vIxtQXi5fJKoKZJ0yu4TEBI=",
+    "last_login": "2025-08-12T00:54:30.661Z",
+    "is_superuser": true,
+    "username": "rasilva84",
+    "first_name": "Rodrigo",
+    "last_name": "Silva",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-31T22:11:49Z",
+    "email": "rasilva84@test.com",
+    "phone_number": "(11) 99999-9999",
+    "country": 1,
+    "birth_date": "1981-12-01",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "website": "http://www.teste.com.br",
+    "is_verified": false,
+    "is_first_access": false,
+    "verification_code": "",
+    "verification_expires_at": null,
+    "created_at": "2025-07-31T22:11:49.635Z",
+    "updated_at": "2025-08-01T02:44:43.351Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 22,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$TkIZwJ0JKkoetWJwDMWepP$EdAmNEAx0RZlIyhEnI14hBfk6QJ2Kcb1dx9aAu16K54=",
+    "last_login": "2025-08-07T00:30:01.976Z",
+    "is_superuser": false,
+    "username": "tech_admin",
+    "first_name": "Michael",
+    "last_name": "Jackson",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T02:39:17Z",
+    "email": "michael_jackson@hotmail.com",
+    "phone_number": "17999999999",
+    "country": 1,
+    "birth_date": "1980-12-01",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "website": "",
+    "is_verified": true,
+    "is_first_access": false,
+    "verification_code": "",
+    "verification_expires_at": null,
+    "created_at": "2025-08-01T02:39:18.096Z",
+    "updated_at": "2025-08-07T00:28:51.346Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.user",
+  "pk": 23,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5Ro3dKOA2jSwW6VFyOSCmE$PsY1aifEDlaPdJX3SbqKWj0U363L/7GNLgZL3MWQegY=",
+    "last_login": "2025-08-12T00:52:45.537Z",
+    "is_superuser": false,
+    "username": "pato_donald",
+    "first_name": "Pato",
+    "last_name": "Donald",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-08-01T18:56:24.987Z",
+    "email": "pato.donald@gmail.com",
+    "phone_number": "17981839329",
+    "country": 1,
+    "birth_date": "1980-01-01",
+    "address": "Rua Chade Rezek",
+    "address_number": "135",
+    "city": "Barretos",
+    "state": "SP",
+    "zip_code": "14781-262",
+    "website": "http://www.teste.com.br",
+    "is_verified": true,
+    "is_first_access": false,
+    "verification_code": "",
+    "verification_expires_at": null,
+    "created_at": "2025-08-01T18:56:25.883Z",
+    "updated_at": "2025-08-04T17:40:56.333Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "core.usercompany",
+  "pk": 3,
+  "fields": {
+    "user": 16,
+    "company": 7,
+    "role": "owner",
+    "permissions": {},
+    "is_active": true,
+    "created_at": "2025-08-01T13:04:20.292Z",
+    "updated_at": "2025-08-01T13:04:20.292Z"
+  }
+},
+{
+  "model": "core.usercompany",
+  "pk": 4,
+  "fields": {
+    "user": 22,
+    "company": 10,
+    "role": "owner",
+    "permissions": {},
+    "is_active": true,
+    "created_at": "2025-08-01T13:04:20.299Z",
+    "updated_at": "2025-08-01T13:04:20.299Z"
+  }
+},
+{
+  "model": "core.usercompany",
+  "pk": 5,
+  "fields": {
+    "user": 23,
+    "company": 12,
+    "role": "owner",
+    "permissions": {},
+    "is_active": true,
+    "created_at": "2025-08-01T19:05:36.307Z",
+    "updated_at": "2025-08-01T19:05:36.307Z"
+  }
+},
+{
+  "model": "core.account",
+  "pk": 20,
+  "fields": {
+    "user": 22,
+    "plan": 12,
+    "is_active": true,
+    "created_at": "2025-08-01T02:39:18.103Z",
+    "updated_at": "2025-08-01T15:27:48.637Z"
+  }
+},
+{
+  "model": "core.account",
+  "pk": 21,
+  "fields": {
+    "user": 16,
+    "plan": 12,
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.643Z",
+    "updated_at": "2025-08-01T15:27:48.643Z"
+  }
+},
+{
+  "model": "core.account",
+  "pk": 22,
+  "fields": {
+    "user": 23,
+    "plan": 12,
+    "is_active": true,
+    "created_at": "2025-08-01T18:56:25.889Z",
+    "updated_at": "2025-08-01T18:56:25.889Z"
+  }
+},
+{
+  "model": "core.subscription",
+  "pk": 14,
+  "fields": {
+    "user": 23,
+    "plan": 12,
+    "status": "grace_period",
+    "billing_cycle": "monthly",
+    "start_date": "2025-08-01T18:56:25.894Z",
+    "end_date": "2025-08-03T00:47:38.350Z",
+    "next_billing_date": "2025-08-16T18:56:25.894Z",
+    "grace_period_until": "2025-08-19T00:55:02.159Z",
+    "last_notification_sent": null,
+    "auto_renew": true,
+    "created_at": "2025-08-01T18:56:25.894Z",
+    "updated_at": "2025-08-04T00:55:02.159Z"
+  }
+},
+{
+  "model": "core.subscription",
+  "pk": 15,
+  "fields": {
+    "user": 16,
+    "plan": 12,
+    "status": "active",
+    "billing_cycle": "yearly",
+    "start_date": "2025-08-04T01:36:30Z",
+    "end_date": "9999-12-31T03:00:00Z",
+    "next_billing_date": "9999-12-31T03:00:00Z",
+    "grace_period_until": null,
+    "last_notification_sent": null,
+    "auto_renew": true,
+    "created_at": "2025-08-04T01:36:55.399Z",
+    "updated_at": "2025-08-04T01:36:55.399Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 18,
+  "fields": {
+    "plan": 10,
+    "currency": "BRL",
+    "price": "69.99",
+    "yearly_price": "699.99",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.583Z",
+    "updated_at": "2025-08-01T15:27:48.583Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 19,
+  "fields": {
+    "plan": 10,
+    "currency": "USD",
+    "price": "14.00",
+    "yearly_price": "140.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.588Z",
+    "updated_at": "2025-08-01T15:27:48.588Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 20,
+  "fields": {
+    "plan": 10,
+    "currency": "EUR",
+    "price": "12.60",
+    "yearly_price": "126.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.593Z",
+    "updated_at": "2025-08-01T15:27:48.594Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 21,
+  "fields": {
+    "plan": 11,
+    "currency": "BRL",
+    "price": "119.99",
+    "yearly_price": "1199.99",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.600Z",
+    "updated_at": "2025-08-01T15:27:48.600Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 22,
+  "fields": {
+    "plan": 11,
+    "currency": "USD",
+    "price": "24.00",
+    "yearly_price": "240.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.606Z",
+    "updated_at": "2025-08-01T15:27:48.606Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 23,
+  "fields": {
+    "plan": 11,
+    "currency": "EUR",
+    "price": "21.60",
+    "yearly_price": "216.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.612Z",
+    "updated_at": "2025-08-01T15:27:48.612Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 24,
+  "fields": {
+    "plan": 12,
+    "currency": "BRL",
+    "price": "249.99",
+    "yearly_price": "2499.99",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.618Z",
+    "updated_at": "2025-08-01T15:27:48.618Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 25,
+  "fields": {
+    "plan": 12,
+    "currency": "USD",
+    "price": "50.00",
+    "yearly_price": "500.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.623Z",
+    "updated_at": "2025-08-01T15:27:48.623Z"
+  }
+},
+{
+  "model": "core.planprice",
+  "pk": 26,
+  "fields": {
+    "plan": 12,
+    "currency": "EUR",
+    "price": "45.00",
+    "yearly_price": "450.00",
+    "is_active": true,
+    "created_at": "2025-08-01T15:27:48.629Z",
+    "updated_at": "2025-08-01T15:27:48.629Z"
+  }
+}
+]

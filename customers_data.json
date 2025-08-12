@@ -1,0 +1,48 @@
+[
+{
+  "model": "customers.customer",
+  "pk": 1,
+  "fields": {
+    "company": 12,
+    "name": "Michael Jackson",
+    "country": 1,
+    "phone": "(11) 99999-9999",
+    "email": "mjackson@gmail.com",
+    "birth_date": "1979-01-01",
+    "document_number": "",
+    "social_network": "mjackson256",
+    "address": "Rua MP 22 - Dercy Novaes",
+    "address_number": "258",
+    "city": "Barretos",
+    "state": "SP",
+    "zip_code": "14782-030",
+    "notes": "",
+    "is_active": true,
+    "created_at": "2025-08-04T02:10:53.034Z",
+    "updated_at": "2025-08-05T11:44:02.664Z"
+  }
+},
+{
+  "model": "customers.customer",
+  "pk": 2,
+  "fields": {
+    "company": 12,
+    "name": "Mickey Mousae",
+    "country": 2,
+    "phone": "(12) 36547-9652",
+    "email": "micke@gmail.com",
+    "birth_date": null,
+    "document_number": "",
+    "social_network": "",
+    "address": "",
+    "address_number": "",
+    "city": "",
+    "state": "",
+    "zip_code": "",
+    "notes": "",
+    "is_active": true,
+    "created_at": "2025-08-10T22:27:24.548Z",
+    "updated_at": "2025-08-10T22:27:24.548Z"
+  }
+}
+]

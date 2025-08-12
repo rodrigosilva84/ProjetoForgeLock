@@ -1,0 +1,441 @@
+[
+{
+  "model": "products.currency",
+  "pk": 1,
+  "fields": {
+    "code": "BRL",
+    "name": "Real Brasileiro",
+    "symbol": "R$"
+  }
+},
+{
+  "model": "products.currency",
+  "pk": 2,
+  "fields": {
+    "code": "USD",
+    "name": "Dólar Americano",
+    "symbol": "$"
+  }
+},
+{
+  "model": "products.currency",
+  "pk": 3,
+  "fields": {
+    "code": "EUR",
+    "name": "Euro",
+    "symbol": "€"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 1,
+  "fields": {
+    "name": "Arquivo STL",
+    "description": "Arquivo digital para impressão 3D",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 2,
+  "fields": {
+    "name": "Modelo Físico",
+    "description": "Produto já impresso/confecionado. Estátuas, dioramas e outros.",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 3,
+  "fields": {
+    "name": "Serviço",
+    "description": "Impressão 3D, modelagem, etc.",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.producttype",
+  "pk": 4,
+  "fields": {
+    "name": "Outros",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.511Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Modelagem",
+    "description": "Modelos 3D para impressão",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "Action Figures",
+    "description": "Figuras de ação",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Dioramas",
+    "description": "Cenários e composições",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "RPG",
+    "description": "Itens para role-playing games",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "Religioso",
+    "description": "Itens religiosos",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "name": "Decoração",
+    "description": "Itens decorativos. Vasos, imãs, quadros, etc.",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 8,
+  "fields": {
+    "name": "Utilidades",
+    "description": "Utilitários",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 9,
+  "fields": {
+    "name": "Outros",
+    "description": "Categoria genérica",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 10,
+  "fields": {
+    "name": "Bustos",
+    "description": "",
+    "is_active": true,
+    "created_at": "2025-08-08T17:07:57.502Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 1,
+  "fields": {
+    "name": "1:1",
+    "description": "Escala real (tamanho original)",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.109Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 2,
+  "fields": {
+    "name": "1:4",
+    "description": "Escala 1 para 4",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.114Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 3,
+  "fields": {
+    "name": "1:6",
+    "description": "Escala 1 para 6",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.119Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 4,
+  "fields": {
+    "name": "1:8",
+    "description": "Escala 1 para 8",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.123Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 5,
+  "fields": {
+    "name": "1:10",
+    "description": "Escala 1 para 10",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.127Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 6,
+  "fields": {
+    "name": "Outros",
+    "description": "Outras escalas personalizadas",
+    "is_active": true,
+    "created_at": "2025-08-07T23:41:23.132Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 7,
+  "fields": {
+    "name": "1:20",
+    "description": "Escala 1 para 20",
+    "is_active": true,
+    "created_at": "2025-08-08T00:58:40.501Z"
+  }
+},
+{
+  "model": "products.scale",
+  "pk": 8,
+  "fields": {
+    "name": "1:12",
+    "description": "Escala 1 para 12",
+    "is_active": true,
+    "created_at": "2025-08-08T01:06:25.892Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "WOLVERINE | X-Men '97 | STL FILE",
+    "description": "Teste",
+    "company": 12,
+    "product_type": 1,
+    "category": 1,
+    "cost_price": "15.02",
+    "sale_price": "50.00",
+    "currency": 1,
+    "scale": null,
+    "dimensions_x": null,
+    "dimensions_y": null,
+    "dimensions_z": null,
+    "dimension_unit": "mm",
+    "weight": null,
+    "weight_unit": "g",
+    "print_time_estimate": "",
+    "stock_quantity": 1,
+    "is_active": false,
+    "created_by": 23,
+    "created_at": "2025-08-06T00:40:58.976Z",
+    "updated_at": "2025-08-07T00:51:15.524Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Baiano",
+    "description": "Teste",
+    "company": 12,
+    "product_type": 1,
+    "category": 2,
+    "cost_price": "15.00",
+    "sale_price": "20.00",
+    "currency": 3,
+    "scale": 2,
+    "dimensions_x": null,
+    "dimensions_y": null,
+    "dimensions_z": null,
+    "dimension_unit": "cm",
+    "weight": null,
+    "weight_unit": "g",
+    "print_time_estimate": "",
+    "stock_quantity": 1,
+    "is_active": true,
+    "created_by": 23,
+    "created_at": "2025-08-06T13:46:31.866Z",
+    "updated_at": "2025-08-08T01:00:12.419Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Teste Valores",
+    "description": "",
+    "company": 12,
+    "product_type": 4,
+    "category": 2,
+    "cost_price": "15.50",
+    "sale_price": "150.20",
+    "currency": 1,
+    "scale": 8,
+    "dimensions_x": "1.00",
+    "dimensions_y": "2.00",
+    "dimensions_z": "55.00",
+    "dimension_unit": "cm",
+    "weight": null,
+    "weight_unit": "g",
+    "print_time_estimate": "",
+    "stock_quantity": 1,
+    "is_active": true,
+    "created_by": 23,
+    "created_at": "2025-08-07T14:40:45.956Z",
+    "updated_at": "2025-08-08T01:06:36.133Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 1,
+  "fields": {
+    "product": 4,
+    "image": "products/images/00_POSTER.jpg",
+    "is_primary": true,
+    "order_index": 0,
+    "created_at": "2025-08-06T13:46:31.888Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 2,
+  "fields": {
+    "product": 4,
+    "image": "products/images/01.jpg",
+    "is_primary": false,
+    "order_index": 1,
+    "created_at": "2025-08-06T13:46:31.905Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 4,
+    "image": "products/images/04.jpg",
+    "is_primary": false,
+    "order_index": 2,
+    "created_at": "2025-08-06T13:46:31.921Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "image": "products/images/07.jpg",
+    "is_primary": false,
+    "order_index": 3,
+    "created_at": "2025-08-06T13:46:31.937Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 4,
+    "image": "products/images/10.jpg",
+    "is_primary": false,
+    "order_index": 4,
+    "created_at": "2025-08-06T13:46:31.952Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 1,
+    "image": "products/images/01_JOoAORm.jpg",
+    "is_primary": true,
+    "order_index": 0,
+    "created_at": "2025-08-06T13:48:16.110Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 1,
+    "image": "products/images/04_KngNE2j.jpg",
+    "is_primary": false,
+    "order_index": 1,
+    "created_at": "2025-08-06T13:48:16.123Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 1,
+    "image": "products/images/07_M7VjQ7L.jpg",
+    "is_primary": false,
+    "order_index": 2,
+    "created_at": "2025-08-06T13:48:16.137Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 1,
+    "image": "products/images/08.jpg",
+    "is_primary": false,
+    "order_index": 3,
+    "created_at": "2025-08-06T13:48:16.150Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 1,
+    "image": "products/images/11.jpg",
+    "is_primary": false,
+    "order_index": 4,
+    "created_at": "2025-08-06T13:48:16.164Z"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 5,
+    "image": "products/images/16.jpg",
+    "is_primary": true,
+    "order_index": 0,
+    "created_at": "2025-08-07T14:40:45.967Z"
+  }
+}
+]

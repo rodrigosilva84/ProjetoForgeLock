@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-your-secret-key-here')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = ['testserver', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'testserver,127.0.0.1,localhost').split(',')
 
 
 # Application definition
@@ -89,12 +89,28 @@ WSGI_APPLICATION = 'forgelock.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# Verificar se está no Railway (produção)
+if os.getenv('DATABASE_URL'):
+    # Usar PostgreSQL no Railway
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.getenv('DATABASE_URL'),
+            conn_max_age=600
+        )
     }
-}
+else:
+    # Usar PostgreSQL Docker local
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'forgelock_db',
+            'USER': 'forgelock_user',
+            'PASSWORD': 'forgelock_password',
+            'HOST': 'localhost',
+            'PORT': '5433',
+        }
+    }
 
 
 # Password validation

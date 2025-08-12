@@ -1,0 +1,11 @@
+Django>=5.2.4
+python-dotenv
+requests
+twilio
+django-rosetta
+deep-translator
+gunicorn
+psycopg2-binary
+whitenoise
+dj-database-url
+Pillow>=10.0.0
