@@ -90,8 +90,17 @@ WSGI_APPLICATION = 'forgelock.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 # Verificar se está no Railway (produção)
-if os.getenv('DATABASE_URL'):
-    # Usar PostgreSQL no Railway
+if os.getenv('DATABASE_PUBLIC_URL'):
+    # Usar PostgreSQL público no Railway (host externo)
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.getenv('DATABASE_PUBLIC_URL'),
+            conn_max_age=600
+        )
+    }
+elif os.getenv('DATABASE_URL'):
+    # Fallback para DATABASE_URL se não tiver pública
     import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(
