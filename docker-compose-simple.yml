@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # Aplicação Django (conecta ao PostgreSQL existente)
+  web:
+    build: .
+    ports:
+      - "8001:8000"
+    environment:
+      - DATABASE_URL=postgresql://forgelock_user:forgelock_password@host.docker.internal:5433/forgelock_db
+      - DEBUG=True
+      - SECRET_KEY=django-insecure-your-secret-key-here
+    volumes:
+      - .:/app
+      - /app/staticfiles
+      - /app/media
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py collectstatic --noinput &&
+             python manage.py runserver 0.0.0.0:8000"
+    # Conectar à rede do host para acessar container existente
+    network_mode: host
+    # Usar o container PostgreSQL existente
+    external_links:
+      - forgelock-web-platform-db-1:db

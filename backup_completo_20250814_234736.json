@@ -1,0 +1,2329 @@
+{
+  "django_migrations": [
+    {
+      "id": 1,
+      "app": "contenttypes",
+      "name": "0001_initial",
+      "applied": "2025-07-29 11:29:43.011888"
+    },
+    {
+      "id": 2,
+      "app": "contenttypes",
+      "name": "0002_remove_content_type_name",
+      "applied": "2025-07-29 11:29:43.020690"
+    },
+    {
+      "id": 3,
+      "app": "auth",
+      "name": "0001_initial",
+      "applied": "2025-07-29 11:29:43.035148"
+    },
+    {
+      "id": 4,
+      "app": "auth",
+      "name": "0002_alter_permission_name_max_length",
+      "applied": "2025-07-29 11:29:43.043935"
+    },
+    {
+      "id": 5,
+      "app": "auth",
+      "name": "0003_alter_user_email_max_length",
+      "applied": "2025-07-29 11:29:43.050295"
+    },
+    {
+      "id": 6,
+      "app": "auth",
+      "name": "0004_alter_user_username_opts",
+      "applied": "2025-07-29 11:29:43.057381"
+    },
+    {
+      "id": 7,
+      "app": "auth",
+      "name": "0005_alter_user_last_login_null",
+      "applied": "2025-07-29 11:29:43.063777"
+    },
+    {
+      "id": 8,
+      "app": "auth",
+      "name": "0006_require_contenttypes_0002",
+      "applied": "2025-07-29 11:29:43.068158"
+    },
+    {
+      "id": 9,
+      "app": "auth",
+      "name": "0007_alter_validators_add_error_messages",
+      "applied": "2025-07-29 11:29:43.074498"
+    },
+    {
+      "id": 10,
+      "app": "auth",
+      "name": "0008_alter_user_username_max_length",
+      "applied": "2025-07-29 11:29:43.081823"
+    },
+    {
+      "id": 11,
+      "app": "auth",
+      "name": "0009_alter_user_last_name_max_length",
+      "applied": "2025-07-29 11:29:43.088769"
+    },
+    {
+      "id": 12,
+      "app": "auth",
+      "name": "0010_alter_group_name_max_length",
+      "applied": "2025-07-29 11:29:43.096778"
+    },
+    {
+      "id": 13,
+      "app": "auth",
+      "name": "0011_update_proxy_permissions",
+      "applied": "2025-07-29 11:29:43.103817"
+    },
+    {
+      "id": 14,
+      "app": "auth",
+      "name": "0012_alter_user_first_name_max_length",
+      "applied": "2025-07-29 11:29:43.110422"
+    },
+    {
+      "id": 15,
+      "app": "core",
+      "name": "0001_initial",
+      "applied": "2025-07-29 11:29:43.137395"
+    },
+    {
+      "id": 16,
+      "app": "admin",
+      "name": "0001_initial",
+      "applied": "2025-07-29 11:29:43.153772"
+    },
+    {
+      "id": 17,
+      "app": "admin",
+      "name": "0002_logentry_remove_auto_add",
+      "applied": "2025-07-29 11:29:43.166339"
+    },
+    {
+      "id": 18,
+      "app": "admin",
+      "name": "0003_logentry_add_action_flag_choices",
+      "applied": "2025-07-29 11:29:43.175261"
+    },
+    {
+      "id": 19,
+      "app": "sessions",
+      "name": "0001_initial",
+      "applied": "2025-07-29 11:29:43.185208"
+    },
+    {
+      "id": 20,
+      "app": "core",
+      "name": "0002_country_name_en_country_name_es",
+      "applied": "2025-07-29 15:17:35.034778"
+    },
+    {
+      "id": 21,
+      "app": "core",
+      "name": "0003_loginattempt_account_trial_expires_at_and_more",
+      "applied": "2025-07-29 16:42:15.891495"
+    },
+    {
+      "id": 22,
+      "app": "core",
+      "name": "0004_rename_verification_expires_user_verification_expires_at",
+      "applied": "2025-07-29 22:36:05.339486"
+    },
+    {
+      "id": 23,
+      "app": "core",
+      "name": "0005_alter_user_phone_number",
+      "applied": "2025-07-30 00:54:51.145166"
+    },
+    {
+      "id": 24,
+      "app": "core",
+      "name": "0006_plan_is_trial_plan_trial_days",
+      "applied": "2025-07-30 01:14:37.575174"
+    },
+    {
+      "id": 25,
+      "app": "core",
+      "name": "0007_planprice",
+      "applied": "2025-07-30 01:31:31.653454"
+    },
+    {
+      "id": 26,
+      "app": "core",
+      "name": "0008_remove_account_trial_expires_at_and_more",
+      "applied": "2025-07-30 02:08:33.526132"
+    },
+    {
+      "id": 27,
+      "app": "core",
+      "name": "0009_plan_description_en_plan_description_es_plan_name_en_and_more",
+      "applied": "2025-07-30 02:15:19.376571"
+    },
+    {
+      "id": 28,
+      "app": "core",
+      "name": "0010_planprice_yearly_price_alter_planprice_price",
+      "applied": "2025-07-30 02:27:57.917056"
+    },
+    {
+      "id": 29,
+      "app": "core",
+      "name": "0011_user_date_of_birth_user_website",
+      "applied": "2025-07-30 23:54:45.877296"
+    },
+    {
+      "id": 30,
+      "app": "core",
+      "name": "0012_alter_user_company",
+      "applied": "2025-07-31 22:18:42.840370"
+    },
+    {
+      "id": 31,
+      "app": "core",
+      "name": "0013_user_is_first_access_alter_user_date_of_birth",
+      "applied": "2025-08-01 01:06:34.246378"
+    },
+    {
+      "id": 32,
+      "app": "core",
+      "name": "0014_remove_user_company_plan_max_companies_usercompany_and_more",
+      "applied": "2025-08-01 12:31:09.924094"
+    },
+    {
+      "id": 33,
+      "app": "core",
+      "name": "0015_remove_plan_price_field",
+      "applied": "2025-08-01 13:47:52.500053"
+    },
+    {
+      "id": 34,
+      "app": "core",
+      "name": "0016_subscription_grace_period_until_and_more",
+      "applied": "2025-08-01 17:47:52.477013"
+    },
+    {
+      "id": 35,
+      "app": "core",
+      "name": "0017_alter_company_cnpj",
+      "applied": "2025-08-04 01:34:09.226621"
+    },
+    {
+      "id": 36,
+      "app": "customers",
+      "name": "0001_initial",
+      "applied": "2025-08-04 01:34:09.245053"
+    },
+    {
+      "id": 37,
+      "app": "core",
+      "name": "0018_rename_date_of_birth_user_birth_date",
+      "applied": "2025-08-04 02:35:53.872964"
+    },
+    {
+      "id": 38,
+      "app": "core",
+      "name": "0019_company_address_number_company_city_company_state_and_more",
+      "applied": "2025-08-04 13:07:26.311265"
+    },
+    {
+      "id": 39,
+      "app": "customers",
+      "name": "0002_customer_address_number",
+      "applied": "2025-08-04 13:07:26.326654"
+    },
+    {
+      "id": 40,
+      "app": "products",
+      "name": "0001_initial",
+      "applied": "2025-08-05 14:20:08.900629"
+    },
+    {
+      "id": 41,
+      "app": "products",
+      "name": "0002_product_company",
+      "applied": "2025-08-07 00:46:11.734907"
+    },
+    {
+      "id": 42,
+      "app": "products",
+      "name": "0003_make_company_required",
+      "applied": "2025-08-07 00:58:22.077610"
+    },
+    {
+      "id": 43,
+      "app": "products",
+      "name": "0005_scale_only",
+      "applied": "2025-08-07 23:41:04.185890"
+    },
+    {
+      "id": 44,
+      "app": "products",
+      "name": "0004_scale_alter_product_scale",
+      "applied": "2025-08-07 23:41:18.165523"
+    },
+    {
+      "id": 46,
+      "app": "products",
+      "name": "0006_merge_0004_scale_alter_product_scale_0005_scale_only",
+      "applied": "2025-08-08 00:30:06.210400"
+    },
+    {
+      "id": 47,
+      "app": "products",
+      "name": "0007_add_scale_field",
+      "applied": "2025-08-08 00:30:06.229238"
+    },
+    {
+      "id": 48,
+      "app": "products",
+      "name": "0008_category_created_at_category_is_active_and_more",
+      "applied": "2025-08-08 17:07:57.516354"
+    }
+  ],
+  "sqlite_sequence": [
+    {
+      "name": "django_migrations",
+      "seq": 48
+    },
+    {
+      "name": "django_content_type",
+      "seq": 21
+    },
+    {
+      "name": "auth_permission",
+      "seq": 84
+    },
+    {
+      "name": "auth_group",
+      "seq": 0
+    },
+    {
+      "name": "django_admin_log",
+      "seq": 51
+    },
+    {
+      "name": "core_account",
+      "seq": 22
+    },
+    {
+      "name": "core_country",
+      "seq": 15
+    },
+    {
+      "name": "core_loginattempt",
+      "seq": 160
+    },
+    {
+      "name": "core_planprice",
+      "seq": 26
+    },
+    {
+      "name": "core_subscription",
+      "seq": 15
+    },
+    {
+      "name": "core_plan",
+      "seq": 12
+    },
+    {
+      "name": "core_usercompany",
+      "seq": 6
+    },
+    {
+      "name": "core_company",
+      "seq": 12
+    },
+    {
+      "name": "core_user",
+      "seq": 23
+    },
+    {
+      "name": "customers_customer",
+      "seq": 2
+    },
+    {
+      "name": "products_currency",
+      "seq": 3
+    },
+    {
+      "name": "products_productimage",
+      "seq": 11
+    },
+    {
+      "name": "products_product",
+      "seq": 5
+    },
+    {
+      "name": "products_scale",
+      "seq": 8
+    },
+    {
+      "name": "products_category",
+      "seq": 10
+    },
+    {
+      "name": "products_producttype",
+      "seq": 4
+    }
+  ],
+  "django_content_type": [
+    {
+      "id": 1,
+      "app_label": "admin",
+      "model": "logentry"
+    },
+    {
+      "id": 2,
+      "app_label": "auth",
+      "model": "permission"
+    },
+    {
+      "id": 3,
+      "app_label": "auth",
+      "model": "group"
+    },
+    {
+      "id": 4,
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    },
+    {
+      "id": 5,
+      "app_label": "sessions",
+      "model": "session"
+    },
+    {
+      "id": 6,
+      "app_label": "core",
+      "model": "company"
+    },
+    {
+      "id": 7,
+      "app_label": "core",
+      "model": "country"
+    },
+    {
+      "id": 8,
+      "app_label": "core",
+      "model": "plan"
+    },
+    {
+      "id": 9,
+      "app_label": "core",
+      "model": "user"
+    },
+    {
+      "id": 10,
+      "app_label": "core",
+      "model": "account"
+    },
+    {
+      "id": 11,
+      "app_label": "core",
+      "model": "loginattempt"
+    },
+    {
+      "id": 12,
+      "app_label": "core",
+      "model": "planprice"
+    },
+    {
+      "id": 13,
+      "app_label": "core",
+      "model": "subscription"
+    },
+    {
+      "id": 14,
+      "app_label": "core",
+      "model": "usercompany"
+    },
+    {
+      "id": 15,
+      "app_label": "customers",
+      "model": "customer"
+    },
+    {
+      "id": 16,
+      "app_label": "products",
+      "model": "producttype"
+    },
+    {
+      "id": 17,
+      "app_label": "products",
+      "model": "currency"
+    },
+    {
+      "id": 18,
+      "app_label": "products",
+      "model": "product"
+    },
+    {
+      "id": 19,
+      "app_label": "products",
+      "model": "category"
+    },
+    {
+      "id": 20,
+      "app_label": "products",
+      "model": "productimage"
+    },
+    {
+      "id": 21,
+      "app_label": "products",
+      "model": "scale"
+    }
+  ],
+  "auth_group_permissions": [],
+  "auth_permission": [
+    {
+      "id": 1,
+      "content_type_id": 1,
+      "codename": "add_logentry",
+      "name": "Can add log entry"
+    },
+    {
+      "id": 2,
+      "content_type_id": 1,
+      "codename": "change_logentry",
+      "name": "Can change log entry"
+    },
+    {
+      "id": 3,
+      "content_type_id": 1,
+      "codename": "delete_logentry",
+      "name": "Can delete log entry"
+    },
+    {
+      "id": 4,
+      "content_type_id": 1,
+      "codename": "view_logentry",
+      "name": "Can view log entry"
+    },
+    {
+      "id": 5,
+      "content_type_id": 2,
+      "codename": "add_permission",
+      "name": "Can add permission"
+    },
+    {
+      "id": 6,
+      "content_type_id": 2,
+      "codename": "change_permission",
+      "name": "Can change permission"
+    },
+    {
+      "id": 7,
+      "content_type_id": 2,
+      "codename": "delete_permission",
+      "name": "Can delete permission"
+    },
+    {
+      "id": 8,
+      "content_type_id": 2,
+      "codename": "view_permission",
+      "name": "Can view permission"
+    },
+    {
+      "id": 9,
+      "content_type_id": 3,
+      "codename": "add_group",
+      "name": "Can add group"
+    },
+    {
+      "id": 10,
+      "content_type_id": 3,
+      "codename": "change_group",
+      "name": "Can change group"
+    },
+    {
+      "id": 11,
+      "content_type_id": 3,
+      "codename": "delete_group",
+      "name": "Can delete group"
+    },
+    {
+      "id": 12,
+      "content_type_id": 3,
+      "codename": "view_group",
+      "name": "Can view group"
+    },
+    {
+      "id": 13,
+      "content_type_id": 4,
+      "codename": "add_contenttype",
+      "name": "Can add content type"
+    },
+    {
+      "id": 14,
+      "content_type_id": 4,
+      "codename": "change_contenttype",
+      "name": "Can change content type"
+    },
+    {
+      "id": 15,
+      "content_type_id": 4,
+      "codename": "delete_contenttype",
+      "name": "Can delete content type"
+    },
+    {
+      "id": 16,
+      "content_type_id": 4,
+      "codename": "view_contenttype",
+      "name": "Can view content type"
+    },
+    {
+      "id": 17,
+      "content_type_id": 5,
+      "codename": "add_session",
+      "name": "Can add session"
+    },
+    {
+      "id": 18,
+      "content_type_id": 5,
+      "codename": "change_session",
+      "name": "Can change session"
+    },
+    {
+      "id": 19,
+      "content_type_id": 5,
+      "codename": "delete_session",
+      "name": "Can delete session"
+    },
+    {
+      "id": 20,
+      "content_type_id": 5,
+      "codename": "view_session",
+      "name": "Can view session"
+    },
+    {
+      "id": 21,
+      "content_type_id": 6,
+      "codename": "add_company",
+      "name": "Can add Empresa"
+    },
+    {
+      "id": 22,
+      "content_type_id": 6,
+      "codename": "change_company",
+      "name": "Can change Empresa"
+    },
+    {
+      "id": 23,
+      "content_type_id": 6,
+      "codename": "delete_company",
+      "name": "Can delete Empresa"
+    },
+    {
+      "id": 24,
+      "content_type_id": 6,
+      "codename": "view_company",
+      "name": "Can view Empresa"
+    },
+    {
+      "id": 25,
+      "content_type_id": 7,
+      "codename": "add_country",
+      "name": "Can add País"
+    },
+    {
+      "id": 26,
+      "content_type_id": 7,
+      "codename": "change_country",
+      "name": "Can change País"
+    },
+    {
+      "id": 27,
+      "content_type_id": 7,
+      "codename": "delete_country",
+      "name": "Can delete País"
+    },
+    {
+      "id": 28,
+      "content_type_id": 7,
+      "codename": "view_country",
+      "name": "Can view País"
+    },
+    {
+      "id": 29,
+      "content_type_id": 8,
+      "codename": "add_plan",
+      "name": "Can add Plano"
+    },
+    {
+      "id": 30,
+      "content_type_id": 8,
+      "codename": "change_plan",
+      "name": "Can change Plano"
+    },
+    {
+      "id": 31,
+      "content_type_id": 8,
+      "codename": "delete_plan",
+      "name": "Can delete Plano"
+    },
+    {
+      "id": 32,
+      "content_type_id": 8,
+      "codename": "view_plan",
+      "name": "Can view Plano"
+    },
+    {
+      "id": 33,
+      "content_type_id": 9,
+      "codename": "add_user",
+      "name": "Can add Usuário"
+    },
+    {
+      "id": 34,
+      "content_type_id": 9,
+      "codename": "change_user",
+      "name": "Can change Usuário"
+    },
+    {
+      "id": 35,
+      "content_type_id": 9,
+      "codename": "delete_user",
+      "name": "Can delete Usuário"
+    },
+    {
+      "id": 36,
+      "content_type_id": 9,
+      "codename": "view_user",
+      "name": "Can view Usuário"
+    },
+    {
+      "id": 37,
+      "content_type_id": 10,
+      "codename": "add_account",
+      "name": "Can add Conta"
+    },
+    {
+      "id": 38,
+      "content_type_id": 10,
+      "codename": "change_account",
+      "name": "Can change Conta"
+    },
+    {
+      "id": 39,
+      "content_type_id": 10,
+      "codename": "delete_account",
+      "name": "Can delete Conta"
+    },
+    {
+      "id": 40,
+      "content_type_id": 10,
+      "codename": "view_account",
+      "name": "Can view Conta"
+    },
+    {
+      "id": 41,
+      "content_type_id": 11,
+      "codename": "add_loginattempt",
+      "name": "Can add Tentativa de Login"
+    },
+    {
+      "id": 42,
+      "content_type_id": 11,
+      "codename": "change_loginattempt",
+      "name": "Can change Tentativa de Login"
+    },
+    {
+      "id": 43,
+      "content_type_id": 11,
+      "codename": "delete_loginattempt",
+      "name": "Can delete Tentativa de Login"
+    },
+    {
+      "id": 44,
+      "content_type_id": 11,
+      "codename": "view_loginattempt",
+      "name": "Can view Tentativa de Login"
+    },
+    {
+      "id": 45,
+      "content_type_id": 12,
+      "codename": "add_planprice",
+      "name": "Can add Preço do Plano"
+    },
+    {
+      "id": 46,
+      "content_type_id": 12,
+      "codename": "change_planprice",
+      "name": "Can change Preço do Plano"
+    },
+    {
+      "id": 47,
+      "content_type_id": 12,
+      "codename": "delete_planprice",
+      "name": "Can delete Preço do Plano"
+    },
+    {
+      "id": 48,
+      "content_type_id": 12,
+      "codename": "view_planprice",
+      "name": "Can view Preço do Plano"
+    },
+    {
+      "id": 49,
+      "content_type_id": 13,
+      "codename": "add_subscription",
+      "name": "Can add Assinatura"
+    },
+    {
+      "id": 50,
+      "content_type_id": 13,
+      "codename": "change_subscription",
+      "name": "Can change Assinatura"
+    },
+    {
+      "id": 51,
+      "content_type_id": 13,
+      "codename": "delete_subscription",
+      "name": "Can delete Assinatura"
+    },
+    {
+      "id": 52,
+      "content_type_id": 13,
+      "codename": "view_subscription",
+      "name": "Can view Assinatura"
+    },
+    {
+      "id": 53,
+      "content_type_id": 14,
+      "codename": "add_usercompany",
+      "name": "Can add Usuário-Empresa"
+    },
+    {
+      "id": 54,
+      "content_type_id": 14,
+      "codename": "change_usercompany",
+      "name": "Can change Usuário-Empresa"
+    },
+    {
+      "id": 55,
+      "content_type_id": 14,
+      "codename": "delete_usercompany",
+      "name": "Can delete Usuário-Empresa"
+    },
+    {
+      "id": 56,
+      "content_type_id": 14,
+      "codename": "view_usercompany",
+      "name": "Can view Usuário-Empresa"
+    },
+    {
+      "id": 57,
+      "content_type_id": 15,
+      "codename": "add_customer",
+      "name": "Can add Cliente"
+    },
+    {
+      "id": 58,
+      "content_type_id": 15,
+      "codename": "change_customer",
+      "name": "Can change Cliente"
+    },
+    {
+      "id": 59,
+      "content_type_id": 15,
+      "codename": "delete_customer",
+      "name": "Can delete Cliente"
+    },
+    {
+      "id": 60,
+      "content_type_id": 15,
+      "codename": "view_customer",
+      "name": "Can view Cliente"
+    },
+    {
+      "id": 61,
+      "content_type_id": 16,
+      "codename": "add_producttype",
+      "name": "Can add Tipo de Produto"
+    },
+    {
+      "id": 62,
+      "content_type_id": 16,
+      "codename": "change_producttype",
+      "name": "Can change Tipo de Produto"
+    },
+    {
+      "id": 63,
+      "content_type_id": 16,
+      "codename": "delete_producttype",
+      "name": "Can delete Tipo de Produto"
+    },
+    {
+      "id": 64,
+      "content_type_id": 16,
+      "codename": "view_producttype",
+      "name": "Can view Tipo de Produto"
+    },
+    {
+      "id": 65,
+      "content_type_id": 17,
+      "codename": "add_currency",
+      "name": "Can add Moeda"
+    },
+    {
+      "id": 66,
+      "content_type_id": 17,
+      "codename": "change_currency",
+      "name": "Can change Moeda"
+    },
+    {
+      "id": 67,
+      "content_type_id": 17,
+      "codename": "delete_currency",
+      "name": "Can delete Moeda"
+    },
+    {
+      "id": 68,
+      "content_type_id": 17,
+      "codename": "view_currency",
+      "name": "Can view Moeda"
+    },
+    {
+      "id": 69,
+      "content_type_id": 18,
+      "codename": "add_product",
+      "name": "Can add Produto"
+    },
+    {
+      "id": 70,
+      "content_type_id": 18,
+      "codename": "change_product",
+      "name": "Can change Produto"
+    },
+    {
+      "id": 71,
+      "content_type_id": 18,
+      "codename": "delete_product",
+      "name": "Can delete Produto"
+    },
+    {
+      "id": 72,
+      "content_type_id": 18,
+      "codename": "view_product",
+      "name": "Can view Produto"
+    },
+    {
+      "id": 73,
+      "content_type_id": 19,
+      "codename": "add_category",
+      "name": "Can add Categoria"
+    },
+    {
+      "id": 74,
+      "content_type_id": 19,
+      "codename": "change_category",
+      "name": "Can change Categoria"
+    },
+    {
+      "id": 75,
+      "content_type_id": 19,
+      "codename": "delete_category",
+      "name": "Can delete Categoria"
+    },
+    {
+      "id": 76,
+      "content_type_id": 19,
+      "codename": "view_category",
+      "name": "Can view Categoria"
+    },
+    {
+      "id": 77,
+      "content_type_id": 20,
+      "codename": "add_productimage",
+      "name": "Can add Imagem do Produto"
+    },
+    {
+      "id": 78,
+      "content_type_id": 20,
+      "codename": "change_productimage",
+      "name": "Can change Imagem do Produto"
+    },
+    {
+      "id": 79,
+      "content_type_id": 20,
+      "codename": "delete_productimage",
+      "name": "Can delete Imagem do Produto"
+    },
+    {
+      "id": 80,
+      "content_type_id": 20,
+      "codename": "view_productimage",
+      "name": "Can view Imagem do Produto"
+    },
+    {
+      "id": 81,
+      "content_type_id": 21,
+      "codename": "add_scale",
+      "name": "Can add Escala"
+    },
+    {
+      "id": 82,
+      "content_type_id": 21,
+      "codename": "change_scale",
+      "name": "Can change Escala"
+    },
+    {
+      "id": 83,
+      "content_type_id": 21,
+      "codename": "delete_scale",
+      "name": "Can delete Escala"
+    },
+    {
+      "id": 84,
+      "content_type_id": 21,
+      "codename": "view_scale",
+      "name": "Can view Escala"
+    }
+  ],
+  "auth_group": [],
+  "core_user_groups": [],
+  "core_user_user_permissions": [],
+  "core_account": [
+    {
+      "id": 20,
+      "is_active": 1,
+      "created_at": "2025-08-01 02:39:18.103536",
+      "updated_at": "2025-08-01 15:27:48.637691",
+      "user_id": 22,
+      "plan_id": 12
+    },
+    {
+      "id": 21,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.643590",
+      "updated_at": "2025-08-01 15:27:48.643615",
+      "user_id": 16,
+      "plan_id": 12
+    },
+    {
+      "id": 22,
+      "is_active": 1,
+      "created_at": "2025-08-01 18:56:25.889608",
+      "updated_at": "2025-08-01 18:56:25.889629",
+      "user_id": 23,
+      "plan_id": 12
+    }
+  ],
+  "django_admin_log": [
+    {
+      "id": 18,
+      "object_id": "16",
+      "object_repr": "rasilva84@test.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-07-31 22:13:27.013999"
+    },
+    {
+      "id": 19,
+      "object_id": "16",
+      "object_repr": "rasilva84@test.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Pa\\u00eds\", \"Data de nascimento\"]}}]",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-07-31 22:14:00.708028"
+    },
+    {
+      "id": 20,
+      "object_id": "7",
+      "object_repr": "rasilva84@test.com - Admin (Ativa)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]",
+      "content_type_id": 13,
+      "user_id": 16,
+      "action_time": "2025-07-31 22:17:15.635646"
+    },
+    {
+      "id": 21,
+      "object_id": "14",
+      "object_repr": "Conta de rasilva84@test.com",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]",
+      "content_type_id": 10,
+      "user_id": 16,
+      "action_time": "2025-07-31 22:17:44.005113"
+    },
+    {
+      "id": 22,
+      "object_id": "5",
+      "object_repr": "Vitalicio",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-07-31 23:19:23.122494"
+    },
+    {
+      "id": 23,
+      "object_id": "17",
+      "object_repr": "rasilva84@gmail.com",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-07-31 23:21:34.116956"
+    },
+    {
+      "id": 24,
+      "object_id": "18",
+      "object_repr": "rodrigoa_silva@hotmail.com",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-07-31 23:30:11.881281"
+    },
+    {
+      "id": 25,
+      "object_id": "19",
+      "object_repr": "rodrigoa_silva@hotmail.com",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-08-01 00:27:08.223657"
+    },
+    {
+      "id": 26,
+      "object_id": "1",
+      "object_repr": "Admin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"M\\u00e1ximo de usu\\u00e1rios\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 00:38:19.585913"
+    },
+    {
+      "id": 27,
+      "object_id": "1",
+      "object_repr": "Admin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Dias de trial\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 00:38:37.512474"
+    },
+    {
+      "id": 28,
+      "object_id": "20",
+      "object_repr": "rodrigoa_silva@hotmail.com",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-08-01 00:40:36.951528"
+    },
+    {
+      "id": 29,
+      "object_id": "21",
+      "object_repr": "rodrigoa_silva@hotmail.com",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-08-01 01:23:52.347864"
+    },
+    {
+      "id": 30,
+      "object_id": "6",
+      "object_repr": "Basic",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 13:17:33.218087"
+    },
+    {
+      "id": 31,
+      "object_id": "7",
+      "object_repr": "Premium",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 13:17:44.224466"
+    },
+    {
+      "id": 32,
+      "object_id": "9",
+      "object_repr": "Vitalicio",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 13:26:32.553535"
+    },
+    {
+      "id": 33,
+      "object_id": "10",
+      "object_repr": "Basic - BRL (89.99)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\", \"Pre\\u00e7o Anual\"]}}]",
+      "content_type_id": 12,
+      "user_id": 16,
+      "action_time": "2025-08-01 14:05:37.304444"
+    },
+    {
+      "id": 34,
+      "object_id": "11",
+      "object_repr": "Premium - BRL (129.99)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\"]}}]",
+      "content_type_id": 12,
+      "user_id": 16,
+      "action_time": "2025-08-01 14:06:07.484785"
+    },
+    {
+      "id": 35,
+      "object_id": "12",
+      "object_repr": "Admin - BRL (0)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\", \"Pre\\u00e7o Anual\"]}}]",
+      "content_type_id": 12,
+      "user_id": 16,
+      "action_time": "2025-08-01 14:06:19.910598"
+    },
+    {
+      "id": 36,
+      "object_id": "13",
+      "object_repr": "Vitalício - BRL (0)",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Pre\\u00e7o Mensal\", \"Pre\\u00e7o Anual\"]}}]",
+      "content_type_id": 12,
+      "user_id": 16,
+      "action_time": "2025-08-01 14:06:25.091416"
+    },
+    {
+      "id": 37,
+      "object_id": "6",
+      "object_repr": "Basico",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 14:17:18.715454"
+    },
+    {
+      "id": 38,
+      "object_id": "6",
+      "object_repr": "Básico",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\", \"Nome (Ingl\\u00eas)\", \"Nome (Espanhol)\", \"Descri\\u00e7\\u00e3o (Ingl\\u00eas)\", \"Descri\\u00e7\\u00e3o (Espanhol)\"]}}]",
+      "content_type_id": 8,
+      "user_id": 16,
+      "action_time": "2025-08-01 14:18:55.444897"
+    },
+    {
+      "id": 39,
+      "object_id": "10",
+      "object_repr": "RC Imports",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]",
+      "content_type_id": 6,
+      "user_id": 16,
+      "action_time": "2025-08-01 16:18:22.083835"
+    },
+    {
+      "id": 40,
+      "object_id": "7",
+      "object_repr": "ADM Company",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\", \"Telefone\"]}}]",
+      "content_type_id": 6,
+      "user_id": 16,
+      "action_time": "2025-08-01 16:30:17.097786"
+    },
+    {
+      "id": 41,
+      "object_id": "22",
+      "object_repr": "michael_jackson@hotmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"E-mail\", \"Telefone\"]}}]",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-08-01 16:31:28.781279"
+    },
+    {
+      "id": 42,
+      "object_id": "11",
+      "object_repr": "Pato Donald",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 6,
+      "user_id": 16,
+      "action_time": "2025-08-04 00:49:58.404338"
+    },
+    {
+      "id": 43,
+      "object_id": "15",
+      "object_repr": "rasilva84@test.com - Enterprise (Ativa)",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]",
+      "content_type_id": 13,
+      "user_id": 16,
+      "action_time": "2025-08-04 01:36:55.401258"
+    },
+    {
+      "id": 44,
+      "object_id": "6",
+      "object_repr": "Religioso",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]",
+      "content_type_id": 19,
+      "user_id": 16,
+      "action_time": "2025-08-06 14:38:07.511704"
+    },
+    {
+      "id": 45,
+      "object_id": "7",
+      "object_repr": "Decoração",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Descri\\u00e7\\u00e3o\"]}}]",
+      "content_type_id": 19,
+      "user_id": 16,
+      "action_time": "2025-08-06 14:42:30.473050"
+    },
+    {
+      "id": 46,
+      "object_id": "5",
+      "object_repr": "Ímãs de Geladeira",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 19,
+      "user_id": 16,
+      "action_time": "2025-08-06 14:42:52.772099"
+    },
+    {
+      "id": 47,
+      "object_id": "8",
+      "object_repr": "Utilidades",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]",
+      "content_type_id": 19,
+      "user_id": 16,
+      "action_time": "2025-08-06 14:43:25.062961"
+    },
+    {
+      "id": 48,
+      "object_id": "1",
+      "object_repr": "Arquivo STL",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Nome\"]}}]",
+      "content_type_id": 16,
+      "user_id": 16,
+      "action_time": "2025-08-06 14:49:23.251207"
+    },
+    {
+      "id": 49,
+      "object_id": "2",
+      "object_repr": "Modelo Físico",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Descri\\u00e7\\u00e3o\"]}}]",
+      "content_type_id": 16,
+      "user_id": 16,
+      "action_time": "2025-08-06 14:49:54.599379"
+    },
+    {
+      "id": 50,
+      "object_id": "22",
+      "object_repr": "michael_jackson@hotmail.com",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]",
+      "content_type_id": 9,
+      "user_id": 16,
+      "action_time": "2025-08-07 00:28:51.351998"
+    },
+    {
+      "id": 51,
+      "object_id": "6",
+      "object_repr": "michael_jackson@hotmail.com - Pato Donald (Administrador)",
+      "action_flag": 3,
+      "change_message": "",
+      "content_type_id": 14,
+      "user_id": 16,
+      "action_time": "2025-08-10 21:37:34.015534"
+    }
+  ],
+  "django_session": [
+    {
+      "session_key": "jxdedtd5jjlmoanzecc8jmddhrwwovgc",
+      "session_data": "eyJkamFuZ29fbGFuZ3VhZ2UiOiJlcyJ9:1uglEV:FOdsmPY4RCpp-COvCDleF5xuZR3dMkCCofF5s4IPyJo",
+      "expire_date": "2025-08-12 14:23:11.887444"
+    },
+    {
+      "session_key": "zaq8q9jbse7pefji7odpvcgslywmspi6",
+      "session_data": "eyJkamFuZ29fbGFuZ3VhZ2UiOiJlbiJ9:1uglWN:pPRH4Xt5d12qDa8Y0vJglOrxpOTJZKgPzCpMz0dezCs",
+      "expire_date": "2025-08-12 14:41:39.746477"
+    },
+    {
+      "session_key": "iu3lixhanypvycav3we740jq2d2dnoe2",
+      "session_data": "eyJ1c2VyX2lkIjo3LCJkamFuZ29fbGFuZ3VhZ2UiOiJlbiJ9:1ugtdJ:MhfJyh4mqd0mwdvE_t5UXmegEFNWXX550APmshhgaIk",
+      "expire_date": "2025-08-12 23:21:21.575814"
+    },
+    {
+      "session_key": "yqactds2nd7husgaqfhmr3yx6ve9ze8f",
+      "session_data": "eyJ1c2VyX2lkIjo3LCJkamFuZ29fbGFuZ3VhZ2UiOiJlbiJ9:1ugte6:Q3ziRMwXG5r-OsYF96zTwQ29F7dQsQPdpfZxdqGBhGs",
+      "expire_date": "2025-08-12 23:22:10.395794"
+    },
+    {
+      "session_key": "bfabrci1i2a5zdyli5btkzg4qkw71gtt",
+      "session_data": "eyJkamFuZ29fbGFuZ3VhZ2UiOiJlcyJ9:1uhWFt:K9qoCKntYDFfFfzPHEVw7i9Cn2qC0dYhcglmbQMH92I",
+      "expire_date": "2025-08-14 16:35:45.792116"
+    },
+    {
+      "session_key": "dnuqtz4eft271dldvjlp3g671s08zaua",
+      "session_data": ".eJxVjr0OgyAUhd-FuSEiyE_H7n0GcrlcxdaoEZyavnsxdWiXM5yfL-fFPOwl-T3T5sfIrkxodvk1A-CT5iOJD5iHheMyl20M_KjwM838vkSabmf3D5Agp7q20QAqFTqH0ikRGi2ArJHQN8pK1fYOwWiCDrV1kVpBxiqhsZWInRSyQr8H_FR1h4EqdC3s_QFhhD-V:1ujoV1:rxPh9ZkfFvDLXGIiD6Lp2PoD5SdTag8F63l7NsebvIE",
+      "expire_date": "2025-08-21 00:28:51.367995"
+    },
+    {
+      "session_key": "4e08jq7dghrj8va291juh1e4yij2smaj",
+      "session_data": ".eJxVjrEOgzAQQ_8lcxXdcU0gHbvzDdGRXIAWBYnAVPXfCypDu3iwny2_lOdtHfxWZPFjVDdVkbr8mh2Hp-QjiQ_O_azDnNdl7PSB6DMtup2jTPeT_RsYuAx721QMbCjaxJacMYYSSAd1QnGpMtYiYIhXQeAGsAbCAI5IGkRmJ8er7wE_7bpxL_uoZPX-AD9oPvw:1ulXLY:BwZrxD8P5qO53d19DG8x7PH1tXd-jK9oIHY2ZojbgfM",
+      "expire_date": "2025-08-25 18:34:12.851435"
+    },
+    {
+      "session_key": "gg7xcw3prfq3auzrn91oj8mv0qtcvyl6",
+      "session_data": ".eJxVjEEOgjAQRe_StWlmGKdQl-45AxnaqaCmTSisjHdXEha6_e-9_zKDbOs0bFWXYY7mYhoyp99xlPDQvJN4l3wrNpS8LvNod8UetNq-RH1eD_fvYJI6fWtuBIQpuiSOPDNTAh2hTag-NewcAoZ4VgTpAFsgDOCJtEMU8Urm_QHteTcl:1uldFt:NYqVpKS-hlfDOYmBLZgc_2RXEmBt7Qcq7eovUT1kEUM",
+      "expire_date": "2025-08-26 00:52:45.551276"
+    },
+    {
+      "session_key": "xsjhkzf7801hri6izcg1td1o3t23d0yw",
+      "session_data": ".eJxVjDsOwjAQBe_iGlmxvf5R0nMGa73e4ABypDipEHeHSCmgfTPzXiLhtta0dV7SVMRZKCdOv2NGenDbSblju82S5rYuU5a7Ig_a5XUu_Lwc7t9BxV6_dSgeCSDbSCaCyoNTyMEbHAcIBvQYCb1jtORCLKwV-wDKkTZE1igj3h8DLjet:1uldHa:tA-hhcDc9IT2lfFBF_Kf6UovKvWMuKBi-7_UPvFvR7c",
+      "expire_date": "2025-08-26 00:54:30.665912"
+    }
+  ],
+  "core_country": [
+    {
+      "id": 1,
+      "name": "Brasil",
+      "code": "BR",
+      "ddi": "+55",
+      "flag": "br",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.325836",
+      "updated_at": "2025-07-29 15:19:09.727225",
+      "name_en": "Brazil",
+      "name_es": "Brasil"
+    },
+    {
+      "id": 2,
+      "name": "Estados Unidos",
+      "code": "US",
+      "ddi": "+1",
+      "flag": "us",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.330891",
+      "updated_at": "2025-07-29 15:19:09.731992",
+      "name_en": "United States",
+      "name_es": "Estados Unidos"
+    },
+    {
+      "id": 3,
+      "name": "Argentina",
+      "code": "AR",
+      "ddi": "+54",
+      "flag": "ar",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.335869",
+      "updated_at": "2025-07-29 15:19:09.736465",
+      "name_en": "Argentina",
+      "name_es": "Argentina"
+    },
+    {
+      "id": 4,
+      "name": "Chile",
+      "code": "CL",
+      "ddi": "+56",
+      "flag": "cl",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.340110",
+      "updated_at": "2025-07-29 15:19:09.740737",
+      "name_en": "Chile",
+      "name_es": "Chile"
+    },
+    {
+      "id": 5,
+      "name": "Colômbia",
+      "code": "CO",
+      "ddi": "+57",
+      "flag": "co",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.344019",
+      "updated_at": "2025-07-29 15:19:09.744851",
+      "name_en": "Colombia",
+      "name_es": "Colombia"
+    },
+    {
+      "id": 6,
+      "name": "México",
+      "code": "MX",
+      "ddi": "+52",
+      "flag": "mx",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.348160",
+      "updated_at": "2025-07-29 15:19:09.749317",
+      "name_en": "Mexico",
+      "name_es": "México"
+    },
+    {
+      "id": 7,
+      "name": "Peru",
+      "code": "PE",
+      "ddi": "+51",
+      "flag": "pe",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.352753",
+      "updated_at": "2025-07-29 15:19:09.753546",
+      "name_en": "Peru",
+      "name_es": "Perú"
+    },
+    {
+      "id": 8,
+      "name": "Uruguai",
+      "code": "UY",
+      "ddi": "+598",
+      "flag": "uy",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.357203",
+      "updated_at": "2025-07-29 15:19:09.757800",
+      "name_en": "Uruguay",
+      "name_es": "Uruguay"
+    },
+    {
+      "id": 9,
+      "name": "Venezuela",
+      "code": "VE",
+      "ddi": "+58",
+      "flag": "ve",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.361484",
+      "updated_at": "2025-07-29 15:19:09.762013",
+      "name_en": "Venezuela",
+      "name_es": "Venezuela"
+    },
+    {
+      "id": 10,
+      "name": "Espanha",
+      "code": "ES",
+      "ddi": "+34",
+      "flag": "es",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.365414",
+      "updated_at": "2025-07-29 15:19:09.766389",
+      "name_en": "Spain",
+      "name_es": "España"
+    },
+    {
+      "id": 11,
+      "name": "Portugal",
+      "code": "PT",
+      "ddi": "+351",
+      "flag": "pt",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.370369",
+      "updated_at": "2025-07-29 15:19:09.770669",
+      "name_en": "Portugal",
+      "name_es": "Portugal"
+    },
+    {
+      "id": 12,
+      "name": "Reino Unido",
+      "code": "GB",
+      "ddi": "+44",
+      "flag": "gb",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.375024",
+      "updated_at": "2025-07-29 15:19:09.775119",
+      "name_en": "United Kingdom",
+      "name_es": "Reino Unido"
+    },
+    {
+      "id": 13,
+      "name": "França",
+      "code": "FR",
+      "ddi": "+33",
+      "flag": "fr",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.379088",
+      "updated_at": "2025-07-29 15:19:09.779371",
+      "name_en": "France",
+      "name_es": "Francia"
+    },
+    {
+      "id": 14,
+      "name": "Alemanha",
+      "code": "DE",
+      "ddi": "+49",
+      "flag": "de",
+      "is_active": 0,
+      "created_at": "2025-07-29 11:30:59.383262",
+      "updated_at": "2025-08-10 19:52:07.750265",
+      "name_en": "Germany",
+      "name_es": "Alemania"
+    },
+    {
+      "id": 15,
+      "name": "Itália",
+      "code": "IT",
+      "ddi": "+39",
+      "flag": "it",
+      "is_active": 1,
+      "created_at": "2025-07-29 11:30:59.387953",
+      "updated_at": "2025-08-08 20:12:36.046476",
+      "name_en": "Italy",
+      "name_es": "Italia"
+    }
+  ],
+  "core_loginattempt": [],
+  "core_planprice": [
+    {
+      "id": 18,
+      "currency": "BRL",
+      "price": 69.99,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.583434",
+      "updated_at": "2025-08-01 15:27:48.583452",
+      "plan_id": 10,
+      "yearly_price": 699.99
+    },
+    {
+      "id": 19,
+      "currency": "USD",
+      "price": 14,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.588681",
+      "updated_at": "2025-08-01 15:27:48.588723",
+      "plan_id": 10,
+      "yearly_price": 140
+    },
+    {
+      "id": 20,
+      "currency": "EUR",
+      "price": 12.6,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.593982",
+      "updated_at": "2025-08-01 15:27:48.594004",
+      "plan_id": 10,
+      "yearly_price": 126
+    },
+    {
+      "id": 21,
+      "currency": "BRL",
+      "price": 119.99,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.600593",
+      "updated_at": "2025-08-01 15:27:48.600615",
+      "plan_id": 11,
+      "yearly_price": 1199.99
+    },
+    {
+      "id": 22,
+      "currency": "USD",
+      "price": 24,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.606731",
+      "updated_at": "2025-08-01 15:27:48.606759",
+      "plan_id": 11,
+      "yearly_price": 240
+    },
+    {
+      "id": 23,
+      "currency": "EUR",
+      "price": 21.6,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.612413",
+      "updated_at": "2025-08-01 15:27:48.612437",
+      "plan_id": 11,
+      "yearly_price": 216
+    },
+    {
+      "id": 24,
+      "currency": "BRL",
+      "price": 249.99,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.618133",
+      "updated_at": "2025-08-01 15:27:48.618156",
+      "plan_id": 12,
+      "yearly_price": 2499.99
+    },
+    {
+      "id": 25,
+      "currency": "USD",
+      "price": 50,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.623421",
+      "updated_at": "2025-08-01 15:27:48.623439",
+      "plan_id": 12,
+      "yearly_price": 500
+    },
+    {
+      "id": 26,
+      "currency": "EUR",
+      "price": 45,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.629111",
+      "updated_at": "2025-08-01 15:27:48.629129",
+      "plan_id": 12,
+      "yearly_price": 450
+    }
+  ],
+  "core_subscription": [
+    {
+      "id": 14,
+      "status": "grace_period",
+      "billing_cycle": "monthly",
+      "start_date": "2025-08-01 18:56:25.894135",
+      "end_date": "2025-08-03 00:47:38.350343",
+      "next_billing_date": "2025-08-16 18:56:25.894121",
+      "auto_renew": 1,
+      "created_at": "2025-08-01 18:56:25.894371",
+      "updated_at": "2025-08-04 00:55:02.159800",
+      "plan_id": 12,
+      "user_id": 23,
+      "grace_period_until": "2025-08-19 00:55:02.159698",
+      "last_notification_sent": null
+    },
+    {
+      "id": 15,
+      "status": "active",
+      "billing_cycle": "yearly",
+      "start_date": "2025-08-04 01:36:30",
+      "end_date": "9999-12-31 03:00:00",
+      "next_billing_date": "9999-12-31 03:00:00",
+      "auto_renew": 1,
+      "created_at": "2025-08-04 01:36:55.399921",
+      "updated_at": "2025-08-04 01:36:55.399929",
+      "plan_id": 12,
+      "user_id": 16,
+      "grace_period_until": null,
+      "last_notification_sent": null
+    }
+  ],
+  "core_plan": [
+    {
+      "id": 10,
+      "name": "Basic",
+      "description": "Ideal para quem transforma arquivos digitais em arte física. Gerencie sua produção e suas vendas de forma simples e eficiente, sem se preocupar com limites de clientes ou projetos.",
+      "max_users": 1,
+      "max_customers": -1,
+      "max_products": -1,
+      "max_projects": -1,
+      "has_stl_security": 0,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.569039",
+      "updated_at": "2025-08-01 16:38:09.667619",
+      "is_trial": 0,
+      "trial_days": 15,
+      "description_en": "Ideal for those who transform digital files into physical art. Manage your production and sales simply and efficiently, without worrying about client or project limits.",
+      "description_es": "Ideal para quienes transforman archivos digitales en arte física. Gestiona tu producción y ventas de forma simple y eficiente, sin preocuparte por límites de clientes o proyectos.",
+      "name_en": "Basic",
+      "name_es": "Basic",
+      "max_companies": 1
+    },
+    {
+      "id": 11,
+      "name": "Pro",
+      "description": "A solução completa para quem vive de criar arquivos 3D. Proteja seu portfólio digital contra pirataria, garanta a exclusividade de suas criações e gerencie seu negócio com segurança.",
+      "max_users": 1,
+      "max_customers": -1,
+      "max_products": -1,
+      "max_projects": -1,
+      "has_stl_security": 1,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.573693",
+      "updated_at": "2025-08-01 16:38:09.673485",
+      "is_trial": 0,
+      "trial_days": 15,
+      "description_en": "The complete solution for those who live by creating 3D files. Protect your digital portfolio against piracy, guarantee the exclusivity of your creations and manage your business securely.",
+      "description_es": "La solución completa para quienes viven creando archivos 3D. Protege tu portafolio digital contra la piratería, garantiza la exclusividad de tus creaciones y gestiona tu negocio con seguridad.",
+      "name_en": "Pro",
+      "name_es": "Pro",
+      "max_companies": 1
+    },
+    {
+      "id": 12,
+      "name": "Enterprise",
+      "description": "Feito para equipes que criam e comercializam em grande escala. Organize a gestão de projetos com até 5 usuários, centralize a comunicação e proteja os arquivos digitais da sua empresa contra pirataria.",
+      "max_users": 5,
+      "max_customers": -1,
+      "max_products": -1,
+      "max_projects": -1,
+      "has_stl_security": 1,
+      "is_active": 1,
+      "created_at": "2025-08-01 15:27:48.578075",
+      "updated_at": "2025-08-01 16:38:09.678274",
+      "is_trial": 0,
+      "trial_days": 15,
+      "description_en": "Made for teams that create and commercialize on a large scale. Organize project management with up to 5 users, centralize communication and protect your company's digital files against piracy.",
+      "description_es": "Hecho para equipos que crean y comercializan a gran escala. Organiza la gestión de proyectos con hasta 5 usuarios, centraliza la comunicación y protege los archivos digitales de tu empresa contra la piratería.",
+      "name_en": "Enterprise",
+      "name_es": "Enterprise",
+      "max_companies": 1
+    }
+  ],
+  "core_usercompany": [
+    {
+      "id": 3,
+      "role": "owner",
+      "permissions": "{}",
+      "is_active": 1,
+      "created_at": "2025-08-01 13:04:20.292398",
+      "updated_at": "2025-08-01 13:04:20.292425",
+      "company_id": 7,
+      "user_id": 16
+    },
+    {
+      "id": 4,
+      "role": "owner",
+      "permissions": "{}",
+      "is_active": 1,
+      "created_at": "2025-08-01 13:04:20.299181",
+      "updated_at": "2025-08-01 13:04:20.299198",
+      "company_id": 10,
+      "user_id": 22
+    },
+    {
+      "id": 5,
+      "role": "owner",
+      "permissions": "{}",
+      "is_active": 1,
+      "created_at": "2025-08-01 19:05:36.307811",
+      "updated_at": "2025-08-01 19:05:36.307825",
+      "company_id": 12,
+      "user_id": 23
+    }
+  ],
+  "core_company": [
+    {
+      "id": 7,
+      "name": "ADM Company",
+      "cnpj": null,
+      "email": "rasilva84@test.com",
+      "phone": "11999999999",
+      "address": "Teste",
+      "logo": "company_logos/bender_futurama_A0SWHet.jpeg",
+      "description": "",
+      "is_active": 1,
+      "created_at": "2025-07-31 22:16:10.854861",
+      "updated_at": "2025-08-01 16:30:17.096300",
+      "country_id": 1,
+      "address_number": "",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    {
+      "id": 10,
+      "name": "RC Imports",
+      "cnpj": null,
+      "email": "rodrigoa_silva@hotmail.com",
+      "phone": "17981839329",
+      "address": "",
+      "logo": "company_logos/logorec.jpeg",
+      "description": "",
+      "is_active": 1,
+      "created_at": "2025-08-01 02:39:59.719954",
+      "updated_at": "2025-08-01 16:18:57.950650",
+      "country_id": 1,
+      "address_number": "",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    {
+      "id": 12,
+      "name": "Pato Donald",
+      "cnpj": null,
+      "email": "pato.donald@gmail.com",
+      "phone": "17981839329",
+      "address": "Rua Chade Rezek",
+      "logo": "company_logos/papai_noel_bebado_Vv3CM2M.jpeg",
+      "description": "",
+      "is_active": 1,
+      "created_at": "2025-08-01 19:05:36.302896",
+      "updated_at": "2025-08-05 11:44:41.522852",
+      "country_id": 1,
+      "address_number": "258",
+      "city": "Barretos",
+      "state": "SP",
+      "zip_code": "14781262"
+    }
+  ],
+  "core_user": [
+    {
+      "id": 16,
+      "password": "pbkdf2_sha256$1000000$uIPbHPEkHqjGbuYnGR3zmj$9SNM5iKLqYbzPwc3Rh11vIxtQXi5fJKoKZJ0yu4TEBI=",
+      "last_login": "2025-08-12 00:54:30.661461",
+      "is_superuser": 1,
+      "username": "rasilva84",
+      "first_name": "Rodrigo",
+      "last_name": "Silva",
+      "is_staff": 1,
+      "is_active": 1,
+      "date_joined": "2025-07-31 22:11:49",
+      "email": "rasilva84@test.com",
+      "phone_number": "(11) 99999-9999",
+      "is_verified": 0,
+      "verification_code": "",
+      "created_at": "2025-07-31 22:11:49.635207",
+      "updated_at": "2025-08-01 02:44:43.351009",
+      "country_id": 1,
+      "verification_expires_at": null,
+      "website": "http://www.teste.com.br",
+      "is_first_access": 0,
+      "birth_date": "1981-12-01",
+      "address": "",
+      "address_number": "",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    {
+      "id": 22,
+      "password": "pbkdf2_sha256$1000000$TkIZwJ0JKkoetWJwDMWepP$EdAmNEAx0RZlIyhEnI14hBfk6QJ2Kcb1dx9aAu16K54=",
+      "last_login": "2025-08-07 00:30:01.976669",
+      "is_superuser": 0,
+      "username": "tech_admin",
+      "first_name": "Michael",
+      "last_name": "Jackson",
+      "is_staff": 0,
+      "is_active": 1,
+      "date_joined": "2025-08-01 02:39:17",
+      "email": "michael_jackson@hotmail.com",
+      "phone_number": "17999999999",
+      "is_verified": 1,
+      "verification_code": "",
+      "created_at": "2025-08-01 02:39:18.096434",
+      "updated_at": "2025-08-07 00:28:51.346321",
+      "country_id": 1,
+      "verification_expires_at": null,
+      "website": "",
+      "is_first_access": 0,
+      "birth_date": "1980-12-01",
+      "address": "",
+      "address_number": "",
+      "city": "",
+      "state": "",
+      "zip_code": ""
+    },
+    {
+      "id": 23,
+      "password": "pbkdf2_sha256$1000000$5Ro3dKOA2jSwW6VFyOSCmE$PsY1aifEDlaPdJX3SbqKWj0U363L/7GNLgZL3MWQegY=",
+      "last_login": "2025-08-12 00:52:45.537519",
+      "is_superuser": 0,
+      "username": "pato_donald",
+      "first_name": "Pato",
+      "last_name": "Donald",
+      "is_staff": 0,
+      "is_active": 1,
+      "date_joined": "2025-08-01 18:56:24.987453",
+      "email": "pato.donald@gmail.com",
+      "phone_number": "17981839329",
+      "is_verified": 1,
+      "verification_code": "",
+      "created_at": "2025-08-01 18:56:25.883942",
+      "updated_at": "2025-08-04 17:40:56.333261",
+      "country_id": 1,
+      "verification_expires_at": null,
+      "website": "http://www.teste.com.br",
+      "is_first_access": 0,
+      "birth_date": "1980-01-01",
+      "address": "Rua Chade Rezek",
+      "address_number": "135",
+      "city": "Barretos",
+      "state": "SP",
+      "zip_code": "14781-262"
+    }
+  ],
+  "customers_customer": [
+    {
+      "id": 1,
+      "name": "Michael Jackson",
+      "phone": "(11) 99999-9999",
+      "email": "mjackson@gmail.com",
+      "birth_date": "1979-01-01",
+      "document_number": "",
+      "social_network": "mjackson256",
+      "address": "Rua MP 22 - Dercy Novaes",
+      "city": "Barretos",
+      "state": "SP",
+      "zip_code": "14782-030",
+      "notes": "",
+      "is_active": 1,
+      "created_at": "2025-08-04 02:10:53.034722",
+      "updated_at": "2025-08-05 11:44:02.664352",
+      "company_id": 12,
+      "country_id": 1,
+      "address_number": "258"
+    },
+    {
+      "id": 2,
+      "name": "Mickey Mousae",
+      "phone": "(12) 36547-9652",
+      "email": "micke@gmail.com",
+      "birth_date": null,
+      "document_number": "",
+      "social_network": "",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip_code": "",
+      "notes": "",
+      "is_active": 1,
+      "created_at": "2025-08-10 22:27:24.548183",
+      "updated_at": "2025-08-10 22:27:24.548207",
+      "company_id": 12,
+      "country_id": 2,
+      "address_number": ""
+    }
+  ],
+  "products_currency": [
+    {
+      "id": 1,
+      "code": "BRL",
+      "name": "Real Brasileiro",
+      "symbol": "R$"
+    },
+    {
+      "id": 2,
+      "code": "USD",
+      "name": "Dólar Americano",
+      "symbol": "$"
+    },
+    {
+      "id": 3,
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }
+  ],
+  "products_productimage": [
+    {
+      "id": 1,
+      "image": "products/images/00_POSTER.jpg",
+      "is_primary": 1,
+      "order_index": 0,
+      "created_at": "2025-08-06 13:46:31.888525",
+      "product_id": 4
+    },
+    {
+      "id": 2,
+      "image": "products/images/01.jpg",
+      "is_primary": 0,
+      "order_index": 1,
+      "created_at": "2025-08-06 13:46:31.905448",
+      "product_id": 4
+    },
+    {
+      "id": 3,
+      "image": "products/images/04.jpg",
+      "is_primary": 0,
+      "order_index": 2,
+      "created_at": "2025-08-06 13:46:31.921860",
+      "product_id": 4
+    },
+    {
+      "id": 4,
+      "image": "products/images/07.jpg",
+      "is_primary": 0,
+      "order_index": 3,
+      "created_at": "2025-08-06 13:46:31.937795",
+      "product_id": 4
+    },
+    {
+      "id": 5,
+      "image": "products/images/10.jpg",
+      "is_primary": 0,
+      "order_index": 4,
+      "created_at": "2025-08-06 13:46:31.952964",
+      "product_id": 4
+    },
+    {
+      "id": 6,
+      "image": "products/images/01_JOoAORm.jpg",
+      "is_primary": 1,
+      "order_index": 0,
+      "created_at": "2025-08-06 13:48:16.110369",
+      "product_id": 1
+    },
+    {
+      "id": 7,
+      "image": "products/images/04_KngNE2j.jpg",
+      "is_primary": 0,
+      "order_index": 1,
+      "created_at": "2025-08-06 13:48:16.123102",
+      "product_id": 1
+    },
+    {
+      "id": 8,
+      "image": "products/images/07_M7VjQ7L.jpg",
+      "is_primary": 0,
+      "order_index": 2,
+      "created_at": "2025-08-06 13:48:16.137052",
+      "product_id": 1
+    },
+    {
+      "id": 9,
+      "image": "products/images/08.jpg",
+      "is_primary": 0,
+      "order_index": 3,
+      "created_at": "2025-08-06 13:48:16.150455",
+      "product_id": 1
+    },
+    {
+      "id": 10,
+      "image": "products/images/11.jpg",
+      "is_primary": 0,
+      "order_index": 4,
+      "created_at": "2025-08-06 13:48:16.164364",
+      "product_id": 1
+    },
+    {
+      "id": 11,
+      "image": "products/images/16.jpg",
+      "is_primary": 1,
+      "order_index": 0,
+      "created_at": "2025-08-07 14:40:45.967808",
+      "product_id": 5
+    }
+  ],
+  "products_product": [
+    {
+      "id": 1,
+      "name": "WOLVERINE | X-Men '97 | STL FILE",
+      "description": "Teste",
+      "cost_price": 15.02,
+      "sale_price": 50,
+      "scale": "1:1",
+      "dimensions_x": null,
+      "dimensions_y": null,
+      "dimensions_z": null,
+      "dimension_unit": "mm",
+      "weight": null,
+      "weight_unit": "g",
+      "print_time_estimate": "",
+      "stock_quantity": 1,
+      "is_active": 0,
+      "created_at": "2025-08-06 00:40:58.976211",
+      "updated_at": "2025-08-07 00:51:15.524185",
+      "category_id": 1,
+      "created_by_id": 23,
+      "currency_id": 1,
+      "product_type_id": 1,
+      "company_id": 12,
+      "scale_id": null
+    },
+    {
+      "id": 4,
+      "name": "Baiano",
+      "description": "Teste",
+      "cost_price": 15,
+      "sale_price": 20,
+      "scale": "",
+      "dimensions_x": null,
+      "dimensions_y": null,
+      "dimensions_z": null,
+      "dimension_unit": "cm",
+      "weight": null,
+      "weight_unit": "g",
+      "print_time_estimate": "",
+      "stock_quantity": 1,
+      "is_active": 1,
+      "created_at": "2025-08-06 13:46:31.866724",
+      "updated_at": "2025-08-08 01:00:12.419885",
+      "category_id": 2,
+      "created_by_id": 23,
+      "currency_id": 3,
+      "product_type_id": 1,
+      "company_id": 12,
+      "scale_id": 2
+    },
+    {
+      "id": 5,
+      "name": "Teste Valores",
+      "description": "",
+      "cost_price": 15.5,
+      "sale_price": 150.2,
+      "scale": "",
+      "dimensions_x": 1,
+      "dimensions_y": 2,
+      "dimensions_z": 55,
+      "dimension_unit": "cm",
+      "weight": null,
+      "weight_unit": "g",
+      "print_time_estimate": "",
+      "stock_quantity": 1,
+      "is_active": 1,
+      "created_at": "2025-08-07 14:40:45.956779",
+      "updated_at": "2025-08-08 01:06:36.133521",
+      "category_id": 2,
+      "created_by_id": 23,
+      "currency_id": 1,
+      "product_type_id": 4,
+      "company_id": 12,
+      "scale_id": 8
+    }
+  ],
+  "products_scale": [
+    {
+      "id": 1,
+      "name": "1:1",
+      "description": "Escala real (tamanho original)",
+      "is_active": 1,
+      "created_at": "2025-08-07 23:41:23.109767"
+    },
+    {
+      "id": 2,
+      "name": "1:4",
+      "description": "Escala 1 para 4",
+      "is_active": 1,
+      "created_at": "2025-08-07 23:41:23.114689"
+    },
+    {
+      "id": 3,
+      "name": "1:6",
+      "description": "Escala 1 para 6",
+      "is_active": 1,
+      "created_at": "2025-08-07 23:41:23.119252"
+    },
+    {
+      "id": 4,
+      "name": "1:8",
+      "description": "Escala 1 para 8",
+      "is_active": 1,
+      "created_at": "2025-08-07 23:41:23.123600"
+    },
+    {
+      "id": 5,
+      "name": "1:10",
+      "description": "Escala 1 para 10",
+      "is_active": 1,
+      "created_at": "2025-08-07 23:41:23.127839"
+    },
+    {
+      "id": 6,
+      "name": "Outros",
+      "description": "Outras escalas personalizadas",
+      "is_active": 1,
+      "created_at": "2025-08-07 23:41:23.132174"
+    },
+    {
+      "id": 7,
+      "name": "1:20",
+      "description": "Escala 1 para 20",
+      "is_active": 1,
+      "created_at": "2025-08-08 00:58:40.501460"
+    },
+    {
+      "id": 8,
+      "name": "1:12",
+      "description": "Escala 1 para 12",
+      "is_active": 1,
+      "created_at": "2025-08-08 01:06:25.892685"
+    }
+  ],
+  "products_category": [
+    {
+      "id": 1,
+      "name": "Modelagem",
+      "description": "Modelos 3D para impressão",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "name": "Action Figures",
+      "description": "Figuras de ação",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "name": "Dioramas",
+      "description": "Cenários e composições",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "name": "RPG",
+      "description": "Itens para role-playing games",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 6,
+      "name": "Religioso",
+      "description": "Itens religiosos",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 7,
+      "name": "Decoração",
+      "description": "Itens decorativos. Vasos, imãs, quadros, etc.",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 8,
+      "name": "Utilidades",
+      "description": "Utilitários",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 9,
+      "name": "Outros",
+      "description": "Categoria genérica",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    },
+    {
+      "id": 10,
+      "name": "Bustos",
+      "description": "",
+      "created_at": "2025-08-08 17:07:57.502560",
+      "is_active": 1
+    }
+  ],
+  "products_producttype": [
+    {
+      "id": 1,
+      "name": "Arquivo STL",
+      "description": "Arquivo digital para impressão 3D",
+      "created_at": "2025-08-08 17:07:57.511174",
+      "is_active": 1
+    },
+    {
+      "id": 2,
+      "name": "Modelo Físico",
+      "description": "Produto já impresso/confecionado. Estátuas, dioramas e outros.",
+      "created_at": "2025-08-08 17:07:57.511174",
+      "is_active": 1
+    },
+    {
+      "id": 3,
+      "name": "Serviço",
+      "description": "Impressão 3D, modelagem, etc.",
+      "created_at": "2025-08-08 17:07:57.511174",
+      "is_active": 1
+    },
+    {
+      "id": 4,
+      "name": "Outros",
+      "description": "",
+      "created_at": "2025-08-08 17:07:57.511174",
+      "is_active": 1
+    }
+  ]
+}

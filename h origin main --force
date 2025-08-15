@@ -1,0 +1,5 @@
+[33m4a048a3[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Usar DATABASE_PUBLIC_URL para conectar ao PostgreSQL externo
+[33m47ddde8[m Modificar settings.py para usar PostgreSQL no Railway automaticamente
+[33m8798420[m Configuração específica para Railway com PostgreSQL
+[33m8ce0a2b[m Ignorar banco SQLite e arquivos locais no Railway
+[33ma45a16a[m Adicionar Pillow e requirements.txt para Railway
