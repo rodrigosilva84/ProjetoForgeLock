@@ -657,6 +657,8 @@ def country_list(request):
     # Filtros de pesquisa
     search = request.GET.get('search', '')
     status = request.GET.get('status', '')
+    continent = request.GET.get('continent', '')
+    region = request.GET.get('region', '')
     
     if search:
         countries = countries.filter(
@@ -669,12 +671,27 @@ def country_list(request):
         countries = countries.filter(is_active=True)
     elif status == 'inactive':
         countries = countries.filter(is_active=False)
+    
+    if continent:
+        countries = countries.filter(continent=continent)
+    
+    if region:
+        countries = countries.filter(region=region)
+    
     # Se status estiver vazio, mostra todos (ativo e inativo)
+    
+    # Obter listas únicas para os filtros
+    continents = Country.objects.values_list('continent', flat=True).distinct().exclude(continent='').order_by('continent')
+    regions = Country.objects.values_list('region', flat=True).distinct().exclude(region='').order_by('region')
     
     context = {
         'countries': countries,
         'search': search,
         'status': status,
+        'continent': continent,
+        'region': region,
+        'continents': continents,
+        'regions': regions,
     }
     
     return render(request, 'products/country_list.html', context)

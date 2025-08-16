@@ -78,6 +78,12 @@ class UserRegistrationForm(UserCreationForm):
             country_choices.append((country.id, country.get_localized_name(current_language)))
         
         self.fields['country'].choices = country_choices
+        
+        # Forçar atualização das choices quando o idioma muda
+        self.fields['country'].widget.attrs['data-language'] = current_language
+        
+        # Adicionar parâmetro de cache-busting para forçar atualização
+        self.fields['country'].widget.attrs['data-cache-bust'] = current_language
 
 
 class UserLoginForm(forms.Form):

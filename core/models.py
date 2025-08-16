@@ -14,6 +14,8 @@ class Country(models.Model):
     code = models.CharField(_("Código"), max_length=3, unique=True)
     ddi = models.CharField(_("DDI"), max_length=5)
     flag = models.CharField(_("Bandeira"), max_length=10, blank=True)
+    continent = models.CharField(_("Continente"), max_length=50, blank=True)
+    region = models.CharField(_("Região"), max_length=50, blank=True)
     is_active = models.BooleanField(_("Ativo"), default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

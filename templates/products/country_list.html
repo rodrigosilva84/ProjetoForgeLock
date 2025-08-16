@@ -18,12 +18,34 @@
             <div class="card mb-4">
                 <div class="card-body">
                     <form method="get" class="row g-3">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <label for="search" class="form-label">{% translate 'Pesquisar' %}</label>
                             <input type="text" class="form-control" id="search" name="search" 
                                    value="{{ request.GET.search }}" placeholder="{% translate 'utilities.search.placeholder.countries' %}">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
+                            <label for="continent" class="form-label">{% translate 'Continente' %}</label>
+                            <select class="form-select" id="continent" name="continent" onchange="this.form.submit()">
+                                <option value="">{% translate 'Todos' %}</option>
+                                {% for continent_name in continents %}
+                                    <option value="{{ continent_name }}" {% if continent == continent_name %}selected{% endif %}>
+                                        {{ continent_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="region" class="form-label">{% translate 'Região' %}</label>
+                            <select class="form-select" id="region" name="region" onchange="this.form.submit()">
+                                <option value="">{% translate 'Todas' %}</option>
+                                {% for region_name in regions %}
+                                    <option value="{{ region_name }}" {% if region == region_name %}selected{% endif %}>
+                                        {{ region_name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-2">
                             <label for="status" class="form-label">{% translate 'Status' %}</label>
                             <select class="form-select" id="status" name="status" onchange="this.form.submit()">
                                 <option value="">{% translate 'Todos' %}</option>
@@ -31,7 +53,7 @@
                                 <option value="inactive" {% if status == 'inactive' %}selected{% endif %}>{% translate 'Inativos' %}</option>
                             </select>
                         </div>
-                        <div class="col-md-3 d-flex align-items-end">
+                        <div class="col-md-2 d-flex align-items-end">
                             <button type="submit" class="btn btn-primary me-2">
                                 <i class="fas fa-search me-2"></i>{% translate 'Pesquisar' %}
                             </button>
@@ -54,6 +76,8 @@
                                     <th>{% translate 'Nome' %}</th>
                                     <th>{% translate 'Código' %}</th>
                                     <th>{% translate 'DDI' %}</th>
+                                    <th>{% translate 'Continente' %}</th>
+                                    <th>{% translate 'Região' %}</th>
                                     <th>{% translate 'Status' %}</th>
                                     <th>{% translate 'Ações' %}</th>
                                 </tr>
@@ -63,7 +87,7 @@
                                 <tr>
                                     <td>
                                         {% if country.flag %}
-                                            <img src="{% static 'images/flags/'|add:country.flag|add:'.svg' %}?v=2" 
+                                            <img src="{% static 'images/flags/'|add:country.flag|add:'.svg' %}" 
                                                  alt="{{ country.name }}" 
                                                  class="flag-icon" 
                                                  style="width: 24px; height: 16px; border: 1px solid #ddd;"
@@ -73,14 +97,37 @@
                                             <i class="fas fa-flag text-muted"></i>
                                         {% endif %}
                                     </td>
-                                    <td>
-                                        <strong>{{ country.name }}</strong>
-                                    </td>
+                                                        <td>
+                        <strong>
+                            {% if request.LANGUAGE_CODE == 'en' and country.name_en %}
+                                {{ country.name_en }}
+                            {% elif request.LANGUAGE_CODE == 'es' and country.name_es %}
+                                {{ country.name_es }}
+                            {% else %}
+                                {{ country.name }}
+                            {% endif %}
+                            <!-- Debug: {{ request.LANGUAGE_CODE }} -->
+                        </strong>
+                    </td>
                                     <td>
                                         <span class="badge bg-secondary">{{ country.code }}</span>
                                     </td>
                                     <td>
                                         <span class="badge bg-info">+{{ country.ddi }}</span>
+                                    </td>
+                                    <td>
+                                        {% if country.continent %}
+                                            <span class="badge bg-primary">{{ country.continent }}</span>
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if country.region %}
+                                            <span class="badge bg-warning text-dark">{{ country.region }}</span>
+                                        {% else %}
+                                            <span class="text-muted">-</span>
+                                        {% endif %}
                                     </td>
                                     <td>
                                         {% if country.is_active %}
